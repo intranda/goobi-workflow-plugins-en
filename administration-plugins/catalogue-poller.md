@@ -180,7 +180,7 @@ If the authorization for the user group is re-entered, the user must first log i
 
 ## Automatic backups
 
-If the plugin finds updated metadata for a process and therefore updates the METS file, a backup of the current METS file `meta.xml` is first created automatically and saved next to the updated METS file.
+If the plugin finds updated metadata for a process and therefore updates the METS file, a backup of the current METS file `meta.xml` and, if relevant, the `meta_anchor.xml` is created automatically. The backup is saved next to the updated METS file.
 
 ![Multiple versions of METS files are kept as backups](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LZ4vYcdbp6Dw7s7NKy0%2F-L_EqtM7dAC-gMDktGKg%2F-L_EsSABauq2kgEpsg5W%2Fcatalogue_poller_04.png?alt=media&token=0fd37d89-3c21-4866-bc5a-e9c1cd3f45e7)
 
