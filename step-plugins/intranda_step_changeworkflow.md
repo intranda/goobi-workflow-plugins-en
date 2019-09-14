@@ -4,7 +4,7 @@ description: >-
   workflow based on process properties.
 ---
 
-# Changing the workflow based on operation properties
+# Changing the workflow based on process properties
 
 ## Introduction
 

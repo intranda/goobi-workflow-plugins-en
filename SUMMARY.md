@@ -15,7 +15,8 @@
 * [OCR execution with mixed fonts](step-plugins/intranda_step_mixedocr.md)
 * [Writing XMP metadata to image files](step-plugins/intranda_step_xmp.md)
 * [Split PDFs, Extract Full Text and Read Table of Contents](step-plugins/intranda_step_pdf-extraction.md)
-* [Changing the workflow based on operation properties](step-plugins/intranda_step_changeworkflow.md)
+* [Changing the workflow based on process properties](step-plugins/intranda_step_changeworkflow.md)
+* [Display of metadata in a task](step-plugins/display-of-metadata-in-a-task.md)
 
 ## Opac Plugins
 
