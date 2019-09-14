@@ -18,7 +18,7 @@ description: >-
 | Compatibility | Goobi Workflow 3.0.0 and newer |
 | Documentation date | 21.08.2019 |
 
-### ‌Precondition
+## ‌Precondition
 
 ‌The precondition for using the plugin is the use of Goobi workflow in version 3.0.0 or newer, the correct installation and configuration of the plugin as well as the correct integration of the plugin into the desired workflow steps.
 

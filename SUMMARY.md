@@ -17,6 +17,7 @@
 * [Split PDFs, Extract Full Text and Read Table of Contents](step-plugins/intranda_step_pdf-extraction.md)
 * [Changing the workflow based on process properties](step-plugins/intranda_step_changeworkflow.md)
 * [Display of metadata in a task](step-plugins/intranda_step_displaymetadata.md)
+* [Automatic pagination based on file names](step-plugins/intranda_step_imagename_analyse.md)
 
 ## Opac Plugins
 
