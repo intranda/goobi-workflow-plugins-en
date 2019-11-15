@@ -39,8 +39,7 @@ The configuration file of the plugin `plugin_LayoutWizzardPlugin.xml` must be lo
 
 ‌Within this file the path to the actual configuration file of the LayoutWizard is specified. The structure of this file is as follows:
 
-{% code-tabs %}
-{% code-tabs-item title="plugin\_LayoutWizzardPlugin.xml" %}
+{% code title="plugin\_LayoutWizzardPlugin.xml" %}
 ```markup
 <config_plugin>
         <layout-wizzard-config-path>
@@ -48,8 +47,7 @@ The configuration file of the plugin `plugin_LayoutWizzardPlugin.xml` must be lo
         </layout-wizzard-config-path>
 </config_plugin>
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 The actual configuration file specifies various parameters for the layout recognition process. These parameters are listed as examples in the following configuration file. This is located under the following path, as defined in the plug-in configuration file:
 
@@ -59,8 +57,7 @@ The actual configuration file specifies various parameters for the layout recogn
 
 For example, this configuration file has the following contents:
 
-{% code-tabs %}
-{% code-tabs-item title="layoutwizzard\_config.xml" %}
+{% code title="layoutwizzard\_config.xml" %}
 ```markup
 <!-- intranda Layout Wizzard configuration file -->
 <config>
@@ -137,8 +134,7 @@ For example, this configuration file has the following contents:
     </analysis>
 </config>
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 ## 3. Basic operation <a id="3-grundsaetzliche-arbeitsweise"></a>
 

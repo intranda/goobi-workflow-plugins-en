@@ -38,16 +38,14 @@ In the Goobi configuration directory, the additional plug-in configuration file 
 
 The content of this configuration file is structured as follows:
 
-{% code-tabs %}
-{% code-tabs-item title="plugin\_HaabExportPlugin.xml" %}
+{% code title="plugin\_HaabExportPlugin.xml" %}
 ```markup
 <config_plugin>
         <exportFolder>/opt/digiverso/viewer/hotfolder/</exportFolder>
         <exportFolder>/opt/digiverso/archive/</exportFolder>
 </config_plugin>
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 The `exportFolder` list can be used to define various locations to which the export is to be made. Any number of folders can be defined. However, at least one folder must be defined at this point.
 

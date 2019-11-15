@@ -22,6 +22,7 @@
 ## Opac Plugins
 
 * [EAD data transfer](opac-plugins/goobi-plugin-opac-ead.md)
+* [Generic XML Import](opac-plugins/generic-xml-import.md)
 
 ## Import Plugins
 

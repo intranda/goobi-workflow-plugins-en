@@ -44,8 +44,7 @@ There is also a configuration file, which must be located at the following locat
 
 The plugin is configured via the configuration file `plugin_intranda_administration_catalogue_poller.xml` and can be adapted during operation. The following is an example configuration file:
 
-> {% code-tabs %}
-> {% code-tabs-item title="plugin\_intranda\_administration\_catalogue\_poller.xml" %}
+> {% code title="plugin\_intranda\_administration\_catalogue\_poller.xml" %}
 > ```markup
 > <?xml version="1.0" encoding="UTF-8"?>
 > <config_plugin>
@@ -86,8 +85,7 @@ The plugin is configured via the configuration file `plugin_intranda_administrat
 >    <lastRun>1551731078691</lastRun>
 > </config_plugin>
 > ```
-> {% endcode-tabs-item %}
-> {% endcode-tabs %}
+> {% endcode %}
 
 <table>
   <thead>

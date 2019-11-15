@@ -47,8 +47,7 @@ The file `plugin_RepresentativeCreationPlugin.xml` must also be readable by the 
 
 The following file is used to configure the plugin and must be structured as follows:
 
-{% code-tabs %}
-{% code-tabs-item title="plugin\_RepresentativeCreationPlugin.xml" %}
+{% code title="plugin\_RepresentativeCreationPlugin.xml" %}
 ```markup
 <config_plugin>
     <RepresentativeStructureElement>TitlePage</RepresentativeStructureElement>
@@ -56,8 +55,7 @@ The following file is used to configure the plugin and must be structured as fol
     <StepName>Bibliographic import</StepName>
 </config_plugin>
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 The element `RepresentativeStructureElement` can be used to define the structural element whose first page is to be used as a representative. This is the internal name of the `DocStrctType` element defined in the rule set.
 

@@ -45,8 +45,7 @@ The file `plugin_intranda_step_imagename_analyse.xml` must also be readable by t
 
 This file is used to configure the plugin and must have the following structure:
 
-{% code-tabs %}
-{% code-tabs-item title="plugin\_intranda\_step\_imagename\_analyse.xml" %}
+{% code title="plugin\_intranda\_step\_imagename\_analyse.xml" %}
 ```markup
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
@@ -66,8 +65,7 @@ This file is used to configure the plugin and must have the following structure:
     </structureList>
 </config>
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 The element `skipWhenDataExists` defines how the plugin behaves if a pagination already exists. With the value `true` the execution is skipped, with `false` the existing structure and pagination is removed and a new one is created.
 

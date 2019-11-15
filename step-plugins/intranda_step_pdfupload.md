@@ -36,8 +36,7 @@ The first file contains the actual program logic, the second file provides the g
 
 The content of the configuration file `plugin_PdfUploadPlugin.xml` must be structured as follows:
 
-{% code-tabs %}
-{% code-tabs-item title="plugin\_PdfUploadPlugin.xml" %}
+{% code title="plugin\_PdfUploadPlugin.xml" %}
 ```markup
 <config_plugin>
  <!-- allowed values: master, source, derivate -->
@@ -48,8 +47,7 @@ The content of the configuration file `plugin_PdfUploadPlugin.xml` must be struc
     </extensions>
 </config_plugin>
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 `folder` specifies the folder in which the uploaded files are stored. The values `master`, `source` and `derivate` can be used. Afterwards the allowed file extensions have to be configured. Please make sure that the check is case sensitive. If you want to allow upper and lower case, both spellings must be defined.
 

@@ -40,13 +40,11 @@ To install BaseX on a Linux system, first download the zip file and install it o
 
 The Jetty configuration must then be adapted so that the application can only be accessed on localhost. To do this, make sure in the configuration file `/opt/digiverso/basex/webapp/WEB-INF/jetty.xml` that the `host` is set to `127.0.0.1`:
 
-{% code-tabs %}
-{% code-tabs-item title="jetty.xml" %}
+{% code title="jetty.xml" %}
 ```markup
   <Set name="host">127.0.0.1</Set>
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Then the Systemd Unit File is installed to this path:
 
@@ -56,8 +54,7 @@ Then the Systemd Unit File is installed to this path:
 
 This has the following structure:
 
-{% code-tabs %}
-{% code-tabs-item title="basexhttp.service" %}
+{% code title="basexhttp.service" %}
 ```ruby
 [Unit]
 Description=BaseX HTTP server
@@ -72,8 +69,7 @@ ExecStop=/opt/digiverso/basex/bin/basexhttp stop
 [Install]
 WantedBy=multi-user.target
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 The daemon must then be reloaded, the unit file activated and the database restarted:
 
@@ -114,8 +110,7 @@ In order to set up the query interface for Goobi, the database must be made awar
 
 Therefore a new file `eadRequest.xq` must be created in the directory `/opt/digiverso/basex/webapp/`.
 
-{% code-tabs %}
-{% code-tabs-item title="eadRequest.xq" %}
+{% code title="eadRequest.xq" %}
 ```graphql
 (: XQuery file to return an ead record :)
 module namespace page = 'http://basex.org/examples/web-page';
@@ -146,8 +141,7 @@ function page:getRecord($identifier) {
         </ead>
 };
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 This xquery module is executed when requests are sent via `GET` to `/search/{$identifier}`. If another `endpoint` is to be used, this can be adjusted in the `declare` area. When a request is made, the `page:getRecord` function is executed. In the first line of the function, the database name to be used must be defined. If the information has been split between several databases, several files must be used with this function. The variable `rest:path` must be uniquely defined.
 
@@ -165,8 +159,7 @@ Once the database has been set up, it can be configured in Goobi. Since the meta
 
 The file `goobi_opac.xml` must be extended by two more entries. On the one hand, the document type to be used must be defined. This happens in the `doctypes` area:
 
-{% code-tabs %}
-{% code-tabs-item title="goobi\_opac.xml" %}
+{% code title="goobi\_opac.xml" %}
 ```markup
 <type isContainedWork="false" isMultiVolume="false" isPeriodical="false" rulesetType="SingleRecord" tifHeaderType="Record" title="Record">
     <label language="de">Akte</label>
@@ -174,15 +167,13 @@ The file `goobi_opac.xml` must be extended by two more entries. On the one hand,
     <mapping>SingleRecord</mapping>
 </type>
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 In this example, the file type \(`SingleRecord` in the rule record\) is used.
 
 The data source must also be defined:
 
-{% code-tabs %}
-{% code-tabs-item title="goobi\_opac.xml" %}
+{% code title="goobi\_opac.xml" %}
 ```markup
 <catalogue title="EAD Import">
     <config address="http://localhost:8984/search/" database="hu-ead-example" description="EAD Import" iktlist="IKTLIST-GBV.xml"
@@ -192,8 +183,7 @@ The data source must also be defined:
     </searchFields>
 </catalogue>
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 The `title` attribute contains the name under which the data source can be selected in Goobi. The `config` element contains the URL to the previously defined REST interface in `address` and the name of the database in `database`.
 
@@ -201,8 +191,7 @@ The `title` attribute contains the name under which the data source can be selec
 
 This file is located in the `/opt/digiverso/goobi/config/` folder and contains the mapping of the EAD elements to Goobi metadata.
 
-{% code-tabs %}
-{% code-tabs-item title="plugin\_opac\_ead.xml" %}
+{% code title="plugin\_opac\_ead.xml" %}
 ```markup
 <?xml version="1.0" encoding="UTF-8"?>
 <config_plugin>
@@ -236,8 +225,7 @@ This file is located in the `/opt/digiverso/goobi/config/` folder and contains t
     </mapping>
 </config_plugin>
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 The available namespaces are defined in the upper area, followed by the structure type to be generated. The attribute `isanchor="true/false"` can be used to define whether a multi-volume object or an independent object is to be created. The metadata is then mapped in the `mapping` area. Since EAD does not distinguish between persons and other metadata, only normal metadata can be created here. Each `metadata` in `name` contains the metadata as defined in the rule set. In `level`, you specify where the metadata is to be created. Possible values are `physical`, `topstruct` and `anchor`.
 
@@ -247,8 +235,7 @@ In `xpath` is the [XPath](https://www.w3.org/TR/1999/REC-xpath-19991116/) expres
 
 The file `goobi_projects.xml` needs a new definition for the publication type and the new metadata.
 
-{% code-tabs %}
-{% code-tabs-item title="goobi\_projects.xml" %}
+{% code title="goobi\_projects.xml" %}
 ```markup
 <project name="EAD-Import">
     <createNewProcess>
@@ -291,8 +278,7 @@ The file `goobi_projects.xml` needs a new definition for the publication type an
     <validate/>
 </project>
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Once this configuration has been completed, a new data source is available within Goobi within the creation mask for processes. This can now be queried using identifiers in the same way as other data sources and catalogs.
 
