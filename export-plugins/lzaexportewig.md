@@ -6,11 +6,11 @@ This documentation describes the installation, configuration and use of a plugin
 
 | Details |  |
 | :--- | :--- |
-| Plugin version | 1.0.0 |
+| Version des Plugins | 1.0.0 |
 | Identifier | LzaExportEWIG |
-| Source code | - Source code not yet publicly available - |
-| Compatibility | Goobi workflow 3.0 and newer |
-| Documentation date | 28.10.2019 |
+| Source code | - Quellcode noch nicht öffentlich verfügbar - |
+| Kompatibilität | Goobi workflow 3.0 |
+| Dokumentation vom | 28.10.2019 |
 
 ## ​Precondition
 
