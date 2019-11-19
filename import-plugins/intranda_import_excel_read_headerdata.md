@@ -242,7 +242,7 @@ The `metadata` element is used to generate descriptive metadata..
 | `headerName` | Attribut | Column header in the Excel file |
 | `ugh` | Attribut | Name of the metadata |
 | `name` | Attribut | Name of the property |
-| `docType` | Attribut | anchor or child |
+| `docType` | Attribut | `anchor` or `child` |
 | `normdataHeaderName` | Attribut | Column header of a column with associated identifiers |
 
 The `headerName` attribute contains the column header. The rule only applies if the Excel file contains a column with this title and the cell is not empty. At least one of the two attributes `ugh` and `name` must exist. The `ugh` field can contain the name of a metadata. If this is the case \(and the metadata is allowed for the configured publication type\), a new metadata is created. `name` creates a property with this name.
@@ -258,7 +258,7 @@ The `person` element can be used to automatically create persons.
 | Name | Type | Description |
 | :--- | :--- | :--- |
 | `ugh` | Attribut | Name of the person role |
-| `docType` | Attribut | anchor or child |
+| `docType` | Attribut | `anchor` or `child` |
 | `normdataHeaderName` | Attribut | Column header of a column with associated identifiers |
 | `firstnameFieldHeader` | Element | Column header of field for first name |
 | `lastnameFieldHeader` | Element | Column header for surnames |
@@ -276,7 +276,7 @@ Metadata groups can be created using the `group` element.
 | Name | Type | Description |
 | :--- | :--- | :--- |
 | `ugh` | Attribut | Name of the metadata group |
-| `docType` | Attribut | anchor or child |
+| `docType` | Attribut | `anchor` or `child` |
 | `metadata` | Element | Metadata within the group |
 | `person` | Element | Person within the group |
 
