@@ -34,6 +34,7 @@
 * [Fedora Export](export-plugins/plugin_intranda_export_fedora.md)
 * [Fedora Export PROV](export-plugins/plugin_intranda_export_fedora_prov.md)
 * [HAAB Export](export-plugins/haabexport.md)
+* [EWIG long-term preservation](export-plugins/lzaexportewig.md)
 
 ## Other
 
