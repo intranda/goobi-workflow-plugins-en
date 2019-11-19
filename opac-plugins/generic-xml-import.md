@@ -10,9 +10,10 @@ This documentation describes the installation, configuration and use of the plug
 
 |  |  |
 | :--- | :--- |
-| Goobi Version | 2019.11 |
-| Maven Version | 1.0.0 |
-| Repository | goobi-plugin-opac-generic-xml |
+| Plugin version | 1.0.0 |
+| Identifier | goobi-plugin-opac-generic-xml |
+| Source code | - Source code not yet publicly available - |
+| Compatibility | Goobi workflow 2019.11 |
 | Documentation date | 11.11.2019 |
 
 ## Installation
