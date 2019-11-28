@@ -12,11 +12,11 @@ description: >-
 
 | Details | ​ |
 | :--- | :--- |
-| Plugin version | 1.0.0 |
+| Plugin version | 1.1.0 |
 | Identifier | intranda\_step\_displayMetadata |
-| Source code | - Source code not yet publicly available - |
+| Source code | [https://github.com/intranda/goobi-plugin-step-displaymetadata](https://github.com/intranda/goobi-plugin-step-displaymetadata) |
 | Compatibility | Goobi Workflow 3.0.0 and newer |
-| Documentation date | 21.08.2019 |
+| Documentation date | 28.11.2019 |
 
 ## ‌Precondition
 
@@ -41,12 +41,16 @@ description: >-
 ```markup
     <?xml version="1.0" encoding="UTF-8"?>
     <config_plugin>
-        <metadatalist>
-            <metadata>Author</metadata>
-            <metadata>TitleDocMain</metadata>
-            <metadata>_urn</metadata>
-            <metadata prefix="http://viewer.mydomain.tld/viewer/image/" suffix="/1/" key="url">CatalogIDDigital</metadata>
-        </metadatalist>
+       <config>
+            <project>*</project>
+            <step>*</step>
+            <metadatalist>
+                <metadata>Author</metadata>
+                <metadata>TitleDocMain</metadata>
+                <metadata>_urn</metadata>
+                <metadata prefix="http://svdmzgoobiweb01.klassik-stiftung.de/viewer/image/" suffix="/1/" key="url">CatalogIDDigital</metadata>
+            </metadatalist>
+        </config>
     </config_plugin>
 ```
 
