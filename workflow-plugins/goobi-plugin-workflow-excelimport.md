@@ -22,7 +22,7 @@ This workflow plugin was implemented in order to provide an individual user inte
 
 ## Installation
 
-To configure how the Yerusha import plugin imports an Excel file different values in its configuration file can be adapted. The configuration file is located here:
+To configure how this import plugin imports an Excel file different values in its configuration file can be adapted. The configuration file is located here:
 
 ```bash
 /opt/digiverso/goobi/config/plugin_intranda_workflow_excelimport.xml
@@ -90,7 +90,7 @@ The content of this configuration file looks like this:
         <metadata ugh="TitleDocMain" identifier="7" required="true" requiredErrorMessage="Field is required" />
         <metadata ugh="TitleDocMainOfficial" identifier="8" required="true" requiredErrorMessage="Field is required"/>
         <metadata ugh="TitleDocMainLanguage" identifier="8a" required="true" requiredErrorMessage="Field is required" list="/opt/digiverso/goobi/config/plugin_intranda_workflow_excelimport_ISO639-2.txt" listErrorMessage="Content not in list of valid options"/>
-        <metadata ugh="CreatorYerusha" identifier="9" required="true" requiredErrorMessage="Field is required" />
+        <metadata ugh="Creator" identifier="9" required="true" requiredErrorMessage="Field is required" />
         <metadata ugh="DateOfOrigin" identifier="10" either="11" eitherErrorMessage="Either this or 11 must have content" pattern="(^\\d{4}$|^\\d{4}/\\d{4}$|^\\d{4}-\\d{2}$|^\\d{4}-\\d{2}/\\d{4}-\\d{2}$)" patternErrorMessage="Invalid date Format"/>
         <metadata ugh="DateNote" identifier="11" either="10" eitherErrorMessage="Either this or 10 must have content"/>
         <metadata ugh="DocLanguage" identifier="12" required="true" requiredErrorMessage="Field is required" list="/opt/digiverso/goobi/config/plugin_intranda_workflow_excelimport_ISO639-2.txt" listErrorMessage="Content not in list of valid options"/>
