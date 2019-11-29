@@ -36,11 +36,11 @@
 * [HAAB Export](export-plugins/haabexport.md)
 * [EWIG long-term preservation](export-plugins/lzaexportewig.md)
 
-## Other
-
-* [Counterscript Application](other/counterscript-application.md)
-
 ## Workflow plugins
 
 * [Generic import plugin for excel files including validation](workflow-plugins/goobi-plugin-workflow-excelimport.md)
+
+## Other
+
+* [Counterscript Application](other/counterscript-application.md)
 
