@@ -10,7 +10,9 @@
 
 * [Automatic setting of the representative](step-plugins/representativecreation.md)
 * [Electronic Publications](step-plugins/intranda_step_pdfupload.md)
-* [LayoutWizzard](step-plugins/layoutwizzard.md)
+* [LayoutWizzard](step-plugins/layoutwizzard/README.md)
+  * [Using the plugin](step-plugins/layoutwizzard/01_use.md)
+  * [Technical details](step-plugins/layoutwizzard/02_details.md)
 * [OCR page selection](step-plugins/intranda_step_ocrselector.md)
 * [OCR execution with mixed fonts](step-plugins/intranda_step_mixedocr.md)
 * [Writing XMP metadata to image files](step-plugins/intranda_step_xmp.md)
