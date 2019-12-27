@@ -22,9 +22,9 @@ The LayoutWizzard is a tool for the analysis of digitized book pages and similar
 
 The analysis in LayoutWizzard is semi-automatic. It usually starts with an automatic step in which all images are analyzed according to fixed algorithms. The results are then checked in a manual step and corrected if necessary. Finally, in a further automatic step, cropped derivatives of the source images are generated, usually within the derivatives folder in the corresponding Goobi process.
 
-![How the LayoutWizard works within the Goobi Workflow](../.gitbook/assets/layoutwizzard_workflow_de.png)
+![How the LayoutWizzard works within Goobi workflow](../.gitbook/assets/layoutwizzard_workflow_en.png)
 
-The automatic work steps \(`Automatic Image Analysis` and `Automatic Image Cropping`\) are generally outsourced in a TaskManager plug-in so that other work within Goobi is not restricted by a high computing load on the Goobi server. However, it is also possible to run them without the TaskManager plug-in, so that these automatic steps within Goobi Step plug-ins without their own user interface are carried out directly within Goobi workflow.
+The automatic work steps \(`Automatic Image Analysis` and `Automatic Cropping`\) are generally outsourced in a TaskManager plug-in so that other work within Goobi is not restricted by a high computing load on the Goobi server. However, it is also possible to run them without the TaskManager plug-in, so that these automatic steps within Goobi Step plug-ins without their own user interface are carried out directly within Goobi workflow.
 
 Manual control of the analysis results with the suggested cropping is carried out within a standalone Goobi Step plug-in with a user interface so that its operation is fully integrated into Goobi workflow.
 
