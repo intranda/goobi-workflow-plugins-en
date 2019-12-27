@@ -116,7 +116,7 @@ LayoutWizzard's image analysis works in several phases in order to arrive at the
         <p><b>End</b>
         </p>
         <p></p>
-        <p>The LayoutWizard&apos;s suggestion is handed over to the user for review
+        <p>The LayoutWizzard&apos;s suggestion is handed over to the user for review
           after all analysis phases have been completed, where it is adapted if necessary.</p>
       </td>
     </tr>
