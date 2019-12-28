@@ -1,17 +1,17 @@
-# Globale Zuschneideoptionen
+# Global cutting options
 
-Dieser Bereich ist nur verfügbar, wenn der Schritt `Seite zuschneiden` ausgewählt ist und diese Option in der Konfiguration aktiviert ist. Er zeigt die Position und Größe des Zuschneiderahmens für das aktuelle Bildes an. Die Anzeige erfolgt in Millimetern oder einer anderen konfigurierbaren Maßeinheit. Die hier dargestellten Werte sind direkt editierbar und bleiben stets synchron mit dem Rahmen in der Bildanzeige.
+This area is only available if the `Crop page` step is selected and this option is enabled in the configuration. It shows the position and size of the crop frame for the current image. It is displayed in millimeters or another configurable unit of measurement. The values displayed here can be edited directly and always remain synchronous with the frame in the image display.
 
-Zusätzlich verfügt dieser Bereich über Buttons, um die Größe und Position des aktuellen Rahmens auf andere Bilder zu übertragen:
+Additionally, this area has buttons to transfer the size and position of the current frame to other images:
 
-| Icon | Beschreibung |
+| Icon | Description |
 | :--- | :--- |
-|   | Rahmen auf alle anderen Bilder übertragen. |
-|   | Rahmen auf alle nachfolgenden Bilder übertragen. |
-|   | Rahmen auf alle rechten Bilder übertragen. Dies ist nur verfügbar, wenn das aktuelle Bild ein rechtes ist. |
-|   | Rahmen auf alle nachfolgenden rechten Bilder übertragen. Dies ist nur verfügbar, wenn das aktuelle Bild ein rechtes ist. |
-|   | Rahmen auf alle linken Bilder übertragen. Dies ist nur verfügbar, wenn das aktuelle Bild ein linkes ist. |
-|   | Rahmen auf alle nachfolgenden linken Bilder übertragen. Dies ist nur verfügbar, wenn das aktuelle Bild ein linkes ist. |
+|  | Transfer frame to all other images. |
+|  | Transfer frame to all subsequent images. |
+|  | Transfer frame to all right images. This is only available if the current image is a right image. |
+|  | frame to all subsequent right images. This is only available if the current image is a right image. |
+|  | Transfer frame to all left images. This is only available if the current image is a left image. |
+|  | frame to all subsequent left images. This is only available if the current image is a left image. |
 
 
 

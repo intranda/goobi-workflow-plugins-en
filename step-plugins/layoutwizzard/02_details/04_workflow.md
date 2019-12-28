@@ -1,16 +1,16 @@
 # Workflow
 
-Der LayoutWizzard-Workflow in Goobi besteht in aller Regel aus mehreren Goobi-Workflow Schritten die zusammenarbeiten. Ein typischer LayoutWizzard Workflow als Teil eines Goobi-Workflows kann dabei zum Beispiel wie folgt aussehen:
+The LayoutWizard workflow in Goobi generally consists of several Goobi workflow steps that work together. A typical LayoutWizzard workflow as part of a Goobi workflow might look like the following:
 
-Im ersten Schritt \(in diesem Beispiel `Automatic Image Analysis`\) findet eine automatische Layoutanalse der Bilder zur Prüfung der Rotation, des Inhaltsbereichs sowie zur Position der Buchfalz statt. Dies geschieht üblicherweise in einem externen TaskManager, um die Systemressourcen von Goobi zu entlasten. Im zweiten Schritt \(in diesem Beispiel `LayoutWizzard`\) erfolgt dann eine manuelle Überprüfung und gegebenenfalls eine Korrektur der analysierten Ergebnisse. Diese Bearbeitung erfolgt innerhalb einer eigenen Nutzeroberfläche, die als Goobi-Plugin installiert wurde. Sobald diese manuelle Überprüfung dann abgeschlossen wurde, findet die automatische Speicherung \(hier benannt als `Automatic Image Cropping`\) der zugeschnittenen Derivate statt, auf Basis der zuvor analysierten und eventuell angepassten Daten. Auch diese Speicherung findet üblicherweise innerhalb des TaskManagers statt.
+In the first step \(in this example `Automatic Image Analysis`\) an automatic layout analysis of the images is performed to check the rotation, the content area and the position of the book fold. This is usually done in an external TaskManager to relieve the strain on Goobi's system resources. In the second step \(`LayoutWizzard` in this example\), the results of the analysis are then checked manually and, if necessary, corrected. This is done within a separate user interface that has been installed as a Goobi plug-in. As soon as this manual check has been completed, the automatic saving \(referred to here as `Automatic image cropping`\) of the cropped derivatives takes place, based on the data previously analysed and possibly adjusted. This saving also usually takes place within the TaskManager.
 
-## Datenhaltung
+## Data management
 
-Da die einzelnen Workflow-Schritte des LayoutWizzards auf einem gemeinsamen Datenbestand an Konfigurations- und Analysedaten arbeiten, müssen die Daten zumindest für die Dauer des LayoutWizzard Workflows persistent vorgehalten werden. Dies geschieht in der Datei `imageData.xml` im Goobi-Vorgangsordner. Beispielhaft lautet ein solcher vollständiger Pfad zu dieser Datei entsprechend:
+Since the individual workflow steps of the LayoutWizard work on a common database of configuration and analysis data, the data must be kept persistent at least for the duration of the LayoutWizard workflow. This is done in the `imageData.xml` file in the Goobi operations folder. As an example, such a complete path to this file would read accordingly:
 
 ```bash
 /opt/digiverso/goobi/metadata/1234/imageData.xml
 ```
 
-Diese Datei enthält sämtliche Konfigurationseinstellungen für den entsprechenden Vorgang sowie die Analysedaten zu jedem Bild, aus denen im abschließenden Speicherschritt die Derivate erstellt werden.
+This file contains all configuration settings for the corresponding process as well as the analysis data for each image, from which the derivatives are created in the final saving step.
 

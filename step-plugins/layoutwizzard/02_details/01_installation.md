@@ -1,28 +1,28 @@
 # Installation
 
-## Programmbibliotheken
+## Program Libraries
 
-Die Installation besteht aus insgesamt vier Programmbibliotheken, die im Apache Tomcat bzw. in Goobi erreichbar sein müssen:
+The installation consists of a total of four program libraries that must be accessible in Apache Tomcat or Goobi:
 
-| Datei | Speicherort |
+| File | Location |
 | :--- | :--- |
-| `layoutwizzard.jar` | Im `lib`-Ordner der Goobi webapp im Tomcat |
-| `plugin_intranda_step_LayoutWizzard.jar` | Im Ordner `plugins/step` im Goobi-Arbeitsverzeichnis |
-| `plugin_intranda_step_LayoutWizzard-GUI.jar` | Im Ordner `plugins/GUI` im Goobi-Arbeitsverzeichnis |
+| `layoutwizzard.jar` | In the `lib` folder of the Goobi webapp in the Tomcat |
+| `plugin_intranda_step_LayoutWizzard.jar` | In the `plugins/step` folder in the Goobi working directory |
+| `plugin_intranda_step_LayoutWizzard-GUI.jar` | In the `plugins/GUI` folder in the Goobi working directory |
 
-## Konfigurationsdateien
+## Configuration files
 
-Neben diesen Programmdateien werden zwei Konfigurationsdateien benötigt, eine für das Goobi-Plugin, und eine für die zugrundeliegende LayoutWizzard-Programmbibliothek.
+In addition to these program files, two configuration files are required, one for the Goobi plug-in and one for the underlying LayoutWizzard program library.
 
-### Plugin-Konfiguration
+### Plugin configuration
 
-Die Konfigurationsdatei des Plugins `plugin_LayoutWizzardPlugin.xml` muss im Konfigurationsverzeichnis `config` innerhalb des Goobi-Arbeitsverzeichnisses liegen. Üblicherweise handelt es sich hierbei um diesen Pfad zur Datei:
+The configuration file of the plugin `plugin_LayoutWizzardPlugin.xml` must be located in the `config` configuration directory within the Goobi working directory. This is usually the path to the file:
 
 ```text
 /opt/digiverso/goobi/config/plugin_LayoutWizzardPlugin.xml
 ```
 
-Innerhalb dieser Konfigurationsdatei wird der Pfad zur eigentlichen zentralen Konfiguration des LayoutWizzards angegeben. Der Aufbau dieser Datei sieht dabei folgendermaßen aus:
+Within this configuration file the path to the actual central configuration of the LayoutWizard is specified. The structure of this file looks like this:
 
 {% tabs %}
 {% tab title="plugin\_LayoutWizzardPlugin.xml" %}
@@ -37,15 +37,15 @@ Innerhalb dieser Konfigurationsdatei wird der Pfad zur eigentlichen zentralen Ko
 {% endtab %}
 {% endtabs %}
 
-### LayoutWizzard-Konfiguration
+### LayoutWizzard configuration
 
-Die eigentliche Konfigurationsdatei gibt für den Vorgang der Layoutanalyse verschiedene Parameter vor. Diese Parameter sind beispielhaft in der folgenden Konfigurationsdatei aufgeführt. Sie befindet sich, wie in der Plugin-Konfigurationsdatei definiert, unter folgendem Pfad:
+The actual configuration file specifies various parameters for the layout analysis process. These parameters are listed as examples in the following configuration file. As defined in the plugin configuration file, it is located under the following path:
 
 ```text
 /opt/digiverso/intranda/LayoutWizzard/layoutwizzard_config.xml
 ```
 
-Beispielhaft hat diese Konfigurationsdatei den folgenden Inhalt:
+As an example, this configuration file has the following content:
 
 ```markup
 <!-- intranda Layout Wizzard configuration file -->
@@ -124,5 +124,5 @@ Beispielhaft hat diese Konfigurationsdatei den folgenden Inhalt:
 </config>
 ```
 
-Details über die Anpassung der Konfigurationen finden sich im [Abschnitt zur Konfiguration]().
+For details on customizing the configurations, see the Configuration section.
 

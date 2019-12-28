@@ -1,14 +1,12 @@
-# Konfiguration des LayoutWizzards
+# Configuration of the LayoutWizzard
 
-
-
-Die zentrale Konfiguration des LayoutWizzards findet in einer eigenständigen Konfigurationsdatei statt. Diese kann an einem beliebigen Ort im Dateisystem liegen, da ihr Pfad in jedem Programmbestandteil des LayoutWizzards angegeben werden kann. Üblicherweise lautet der Pfad zu dieser zentralen Konfigurationsdatei folgendermaßen:
+The central configuration of the LayoutWizard takes place in a separate configuration file. This file can be located anywhere in the file system, because its path can be specified in any program component of the LayoutWizard. Usually the path to this central configuration file is as follows:
 
 ```bash
 /opt/digiverso/LayoutWizzard/layoutwizzard_config.xml
 ```
 
-Der Inhalt einer solchen Konfiguration sieht beispielhaft wie folgt aus:
+The content of such a configuration looks exemplary as follows:
 
 ```markup
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -112,180 +110,107 @@ Der Inhalt einer solchen Konfiguration sieht beispielhaft wie folgt aus:
 </config>
 ```
 
-Die Konfiguration besteht aus einigen allgemeinen Einstellungen und mehreren `<analysis>`Blöcken. Die `<analysis>` Blöcke regeln im Wesentlichen die Einstellungen für die automatische Analyse. Verschiedene Projekte oder Vorgänge können dabei unterschiedliche Einstellungen verwenden, indem Sie der automatischen Analyse die `id` des `<analysis>` Blocks übergeben. 
+The configuration consists of some general settings and several `<analysis>` blocks. The `<analysis>` blocks mainly control the settings for the automatic analysis. Different projects or tasks can use different settings by passing the id of the `<analysis>` block to the automatic analysis.
 
-Allgemeine Einstellungen betreffen immer alle Vorgänge und werden auch nicht durch vorgangsspezifische Einstellungen überschrieben.
+General settings always affect all operations and are not overwritten by operation-specific settings.
 
-## Allgemeine Einstellungen
+## General settings
 
-Die folgende Liste an allgemeinen Konfigurationspfaden ist nicht vollständig. Sie enthält jedoch alle Konfigurationen die individuell für eine Installation angepasst werden müssen.
+The following list of general configuration paths is not complete. However, it contains all configurations that must be individually adapted for an installation.
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">Pfad</th>
-      <th style="text-align:left">Beschreibung</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left"><code>previews/previewsPerPage</code>
-      </td>
-      <td style="text-align:left">Anzahl an Bildern pro Seite der Vorschauansicht im Goobi-LayoutWizzard-Plugin</td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><code>previews/previewHeight</code>
-      </td>
-      <td style="text-align:left">H&#xF6;he der Thumbnail-Datei in Pixeln, die in der Vorschauansicht angezeigt
-        werden. Kleinere Bilder erm&#xF6;glichen eine schnellere Anzeige, haben
-        aber eine geringere Aufl&#xF6;sung.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><code>previews/largePreviewWidth</code>
-      </td>
-      <td style="text-align:left">Breite der Thumbnail-Datei in Pixeln, die f&#xFC;r die Einzelseiten-Ansicht
-        des Goobi-LayoutWizzard-Plugins angezeigt wird. Kleinere Bilder erm&#xF6;glichen
-        eine schnellere Anzeige, haben aber eine geringere Aufl&#xF6;sung.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><code>processingThreads</code>
-      </td>
-      <td style="text-align:left">Die maximale Anzahl gleichzeitig laufender Analyse- oder Speichervorg&#xE4;nge.
-        Dies gilt f&#xFC;r Goobi und TaskManager separat. Pro Vorgang werden die
-        Bilder sequenziell bearbeitet. Eine gleichzeitige Bearbeitung kann jedoch
-        vorkommen, wenn mehrere LayoutWizzard-Jobs im TaskManager parallel laufen.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><code>analsisTimeout/duration</code>
-      </td>
-      <td style="text-align:left">
-        <p>Dieser Wert gibt die maximale Dauer f&#xFC;r die Analyse oder das Speichern
-          eines Bildes an, nach der die Ausf&#xFC;hrung f&#xFC;r das Bild abgebrochen
-          werden soll. Eine wegen Timeouts abgebrochene Analyse wird vermerkt, die
-          Analyse der folgenden Bilder jedoch fortgesetzt. Die fehlenden Analysedaten
-          k&#xF6;nnen in der manuellen Kontrolle nachgetragen werden. Ein abgebrochenes
-          Speichern beendet jedoch immer den TaskManager-Job mit einem Fehler.</p>
-        <p>Sinnvolle Werte f&#xFC;r den Timeout liegen zwischen 4 Sekunden und etwa
-          einer Minute, je nach Leistung und Zuverl&#xE4;ssigkeit des Systems, und
-          der Gr&#xF6;&#xDF;e und Komplexit&#xE4;t der zu analysierenden Bilder.</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><code>analysisTimeout/unit</code>
-      </td>
-      <td style="text-align:left">Dieser Wert definiert die Zeiteinheit, in der <code>analysisTimeout/duration</code> angegeben
-        wird. M&#xF6;gliche Werte sind <code>MICROSECONDS</code>, <code>MILLISECONDS</code>, <code>SECONDS</code> und <code>MINUTES</code>.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><code>saving/defaultCompression</code>
-      </td>
-      <td style="text-align:left">Mit diesem Wert wird die Kompressionsstufe festgelegt, die standardm&#xE4;&#xDF;ig
-        f&#xFC;r das Speichern der Derivate verwendet wird. G&#xFC;ltige Werte
-        sind hierbei <code>NONE</code> oder <code>JPEG</code>. Das Attribut <code>quality</code> gibt
-        die Kompressionsqualit&#xE4;t bei JPEG-Kompression an. Sie muss zwischen <code>0</code> und <code>100</code> liegen.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><code>saving/overwriteExistingImages</code>
-      </td>
-      <td style="text-align:left">Mit diesem Wert kann festgelegt werden, ob bereits existierende Bildderivate
-        w&#xE4;hrend des Speicherns &#xFC;berschrieben werden sollen.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><code>saving/ignoreImageMetadataErrors</code>
-      </td>
-      <td style="text-align:left">Hier wird angegeben, ob die Derivate auch gespeichert werden sollen, wenn
-        nicht alle Bildmetadaten &#xFC;bernommen werden k&#xF6;nnen. Dies kann
-        beispielsweise vorkommen, wenn f&#xFC;r die Java-Bildbibliothek unbekannte
-        Metadaten vorhanden sind. Es ist daher ratsam diesen Wert immer auf <code>false</code> zu
-        lassen, solange diese Einstellung nicht explizit ben&#xF6;tigt wird.</td>
-    </tr>
-  </tbody>
-</table>## Analysis-Konfiguration
+| Path | Description |
+| :--- | :--- |
+| `previews/previewsPerPage` | Number of images per page in the Goobi LayoutWizzard plugin preview |
+| `previews/previewHeight` | Height of the thumbnail file in pixels displayed in the preview view. Smaller images allow faster display, but have a lower resolution. |
+| `previews/largePreviewWidth` | Width in pixels of the thumbnail file displayed for the single-page view of the Goobi LayoutWizzard plugin Smaller images allow faster display, but have a lower resolution. |
+| `processingThreads` | The maximum number of simultaneously running analysis or storage processes. This applies to Goobi and TaskManager separately. The images are processed sequentially for each operation. However, simultaneous processing may occur if several LayoutWizard jobs are running in parallel in the TaskManager. |
+| `analsisTimeout/duration` | This value specifies the maximum time for analyzing or saving an image after which the execution for the image should be aborted. An analysis that was interrupted due to timeouts is noted, but the analysis of the following images is continued. The missing analysis data can be added in the manual control. However, a canceled save always ends the TaskManager job with an error. Useful values for the timeout are between 4 seconds and about one minute, depending on the performance and reliability of the system and the size and complexity of the images to be analyzed. |
+| `analysisTimeout/unit` | This value defines the time unit in which analysisTimeout/duration is specified. Possible values are `MICROSECONDS`, `MILLISECONDS`, `SECONDS` and `MINUTES`. |
+| `saving/defaultCompression` | This value determines the compression level that is used by default for saving the derivatives. Valid values here are `NONE` or `JPEG`. The `quality` attribute specifies the compression quality for JPEG compression. It must be between `0` and `100`. |
+| `saving/overwriteExistingImages` | This value can be used to determine whether existing image derivatives should be overwritten during saving. |
+| `saving/ignoreImageMetadataErrors` | Here you can specify whether the derivatives should also be saved if not all image metadata can be transferred. This can happen, for example, if unknown metadata exists for the Java image library. It is therefore advisable to always leave this value set to `false` as long as this setting is not explicitly required. |
 
-Jeder `<analysis>` Block hat ein Attribut `id`, das regelt, welcher Block für eine bestimmte Analyse verwendet wird. Der letzte Block muss die `id="default"` haben. Einstellungen aus diesem Block werden immer verwendet, wenn einem Analyseaufruf keinen Analyse-Id übergeben wird, oder wenn eine Einstellung nicht im eigentlich verwendeten Block konfiguriert ist. Alle anderen Blöcke bestehen entsprechend aus der Teilmenge an Konfigurationen, die von der `default`-Konfiguration abweichen.
+## Analysis configuration
 
-Folgende Einstellungen können in jedem `<analysis>` Block existieren: 
+Each `<analysis>` block has an attribute `id` that controls which block is used for a particular analysis. The last block must have the `id="default"`. Settings from this block are always used if no analysis id is passed to an analysis call, or if a setting is not configured in the actually used block. All other blocks consist accordingly of the subset of configurations that differ from the `default` configuration.
+
+The following settings can exist in each `<analysis>` block:
 
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">Pfad</th>
-      <th style="text-align:left">Beschreibung</th>
+      <th style="text-align:left">Path</th>
+      <th style="text-align:left">Description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td style="text-align:left"><code>info/label</code>
       </td>
-      <td style="text-align:left">Hierbei handelt es sich um die Bezeichnung der Analyse-Einstellung in
-        der Plugin-Oberfl&#xE4;che.</td>
+      <td style="text-align:left">This is the name of the analysis setting in the plugin interface.</td>
     </tr>
     <tr>
       <td style="text-align:left"><code>pageMode</code>
       </td>
-      <td style="text-align:left">
-        <p>Dieser Wert definiert den standardm&#xE4;&#xDF;ig zu verwendenden Seitenmodus.
-          Die hierf&#xFC;r g&#xFC;ltigen Angaben sind innerhalb der</p>
-        <p><a href>Ordner- und Dateioptionen</a> beschrieben.</p>
-      </td>
+      <td style="text-align:left">This value defines the default page mode to be used. The specifications
+        valid for this are defined within the folder and file options.</td>
     </tr>
     <tr>
       <td style="text-align:left"><code>externalCommands/@use</code>
       </td>
-      <td style="text-align:left">An dieser Stelle wird festgelegt, ob die Erzeugung von Bildern f&#xFC;r
-        die Analyse und das Speichern der Derivate durch ein externes Programm
-        erfolgen soll. Dies kann die Bilderzeugung unter Umst&#xE4;nden erheblich
-        beschleunigen, aber auch fehleranf&#xE4;lliger sein, da die Erzeugung dann
-        au&#xDF;erhalb von Java stattfindet.</td>
+      <td style="text-align:left">At this point it is determined whether the generation of images for the
+        analysis and storage of the derivatives should be done by an external program.
+        This can speed up the image generation considerably under certain circumstances,
+        but it can also be more error-prone, since the generation then takes place
+        outside of Java.</td>
     </tr>
     <tr>
       <td style="text-align:left"><code>externalCommands/convert</code>
       </td>
-      <td style="text-align:left">Mit dieser Wert wird der Konsolenbefehl definiert, mit dem das externe
-        Programm zum Erzeugen von Bildern aufgerufen werden soll. An diesen Befehl
-        werden die Spezifika der Ausf&#xFC;hrung angeh&#xE4;ngt, die dem Format
-        von <code>ImageMagick</code> folgen. Das aufgerufene Programm muss also mit
-        Parametern aufgerufen werden k&#xF6;nnen, die kompatibel zu <code>ImageMagick</code> sind.</td>
+      <td style="text-align:left">This value defines the console command to call the external program for
+        generating images. The execution specifics are appended to this command,
+        following the format of <code>ImageMagick</code>. The called program must
+        therefore be able to be called with parameters compatible with <code>ImageMagick</code>.</td>
     </tr>
     <tr>
       <td style="text-align:left"><code>analysisStep</code>
       </td>
-      <td style="text-align:left">Dieser Wert enth&#xE4;lt alle internen Parameter den jeweiligen automatischen
-        Analyseschritt.</td>
+      <td style="text-align:left">This value contains all internal parameters of the respective automatic
+        analysis step.</td>
     </tr>
     <tr>
       <td style="text-align:left"><code>analysisStep/@name</code>
       </td>
       <td style="text-align:left">
-        <p>Hiermit wird der interne Name des <code>&lt;analysisStep&gt;</code> Blocks
-          festgelegt. Er muss einem der folgenden Werte entsprechen:</p>
+        <p>This defines the internal name of the block. It must correspond to one
+          of the following values:</p>
         <ul>
-          <li><code>PAGESKEW</code>: Seite ausrichten</li>
-          <li><code>CONTENTAREA</code>: Seite zuschneiden</li>
-          <li><code>BOOKSPINE</code>: Falz erkennen</li>
+          <li><code>PAGESKEW</code>: Align Page</li>
+          <li><code>CONTENTAREA</code>: Cutting the page</li>
+          <li><code>BOOKSPINE</code>: Detect the book spine</li>
         </ul>
       </td>
     </tr>
     <tr>
       <td style="text-align:left"><code>analysisStep/@use</code>
       </td>
-      <td style="text-align:left">Mit diesem Wert kann festgelegt werden, ob ein Analyseschritt verwendet
-        werden soll. Der Wert <code>false</code> deaktiviert den Analyseschritt.</td>
+      <td style="text-align:left">This value can be used to determine whether an analysis step should be
+        used. The value <code>false</code> deactivates the analysis step.</td>
     </tr>
     <tr>
       <td style="text-align:left"><code>analysisStep/@order</code>
       </td>
-      <td style="text-align:left">An dieser Stelle wird die Reihenfolge des Analyseschrittes innerhalb der
-        gesamten Analyse festgelegt.</td>
+      <td style="text-align:left">At this point the sequence of the analysis step within the entire analysis
+        is determined.</td>
     </tr>
   </tbody>
-</table>Die Einstellungen in den `<analysisStep>` Blöcken betreffen spezifische Parameter der Analyse-Algorithmen. Sie werden hier nicht weiter beschrieben. Benutzer können jedoch in der Oberfläche potentiell jeden Parameter anpassen. Sollten sich so vorgenommene Einstellungen genug bewähren, um in die Konfiguration übernommen zu werden, kann der entsprechende Block in der Konfigurationsdatei auf den neuen Wert gesetzt werden. Der passende Parameter-Block kann hierbei ermittelt werden, indem der `<analysisStep>` zum jeweiligen Analyse-Schritt in der Konfigurationsdatei herausgefunden  und dort der Block mit dem internen Parameternamen geändert wird. Der interne Parametername wird in der Oberfläche als Tooltip angezeigt, wenn der Mauszeiger über das Label des veränderten Parameters gehalten wird.
+</table>The settings in the `<analysisStep>` blocks concern specific parameters of the analysis algorithms. They are not described further here. However, users can potentially adjust any parameter in the interface. If the settings made in this way prove sufficient to be adopted in the configuration, the corresponding block in the configuration file can be set to the new value. The appropriate parameter block can be determined by finding the `<analysisStep>` for the respective analysis step in the configuration file and changing the block with the internal parameter name there. The internal parameter name is displayed in the user interface as a tooltip when the mouse pointer is held over the label of the changed parameter.
 
-Zusätzlich können alle Analyse-Parameter-Blöcke das Attribut `visibility` besitzen, das die Sichtbarkeit des Parameters in der Oberfläche regelt. Fehlt dieses Attribut wird der default-Wert `HIDDEN` verwendet.
+Additionally, all analysis parameter blocks can have the `visibility` attribute, which controls the visibility of the parameter in the user interface. If this attribute is missing, the default value `HIDDEN` is used.
 
-| Sichtbarkeit | Beschreibung |
+| Visibility | Description |
 | :--- | :--- |
-| `VISIBLE` | Der Parameter ist in der Oberfläche immer sichtbar, wenn der zugehörige Schritt ausgewählt ist. |
-| `HIDDEN` | Der Parameter ist in der Oberfläche nur sichtbar, wenn der Analyseschritt-Block in der Oberfläche im erweiterten Modus ist. |
-| `INVISIBLE` | Der Parameter wird in der Oberfläche gar nicht angezeigt. |
+| `VISIBLE` | The parameter is always visible in the interface when the corresponding step is selected. |
+| `HIDDEN` | The parameter is only visible in the user interface when the analysis step block in the user interface is in extended mode. |
+| `INVISIBLE` | The parameter is not displayed at all in the interface. |
 

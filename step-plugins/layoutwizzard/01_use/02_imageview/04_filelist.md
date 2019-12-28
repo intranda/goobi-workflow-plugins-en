@@ -1,8 +1,8 @@
-# Dateiliste
+# File list
 
-In der Dateiliste im unteren Bereich sind sämtliche Bilddateien im Eingabeordner mit ihrem Dateinamen aufgelistet. Ein Klick auf einen der Dateinamen öffnet das jeweilige Bild in der Einzelseitenansicht.
+In the file list in the lower area, all image files in the input folder are listed with their file name. A click on one of the file names opens the respective image in the single page view.
 
-Der Dateiname ist ganz oder teilweise grün hinterlegt, wenn bereits Analyseschritte für das Bild abgeschlossen sind. Sind noch gar keine Analyseschritte abgeschlossen, ist der Dateiname komplett weiß hinterlegt. Für jeden abgeschlossenen Analyseschritt füllt sich der Hintergrund grün, und ist komplett grün hinterlegt, wenn sämt Analyseschritte abgeschlossen sind. 
+The file name is completely or partially highlighted in green if analysis steps for the image have already been completed. If no analysis steps have been completed at all, the file name is completely highlighted in white. For each completed analysis step, the background fills green and is completely green when all analysis steps have been completed.
 
-Bitte beachten Sie, dass das automatische Speichern nur dann erfolgreich durchlaufen kann kann, wenn alle Bilder komplett grün hinterlegt sind. In der Dateiliste lassen sich dafür schnell diejenigen Bilder identifizieren, die noch bearbeitet werden müssen, bevor der aktuelle Workflowschritt abgeschlossen werden kann.
+Please note that automatic saving can only be successful if all images are completely green. In the file list, you can quickly identify those images that still need to be processed before the current workflow step can be completed.
 
