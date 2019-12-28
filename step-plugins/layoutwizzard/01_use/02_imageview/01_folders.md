@@ -2,17 +2,25 @@
 
 In the Folder and File Options area, global settings for handling files can be made. You can also reset the complete LayoutWizard workflow from here.
 
+![Activated area for folder and file options](../../../../.gitbook/assets/layoutwizzard_13%20%281%29.png)
+
 ## Switching between display modes
 
 Within the overview, the mode for the display can be switched in the upper left corner. Usually the LayoutWizard opens in normal mode. The most important settings can already be edited directly here. If you want to display the advanced settings options, you can activate the advanced mode. Switching between the two display modes is possible by using this button in the title bar:
+
+![Button for switching between normal and extended display mode](../../../../.gitbook/assets/layoutwizzard_40.png)
 
 ## Normal Mode
 
 The following options are available in normal display mode.
 
+![Activated normal mode](../../../../.gitbook/assets/layoutwizzard_47.png)
+
 ### Page mode
 
 The page mode is used to define the page processing in right, left, double or single pages. Each mode sets the orientation for all images once. Subsequent changes to the orientation of individual pages change the orientation of all subsequent pages as specified by the page mode. The internal name within the table below is the one used in the LayoutWizzard page mode configuration file.
+
+![Drop-down element for selecting the mode](../../../../.gitbook/assets/layoutwizzard_44.png)
 
 | Page mode | Description | Internal name |
 | :--- | :--- | :--- |
@@ -27,6 +35,8 @@ The page mode is used to define the page processing in right, left, double or si
 ### Writing direction
 
 The setting for the writing direction determines the direction in which the text flows. If the writing direction is `right-to-left`, the first page after binding is a right page in alternating page mode. If the writing direction is `left-to-right`, the first page after the cover is a left page. In case of the `double page mode`, the respective part of the double page is saved as a separate file in the corresponding order before the other part of the double page.
+
+![Drop-down element for selecting the writing direction](../../../../.gitbook/assets/layoutwizzard_45.png)
 
 | Writing direction | Description |
 | :--- | :--- |
