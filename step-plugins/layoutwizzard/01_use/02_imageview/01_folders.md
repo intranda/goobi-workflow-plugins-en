@@ -53,6 +53,8 @@ With the button Discard and start over all LayoutWizzard data for this operation
 
 The following options are only available in advanced mode.
 
+![Activated extended mode with additional selection elements](../../../../.gitbook/assets/layoutwizzard_48.png)
+
 ### Input folder
 
 The Input folder defines the folder within the `images` folder of the Goobi operation from which the original images are read. This is usually the folder containing the master digitised images.
@@ -73,6 +75,8 @@ This option allows you to specify how the compression of images created after cr
 ### Mark outliers
 
 Outliers are images that show strikingly different values in the analysis than the maximum of 12 images before and after them. Outliers are also images whose analysis could not be completed due to errors or timeouts. Outliers are displayed in red in the file list and surrounded by a red frame in the preview view.
+
+
 
 The following outlier types are distinguished and can be selected as to be marked:
 
