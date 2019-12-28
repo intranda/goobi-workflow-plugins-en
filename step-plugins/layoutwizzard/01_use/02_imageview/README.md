@@ -2,5 +2,7 @@
 
 The Single Page View, sometimes also called `Overview Page`, contains global settings of the LayoutWizard as well as all settings for the currently viewed page. This view is divided into several sections, with the details of some of these sections only visible when the corresponding sections are active. Switching between the areas is possible by clicking on the title bar of an area. The title bar also contains a button on the right side of some areas to switch the `extended mode` for this area on and off. In `extended mode`, additional options are available that are not usually needed in normal operation. The subareas are described individually below.
 
+![Single page view of the LayoutWizard](../../../../.gitbook/assets/layoutwizzard_13.png)
+
 
 
