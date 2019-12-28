@@ -1,11 +1,11 @@
-# Allgemeine Einstellungen
+# General settings
 
-Unterhalb des Bildbereichs liegen mehrere Buttons, um das Plugin zu verlassen und den Workflow fortzusetzen.
+Below the image area are several buttons to exit the plugin and continue the workflow.
 
-| Icon | Beschreibung |
+| Icon | Description |
 | :--- | :--- |
-|   | Dieser Button speichert alle in der Oberfläche vorgenommenen Konfigurationen und Bilddaten für den aktuellen Vorgang und schließt das Plugin. Der Benutzer gelangt anschließend wieder zu der Ansicht, aus der er das Plugin betreten hat. |
-|   | Dieser Button speichert alle in der Oberfläche vorgenommenen Konfigurationen und Bilddaten für den aktuellen Vorgang und schließt das Plugin sowie den aktuellen Goobi-Workflow Schritt. Der Benutzer gelangt anschließend zur `Meine Aufgaben` Ansicht. Ist der folgende Workflowschritt ein automatischer Schritt, wird dieser sofort gestartet. |
-|   | Dieser Button speichert alle in der Oberfläche vorgenommenen Konfigurationen und Bilddaten für den aktuellen Vorgang und schließt das Plugin.  Der Benutzer gelangt anschließend zur Ansic Ansicht `Meine Aufgaben`. Der Goobi-Workflow wird um einen Schritt zurückgedreht, also in aller Regel zum vorhergehenden Schritt für die LayoutWizzard-Analyse. handelt es sich hierbei um einen automatischen Schritt, wird er sofort ausgeführt. |
-|   | Dieser Button beendet das Plugin sofort ohne zuvor Daten zu speichern, mit Ausnahme von Bildderivaten, die über die Speicheransicht oder durch das Zurücksetzen der gesamten Analyse gespeichert wurden. Der Benutzer gelangt anschließend wieder zu der Ansicht, aus der er das Plugin betreten hat. |
+|  | This button saves all configurations and image data made in the interface for the current process and closes the plugin. The user is then returned to the view from which he entered the plugin. |
+|  | This button saves all the configurations and image data made in the interface for the current process and closes the plug-in and the current Goobi workflow step. The user is then taken to the `My Tasks` view. If the following workflow step is an automatic step, it is started immediately. |
+|  | This button saves all configurations and image data made in the interface for the current process and closes the plugin. The user is then taken to the view `My Tasks`. The Goobi workflow is rotated back one step, i.e. generally to the previous step for the LayoutWizzard analysis. If this is an automatic step, it is executed immediately. |
+|  | This button terminates the plugin immediately without saving any data before, except for image derivatives that have been saved via the save view or by resetting the entire analysis. The user is then returned to the view from which he entered the plugin. |
 

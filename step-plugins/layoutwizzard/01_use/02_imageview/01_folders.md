@@ -1,7 +1,5 @@
 # Folder and file options
 
-
-
 In the Folder and File Options area, global settings for handling files can be made. You can also reset the complete LayoutWizard workflow from here.
 
 ## Switching between display modes
@@ -16,7 +14,7 @@ The following options are available in normal display mode.
 
 The page mode is used to define the page processing in right, left, double or single pages. Each mode sets the orientation for all images once. Subsequent changes to the orientation of individual pages change the orientation of all subsequent pages as specified by the page mode. The internal name within the table below is the one used in the LayoutWizzard page mode configuration file.
 
-| Seitenmodus | Beschreibung | Interner Name |
+| Page mode | Description | Internal name |
 | :--- | :--- | :--- |
 | **Alternating** | The images are treated alternately as right and left pages. The orientation of the first page depends on the `Write Direction` setting. | `ALTERNATING` |
 | **Only left pages** | All images are treated as left pages. | `ALL_LEFT` |
@@ -64,25 +62,25 @@ This option allows you to specify how the compression of images created after cr
 
 Outliers are images that show strikingly different values in the analysis than the maximum of 12 images before and after them. Outliers are also images whose analysis could not be completed due to errors or timeouts. Outliers are displayed in red in the file list and surrounded by a red frame in the preview view.
 
-Folgende Ausreißertypen werden unterschieden und können als zu markieren ausgewählt werden:
+The following outlier types are distinguished and can be selected as to be marked:
 
-| Ausreißertyp | Beschreibung |
+| Outlier types | Description |
 | :--- | :--- |
-| **Rotation** | Der Winkel der Seitenausrichtung ist auffällig. |
-| **Seitengröße** | Die Größe des Zuschneiderahmens ist auffällig. |
-| **Falzposition** | Der Abstand der Falz vom Seitenrand ist auffällig. |
-| **Nicht bearbeitet** | Das Bild konnte nicht vollständig analysiert werden. |
-| **Alle** | Alle oben genannten Typen von Ausreißern sollen markiert werden. |
-| **Keine** | Ausreißer sollen überhaupt nicht markiert werden. |
+| **Rotation** | The angle of the lateral alignment is striking. |
+| **Page size** | The size of the cutting frame is striking. |
+| **Book spine position** | The distance of the book spine from the page margin is striking. |
+| **Not processed** | The image could not be fully analyzed. |
+| **All** | All types of outliers mentioned above should be marked. |
+| **None** | Outliers should not be marked at all. |
 
-### Zuschneidebereiche anpassen
+### Adjust cutting areas
 
-Wenn rechte und linke Bilder einzeln gescannt werden und sie dennoch in einer Doppelseitenansicht zusammenpassen sollen, kann der LayoutWizzard Seiten so zuschneiden, dass der Inhalt jeweils auf gleicher Höhe beginnt, so dass der obere Buchrand auf allen Seiten möglichst bündig ist. Zu beachten ist hierbei jedoch, dass es je nach Aufnahme oft nicht möglich ist, zwei Seiten komplett ohne Verzerrungen bündig zu schneiden. Für eine optimale Doppelseitendarstellung ist daher immer auch ein Doppelseitenscan anstelle dieser Option zu empfehlen.
+If right and left images are scanned separately, but still need to fit together in a double-page view, LayoutWizzard can crop pages so that the content starts at the same height, so that the upper book edge is as flush as possible on all pages. Please note, however, that depending on the recording, it is often not possible to cut two pages completely flush without distortion. For an optimal double-page display, a double-page scan is therefore always recommended instead of this option.
 
-| Anpassungsmodus | Beschreibung |
+| **Adjustment** mode | Description |
 | :--- | :--- |
-| **Keine Angleichung** | Die Angleichung ist ausgeschaltet. |
-| **Angleichung gegenüberliegender Seiten, links nach rechts** | Jeweils gegenüberliegende Seiten werden bündig geschnitten. Als gegenüberliegende Seite einer linken Seiten gilt jeweils die folgende rechte Seite. |
-| **Angleichung gegenüberliegender Seiten, rechts nach links** | Jeweils gegenüberliegende Seiten werden bündig geschnitten. Als gegenüberliegende Seite einer rechten Seiten gilt jeweils die folgende linke Seite. |
-| **Angleichung über alle Seiten** | Alle Seiten werden möglichst bündig geschnitten. Dies verursacht oft große ungeschnittene Ränder, benötigt relativ viel Bearbeitungszeit und ist daher zumeist nicht empfehlenswert. |
+| **No adjustment** | The adjustment is switched off. |
+| **Adjustment of opposite sides, left to right** | Opposite sides are cut flush with each other. The opposite side of a left page is always the following right page. |
+| **Adjustment of opposite sides, right to left** | Opposite sides are cut flush with each other. The opposite side of a right-hand page is always the following left-hand page. |
+| **Adjustment on all sides** | All sides are cut as flush as possible. This often causes large untrimmed edges, requires relatively long processing time and is therefore usually not recommended. |
 

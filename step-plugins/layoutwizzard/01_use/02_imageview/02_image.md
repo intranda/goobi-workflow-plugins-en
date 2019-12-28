@@ -1,8 +1,8 @@
-# Aktuelles Bild
+# Current image
 
-Der rechte Bereich umfasst die Anzeige des aktuellen Bildes und einen Kopfbereich mit einigen Informationen zur Bilddatei. Wichtig ist hier vor allem das DropDown-Menü zur Auswahl der Ausrichtung der aktuellen Seite. Es ist zu beachten, dass eine Änderung der Ausrichtung auch die Ausrichtung aller Folgeseiten ändert, nach den im `Seitenmodus` gewählten Regeln. 
+The right area includes the display of the current image and a header area with some information about the image file. Most important here is the drop-down menu for selecting the orientation of the current page. Please note that changing the orientation also changes the orientation of all subsequent pages, according to the rules selected in the `page mode`.
 
-In der Kopfzeile lässt sich außerdem zum nächsten und vorherigen Bild, sowie zum nächsten oder vorherigen Ausreißer wechseln.
+In the header, you can also switch to the next and previous image, as well as the next or previous outlier.
 
-In der eigentlichen Bildanzeige ist, wenn einer der Analyseschritte ausgewählt ist, das Analyseergebnis des gewählten Schrittes sichtbar, das sich direkt mit der Maus bearbeiten lässt. 
+In the actual image display, when one of the analysis steps is selected, the analysis result of the selected step is visible and can be edited directly with the mouse.
 
