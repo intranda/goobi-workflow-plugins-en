@@ -11,9 +11,9 @@ Additionally, this area has buttons to transfer the size and position of the cur
 | ![](../../../../.gitbook/assets/layoutwizzard_30.png)  | Transfer frame to all other images. |
 | ![](../../../../.gitbook/assets/layoutwizzard_31.png)  | Transfer frame to all subsequent images. |
 | ![](../../../../.gitbook/assets/layoutwizzard_41.png)  | Transfer frame to all right images. This is only available if the current image is a right image. |
-| ![](../../../../.gitbook/assets/layoutwizzard_42.png)  | frame to all subsequent right images. This is only available if the current image is a right image. |
+| ![](../../../../.gitbook/assets/layoutwizzard_42.png)  | Transfer frame to all subsequent right images. This is only available if the current image is a right image. |
 | ![](../../../../.gitbook/assets/layoutwizzard_32.png)  | Transfer frame to all left images. This is only available if the current image is a left image. |
-| ![](../../../../.gitbook/assets/layoutwizzard_33.png)  | frame to all subsequent left images. This is only available if the current image is a left image. |
+| ![](../../../../.gitbook/assets/layoutwizzard_33.png)  | Transfer frame to all subsequent left images. This is only available if the current image is a left image. |
 
 
 

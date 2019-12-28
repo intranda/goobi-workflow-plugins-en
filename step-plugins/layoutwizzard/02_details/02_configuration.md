@@ -1,6 +1,6 @@
 # Configuration of the LayoutWizzard
 
-The central configuration of the LayoutWizard takes place in a separate configuration file. This file can be located anywhere in the file system, because its path can be specified in any program component of the LayoutWizard. Usually the path to this central configuration file is as follows:
+The central configuration of the LayoutWizzard takes place in a separate configuration file. This file can be located anywhere in the file system, because its path can be specified in any program component of the LayoutWizzard. Usually the path to this central configuration file is as follows:
 
 ```bash
 /opt/digiverso/LayoutWizzard/layoutwizzard_config.xml
@@ -153,7 +153,7 @@ The following settings can exist in each `<analysis>` block:
       <td style="text-align:left"><code>pageMode</code>
       </td>
       <td style="text-align:left">This value defines the default page mode to be used. The specifications
-        valid for this are defined within the folder and file options.</td>
+        valid for this are defined within the <a href="../01_use/02_imageview/01_folders.md">folder and file options</a>.</td>
     </tr>
     <tr>
       <td style="text-align:left"><code>externalCommands/@use</code>

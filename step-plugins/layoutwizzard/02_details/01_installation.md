@@ -124,5 +124,5 @@ As an example, this configuration file has the following content:
 </config>
 ```
 
-For details on customizing the configurations, see the Configuration section.
+For details on customizing the configurations, see the [Configuration section](02_configuration.md).
 

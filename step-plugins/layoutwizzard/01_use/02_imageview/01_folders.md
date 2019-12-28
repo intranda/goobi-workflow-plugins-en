@@ -1,6 +1,6 @@
 # Folder and file options
 
-In the Folder and File Options area, global settings for handling files can be made. You can also reset the complete LayoutWizard workflow from here.
+In the Folder and File Options area, global settings for handling files can be made. You can also reset the complete LayoutWizzard workflow from here.
 
 ![Activated area for folder and file options](../../../../.gitbook/assets/layoutwizzard_13%20%281%29.png)
 
@@ -69,7 +69,7 @@ This option allows you to specify how the compression of images created after cr
 
 | **Compression** | Description |
 | :--- | :--- |
-| **None** | Uncompresses Tiff |
+| **None** | Uncompressed Tiff |
 | **JPEG** | JPEG-compressed Tiff |
 
 ### Mark outliers
