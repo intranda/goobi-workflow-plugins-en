@@ -76,7 +76,7 @@ This option allows you to specify how the compression of images created after cr
 
 Outliers are images that show strikingly different values in the analysis than the maximum of 12 images before and after them. Outliers are also images whose analysis could not be completed due to errors or timeouts. Outliers are displayed in red in the file list and surrounded by a red frame in the preview view.
 
-
+![Selected outliers within the preview view](../../../../.gitbook/assets/layoutwizzard_12.png)
 
 The following outlier types are distinguished and can be selected as to be marked:
 
