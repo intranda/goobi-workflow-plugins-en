@@ -47,6 +47,8 @@ The setting for the writing direction determines the direction in which the text
 
 With the button Discard and start over all LayoutWizzard data for this operation can be deleted. This includes all analysis data as well as the configuration specific to this process. After clicking on this button, a menu will open where you can select the desired template for the new configuration. A subsequent click on `OK` discards all previous data and creates a new configuration for the process based on the selected template.
 
+![Button to reprocess all images](../../../../.gitbook/assets/layoutwizzard_43.png)
+
 ## Extended mode
 
 The following options are only available in advanced mode.
