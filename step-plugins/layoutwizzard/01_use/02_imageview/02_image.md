@@ -4,5 +4,7 @@ The right area includes the display of the current image and a header area with 
 
 In the header, you can also switch to the next and previous image, as well as the next or previous outlier.
 
+![Image display of a selected analysis step](../../../../.gitbook/assets/layoutwizzard_08.png)
+
 In the actual image display, when one of the analysis steps is selected, the analysis result of the selected step is visible and can be edited directly with the mouse.
 
