@@ -8,3 +8,9 @@ However, checking these cropping suggestions is the most important point of inte
 
 All general settings for configuration and analysis workflow are located in the `single page view`. However, the actual checking and correction will in most cases only take place in the `preview view`. For this reason, LayoutWizzard should be configured so that the entry into the plugin from an accepted task is as direct as possible to the preview view.
 
+{% page-ref page="01\_preview/" %}
+
+{% page-ref page="02\_imageview/" %}
+
+
+
