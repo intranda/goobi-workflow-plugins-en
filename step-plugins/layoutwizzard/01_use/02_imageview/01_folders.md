@@ -1,70 +1,68 @@
-# Ordner- und Dateioptionen
+# Folder and file options
 
 
 
-Im Bereich Ordner- und Dateioptionen können globale Einstellungen zur Handhabung der Dateien getätigt werden. Außerdem lässt sich von hier aus der komplette LayoutWizzard-Workflow zurücksetzen.
+In the Folder and File Options area, global settings for handling files can be made. You can also reset the complete LayoutWizard workflow from here.
 
-## Umschaltung zwischen den Anzeigemodi
+## Switching between display modes
 
-Innerhalb der Übersicht kann links oben der Modus für die Anzeige umgeschaltet werden. Üblicherweise öffnet sich der LayoutWizzard im normalen Modus. Hier sind die wichtigsten Einstellungen bereits direkt bearbeitbar. Sollen hingegen die erweiterten Einstellungsoptionen angezeigt werden, so kann der erweiterte Modus aktiviert werden. Eine Umschaltung zwischen den beiden Anzeigemodi ist mit der Nutzung dieses Buttons in der Titelleiste möglich:
+Within the overview, the mode for the display can be switched in the upper left corner. Usually the LayoutWizard opens in normal mode. The most important settings can already be edited directly here. If you want to display the advanced settings options, you can activate the advanced mode. Switching between the two display modes is possible by using this button in the title bar:
 
-## Normaler Modus
+## Normal Mode
 
-Folgende Optionen sind im Bereich des normalen Anzeigemodus verfügbar.
+The following options are available in normal display mode.
 
-### **Seitenmodus**
+### Page mode
 
-Der Seitenmodus dient für die Festlegung der Seitenverarbeitung in rechte, linke, Doppel- oder Einzelseiten. Jeder Modus setzt die Ausrichtung für alle Bilder einmalig fest. Spätere Änderungen der Ausrichtung einzelner Seiten ändern die Ausrichtung aller Folgeseiten wie vom Seitenmodus vorgegeben.  
-Der interne Name innerhalb der nachfolgenden Tabelle ist derjenige, wie er in der LayoutWizzard-Konfigurationsdatei für den Seitenmodus verwendet wird.
+The page mode is used to define the page processing in right, left, double or single pages. Each mode sets the orientation for all images once. Subsequent changes to the orientation of individual pages change the orientation of all subsequent pages as specified by the page mode. The internal name within the table below is the one used in the LayoutWizzard page mode configuration file.
 
 | Seitenmodus | Beschreibung | Interner Name |
 | :--- | :--- | :--- |
-| **Alternierend** | Die Bilder werden alternierend als rechte und linke Seiten behandelt. Die Ausrichtung der ersten Seite hängt von der Einstellung  `Schreibrichtung` ab. | `ALTERNATING` |
-| **Nur linke Seiten** | Alle Bilder werden als linke Seiten behandelt. | `ALL_LEFT` |
-| **Nur rechte Seiten** | Alle Bilder werden als rechte Seiten behandelt. | `ALL_RIGHT` |
-| **Doppelseiten** | Alle Bilder werden als Doppelseiten behandelt. Das heißt, dass sie beim Speichern in jeweils zwei Einzelbilder zerlegt werden, wenn eine Falzlinie gesetzt wurde. | `DOUBLE_PAGES` |
-| **Doppelseiten mit Einband** | Die Bilder werden wie im Modus `Doppelseiten` behandelt, mit Ausnahme der ersten und letzten Seite. Diese beiden Seiten werden hingegen als `Einzelblätter` behandelt. | `DOUBLE_PAGES_WITH_COVERS` |
-| **Einzelblätter** | Jede Seite wird als Einzelblatt behandelt. Dies bedeutet, dass keine Buchfalz geschnitten wird. | `SINGLE_PAGES` |
-| **Unabhängig** | In diesem Modus behalten alle Seiten die aktuell eingestellte Ausrichtung. Änderungen der Orientierung von einzelnen Seiten haben keine Auswirkung auf die Folgeseiten. | `INDEPENDENT` |
+| **Alternating** | The images are treated alternately as right and left pages. The orientation of the first page depends on the `Write Direction` setting. | `ALTERNATING` |
+| **Only left pages** | All images are treated as left pages. | `ALL_LEFT` |
+| **Only right pages** | All images are treated as right sides. | `ALL_RIGHT` |
+| **Double pages** | All images are treated as double pages. This means that they will be split into two single images when saved, if a fold line has been set. | `DOUBLE_PAGES` |
+| **Double pages with covers** | The images are treated in the same way as in `Double Page mode`, except for the first and last page. These two pages are treated as `single pages`. | `DOUBLE_PAGES_WITH_COVERS` |
+| **Single pages** | Each page is treated as a single sheet. This means that no book fold is cut. | `SINGLE_PAGES` |
+| **Independent** | In this mode, all pages retain the current orientation. Changes to the orientation of individual pages have no effect on the following pages. | `INDEPENDENT` |
 
-### **Schreibrichtung**
+### Writing direction
 
-Die Einstellung für die Schreibrichtung legt fest, in welche Richtung der Textfluss erfolgt. Ist die Schreibrichtung `Rechts-nach-Links` ist beim alternierenden Seitenmodus die erste Seite nach dem Einband eine rechte Seite. Ist die Schreibrichtung hingegen `Links-nach-Rechts`, so ist die erste Seite nach dem Einband eine linke Seite. Im Falle des `Doppelseitenmodus` wird der jeweilige Teil der Doppelseite in der entsprechenden Reihenfolge vor dem anderen Teil der Doppelseite als eigene Datei gespeichert.
+The setting for the writing direction determines the direction in which the text flows. If the writing direction is `right-to-left`, the first page after binding is a right page in alternating page mode. If the writing direction is `left-to-right`, the first page after the cover is a left page. In case of the `double page mode`, the respective part of the double page is saved as a separate file in the corresponding order before the other part of the double page.
 
-| **Schreibrichtung** | Beschreibung |
+| Writing direction | Description |
 | :--- | :--- |
-| **Links-nach-rechts** | Im alternierenden Seitenmodus ist die erste Seite nach dem Einband eine linke Seite. Im Doppelseiten Modus kommt die linke Seite einer Doppelseite vor der rechten in der Seitenreihenfolge. |
-| **Rechts-nach-Links** | Im alternierenden Seitenmodus ist die erste Seite nach dem Einband eine rechte Seite. Im Doppelseiten Modus kommt die rechte Seite einer Doppelseite vor der linken in der Seitenreihenfolge. |
+| Left-to-right | In alternate page mode, the first page after binding is a left page. In double page mode, the left page of a double page comes before the right page in the page order. |
+| Right-to-left | In alternate page mode, the first page after binding is a right page. In double page mode, the right page of a double page comes before the left page in the page order. |
 
-### **Verwerfen und neu Anfangen**
+### Discard and restart
 
-Mit dem Button `Verwerfen und neu anfangen` können alle LayoutWizzard-Daten für diesen Vorgang gelöscht werden. Dies betrifft sowohl alle Analysedaten als auch die für diesen Vorgang spezifische Konfiguration. Nach dem Klick auf diesen Button öffnet sich ein Menü, um darin die gewünschte Vorlage für die neue Konfiguration auszuwählen. Ein anschließender Klick auf `OK` verwirft alle bisherigen Daten und erstellt eine neue Konfiguration für den Vorgang aufgrund des ausgewählten Templates.
+With the button Discard and start over all LayoutWizzard data for this operation can be deleted. This includes all analysis data as well as the configuration specific to this process. After clicking on this button, a menu will open where you can select the desired template for the new configuration. A subsequent click on `OK` discards all previous data and creates a new configuration for the process based on the selected template.
 
-## Erweiterter Modus
+## Extended mode
 
-Die folgenden Optionen sind nur im erweiterten Modus verfügbar.
+The following options are only available in advanced mode.
 
-### Eingabe-Ordner
+### Input folder
 
-Der Eingabe-Ordner definiert denjenigen Ordner innerhalb des `images`-Ordners des Goobi-Vorgangs, aus dem die Originalbilder gelesen werden. Dies ist üblicherweise der Ordner mit den Master-Digitalisaten.
+The Input folder defines the folder within the `images` folder of the Goobi operation from which the original images are read. This is usually the folder containing the master digitised images.
 
-### **Ausgabe-Ordner**
+### Output folder
 
-Der Ausgabe-Ordner legt denjenigen Ordner innerhalb des `images`-Ordners des Goobi-Vorgangs fest, in den die gecroppten Derivate gespeichert werden sollen. Dies ist zumeist der Derivate-Ordner.
+The output folder specifies the folder within the `images` folder of the Goobi operation in which the clipped derivatives are to be saved. This is usually the derivatives folder.
 
-### **Komprimierung der Ausgabebilder**
+### Compression of the output images
 
-Mit dieser Option kann festgelegt werden, wie die Kompression der Bilder erfolgen soll, die nach dem Croppen entstanden sind. Grundsätzlich werden die Derivate im Tiff-Format gespeichert. Hier kann jedoch angegeben werden, ob die Bilder innerhalb des Tiff-Containers mit einer JPEG-Kompression komprimiert werden sollen.
+This option allows you to specify how the compression of images created after cropping should be performed. Basically the derivatives are saved in Tiff format. However, here you can specify whether the images within the Tiff container should be compressed using JPEG compression.
 
-| **Komprimierung** | Beschreibung |
+| **Compression** | Description |
 | :--- | :--- |
-| **Keine** | Unkomprimiertes Tiff |
-| **JPEG** | JPEG-komprimiertes Tiff |
+| **None** | Uncompresses Tiff |
+| **JPEG** | JPEG-compressed Tiff |
 
-### Ausreißer markieren
+### Mark outliers
 
-Bei Ausreißern handelt es sich um Bilder, die in der Analyse auffällig andere Werte aufweisen als die maximal 12 Bilder vor und nach ihnen. Ebenso handelt es sich um Ausreißer bei Bildern, deren Analyse aufgrund von Fehlern oder Zeitüberschreitungen nicht abgeschlossen werden konnte.  
-Ausreißer werden in der Dateiliste rot dargestellt und in der Vorschauansicht von einem roten Rahmen umgeben.
+Outliers are images that show strikingly different values in the analysis than the maximum of 12 images before and after them. Outliers are also images whose analysis could not be completed due to errors or timeouts. Outliers are displayed in red in the file list and surrounded by a red frame in the preview view.
 
 Folgende Ausreißertypen werden unterschieden und können als zu markieren ausgewählt werden:
 

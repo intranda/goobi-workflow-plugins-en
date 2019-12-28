@@ -1,6 +1,6 @@
-# Einzelseitenansicht
+# Single page view
 
-Die Einzelseitenansicht, bisweilen auch als `Übersichtsseite` bezeichnet, enthält globale Einstellungen des LayoutWizzards sowie alle Einstellungen zur aktuell betrachteten Seite. Diese Ansicht gliedert sich in mehrere Teilbereiche, wobei die Details einiger dieser Bereiche jeweils nur dann sichtbar sind, wenn die entsprechenden Bereiche aktiv sind. Ein Umschalten zwischen den Bereichen ist möglich, indem die Titelleiste eines Bereichs angeklickt wird. Die Titelleiste enthält außerdem bei manchen Bereichen rechts einen Knopf um den `erweiterten Modus` für diesen Bereich an- und auszuschalten. Im `erweiterten Modus` sind jeweils zusätzliche Optionen verfügbar die im normalen Betrieb üblicherweise nicht benötigt werden. Die Teilbereiche sind im Folgenden einzeln beschrieben.
+The Single Page View, sometimes also called `Overview Page`, contains global settings of the LayoutWizard as well as all settings for the currently viewed page. This view is divided into several sections, with the details of some of these sections only visible when the corresponding sections are active. Switching between the areas is possible by clicking on the title bar of an area. The title bar also contains a button on the right side of some areas to switch the `extended mode` for this area on and off. In `extended mode`, additional options are available that are not usually needed in normal operation. The subareas are described individually below.
 
 
 
