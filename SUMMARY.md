@@ -57,6 +57,7 @@
 ## Workflow plugins
 
 * [Generic import plugin for excel files including validation](workflow-plugins/goobi-plugin-workflow-excelimport.md)
+* [Barcode Generator](workflow-plugins/plugin-workflow-barcode-generator.md)
 
 ## Other
 
