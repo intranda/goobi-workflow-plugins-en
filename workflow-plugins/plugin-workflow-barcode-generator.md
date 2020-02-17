@@ -51,6 +51,10 @@ The content of this configuration file looks like this:
 	
 	<!--  default value the first barcode number -->
 	<prefix></prefix>
+	
+	<!--  default separator to use between prefix and counter, 
+	if the prefix is empty this separator does not get used -->
+	<separator>_</separator>
 
 	<!-- path to xslt file for barcode generation, 
 	this value can exist multiple times and gets displayed as dropdown list -->
@@ -69,6 +73,7 @@ The plugin is configured within the configuration file mentioned above. There yo
 | `amount` | This parameter determines how many barcodes are defined. |
 | `start` | If the counter for the barcodes is to start at a certain starting value, this value can be defined here. |
 | `prefix` | This parameter defines a prefix that is prefixed to the counter with an underscore `_`. |
+| `separator` | With this parameter you can specify a separator to be used between the prefix and the counter. If the prefix is not specified, the separator is not used. |
 | `xslt-path` | The parameter `xslt-path` allows the definition of any number of xsl files. The files configured here are then offered to the user for selection within the user interface. |
 
 ## Layout of the barcodes
