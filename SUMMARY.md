@@ -37,6 +37,8 @@
 * [Display of metadata in a task](step-plugins/intranda_step_displaymetadata.md)
 * [Automatic pagination based on file names](step-plugins/intranda_step_imagename_analyse.md)
 * [EWIG Long term archiving](step-plugins/ewig.md)
+* [Renaming files](step-plugins/intranda_step-rename-files.md)
+* [Tif-Validation](step-plugins/intranda_step_jhove-validation.md)
 
 ## Opac Plugins
 
