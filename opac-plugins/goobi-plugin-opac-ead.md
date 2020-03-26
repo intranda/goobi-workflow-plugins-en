@@ -60,8 +60,8 @@ This has the following structure:
 Description=BaseX HTTP server
 
 [Service]
-User=tomcat7
-Group=tomcat7
+User=tomcat8
+Group=tomcat8
 ProtectSystem=full
 ExecStart=/opt/digiverso/basex/bin/basexhttp
 ExecStop=/opt/digiverso/basex/bin/basexhttp stop
@@ -88,6 +88,13 @@ To make the admin interface externally accessible, it can be configured in `Apac
             ProxyPass http://localhost:8984/ retry=0
             ProxyPassReverse http://localhost:8984/
     </Location>
+```
+
+Afterwards the Apache module `proxy_http` must be activated and Apache must be restarted for the adjustments to take effect:
+
+```markup
+a2enmod proxy_http
+systemctl restart apache2
 ```
 
 ### Set up database
