@@ -22,6 +22,8 @@ This documentation describes how to install, configure and use a plugin to extra
 
 The precondition for using the plugin is the use of Goobi workflow in version 3.0.6 or higher, the correct installation and configuration of the plugin as well as the correct integration of the plugin into the desired workflow steps.
 
+The command line program Ghostscript is also required. It can be installed from the system's package sources.
+
 ## Installation and Configuration
 
 To use the plugin, it must be copied to the following location:
