@@ -12,7 +12,7 @@ This documentation describes the installation, configuration and use of the XMP 
 
 | Details | ​ |
 | :--- | :--- |
-| Plugin version | 1.0.0 |
+| Version | 1.0.0 |
 | Identifier | intranda\_step\_xmp |
 | Source code | - Source code not yet publicly available - |
 | Compatibility | Goobi workflow 3.0.5 and newer |

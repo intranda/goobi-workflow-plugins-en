@@ -12,7 +12,7 @@ This documentation describes the installation, configuration and use of an XML-b
 
 | Details |  |
 | :--- | :--- |
-| Plugin version | 1.0.0 |
+| Version | 1.0.0 |
 | Identifier | goobi-plugin-opac-ead |
 | Source code | - Source code not yet publicly available - |
 | Compatibility | Goobi workflow 3.0 and newer |

@@ -12,7 +12,7 @@ This documentation describes how to install, configure, and use a plug-in to aut
 
 | Details |  |
 | :--- | :--- |
-| Plugin version | 1.0.0 |
+| Version | 1.0.0 |
 | Identifier | intranda\_step\_changeWorkflow |
 | Source code | - Source code not yet publicly available - |
 | Compatibility | Goobi Workflow 3.0.0 and newer |

@@ -12,7 +12,7 @@ This documentation describes the installation, configuration and use of an expor
 
 | Details |  |
 | :--- | :--- |
-| Plugin version | 1.0.0 |
+| Version | 1.0.0 |
 | Identifier | HaabExport |
 | Source code | - Source code not yet publicly available - |
 | Compatibility | Goobi workflow 2.1 and newer |

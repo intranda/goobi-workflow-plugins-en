@@ -12,7 +12,7 @@ The LayoutWizzard is a tool for the analysis of digitized book pages and similar
 
 | Details |  |
 | :--- | :--- |
-| Plugin version | 1.0.0 |
+| Version | 1.0.0 |
 | Identifier | intranda\_step\_crop |
 | Source code | - nicht öffentlich verfügbar - |
 | Compatibility | Goobi workflow 3.0 |

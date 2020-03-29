@@ -12,7 +12,7 @@ This documentation describes the installation, configuration and use of the plug
 
 | Details |  |
 | :--- | :--- |
-| Plugin version | 1.0.0 |
+| Version | 1.0.0 |
 | Identifier | intranda\_import\_endnote |
 | Source code | - Source code not yet publicly available - |
 | Compatibility | Goobi workflow 3.0 and newer |

@@ -12,7 +12,7 @@ This documentation describes how to install, configure and use the Administratio
 
 | Details | ​ |
 | :--- | :--- |
-| Plugin version | 1.0.0 |
+| Version | 1.0.0 |
 | Identifier | plugin\_intranda\_administration\_catalogue\_poller |
 | Source code | - Source code not yet publicly available - |
 | Compatibility | Goobi workflow 3.0.4 and newer |

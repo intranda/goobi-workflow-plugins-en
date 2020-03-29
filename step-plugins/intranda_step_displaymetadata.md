@@ -12,7 +12,7 @@ description: >-
 
 | Details | ​ |
 | :--- | :--- |
-| Plugin version | 1.1.0 |
+| Version | 1.1.0 |
 | Identifier | intranda\_step\_displayMetadata |
 | Source code | [https://github.com/intranda/goobi-plugin-step-displaymetadata](https://github.com/intranda/goobi-plugin-step-displaymetadata) |
 | Compatibility | Goobi Workflow 3.0.0 and newer |

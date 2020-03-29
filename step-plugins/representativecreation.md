@@ -14,7 +14,7 @@ This plugin can be used to automatically prepare METS files and set the represen
 
 | Details | ​ |
 | :--- | :--- |
-| Plugin version | 1.0.0 |
+| Version | 1.0.0 |
 | Identifier | RepresentativeCreation |
 | Source code | - Source code not yet publicly available - |
 | Compatibility | Goobi workflow 2.2 |

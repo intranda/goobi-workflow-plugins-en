@@ -10,7 +10,7 @@ This documentation describes the installation, configuration and use of the plug
 
 |  |  |
 | :--- | :--- |
-| Plugin version | 1.0.0 |
+| Version | 1.0.0 |
 | Identifier | goobi-plugin-opac-generic-xml |
 | Source code | - Source code not yet publicly available - |
 | Compatibility | Goobi workflow 2019.11 |
