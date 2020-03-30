@@ -14,7 +14,7 @@ This documentation describes how to install, configure and use a plugin to extra
 | :--- | :--- |
 | Version | 1.2.0 |
 | Identifier | intranda\_step\_pdf-extraction |
-| Source code | - Source code not yet publicly available - |
+| Source code | [https://github.com/intranda/goobi-plugin-step-pdf-extraction](https://github.com/intranda/goobi-plugin-step-pdf-extraction) |
 | Compatibility | Goobi Workflow 3.0.6 and newer |
 | Documentation date | 09.04.2019 |
 
