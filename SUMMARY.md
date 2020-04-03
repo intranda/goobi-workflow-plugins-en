@@ -41,6 +41,7 @@
 * [Tif-Validation](step-plugins/intranda_step_jhove-validation.md)
 * [Metadata validation within a task](step-plugins/intranda_step_metadata_yerusha_validation.md)
 * [Automatic enrichment of metadata from own vocabularies](step-plugins/intranda_step_metadata_replacement.md)
+* [Quality control of images](step-plugins/intranda_step_imageqa.md)
 
 ## Opac Plugins
 
