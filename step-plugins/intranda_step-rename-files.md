@@ -43,6 +43,7 @@ As an example, the content of this configuration file looks like this:
         <project>Monographs 1900-1950</project>
         <project>Monographs 1950-2000</project>
         <step>Automatic renaming</step>
+        <startValue>1</startValue>
         <namepart type="counter">00000</namepart>
         <namepart type="static">-</namepart>
         <namepart type="variable">{projectid}</namepart>
@@ -51,6 +52,7 @@ As an example, the content of this configuration file looks like this:
     <config>
         <project>*</project>
         <step>*</step>
+        <startValue>1</startValue>
         <namepart type="variable">{processtitle}</namepart>
         <namepart type="static">_</namepart>
         <namepart type="counter">00000</namepart>
@@ -67,6 +69,7 @@ The configuration of the plugin is done within the already mentioned configurati
 | :--- | :--- |
 | `project` | This parameter determines the project for which the current block `<config>` is to apply. The name of the project is used here. This parameter can occur several times per `<config>` block. |
 | `step` | This parameter controls for which work steps the block `<config>` should apply. The name of the workflow step is used here. This parameter can occur several times per `<config>` block. |
+| `startValue` | This value controls with which start value the incrementing `counter` should start. |
 | `namepart` | This parameter, which can also be used several times, controls the generation of the file names. It can contain static elements \(`static`\), use variables from Goobi \(`variable`\) and generate a counter. The number of digits defined is crucial for generating the counter \(`counter`\). For example, the value `00000` would generate five-digit numbers with any leading zeros. The components of the file name defined in this way are concatenated together for naming purposes and then supplemented by the actual file extension to name the file. |
 
 ## Mode of operation
