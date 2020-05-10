@@ -18,7 +18,7 @@ This plugin is used to conditionally rename files within the different folders o
 | Identifier | intranda\_step\_rename-files |
 | Source code | - Source code not yet publicly available - |
 | Compatibility | Goobi workflow 2020.02 |
-| Dokumentation date | 04.03.2020 |
+| Dokumentation date | 10.05.2020 |
 
 ## Installation
 
