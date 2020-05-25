@@ -16,7 +16,7 @@ This plugin is used to visually check the quality of images. It allows different
 | Identifier | intranda\_step\_imageQA |
 | Source code | - Source code not yet publicly available - |
 | Compatibility | Goobi workflow 2020.03 |
-| Dokumentation date | 03.04.2020 |
+| Dokumentation date | 25.05.2020 |
 
 ## Installation
 
