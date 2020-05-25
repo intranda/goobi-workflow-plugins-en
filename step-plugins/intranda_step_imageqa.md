@@ -71,6 +71,12 @@ The configuration of the plugin is structured as follows:
         <scaleFactors>32</scaleFactors>
         <useTiles>false</useTiles>
         <useTilesFullscreen>true</useTilesFullscreen>
+        <!-- use new (faster) fullscreen mode - doesn't support 3D objects yet -->
+        <useJSFullscreen>false</useJSFullscreen>
+        <!-- no shortcut prefix for JS fullscreen. Allows navigating with arrow keys only -->
+        <noShortcutPrefix>false</noShortcutPrefix>
+        <!-- Don't show a big image - thumbnails only -->
+        <thumbnailsOnly>false</thumbnailsOnly>
 
         <!-- allow deletion of images -->
         <allowDeletion>false</allowDeletion>
