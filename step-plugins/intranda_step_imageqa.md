@@ -152,11 +152,11 @@ Here you can select the desired images to be viewed in higher quality. The large
 
 Images can also be displayed in a full-screen view for a larger view. In both the regular image display and the full-screen display, the associated full text can also be shown, provided that this has been generated in advance using OCR.
 
-![](../.gitbook/assets/intranda_step_imageqa5.png)
+![Image display in full screen mode with activated full text display](../.gitbook/assets/intranda_step_imageqa5.png)
 
 Besides the pure image display, the plugin can also handle other object types. For example, it is possible to display 3D objects, which can also be rotated and enlarged for display using additional navigation buttons.
 
 Depending on the individual configuration, the plugin allows many more functions, which are mostly visible within the thumbnail display. If these functions have been configured in the configuration file described above, they can be used, for example, for downloading PDF files, image files, rotations, deletions and other operations.
 
-![Aktivierte Zusatzfunktionen innerhalb der Thumbnaildarstellung](../.gitbook/assets/intranda_step_imageqa6.png)
+![Activated additional functions within the thumbnail display](../.gitbook/assets/intranda_step_imageqa6.png)
 
