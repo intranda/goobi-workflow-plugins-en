@@ -5,6 +5,7 @@
 ## Administration Plugins
 
 * [Catalogue Poller](administration-plugins/catalogue-poller.md)
+* [Copy Master-Anchor](administration-plugins/plugin_intranda_administration_copyanchor.md)
 
 ## Step Plugins
 
@@ -67,4 +68,3 @@
 ## Other
 
 * [Counterscript Application](other/counterscript-application.md)
-
