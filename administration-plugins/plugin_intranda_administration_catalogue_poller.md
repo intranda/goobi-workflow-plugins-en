@@ -14,7 +14,8 @@ This documentation describes how to install, configure and use the Administratio
 | :--- | :--- |
 | Version | 1.0.0 |
 | Identifier | plugin\_intranda\_administration\_catalogue\_poller |
-| Source code | - Source code not yet publicly available - |
+| Source code | https://github.com/intranda/goobi-plugin-administration-catalogue-poller |
+| Licence | GPL 2.0 or newer |
 | Compatibility | Goobi workflow 3.0.4 and newer |
 | Documentation date | 05.03.2019 |
 
@@ -60,24 +61,24 @@ The plugin is configured via the configuration file `plugin_intranda_administrat
 >         <!-- which catalogue to use (GBV, Wiener, CBL Adlib ...) -->
 >         <catalogue>Wiener</catalogue>
 >         
->         <!-- which identifier to use for the catalogue request (use 
+>         <!-- which identifier to use for the catalogue request (use
 >         standard variable replacer compatible value here) -->
 >         <catalogueIdentifier>$(meta.CatalogIDDigital)</catalogueIdentifier>
 >         
->         <!-- define if existing structure subelements shall be kept (true), 
->         otherwise a complete new mets file is created and overwrites the 
+>         <!-- define if existing structure subelements shall be kept (true),
+>         otherwise a complete new mets file is created and overwrites the
 >         existing one (false) -->
 >         <mergeRecords>true</mergeRecords>
 >         
->         <!-- execute an automatic export of updated records; 
+>         <!-- execute an automatic export of updated records;
 >         this is only executed if mergeRecords is set to true -->
 > 		<exportUpdatedRecords>false</exportUpdatedRecords>
 >         
->         <!-- if records shall be merged: which existing fields shall not 
+>         <!-- if records shall be merged: which existing fields shall not
 >         be replace with new values? (use the metadatatypes from ruleset)-->
 >         <skipField>viewerinstance</skipField>
 >         <skipField>singleDigCollection</skipField>    
->         <skipField>pathimagefiles</skipField> 
+>         <skipField>pathimagefiles</skipField>
 >         
 >     </rule>
 >    
@@ -163,7 +164,7 @@ The Catalogue Poller Plugin is automatically activated by Goobi. Its runtime sta
 If, in addition to this automatic process, a user also wants access to the plugin's user interface, he or she must belong to a user group that has been granted the following plugin-specific right to do so:
 
 ```text
-Plugin_Goobi_CataloguePoller 
+Plugin_Goobi_CataloguePoller
 ```
 
 In order to assign this right, the desired user group must first be assigned the right authorization in the right-hand area.
@@ -187,4 +188,3 @@ If the plugin finds updated metadata for a process and therefore updates the MET
 The updates of the metadata by the plugin usually take place fully automatically in the background. In order to be able to track what happened to a data record at any time, the events are logged. Detailed entries are automatically added to the process log for each process for which there were changes from this plugin. In addition to the timestamp, these entries also contain an exact list of the changed metadata fields and their contents. Thus, it is possible to trace the previous or the new value at any time.
 
 ![Within the process log the changes of the Catalogue Poller are traceable](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LZ4vYcdbp6Dw7s7NKy0%2F-L_EqtM7dAC-gMDktGKg%2F-L_EsUQIB9e-ktMRQ3Nf%2Fcatalogue_poller_05.png?alt=media&token=ebefc340-2367-40d1-8c5d-63cc7d2716fa)
-
