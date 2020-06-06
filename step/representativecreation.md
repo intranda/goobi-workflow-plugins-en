@@ -6,7 +6,7 @@ description: >-
 
 # Automatic setting of the representative
 
-## Introduction 
+## Introduction
 
 This documentation describes how to install, configure and use a plug-in to set the representative within METS files in Goobi.
 
@@ -16,7 +16,8 @@ This plugin can be used to automatically prepare METS files and set the represen
 | :--- | :--- |
 | Version | 1.0.0 |
 | Identifier | RepresentativeCreation |
-| Source code | - Source code not yet publicly available - |
+| Source code | [https://github.com/intranda/goobi-plugin-step-representative-creation](https://github.com/intranda/goobi-plugin-step-representative-creation) |
+| Licence | GPL 2.0 or newer |
 | Compatibility | Goobi workflow 2.2 |
 | Documentation date | 28.04.2017 |
 
@@ -73,13 +74,12 @@ To do this, the `RepresentativeCreation` plugin must be entered within the desir
 
 The way the plugin works within the correctly configured workflow is as follows.
 
-1. If the plugin was called within the workflow, it opens the METS file and first checks whether a representative has already been defined. 
-2. If this is the case, the step is completed. 
-3. If this is not the case, the system searches for the first structural element that corresponds to the configured name. 
-4. The first assigned image of this element is set as the representative. 
-5. If no structural element with this name is found or the data record does not contain any structural elements, an error message can be written to the process log and the workflow can be reset to a previous work step. 
+1. If the plugin was called within the workflow, it opens the METS file and first checks whether a representative has already been defined.
+2. If this is the case, the step is completed.
+3. If this is not the case, the system searches for the first structural element that corresponds to the configured name.
+4. The first assigned image of this element is set as the representative.
+5. If no structural element with this name is found or the data record does not contain any structural elements, an error message can be written to the process log and the workflow can be reset to a previous work step.
 6. However, this is only possible if a text has been configured for the error message and the name of the step.
 
 [  
 ](https://app.gitbook.com/@intranda/s/goobi-workflow-plugins-de/~/drafts/-LgXfKAYfksC_NXqERbV/primary/administration-plugins/catalogue-poller)
-
