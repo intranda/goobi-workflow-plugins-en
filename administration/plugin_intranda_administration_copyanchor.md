@@ -1,19 +1,20 @@
 ---
 description: >-
-  Goobi administration plugin for copying an anchor file to all associated volumes
+  Goobi administration plugin for copying an anchor file to all associated
+  volumes
 ---
 
 # Copy Master-Anchor
 
 ## Introduction
 
-This documentation describes the installation, configuration and use of the Administration Plugin for the automated transfer of a central anchor file of a volume (e.g. from periodicals or multi-volume works) to other volumes within Goobi workflow.
+This documentation describes the installation, configuration and use of the Administration Plugin for the automated transfer of a central anchor file of a volume \(e.g. from periodicals or multi-volume works\) to other volumes within Goobi workflow.
 
 | Details |  |
 | :--- | :--- |
 | Version | 1.0.0 |
 | Identifier | plugin\_administration\_copymasteranchor |
-| Source code | https://github.com/intranda/goobi-plugin-administration-copyanchor |
+| Source code | [https://github.com/intranda/goobi-plugin-administration-copyanchor](https://github.com/intranda/goobi-plugin-administration-copyanchor) |
 | Compatibility | Goobi workflow 2020.05 |
 | Documentation date | 05.06.2020 |
 
@@ -64,6 +65,7 @@ This metadata must now be allowed within the definition of the volumes. Using a 
   <metadata num="*">InternalNote</metadata>
 </DocStrctType>
 ```
+
 With this adjustment to the ruleset, the preparations for using the plugin are already complete.
 
 ## Using the plug-in within Goobi
@@ -74,7 +76,7 @@ After the plugin is fully configured, it can be used. To do this, first add the 
 
 ![The periodical volume was assigned the metadata InternalNote with the value AnchorMaster](../.gitbook/assets/copy_anchor_01.png)
 
-With this change, the thus adjusted periodical volume was defined as a master. From now on, the metadata of the parent work (e.g. the periodical) used there will serve as master for all other related volumes. Changes that are to be made for all volumes within the anchor files are therefore from now on made within this record.
+With this change, the thus adjusted periodical volume was defined as a master. From now on, the metadata of the parent work \(e.g. the periodical\) used there will serve as master for all other related volumes. Changes that are to be made for all volumes within the anchor files are therefore from now on made within this record.
 
 ![Adjustments to this anchor can be applied to all associated volumes with the plugin from now on](../.gitbook/assets/copy_anchor_02.png)
 
@@ -86,6 +88,7 @@ First open the plugin via the menu `Administration` and there the menu item `Cop
 
 ![Open the plugin via the Administration menu](../.gitbook/assets/copy_anchor_03.png)
 
-In the input field of the plugin, enter the catalog identifier of the parent work (e.g. the ID of the periodical) and then click on the button 'Start copying'. This will start the copy process, which automatically copies the metadata of the master anchor record to all associated volumes (e.g. all volumes of the periodical).
+In the input field of the plugin, enter the catalog identifier of the parent work \(e.g. the ID of the periodical\) and then click on the button 'Start copying'. This will start the copy process, which automatically copies the metadata of the master anchor record to all associated volumes \(e.g. all volumes of the periodical\).
 
 ![Performing the copy operation](../.gitbook/assets/copy_anchor_04.png)
+

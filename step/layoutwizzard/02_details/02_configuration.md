@@ -204,7 +204,9 @@ The following settings can exist in each `<analysis>` block:
         is determined.</td>
     </tr>
   </tbody>
-</table>The settings in the `<analysisStep>` blocks concern specific parameters of the analysis algorithms. They are not described further here. However, users can potentially adjust any parameter in the interface. If the settings made in this way prove sufficient to be adopted in the configuration, the corresponding block in the configuration file can be set to the new value. The appropriate parameter block can be determined by finding the `<analysisStep>` for the respective analysis step in the configuration file and changing the block with the internal parameter name there. The internal parameter name is displayed in the user interface as a tooltip when the mouse pointer is held over the label of the changed parameter.
+</table>
+
+The settings in the `<analysisStep>` blocks concern specific parameters of the analysis algorithms. They are not described further here. However, users can potentially adjust any parameter in the interface. If the settings made in this way prove sufficient to be adopted in the configuration, the corresponding block in the configuration file can be set to the new value. The appropriate parameter block can be determined by finding the `<analysisStep>` for the respective analysis step in the configuration file and changing the block with the internal parameter name there. The internal parameter name is displayed in the user interface as a tooltip when the mouse pointer is held over the label of the changed parameter.
 
 Additionally, all analysis parameter blocks can have the `visibility` attribute, which controls the visibility of the parameter in the user interface. If this attribute is missing, the default value `HIDDEN` is used.
 

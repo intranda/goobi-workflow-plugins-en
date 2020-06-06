@@ -53,3 +53,4 @@ Below the image area are several buttons to exit the plugin and continue the wor
     </tr>
   </tbody>
 </table>
+
