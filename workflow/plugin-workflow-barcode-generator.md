@@ -16,7 +16,7 @@ This workflow plugin is used for flexible generation of barcodes in a multi-page
 | :--- | :--- |
 | Version | 1.0.0 |
 | Identifier | goobi-plugin-workflow-barcode-generator |
-| Source code | - Source code not yet publicly available - |
+| Source code | [https://github.com/intranda/goobi-plugin-workflow-barcode-generator](https://github.com/intranda/goobi-plugin-workflow-barcode-generator) |
 | Licence | GPL 2.0 or newer |
 | Compatibility | Goobi workflow 2020.02 |
 | Documentation date | 15.02.2020 |
