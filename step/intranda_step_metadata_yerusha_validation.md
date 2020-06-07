@@ -14,7 +14,7 @@ This plug-in is used to validate metadata from the Goobi METS file and visualise
 | :--- | :--- |
 | Version | 1.0.0 |
 | Identifier | intranda\_step\_metadata\_yerusha\_validation |
-| Source code | - Source code not yet publicly available - |
+| Source code | [https://github.com/intranda/goobi-plugin-step-yerusha-validation](https://github.com/intranda/goobi-plugin-step-yerusha-validation) |
 | Licence | GPL 2.0 or newer |
 | Compatibility | Goobi workflow 2020.03 |
 | Dokumentation date | 02.04.2020 |
