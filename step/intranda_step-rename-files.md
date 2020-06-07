@@ -17,6 +17,7 @@ This plugin is used to conditionally rename files within the different folders o
 | Version | 1.0.0 |
 | Identifier | intranda\_step\_rename-files |
 | Source code | - Source code not yet publicly available - |
+| Licence | GPL 2.0 or newer |
 | Compatibility | Goobi workflow 2020.02 |
 | Dokumentation date | 10.05.2020 |
 
@@ -38,7 +39,7 @@ As an example, the content of this configuration file looks like this:
 
 ```markup
 <config_plugin>
-    
+
     <config>
         <project>Monographs 1900-1950</project>
         <project>Monographs 1950-2000</project>
@@ -48,7 +49,7 @@ As an example, the content of this configuration file looks like this:
         <namepart type="static">-</namepart>
         <namepart type="variable">{projectid}</namepart>
     </config>
-    
+
     <config>
         <project>*</project>
         <step>*</step>
@@ -57,7 +58,7 @@ As an example, the content of this configuration file looks like this:
         <namepart type="static">_</namepart>
         <namepart type="counter">00000</namepart>
     </config>
-    
+
 </config_plugin>
 ```
 
@@ -95,4 +96,3 @@ The plugin considers the files within the following subdirectories for naming:
 This plugin is integrated into the workflow in such a way that it is executed automatically. Manual interaction with the plugin is not necessary. For use within a step of the workflow it should be configured as shown in the following screenshot.
 
 ![Integration of the plugin into the workflow](../.gitbook/assets/intranda_step_rename-files.png)
-

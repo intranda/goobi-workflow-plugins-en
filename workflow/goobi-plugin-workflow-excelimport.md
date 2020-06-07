@@ -17,6 +17,7 @@ This workflow plugin was implemented in order to provide an individual user inte
 | Version | 1.0.0 |
 | Identifier | goobi-plugin-workflow-excelimport |
 | Source code | - Source code not yet publicly available - |
+| Licence | GPL 2.0 or newer |
 | Compatibility | Goobi workflow 2019.11 |
 | Documentation date | 29.11.2019 |
 
@@ -62,7 +63,7 @@ The content of this configuration file looks like this:
 
         Further there are a variety of possible validation criteria:
             - required: if this is set to true every cell of this metadatum will be expected to have some content
-            - pattern: the contents of this attribute are interpreted as a regular expression, every cell of this metadatum is checked against it, note that in these regular expressions "," and "\" have to be escaped by "\", e.g. the expression for a single digit would be "\\d" 
+            - pattern: the contents of this attribute are interpreted as a regular expression, every cell of this metadatum is checked against it, note that in these regular expressions "," and "\" have to be escaped by "\", e.g. the expression for a single digit would be "\\d"
             - list: content of this attribute is expected to be the path to a plain text file with one expression per line, cells of this metadatum are checked to match one line of this file, cells may contain several elements of the list separated by "; "
             - either: checks that either this metadatum or the one provided by its identifier in this attribute have content
             - requiredFields: allows to configure fields that must have content before this metadatum is allowed to have content, takes a list of identifiers separated by "; "
@@ -156,4 +157,3 @@ For each individual metadata, you can specify how it is to be imported. Each fie
 After installing and starting the plugin, it is available within the `Workflow` menu. After the call, an Excel file can be uploaded here, so that all validation messages are immediately visible. You can then decide whether the processes should still be generated in Goobi despite any validation messages or whether the import should be cancelled.
 
 ![](../.gitbook/assets/workflow_excel_import.png)
-

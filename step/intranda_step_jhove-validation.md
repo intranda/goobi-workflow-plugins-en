@@ -15,6 +15,7 @@ This plugin is used to validate images in `TIF` format within defined directorie
 | Version | 1.0.0 |
 | Identifier | intranda\_step\_jhove-validation |
 | Source code | - Source code not yet publicly available - |
+| Licence | GPL 2.0 or newer |
 | Compatibility | Goobi workflow 2020.02 |
 | Dokumentation date | 04.03.2020 |
 
@@ -110,4 +111,3 @@ The plugin is usually executed fully automatically within the workflow. It first
 This plugin is integrated into the workflow in such a way that it is executed automatically. Manual interaction with the plugin is not necessary. For use within a step of the workflow it should be configured as shown in the following screenshot.
 
 ![Integration of the plugin into the workflow](../.gitbook/assets/intranda_step_jhove-validation.png)
-

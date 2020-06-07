@@ -15,6 +15,7 @@ This documentation describes the installation, configuration and use of the XMP 
 | Version | 1.0.0 |
 | Identifier | intranda\_step\_xmp |
 | Source code | - Source code not yet publicly available - |
+| Licence | GPL 2.0 or newer |
 | Compatibility | Goobi workflow 3.0.5 and newer |
 | Documentation date | 05.04.2019 |
 
@@ -137,13 +138,13 @@ The `processproperty`, `templateproperty` and `workpieceproperty` properties are
 
 `separator`: the characters configured here will be used as separator if more than one entry is found.
 
-When using `staticText`, an additional field `text` is expected. Its content will be used unchanged. 
+When using `staticText`, an additional field `text` is expected. Its content will be used unchanged.
 
 If it is a `metadata` field, a number of additional sub-elements are expected:
 
 * `name`: contains the internal name of the metadata field.
 * `use`: defines the structural elements in which the field is to be searched for. The following values are possible:
-  * `logical`: the search is restricted to the main element such as monograph or volume. This is usually the data from the OPAC. 
+  * `logical`: the search is restricted to the main element such as monograph or volume. This is usually the data from the OPAC.
   * `anchor`: the search is limited to the anchor like multi-volume work or journal.
   * `physical`: the search is limited to the element `physSequence`. Here, for example, the URN of the work can be found.
   * `current`: the search is only performed in the element that has been assigned to the current image and is at the lowest level in the hierarchy. For example a chapter or an article.
@@ -152,7 +153,7 @@ If it is a `metadata` field, a number of additional sub-elements are expected:
 * `separator`: the characters configured here are used as separator if more than one entry is found.
 * `useFirst`: if this field contains the value true, the first value found will be used, otherwise further values will be searched for.
 * `staticPrefix`: this text is placed before the metadata content
-* `staticSuffix`: this text is appended to the metadata content. If the metadata is a person, the value from `displayName` is used, otherwise the normal value. 
+* `staticSuffix`: this text is appended to the metadata content. If the metadata is a person, the value from `displayName` is used, otherwise the normal value.
 
 With `docstruct` the following fields are expected:
 
@@ -307,7 +308,7 @@ XMP headers allow you to write the complete Dublin Core metadata record. With th
                 <separator>;\u0020</separator>
             </goobiField>
         </imageMetadataField>
-        
+
         <!-- some additional metadata to identify the document -->
         <imageMetadataField name="-xmp-dc:Source">
             <separator>;\u0020</separator>
@@ -374,4 +375,3 @@ XMP headers allow you to write the complete Dublin Core metadata record. With th
     </config>
 </config_plugin>
 ```
-

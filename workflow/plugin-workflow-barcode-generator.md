@@ -17,6 +17,7 @@ This workflow plugin is used for flexible generation of barcodes in a multi-page
 | Version | 1.0.0 |
 | Identifier | goobi-plugin-workflow-barcode-generator |
 | Source code | - Source code not yet publicly available - |
+| Licence | GPL 2.0 or newer |
 | Compatibility | Goobi workflow 2020.02 |
 | Documentation date | 15.02.2020 |
 
@@ -39,27 +40,27 @@ The content of this configuration file looks like this:
 
 ```markup
 <config_plugin>
-	
+
 	<!--  default value for the number format -->
 	<format>00000</format>
 
 	<!--  default value for the amount of barcodes to be generated -->
 	<amount>200</amount>
-	
+
 	<!--  default value the first barcode number -->
 	<start>1</start>
-	
+
 	<!--  default value the first barcode number -->
 	<prefix></prefix>
-	
-	<!--  default separator to use between prefix and counter, 
+
+	<!--  default separator to use between prefix and counter,
 	if the prefix is empty this separator does not get used -->
 	<separator>_</separator>
 
-	<!-- path to xslt file for barcode generation, 
+	<!-- path to xslt file for barcode generation,
 	this value can exist multiple times and gets displayed as dropdown list -->
 	<xslt-path>/opt/digiverso/goobi/xslt/barcodes.xsl</xslt-path>
-	
+
 </config_plugin>
 ```
 
@@ -180,6 +181,3 @@ After clicking the Generate Barcodes button, a PDF file is available for downloa
 To illustrate the operation, a screencast for the use of the plugin is available here:
 
 {% embed url="https://www.youtube.com/watch?v=Eh8H4k1sKvE" caption="Screencast on how to use the plugin" %}
-
-
-

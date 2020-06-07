@@ -8,13 +8,14 @@ description: >-
 
 ## Introduction
 
-This documentation describes how to install, configure and use a plug-in to upload documents to Goobi. This plugin can be used to determine on a single-page basis which images from a process are sent to OCR with which font. 
+This documentation describes how to install, configure and use a plug-in to upload documents to Goobi. This plugin can be used to determine on a single-page basis which images from a process are sent to OCR with which font.
 
 | Details |  |
 | :--- | :--- |
 | Version | 1.0.0 |
 | Identifier | intranda\_step\_ocrselector |
 | Source code | - Source code not yet publicly available - |
+| Licence | GPL 2.0 or newer |
 | Compatibility | Goobi workflow 3.0.4 and newer |
 | Documentation date | 04.03.2019 |
 
@@ -66,4 +67,3 @@ Here you can choose between the three options `antiqua`, `fracture` and `no OCR`
 ![Updated - no OCR for cover and blank pages](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LZ4vYcdbp6Dw7s7NKy0%2F-L_6jqwjfH1C-_n12KML%2F-L_6uYsYBJs2fmXtmJDf%2Fupdated.png?alt=media&token=09afe1f0-0af2-46d7-ba42-a92c235d215b)
 
 The plugin can be exited by clicking on `Exit plugin` after successful selection. The plugin will automatically be saved again. The `Save` button can be used for temporary saving.
-

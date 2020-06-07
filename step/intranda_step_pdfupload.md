@@ -15,6 +15,7 @@ This documentation describes how to install, configure and use a plug-in to uplo
 | Version | 1.0.0 |
 | Identifier | intranda\_step\_pdfUpload |
 | Source code | - Source code not yet publicly available - |
+| Licence | GPL 2.0 or newer |
 | Compatibility | Goobi workflow 2.1 |
 | Documentation date | 04.02.2016 |
 
@@ -32,7 +33,7 @@ The following three files must be installed to use the plugin:
 /opt/digiverso/goobi/config/plugin_PdfUploadPlugin.xml
 ```
 
-The first file contains the actual program logic, the second file provides the graphical user interface for the display and the third file is used to configure the plugin. 
+The first file contains the actual program logic, the second file provides the graphical user interface for the display and the third file is used to configure the plugin.
 
 The content of the configuration file `plugin_PdfUploadPlugin.xml` must be structured as follows:
 
@@ -100,4 +101,3 @@ If a file is uploaded, the information is stored in the METS file.
 The transfer to the METS file ensures that the order of the uploaded files is saved persistently.
 
 If the task is then opened again, the information about the uploaded files is taken from the METS file and also displayed.
-

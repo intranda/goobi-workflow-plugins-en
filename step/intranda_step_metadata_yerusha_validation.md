@@ -15,6 +15,7 @@ This plug-in is used to validate metadata from the Goobi METS file and visualise
 | Version | 1.0.0 |
 | Identifier | intranda\_step\_metadata\_yerusha\_validation |
 | Source code | - Source code not yet publicly available - |
+| Licence | GPL 2.0 or newer |
 | Compatibility | Goobi workflow 2020.03 |
 | Dokumentation date | 02.04.2020 |
 
@@ -114,4 +115,3 @@ The plugin is executed and opened immediately after a task is entered. The resul
 ![Display the results of the validation within an accepted task](../.gitbook/assets/intranda_step_metadata_yerusha_validation2.png)
 
 If the task has been configured to allow access to the Goobi Metadata Editor and changes have been made to the metadata, validation can be carried out again at any time afterwards. If the validation rules within the configuration file have been changed, it is also helpful to run the validation again.
-

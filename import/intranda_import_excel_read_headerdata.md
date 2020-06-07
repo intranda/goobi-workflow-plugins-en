@@ -13,6 +13,7 @@ This documentation describes the installation, configuration and use of the plug
 | Version | 1.0.0 |
 | Identifier | intranda\_import\_excel\_read\_headerdata |
 | Source code | - Source code not yet publicly available - |
+| Licence | GPL 2.0 or newer |
 | Compatibility | Goobi workflow 3.0 or newer |
 | Documentation date | 08.05.2020 |
 
@@ -30,7 +31,7 @@ There is also a configuration file, which must be located at the following place
 /opt/digiverso/goobi/config/plugin_intranda_import_excel_read_headerdata.xml
 ```
 
-## Configuration 
+## Configuration
 
 The configuration is done via the file `plugin_intranda_import_excel_read_headerdata.xml`. This file can be adapted during operation.
 
@@ -45,7 +46,7 @@ The configuration is done via the file `plugin_intranda_import_excel_read_header
 
 		<!-- which digital collection to use -->
 		<collection>archive#100uaghgw#040volkskundearchivk#040#</collection>
-		
+
 		<useOpac>true</useOpac>
 		<opacName>GBV PICA</opacName>
 		<searchField>12</searchField>
@@ -60,15 +61,15 @@ The configuration is done via the file `plugin_intranda_import_excel_read_header
 		<!-- define which column is the one to use for catalogue requests -->
 		<identifierHeaderName>PPN-A</identifierHeaderName>
 
-        <!-- Rules to generate the process title, the same syntax as in goobi_projects.xml can be used. 
-            Use the column names to get the right metadata values. 
+        <!-- Rules to generate the process title, the same syntax as in goobi_projects.xml can be used.
+            Use the column names to get the right metadata values.
             If the field is missing or empty, the value of CatalogIDDigital is used.
          -->
         <processTitleRule>2-Titel+'_'+PPN-O</processTitleRule>
-        
+
         <!-- prefix path to the image folder. Can be empty or missing if the import doesn't contain images or if the excel field contains absolute path  -->
         <imageFolderPath>/opt/digiverso/images/</imageFolderPath>
-        <!-- define which column contains the image folder name. Can be combined with <imageFolderPath> prefix or an absolute path. 
+        <!-- define which column contains the image folder name. Can be combined with <imageFolderPath> prefix or an absolute path.
         If the field is missing, empty or does not contain an existing directory, no images will be imported -->
         <imageFolderHeaderName>images</imageFolderHeaderName>
 
@@ -78,7 +79,7 @@ The configuration is done via the file `plugin_intranda_import_excel_read_header
         <!-- Run the import as GoobiScript -->
         <runAsGoobiScript>true</runAsGoobiScript>
 
-		<!-- define here which columns shall be mapped to which ugh metadata 
+		<!-- define here which columns shall be mapped to which ugh metadata
 				ugh: name of the metadata to use. if it is empty or missing, no metadata is generated
 				headerName: title inside of the header column
         property: name of the process property. if it is empty or missing, no process property gets generated
@@ -101,13 +102,13 @@ The configuration is done via the file `plugin_intranda_import_excel_read_header
 			<splitChar firstNameIsFirstPart="false">\, </splitChar>
 
             <!-- use this fields, if the firstname and lastname are in different columns -->
-            <!-- 
+            <!--
             <firstname>5-Vorname</firstname>
             <lastname>6-Nachname</lastname>
              -->
 
 		</person>
-		
+
 	</config>
 </config_plugin>
 ```
@@ -152,7 +153,7 @@ However, if no OPAC is used, the structure type of the operations to be created 
 
 ### Line range
 
-The following elements describe the structure of the Excel file to be imported. 
+The following elements describe the structure of the Excel file to be imported.
 
 `rowHeader` defines the row in which the column headings that are later relevant for the mapping were entered. This is usually the first line. However, this can also differ for multi-line entries.
 
@@ -184,8 +185,8 @@ The `identifierHeaderName` entry contains the heading of the column in which an 
 The element `processTitleRule` is used to generate the operation title. The same options are available here that can also be used in the Goobi configuration file `goobi_projects.xml`.
 
 ```markup
-<!-- Rules to generate the process title, the same syntax as in goobi_projects.xml can be used. 
-     Use the column names to get the right metadata values. 
+<!-- Rules to generate the process title, the same syntax as in goobi_projects.xml can be used.
+     Use the column names to get the right metadata values.
      If the field is missing or empty, the value of the identifier column is used.
 -->
 <processTitleRule>'StaticPrefix_'+Identifier</processTitleRule>
@@ -193,12 +194,12 @@ The element `processTitleRule` is used to generate the operation title. The same
 
 ### Transfer of images
 
-The elements `imageFolderHeaderName`, `imageFolderPath` and `moveImages` can be used to import images in addition to metadata. In `imageFolderHeaderName` the column name is entered, in which the folder names containing the images can be found in the Excel file. Either an absolute path or a relative path can be specified there. 
+The elements `imageFolderHeaderName`, `imageFolderPath` and `moveImages` can be used to import images in addition to metadata. In `imageFolderHeaderName` the column name is entered, in which the folder names containing the images can be found in the Excel file. Either an absolute path or a relative path can be specified there.
 
 If a relative path is specified, the element `imageFolderPath` must contain the root path to the images. The element `moveImages` can be used to control whether the images should be copied or moved.
 
 ```markup
-<!-- define which column contains the image folder name. Can be combined with <imageFolderPath> prefix or an absolute path. 
+<!-- define which column contains the image folder name. Can be combined with <imageFolderPath> prefix or an absolute path.
       If the field is missing, empty or does not contain an existing directory, no images will be imported -->
 <imageFolderHeaderName>image folder</imageFolderHeaderName>
 
@@ -211,7 +212,7 @@ If a relative path is specified, the element `imageFolderPath` must contain the 
 
 ### Execution using GoobiScript
 
-The element `runAsGoobiScript` controls whether an import should be processed asynchronously in the background via the GoobiScript queue or whether the import should be processed directly within the user session. Here you have to consider which setting makes sense. If an import including images is to take place or if the Excel file contains a lot of data records, it probably makes more sense to perform this import as GoobiScript. 
+The element `runAsGoobiScript` controls whether an import should be processed asynchronously in the background via the GoobiScript queue or whether the import should be processed directly within the user session. Here you have to consider which setting makes sense. If an import including images is to take place or if the Excel file contains a lot of data records, it probably makes more sense to perform this import as GoobiScript.
 
 ```markup
 <!-- Run the import as GoobiScript -->
@@ -262,7 +263,7 @@ The `person` element can be used to automatically create persons.
 
 Persons differ from normal metadata in that they consist of first and last names. This specification can be in two different columns, then the elements `firstnameFieldHeader` and `lastnameFieldHeader` are used. If the names are only in one column, the field `nameFieldHeader` is used. In this case, the system checks whether the specifications should only contain the surname or whether the content must be split. With `splitChar` you can set the character/sequence at which the splitting should take place. The attribute `firstNameIsFirstPart` contains the information whether the name is to be imported as `First name Last name` or `Last name First name`.
 
-#### Import of metadata groups 
+#### Import of metadata groups
 
 Metadata groups can be created using the `group` element.
 
@@ -275,9 +276,8 @@ Metadata groups can be created using the `group` element.
 
 A metadata group consists of several metadata and persons. The configuration of the individual sub-elements is identical to that of the individual metadata and persons.
 
-## Usage in Goobi 
+## Usage in Goobi
 
 To use the import, the mass import area must be opened in the production templates and the plugin `intranda_import_excel_read_headerdata` selected in the File upload import tab. An Excel file can then be uploaded and imported.
 
 The import then takes place line by line. A new process is created for each line and the configured rules are applied. If a valid data record has been created and the generated task title has not yet been assigned, the task is actually created and saved.
-

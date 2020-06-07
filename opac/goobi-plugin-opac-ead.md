@@ -15,6 +15,7 @@ This documentation describes the installation, configuration and use of an XML-b
 | Version | 1.0.0 |
 | Identifier | goobi-plugin-opac-ead |
 | Source code | - Source code not yet publicly available - |
+| Licence | GPL 2.0 or newer |
 | Compatibility | Goobi workflow 3.0 and newer |
 | Documentation date | 28.02.2019 |
 
@@ -32,7 +33,7 @@ First you have to download the database:
 
 [http://basex.org/download/](http://basex.org/download/)
 
-To install BaseX on a Linux system, first download the zip file and install it on the server. For example, this could be done in this path: 
+To install BaseX on a Linux system, first download the zip file and install it on the server. For example, this could be done in this path:
 
 ```text
 /opt/digiverso/basex
@@ -288,4 +289,3 @@ The file `goobi_projects.xml` needs a new definition for the publication type an
 {% endcode %}
 
 Once this configuration has been completed, a new data source is available within Goobi within the creation mask for processes. This can now be queried using identifiers in the same way as other data sources and catalogs.
-
