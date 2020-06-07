@@ -8,7 +8,7 @@ This documentation describes the installation, configuration and use of a plugin
 | :--- | :--- |
 | Version | 1.0.0 |
 | Identifier | intranda\_step\_lza\_ewig |
-| Source code | - Source code not yet publicly available - |
+| Source code | [https://github.com/intranda/goobi-plugin-step-ewig](https://github.com/intranda/goobi-plugin-step-ewig) |
 | Licence | GPL 2.0 or newer |
 | Compatibility | Goobi workflow 3.0 |
 | Documentation date | 05.12.2019 |

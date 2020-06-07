@@ -14,7 +14,7 @@ This documentation describes the installation, configuration and use of an expor
 | :--- | :--- |
 | Version | 1.0.0 |
 | Identifier | HaabExport |
-| Source code | - Source code not yet publicly available - |
+| Source code | [https://github.com/intranda/goobi-plugin-export-haab](https://github.com/intranda/goobi-plugin-export-haab) |
 | Licence | GPL 2.0 or newer |
 | Compatibility | Goobi workflow 2.1 and newer |
 | Documentation date | 17.06.2015 |

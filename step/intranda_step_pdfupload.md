@@ -14,7 +14,7 @@ This documentation describes how to install, configure and use a plug-in to uplo
 | :--- | :--- |
 | Version | 1.0.0 |
 | Identifier | intranda\_step\_pdfUpload |
-| Source code | - Source code not yet publicly available - |
+| Source code | [https://github.com/intranda/goobi-plugin-step-pdfupload](https://github.com/intranda/goobi-plugin-step-pdfupload) |
 | Licence | GPL 2.0 or newer |
 | Compatibility | Goobi workflow 2.1 |
 | Documentation date | 04.02.2016 |

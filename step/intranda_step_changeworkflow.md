@@ -14,7 +14,7 @@ This documentation describes how to install, configure, and use a plug-in to aut
 | :--- | :--- |
 | Version | 1.0.0 |
 | Identifier | intranda\_step\_changeWorkflow |
-| Source code | - Source code not yet publicly available - |
+| Source code | [https://github.com/intranda/goobi-plugin-step-change-workflow](https://github.com/intranda/goobi-plugin-step-change-workflow) |
 | Licence | GPL 2.0 or newer |
 | Compatibility | Goobi Workflow 3.0.0 and newer |
 | Documentation date | 29.04.2019 |

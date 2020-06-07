@@ -14,7 +14,7 @@ This documentation describes the installation, configuration and use of the plug
 | :--- | :--- |
 | Version | 1.0.0 |
 | Identifier | intranda\_step\_imagename\_analyse |
-| Source code | - Source code not yet publicly available - |
+| Source code | [https://github.com/intranda/goobi-plugin-step-analyse-imagenames](https://github.com/intranda/goobi-plugin-step-analyse-imagenames) |
 | Licence | GPL 2.0 or newer |
 | Compatibility | Goobi workflow 3.0.10 |
 | Documentation date | 14.08.2019 |

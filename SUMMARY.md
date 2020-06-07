@@ -37,7 +37,7 @@
 * [Changing the workflow based on process properties](step/intranda_step_changeworkflow.md)
 * [Display of metadata in a task](step/intranda_step_displaymetadata.md)
 * [Automatic pagination based on file names](step/intranda_step_imagename_analyse.md)
-* [EWIG Long term archiving](step/ewig.md)
+* [EWIG Long term archiving](step/intranda_step_lza_ewig.md)
 * [Renaming files](step/intranda_step-rename-files.md)
 * [Tif-Validation](step/intranda_step_jhove-validation.md)
 * [Metadata validation within a task](step/intranda_step_metadata_yerusha_validation.md)
@@ -47,7 +47,7 @@
 ## Opac Plugins <a id="opac"></a>
 
 * [EAD data transfer](opac/goobi-plugin-opac-ead.md)
-* [Generic XML Import](opac/generic-xml-import.md)
+* [Generic XML Import](opac/goobi-plugin-opac-generic-xml.md)
 
 ## Import Plugins <a id="import"></a>
 
@@ -58,7 +58,7 @@
 
 * [Fedora Export](export/plugin_intranda_export_fedora.md)
 * [Fedora Export PROV](export/plugin_intranda_export_fedora_prov.md)
-* [HAAB Export](export/haabexport.md)
+* [HAAB Export](export/plugin-intranda-export-haab.md)
 
 ## Workflow plugins <a id="workflow"></a>
 

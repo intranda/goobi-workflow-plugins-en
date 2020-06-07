@@ -12,7 +12,7 @@ This documentation describes the installation, configuration and use of the plug
 | :--- | :--- |
 | Version | 1.0.0 |
 | Identifier | intranda\_import\_excel\_read\_headerdata |
-| Source code | - Source code not yet publicly available - |
+| Source code | [https://github.com/intranda/goobi-plugin-import-excel](https://github.com/intranda/goobi-plugin-import-excel) |
 | Licence | GPL 2.0 or newer |
 | Compatibility | Goobi workflow 3.0 or newer |
 | Documentation date | 08.05.2020 |
