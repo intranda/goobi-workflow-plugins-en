@@ -16,7 +16,7 @@ This workflow plugin was implemented in order to provide an individual user inte
 | :--- | :--- |
 | Version | 1.0.0 |
 | Identifier | goobi-plugin-workflow-excelimport |
-| Source code | - Source code not yet publicly available - |
+| Source code | [https://github.com/intranda/goobi-plugin-workflow-excelimport](https://github.com/intranda/goobi-plugin-workflow-excelimport) |
 | Licence | GPL 2.0 or newer |
 | Compatibility | Goobi workflow 2019.11 |
 | Documentation date | 29.11.2019 |
