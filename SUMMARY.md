@@ -48,7 +48,8 @@
 
 * [EAD data transfer](opac/goobi-plugin-opac-ead.md)
 * [Generic XML Import](opac/goobi-plugin-opac-generic-xml.md)
-
+* [Generic JSON Import](opac/goobi-plugin-opac-json.md)
+*
 ## Import Plugins <a id="import"></a>
 
 * [Import for journal articles from an Endnote Export](import/intranda_import_endnote.md)

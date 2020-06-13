@@ -8,7 +8,7 @@ description: OPAC Plugin for data transfer of XML data records from an OPAC
 
 This documentation describes the installation, configuration and use of the plugin. This plugin can be used to retrieve data from an external system and transfer it to Goobi. The catalog must have an API that can be used to deliver data records as XML.Details
 
-|  |  |
+| Details |  |
 | :--- | :--- |
 | Version | 1.0.0 |
 | Identifier | goobi-plugin-opac-generic-xml |
