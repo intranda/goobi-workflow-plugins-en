@@ -67,3 +67,4 @@ Here you can choose between the three options `antiqua`, `fracture` and `no OCR`
 ![Updated - no OCR for cover and blank pages](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LZ4vYcdbp6Dw7s7NKy0%2F-L_6jqwjfH1C-_n12KML%2F-L_6uYsYBJs2fmXtmJDf%2Fupdated.png?alt=media&token=09afe1f0-0af2-46d7-ba42-a92c235d215b)
 
 The plugin can be exited by clicking on `Exit plugin` after successful selection. The plugin will automatically be saved again. The `Save` button can be used for temporary saving.
+

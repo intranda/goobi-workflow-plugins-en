@@ -48,32 +48,30 @@ The content of the configuration file `plugin_intranda_step_mixedocr.xml` must b
           4.) project name and step name are *
 -->
     <config>
-		<!-- which projects to use for (can be more then one, otherwise use *) -->
+        <!-- which projects to use for (can be more then one, otherwise use *) -->
         <project>*</project>
         <step>*</step>
 
         <template>template.xml</template>
-		<itmUrl>http://localhost:8080/itm/service</itmUrl>
-		<!--  this must be without a trailing slash -->
-		<callbackBaseUrl>http://localhost:8080/goobi</callbackBaseUrl>
-		<useOrigDir>false</useOrigDir>
-		<serverType>intranda-tesseract</serverType>
+        <itmUrl>http://localhost:8080/itm/service</itmUrl>
+        <!--  this must be without a trailing slash -->
+        <callbackBaseUrl>http://localhost:8080/goobi</callbackBaseUrl>
+        <useOrigDir>false</useOrigDir>
+        <serverType>intranda-tesseract</serverType>
     </config>
 
     <config>
-		<!-- which projects to use for (can be more then one, otherwise use *) -->
+        <!-- which projects to use for (can be more then one, otherwise use *) -->
         <project>My special project</project>
         <project>Archive_Project</project>
         <step>OCR</step>
 
-		<template>template_pdfonly.xml</template>
-		<itmUrl>https://itm.mydomain.tld/itm/service</itmUrl>
-		<callbackBaseUrl>https://goobi.mydomain.tld/goobi</callbackBaseUrl>
-		<useOrigDir>true</useOrigDir>
-		<serverType>intranda-tesseract</serverType>
+        <template>template_pdfonly.xml</template>
+        <itmUrl>https://itm.mydomain.tld/itm/service</itmUrl>
+        <callbackBaseUrl>https://goobi.mydomain.tld/goobi</callbackBaseUrl>
+        <useOrigDir>true</useOrigDir>
+        <serverType>intranda-tesseract</serverType>
     </config>
-
-
 ```
 {% endcode %}
 
@@ -100,3 +98,4 @@ After the plugin has been installed and configured, it must be added to a workfl
 ![Configuration of the step in Goobi Workflow](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LZ4vYcdbp6Dw7s7NKy0%2F-L_6uw3ws9N-nqiCHz5A%2F-L_7-Ck0AlXZ4Ufa97aQ%2Fconfig_gui.png?alt=media&token=38a0e134-9da8-4b9d-bb68-6df1c8145efc)
 
 The plugin is usually executed automatically, so you should check the box `Automatic task`. The plugin `intranda_step_mixedocr` must also be selected under `Plugin for step`.
+

@@ -60,7 +60,7 @@ The following file is used to configure the plugin and must be structured as fol
 
 The element `RepresentativeStructureElement` can be used to define the structural element whose first page is to be used as a representative. This is the internal name of the `DocStrctType` element defined in the rule set.
 
-The text from `ErrorMessage`  is written to the process log if no structure element with this name was found in the METS file. If the element is missing or empty, no entry is made.
+The text from `ErrorMessage` is written to the process log if no structure element with this name was found in the METS file. If the element is missing or empty, no entry is made.
 
 With `StepName` you can define to which step the operation is to be reversed if the defined structure element is missing. If the element is missing or empty, the error handling functionality can be deactivated. Then there is no correction within the process and the first image of the process is used as a representative in the Goobi viewer. If a step has been defined that does not exist in the process, the plugin remains in the current process.
 
@@ -81,5 +81,6 @@ The way the plugin works within the correctly configured workflow is as follows.
 5. If no structural element with this name is found or the data record does not contain any structural elements, an error message can be written to the process log and the workflow can be reset to a previous work step.
 6. However, this is only possible if a text has been configured for the error message and the name of the step.
 
-[  
+[    
 ](https://app.gitbook.com/@intranda/s/goobi-workflow-plugins-de/~/drafts/-LgXfKAYfksC_NXqERbV/primary/administration-plugins/catalogue-poller)
+

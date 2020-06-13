@@ -107,3 +107,4 @@ The following examples are based on the configuration defined above:
 | BxSem-A22\_VS1v.jpg | first end sheet, second page |
 | BxSem-A22\_VS2.jpg | second end sheet |
 | BxSem-B08\_SV.jpg | single picture of the FrontSection |
+

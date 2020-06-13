@@ -61,7 +61,7 @@ In the file `goobi_opac.xml` the interface to the desired catalogue system must 
 
 The attribute `title` contains the name under which the catalog can be selected in the user interface, `address` the URL to the API endpoint and `opacType` the plugin to be used. In this case the entry must be `intranda_opac_xml`.
 
-Only one search query can be configured. Therefore the other search options can be hidden. This happens within the  block `<searchFields>`. In the configuration described above, only one identifier can be searched for.
+Only one search query can be configured. Therefore the other search options can be hidden. This happens within the block `<searchFields>`. In the configuration described above, only one identifier can be searched for.
 
 The contents of the XML record are mapped to Goobi metadata in the `plugin_intranda_opac_xml.xml` file:
 
@@ -112,7 +112,7 @@ The first step is to define the XML namespaces that are required to read the XML
 
 The type to be used can be specified in the `<docstructs>` area. This is done by using `<documenttype>`. If the document type is to be configurable, there must be an element with the attribute `isanchor="false"`. If multi-volume works or journals are to be created, a second element `isanchor="true"` is required, in which the anchor type is defined.
 
-Alternatively, the document type can also be read from the XML record. Then the element  `<doctumenttypequery>` is used, in which an XPath expression is defined that describes which field is to be used. In addition, there are a number of `<docstruct>` elements that describe possible field contents. The attribute `xmlName` contains the value from the XML document, `rulesetName` contains the structure type to be created. If it is a multi-volume work, `anchorName` must also be specified with the name of the higher-level structure type.
+Alternatively, the document type can also be read from the XML record. Then the element `<doctumenttypequery>` is used, in which an XPath expression is defined that describes which field is to be used. In addition, there are a number of `<docstruct>` elements that describe possible field contents. The attribute `xmlName` contains the value from the XML document, `rulesetName` contains the structure type to be created. If it is a multi-volume work, `anchorName` must also be specified with the name of the higher-level structure type.
 
 The mapping is then configured for persons and metadata in the `<element>` area. Here is a list of `<element>` with the attributes `xpath`, level, `xpathType` and `name`. In `xpath` an XPath expression is configured, which describes in which part of the XML document the content is expected, in `name` the name of the metadata is defined, in which the content is to be written afterwards. The specification in `level` can be used to control whether the metadata for multi-volume works is to be written to the data record of the anchor or the volume. `xpathType` specifies the type of the result of the XPath query. This can be an `Element`, `Attribute` or `String`.
 
@@ -129,3 +129,4 @@ https://example.com/opac?id=[VALUE]
 If a valid record is found here, it is searched for the field in which the document type is to be found. If the query is not defined, the document type is read from the configuration file instead. The required structure element is then created with the determined type.
 
 All XPath expressions that have been configured are then evaluated. If data is found with an expression, the corresponding metadata is generated. For persons, the system checks whether the value contains a comma. In this case, first and last names are separated by commas, otherwise the value is interpreted as last name.
+
