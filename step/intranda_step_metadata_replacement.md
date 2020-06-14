@@ -16,8 +16,8 @@ This plug-in allows you to automatically enrich metadata within the METS files o
 | Identifier | intranda\_step\_metadata\_replacement |
 | Source code | [https://github.com/intranda/goobi-plugin-step-yerusha-metadatareplacement](https://github.com/intranda/goobi-plugin-step-yerusha-metadatareplacement) |
 | Licence | GPL 2.0 or newer |
-| Compatibility | Goobi workflow 2020.03 |
-| Dokumentation date | 02.04.2020 |
+| Compatibility | Goobi workflow 2020.06 |
+| Dokumentation date | 14.06.2020 |
 
 ## Installation
 
@@ -77,7 +77,7 @@ The configuration of the plugin is structured as follows:
             <!-- if the content for fieldFrom cannot be found in the vocabulary to be replaced,
       				  shall the original value be duplicated then? -->
       			<duplicateIfMissing>false</duplicateIfMissing>
-            
+
         </entry>
     </config>
 </config_plugin>
