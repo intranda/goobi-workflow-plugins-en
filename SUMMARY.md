@@ -51,6 +51,7 @@
 * [EAD data transfer](opac/goobi-plugin-opac-ead.md)
 * [Generic XML Import](opac/goobi-plugin-opac-generic-xml.md)
 * [Generic JSON Import](opac/goobi-plugin-opac-json.md)
+* [Soutron Import](opac/goobi-plugin-opac-soutron.md)
 
 ## Import Plugins <a id="import"></a>
 
