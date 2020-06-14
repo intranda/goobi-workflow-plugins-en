@@ -43,6 +43,7 @@
 * [Metadata validation within a task](step/intranda_step_metadata_yerusha_validation.md)
 * [Automatic enrichment of metadata from own vocabularies](step/intranda_step_metadata_replacement.md)
 * [Quality control of images](step/intranda_step_imageqa.md)
+* [Generierung von Platzhalterbilder](step/intranda_step_placeholder-creation.md)
 
 ## Opac Plugins <a id="opac"></a>
 
@@ -72,4 +73,3 @@
 ## Other
 
 * [Counterscript Application](other/counterscript-application.md)
-

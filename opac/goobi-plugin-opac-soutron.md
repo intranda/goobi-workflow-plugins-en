@@ -13,7 +13,7 @@ This documentation describes the installation, configuration and use of the plug
 | Version | 1.0.0 |
 | Identifier | intranda\_opac\_soutron |
 | Source code | [https://github.com/intranda/goobi-plugin-opac-soutron](https://github.com/intranda/goobi-plugin-opac-soutron) |
-| Licence | GPL 2.0 oder neuer |
+| Licence | GPL 2.0 or newer |
 | Compatibility | 2020.05 |
 | Documentation date | ​13.06.2020 |
 
