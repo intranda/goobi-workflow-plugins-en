@@ -48,4 +48,4 @@ This plugin is integrated into the workflow so that it is available for a select
 
 This gives the user access to the plugin's user interface, where the current content of the master folder is listed. Here, single or many images can be copied by Drag & Drop to the place where the images to be inserted should replace the existing placeholder images. The plugin also ensures during the upload that the newly uploaded files are renamed correctly.
 
-![Display of the placeholder images e.g. within the METS editor](../.gitbook/assets/intranda_step_replace-images-2_en.png)
+![User interface to replace the existing placeholder images](../.gitbook/assets/intranda_step_replace-images-2_en.png)
