@@ -75,8 +75,8 @@ The configuration of the plugin is structured as follows:
             <contentAuthorityValueUri>valueURI</contentAuthorityValueUri>
 
             <!-- if the content for fieldFrom cannot be found in the vocabulary to be replaced,
-      				  shall the original value be duplicated then? -->
-      			<duplicateIfMissing>false</duplicateIfMissing>
+                shall the original value be duplicated then? -->
+            <duplicateIfMissing>false</duplicateIfMissing>
 
         </entry>
     </config>
