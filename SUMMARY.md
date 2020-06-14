@@ -44,6 +44,7 @@
 * [Automatic enrichment of metadata from own vocabularies](step/intranda_step_metadata_replacement.md)
 * [Quality control of images](step/intranda_step_imageqa.md)
 * [Generation of placeholder images](step/intranda_step_placeholder-creation.md)
+* [Replace images](step/intranda_step_replace-images.md)
 
 ## Opac Plugins <a id="opac"></a>
 
