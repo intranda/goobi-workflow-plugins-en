@@ -39,8 +39,6 @@ LayoutWizzard's image analysis works in several phases in order to arrive at the
 
 ![Analysis phases of the LayoutWizzard](../../.gitbook/assets/layoutwizzard_diagramm_en.png)
 
-
-
 <table>
   <thead>
     <tr>
@@ -56,7 +54,6 @@ LayoutWizzard's image analysis works in several phases in order to arrive at the
       <td style="text-align:left">
         <p><b>Start</b>
         </p>
-        <p></p>
         <p>The original image (master scan) is often slightly distorted and often
           contains a visible area of the opposite page of the book.</p>
       </td>
@@ -68,7 +65,6 @@ LayoutWizzard's image analysis works in several phases in order to arrive at the
       <td style="text-align:left">
         <p><b>1. Phase: Deskew Page</b>
         </p>
-        <p></p>
         <p>In the first phase, the alignment of the page and its rotation relative
           to a horizontal reading direction is detected. This rotation is deducted
           during saving, so that the page is ideally aligned horizontally. This phase
@@ -82,7 +78,6 @@ LayoutWizzard's image analysis works in several phases in order to arrive at the
       <td style="text-align:left">
         <p><b>2. Phase: Crop Page</b>
         </p>
-        <p></p>
         <p>In the second phase, the recognition of the detected object takes place,
           usually e.g. the book. A rectangular cropping frame is calculated around
           the detected object, which contains the object completely with as little
@@ -99,7 +94,6 @@ LayoutWizzard's image analysis works in several phases in order to arrive at the
       <td style="text-align:left">
         <p><b>3. Phase: Detect Book Spine</b>
         </p>
-        <p></p>
         <p>In the third phase the book fold is determined. This is only necessary
           if the book fold is actually part of the image and should be cut along
           the fold to hide the part of the opposite page. This analysis phase is
@@ -116,7 +110,6 @@ LayoutWizzard's image analysis works in several phases in order to arrive at the
       <td style="text-align:left">
         <p><b>End</b>
         </p>
-        <p></p>
         <p>The LayoutWizzard&apos;s suggestion is handed over to the user for review
           after all analysis phases have been completed, where it is adapted if necessary.</p>
       </td>
@@ -124,7 +117,6 @@ LayoutWizzard's image analysis works in several phases in order to arrive at the
   </tbody>
 </table>
 
-
-
-[  
+[    
 ](https://app.gitbook.com/@intranda/s/goobi-workflow-plugins-de/~/drafts/-LgXmDFUB2JKs4qolX5U/primary/step-plugins/intranda_step_pdfupload)
+

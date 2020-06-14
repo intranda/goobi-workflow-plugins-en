@@ -39,43 +39,43 @@ The configuration of the plugin is structured as follows:
 
 ```markup
 <config_plugin>
-	<config>
-		<project>*</project>
-		<step>*</step>
-		<entry>
+    <config>
+        <project>*</project>
+        <step>*</step>
+        <entry>
 
-			<!-- from which field inside of the METS file shall the content be used -->
-			<fieldFrom>originalAccessLocations</fieldFrom>
+            <!-- from which field inside of the METS file shall the content be used -->
+            <fieldFrom>originalAccessLocations</fieldFrom>
 
-			<!-- into which fields in the METS shall the new content be written -->
-			<fieldTo>AccessLocations</fieldTo>
+            <!-- into which fields in the METS shall the new content be written -->
+            <fieldTo>AccessLocations</fieldTo>
 
-			<!-- if the fieldTo is named inside of the vocabulary entry itself: in
-				which vocabulary field of the entry is the METS metadata name defined to
-				be used? Please notice: if the entry cannot be found (as fieldFrom is not
-				found there) and that's why no fieldToDynamic can be read from the entry
-				the value of element fieldTo defined will be used to simply copy the original
-				metadata unchanged -->
-			<fieldToDynamic>type</fieldToDynamic>
+            <!-- if the fieldTo is named inside of the vocabulary entry itself: in
+                which vocabulary field of the entry is the METS metadata name defined to
+                be used? Please notice: if the entry cannot be found (as fieldFrom is not
+                found there) and that's why no fieldToDynamic can be read from the entry
+                the value of element fieldTo defined will be used to simply copy the original
+                metadata unchanged -->
+            <fieldToDynamic>type</fieldToDynamic>
 
-			<!-- what is the name of the vocabulary to use -->
-			<vocabulary>Subject terms</vocabulary>
+            <!-- what is the name of the vocabulary to use -->
+            <vocabulary>Subject terms</vocabulary>
 
-			<!-- the content in which vocabulary field has to be the same as in fieldFrom -->
-			<contentSearch>original value</contentSearch>
+            <!-- the content in which vocabulary field has to be the same as in fieldFrom -->
+            <contentSearch>original value</contentSearch>
 
-			<!-- the content in which vocabulary field shall be taken to write it
-				into fieldTo -->
-			<contentReplace>corrected value</contentReplace>
+            <!-- the content in which vocabulary field shall be taken to write it
+                into fieldTo -->
+            <contentReplace>corrected value</contentReplace>
 
-			<!-- the content in which vocabulary fields shall be taken to fill the
-				authority information for the replaced record -->
-			<contentAuthority>authority</contentAuthority>
-			<contentAuthorityUri>authorityURI</contentAuthorityUri>
-			<contentAuthorityValueUri>valueURI</contentAuthorityValueUri>
+            <!-- the content in which vocabulary fields shall be taken to fill the
+                authority information for the replaced record -->
+            <contentAuthority>authority</contentAuthority>
+            <contentAuthorityUri>authorityURI</contentAuthorityUri>
+            <contentAuthorityValueUri>valueURI</contentAuthorityValueUri>
 
-		</entry>
-	</config>
+        </entry>
+    </config>
 </config_plugin>
 ```
 
@@ -119,3 +119,4 @@ Within the Goobi workflow, the metadata available within the METS file of a Goob
 ![The publication place London is now available in a separate field with correct spelling and standard data](../.gitbook/assets/intranda_step_metadata_replacement4.png)
 
 The constant maintenance of vocabulary and the ability to integrate into a workflow, even at several points within tasks, means that content can be updated and published in the future.
+

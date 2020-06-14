@@ -42,11 +42,11 @@ The following is a sample configuration with comments:
 ```markup
 <config_plugin>
     <!--
-    	order of configuration is:
-	    1.) project name and step name matches
-	    2.) step name matches and project is *
-	    3.) project name matches and step name is *
-	    4.) project name and step name are *
+        order of configuration is:
+        1.) project name and step name matches
+        2.) step name matches and project is *
+        3.) project name matches and step name is *
+        4.) project name and step name are *
     -->
 
     <config>
@@ -129,3 +129,4 @@ After the plugin has been installed and configured, it can be configured in the 
 ## Usage
 
 Since the plugin should run fully automatically, there is nothing else to consider for the use of the plugin.
+

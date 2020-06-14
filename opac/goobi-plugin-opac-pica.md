@@ -49,7 +49,7 @@ The `title` attribute contains the name under which the catalog can be selected 
 
 The content of a PICA record is mapped within the Goobi workflow ruleset used in each case. For more information on how to configure this mapping, see the UGH documentation here:
 
-{% embed url="https://docs.goobi.io/ugh-en/4/4.3/4.3.2" caption="https://docs.goobi.io/ugh-en/4/4.3/4.3.2" %}
+{% embed url="https://docs.goobi.io/ugh-en/4/4.3/4.3.2/" caption="https://docs.goobi.io/ugh-en/4/4.3/4.3.2" %}
 
 ## Use
 
@@ -58,3 +58,4 @@ When you search for an identifier in Goobi, a request is sent to the configured 
 ![Goobi workflow interface for querying the catalogue](../.gitbook/assets/plugin_opac_pica_en.png)
 
 After retrieving the actual record from the PICA-catalog, the metadata is mapped according to the rules configured in the rule set.
+

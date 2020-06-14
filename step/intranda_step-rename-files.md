@@ -96,3 +96,4 @@ The plugin considers the files within the following subdirectories for naming:
 This plugin is integrated into the workflow in such a way that it is executed automatically. Manual interaction with the plugin is not necessary. For use within a step of the workflow it should be configured as shown in the following screenshot.
 
 ![Integration of the plugin into the workflow](../.gitbook/assets/intranda_step_rename-files.png)
+

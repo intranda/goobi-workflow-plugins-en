@@ -62,3 +62,4 @@ In Goobi, the step in the workflow must then be configured. To do this, you must
 If the step is then opened after successful configuration, all metadata - if available in the process - are displayed:
 
 ![](../.gitbook/assets/displaymetadata_view.png)
+

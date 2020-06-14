@@ -1,6 +1,5 @@
 ---
-description: >-
-  OPAC Plugin for the data transfer of JSON data records
+description: OPAC Plugin for the data transfer of JSON data records
 ---
 
 # Generic JSON Import
@@ -9,14 +8,14 @@ description: >-
 
 This documentation describes the installation, configuration and use of the plugin. You can use this plugin to retrieve data from an external system and transfer it to Goobi. The catalog must have an API that allows records to be delivered as JSON.
 
-Details            | &nbsp;
--------------------|---------------------------------------------------------------------------------------------------------
-Version            | 1.0.0
-Identifier         | intranda_opac_json
-Source code        | [https://github.com/intranda/goobi-plugin-opac-json](https://github.com/intranda/goobi-plugin-opac-json)
-Licence            | GPL 2.0 or newer
-Compatibility      | 2020.05
-Documentation date | ​13.06.2020
+| Details |  |
+| :--- | :--- |
+| Version | 1.0.0 |
+| Identifier | intranda\_opac\_json |
+| Source code | [https://github.com/intranda/goobi-plugin-opac-json](https://github.com/intranda/goobi-plugin-opac-json) |
+| Licence | GPL 2.0 or newer |
+| Compatibility | 2020.05 |
+| Documentation date | ​13.06.2020 |
 
 ## Installation
 
@@ -50,7 +49,7 @@ plugin_intranda_opac_json.xml
 
 In the file `goobi_opac.xml` the interface to the desired catalog system must be made known. This is done with an entry that looks like the following:
 
-```xml
+```markup
 <catalogue title="JSON">
     <config description="JSON OPAC" address="https://example.com/opac?id="
     port="443" database="x" iktlist="x" ucnf="x" opacType="intranda_opac_json" />
@@ -64,7 +63,7 @@ The `title` attribute contains the name under which the catalog can be selected 
 
 Mapping the contents of the JSON record to Goobi metadata is done within the `plugin_intranda_opac_json.xml` file. The fields within the JSON record are defined using `JSONPath`, the XPath equivalent of JSON.
 
-```xml
+```markup
 <config_plugin>
     <config>
         <recordType field="[?(@.recordType=='archival_object')]" docType="Monograph" />
@@ -92,12 +91,12 @@ Mapping the contents of the JSON record to Goobi metadata is done within the `pl
 
 The configuration file contains four types of fields:
 
-Field type                  | Description
--------------------------|----------------------------------------------------------------------
-`recordType`             | This type is used to recognize the document type of the JSON record
-`defaultPublicationType` | This type is used if no document type was recognized before
-`metadata`               | This type is used to map JSON fields to metadata
-`person`                 | This type is used to map JSON fields to persons
+| Field type | Description |
+| :--- | :--- |
+| `recordType` | This type is used to recognize the document type of the JSON record |
+| `defaultPublicationType` | This type is used if no document type was recognized before |
+| `metadata` | This type is used to map JSON fields to metadata |
+| `person` | This type is used to map JSON fields to persons |
 
 ### Field type: recordType
 
@@ -106,20 +105,22 @@ The element `recordType` contains the attributes `field`, `docType` and `anchorT
 There are a number of characters that are masked in this file. This includes characters such as `< > & "`, which have a special meaning in XML and must therefore be specified as `&lt; &gt; &amp; &quot;`. Also affected is the `comma`, which must also be masked as `\,` using a backslash.
 
 ### Field type: defaultPublicationType
+
 If none of the definitions apply, a document can be created with the type from `defaultPublicationType`. If this field is missing or empty, no record is created instead.
 
 ### Field types: metadata & person
+
 The two fields `metadata` and `person` are used to import individual content from the JSON record into the respective metadata. A number of attributes are available for this purpose:
 
-Attribute              | Meaning
------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------
-`metadata`             | Contains the name of the metadata or person
-`field`                | Path to the content within the JSON object
-`docType`              | May have the value `anchor` or `volume`. The default value is `volume`. Fields marked with `anchor` are only checked and imported for multi-volume works.
-`validationExpression` | Regular expression, which checks if the found value matches the defined expression. If this is not the case, the value is ignored.
-`regularExpression`    | A regular expression to manipulate the value. This is applied after the `validationExpression` check.
-`firstname`            | A regular expression that determines the first name of a person from the field contents.
-`lastname`             | A regular expression that determines the last name of a person from the field contents.
+| Attribute | Meaning |
+| :--- | :--- |
+| `metadata` | Contains the name of the metadata or person |
+| `field` | Path to the content within the JSON object |
+| `docType` | May have the value `anchor` or `volume`. The default value is `volume`. Fields marked with `anchor` are only checked and imported for multi-volume works. |
+| `validationExpression` | Regular expression, which checks if the found value matches the defined expression. If this is not the case, the value is ignored. |
+| `regularExpression` | A regular expression to manipulate the value. This is applied after the `validationExpression` check. |
+| `firstname` | A regular expression that determines the first name of a person from the field contents. |
+| `lastname` | A regular expression that determines the last name of a person from the field contents. |
 
 ## Use
 
@@ -129,7 +130,7 @@ When you search for an identifier in Goobi, a request is sent to the configured 
 
 According to the configuration described above, this corresponds approximately to the following URL:
 
-```
+```text
 https://example.com/opac?id=[IDENTIFIER]
 ```
 
@@ -138,8 +139,10 @@ If a valid record is found under this URL, it will be searched for the fields de
 The configured expressions of the `metadata` and `person` are then evaluated in sequence. If data is found with an expression, the corresponding specified metadata is generated.
 
 ## Useful links
+
 The following URLs could be of further help for the installation or especially for the configuration of the plugin:
 
-JSONPath Online Evaluator: https://jsonpath.com/
+JSONPath Online Evaluator: [https://jsonpath.com/](https://jsonpath.com/)
 
-JSONPath Description: https://support.smartbear.com/alertsite/docs/monitors/api/endpoint/jsonpath.html
+JSONPath Description: [https://support.smartbear.com/alertsite/docs/monitors/api/endpoint/jsonpath.html](https://support.smartbear.com/alertsite/docs/monitors/api/endpoint/jsonpath.html)
+
