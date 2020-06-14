@@ -13,7 +13,7 @@ This plugin is used to generate placeholder images within the master folder of a
 | :--- | :--- |
 | Version | 1.0.0 |
 | Identifier | intranda\_step\_placeholder-creation |
-| Source code | [https://github.com/intranda/goobi-plugin-step-placeholder-creation](https://github.com/intranda/goobi-plugin-step-placeholder-creation) |
+| Source code | [https://github.com/intranda/goobi-plugin-step-placeholder](https://github.com/intranda/goobi-plugin-step-placeholder) |
 | Lizenz | GPL 2.0 or newer |
 | Kompatibilität | Goobi workflow 2020.06 |
 | Dokumentationsdatum | 13.06.2020 |
