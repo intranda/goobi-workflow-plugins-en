@@ -1,6 +1,7 @@
 ---
 description: >-
-  This step plugin for Goobi workflow is used to replace placeholder images within the master folder.
+  This step plugin for Goobi workflow is used to replace placeholder images
+  within the master folder.
 ---
 
 # Replace images
@@ -20,22 +21,10 @@ This plugin is used to replace previously imported placeholder images within the
 
 ## Installation
 
-To use the plugin, the plugin file 'plugin_intranda_step_replace-images' must be copied to the following location
+This plugin is delivered as a `tar` archive. To install it, unpack the `plugin_intranda_step_replace-images.tar` archive into the Goobi folder:
 
 ```bash
-/opt/digiverso/goobi/plugins/step/plugin_intranda_step_replace-images.jar
-```
-
-The plugin's controls are located inside the 'frontend' folder which must be copied to the 'static_assets' folder. After installation, this folder should have the following structure for the plugin:
-
-```bash
-/opt/digiverso/goobi/static_assets
-└── plugins
-    └── intranda_step_replace-images
-        ├── css
-        │   └── style.css
-        └── js
-            └── app.js
+tar -C /opt/digiverso/goobi/ -xf plugin_intranda_step_replace-images.tar --exclude="pom.xml"
 ```
 
 This plugin has no configuration file and is therefore not configurable.
@@ -49,3 +38,4 @@ This plugin is integrated into the workflow so that it is available for a select
 This gives the user access to the plugin's user interface, where the current content of the master folder is listed. Here, single or many images can be copied by Drag & Drop to the place where the images to be inserted should replace the existing placeholder images. The plugin also ensures during the upload that the newly uploaded files are renamed correctly.
 
 ![User interface to replace the existing placeholder images](../.gitbook/assets/intranda_step_replace-images-2_en.png)
+

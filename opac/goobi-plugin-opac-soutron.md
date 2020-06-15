@@ -49,7 +49,7 @@ plugin_intranda_opac_soutron.xml
 
 In the file `goobi_opac.xml` the interface to the desired catalog system must be made known. This is done with an entry that looks like the following:
 
-```xml
+```markup
 <catalogue title="Soutron">
     <config description="Soutron Library System"
       address="https://example.com/Library/WebServices/SoutronAPI.svc/GetCatalogue"
@@ -66,7 +66,7 @@ Only a search for an identifier is possible, so the other search options can be 
 
 The contents of the Soutron record are mapped to the metadata in Goobi in the `plugin_intranda_opac_soutron.xml` file:
 
-```xml
+```markup
 <config_plugin>
     <docstructs>
         <docstruct soutron="Item" ruleset="Item" />
@@ -115,3 +115,4 @@ If a valid record is found, the record is searched for the field `/soutron/catal
 The configured XPath expressions configured for `<metadata>` and `<person>` are then evaluated.
 
 The expressions apply to the element `/soutron/catalogs_view/ct/`. If data is found with an expression, the corresponding specified metadata is generated. For persons, the system checks whether the value contains a comma. If this is the case, first name and surname are separated by a comma, otherwise the value is interpreted as a surname.
+

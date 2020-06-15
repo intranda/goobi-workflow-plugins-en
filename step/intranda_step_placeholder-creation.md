@@ -1,6 +1,7 @@
 ---
 description: >-
-  This step plugin for Goobi workflow is used to create a defined number of placeholder images within the master folder.
+  This step plugin for Goobi workflow is used to create a defined number of
+  placeholder images within the master folder.
 ---
 
 # Generation of placeholder images
@@ -38,3 +39,4 @@ This plugin is integrated into the workflow so that it is available for a select
 From this moment on, the generated placeholder images exist for the process and can be displayed and replaced in the course of the further workflow.
 
 ![Display of the placeholder images e.g. within the METS editor](../.gitbook/assets/intranda_step_placeholder-creation-2_en.png)
+

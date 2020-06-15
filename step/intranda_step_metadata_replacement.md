@@ -99,7 +99,7 @@ The parameters within this configuration file have the following meanings:
 | `contentAuthority` | If standard data are to be transferred, the field within the vocabulary for the authority can be defined here. |
 | `contentAuthorityUri` | If standard data are to be transferred, the field within the vocabulary for the Authority URI can be defined here. |
 | `contentAuthorityValueUri` | If standard data are to be transferred, the field within the vocabulary for the data record can be defined here. |
-|`duplicateIfMissing` | If the original value is to be used if no match is found within the vocabulary, this value must be set to `true`. |
+| `duplicateIfMissing` | If the original value is to be used if no match is found within the vocabulary, this value must be set to `true`. |
 
 To put the plugin into operation, it must be activated for one or more desired tasks in the workflow. This is done as shown in the following screenshot by selecting the `intranda_step_metadata_replacement` plugin from the list of installed plugins.
 
@@ -124,3 +124,4 @@ Within the Goobi workflow, the metadata available within the METS file of a Goob
 ![The publication place London is now available in a separate field with correct spelling and standard data](../.gitbook/assets/intranda_step_metadata_replacement4.png)
 
 The constant maintenance of vocabulary and the ability to integrate into a workflow, even at several points within tasks, means that content can be updated and published in the future.
+
