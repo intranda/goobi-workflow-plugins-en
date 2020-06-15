@@ -13,7 +13,7 @@ This documentation describes the installation, configuration and use of the Admi
 | Details |  |
 | :--- | :--- |
 | Version | 1.0.0 |
-| Identifier | plugin\_administration\_copymasteranchor |
+| Identifier | intranda\_administration\_copymasteranchor |
 | Source code | [https://github.com/intranda/goobi-plugin-administration-copyanchor](https://github.com/intranda/goobi-plugin-administration-copyanchor) |
 | Compatibility | Goobi workflow 2020.05 |
 | Documentation date | 05.06.2020 |

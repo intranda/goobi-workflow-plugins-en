@@ -11,7 +11,7 @@ This documentation describes the installation, configuration and use of the Fedo
 | Details |  |
 | :--- | :--- |
 | Version | 1.0.0 |
-| Identifier | plugin\_intranda\_export\_fedora |
+| Identifier | intranda\_export\_fedora |
 | Source code | [https://github.com/intranda/goobi-plugin-export-fedora](https://github.com/intranda/goobi-plugin-export-fedora) |
 | Licence | GPL 2.0 or newer |
 | Compatibility | Goobi workflow 3.0 and newer |

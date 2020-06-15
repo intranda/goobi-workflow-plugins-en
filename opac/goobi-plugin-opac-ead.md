@@ -13,7 +13,7 @@ This documentation describes the installation, configuration and use of an XML-b
 | Details |  |
 | :--- | :--- |
 | Version | 1.0.0 |
-| Identifier | goobi-plugin-opac-ead |
+| Identifier | intranda_opac_xml |
 | Source code | [https://github.com/intranda/goobi-plugin-opac-ead](https://github.com/intranda/goobi-plugin-opac-ead) |
 | Licence | GPL 2.0 or newer |
 | Compatibility | Goobi workflow 3.0 and newer |

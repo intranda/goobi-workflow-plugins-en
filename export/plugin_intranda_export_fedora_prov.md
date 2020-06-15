@@ -13,7 +13,7 @@ This documentation describes the installation, configuration and use of the Fedo
 | Details |  |
 | :--- | :--- |
 | Version | 1.0.3 |
-| Identifier | plugin\_intranda\_export\_fedora\_prov |
+| Identifier | prov_export\_fedora |
 | Source code | [https://gitea.intranda.com/goobi-workflow/goobi-plugin-export-fedora-prov](https://gitea.intranda.com/goobi-workflow/goobi-plugin-export-fedora-prov) |
 | Licence | GPL 2.0 or newer |
 | Compatibility | Goobi workflow 3.0 and newer |

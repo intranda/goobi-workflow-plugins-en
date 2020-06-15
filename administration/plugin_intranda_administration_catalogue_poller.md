@@ -13,7 +13,7 @@ This documentation describes how to install, configure and use the Administratio
 | Details | ​ |
 | :--- | :--- |
 | Version | 1.0.0 |
-| Identifier | plugin\_intranda\_administration\_catalogue\_poller |
+| Identifier | intranda\_administration\_catalogue\_poller |
 | Source code | [https://github.com/intranda/goobi-plugin-administration-catalogue-poller](https://github.com/intranda/goobi-plugin-administration-catalogue-poller) |
 | Licence | GPL 2.0 or newer |
 | Compatibility | Goobi workflow 3.0.4 and newer |
