@@ -78,7 +78,9 @@ The configuration of the plugin is structured as follows:
         <noShortcutPrefix>false</noShortcutPrefix>
         <!-- Don't show a big image - thumbnails only -->
         <thumbnailsOnly>false</thumbnailsOnly>
-
+        <!-- use the high speed JavaScript fullscreen view -->
+        <useJSFullscreen>false</useJSFullscreen>
+        
         <!-- allow deletion of images -->
         <allowDeletion>false</allowDeletion>
         <deletionCommand>/opt/digiverso/goobi/scripts/deleteImage.sh IMAGE_FOLDER IMAGE_FILE</deletionCommand>
@@ -130,6 +132,7 @@ The parameters within this configuration file have the following meanings:
 | `allowDownloadAsPdf` | Here you can determine whether a download of the selected pages as one large PDF file should be allowed. |
 | `allowTaskFinishButtons` | This parameter can be used to enable buttons to complete the task to be displayed in the regular plugin interface, so that the plugin does not have to be exited first. |
 | `displayocr` | Here you can determine whether the button for displaying full text results should be activated. |
+| `useJSFullscreen` | This parameter can be used to specify that the full screen display is to be done using JavaScript alone. This display is much more performant, but does not allow the full text to be displayed parallel to the image. |
 
 ## Integration of the plugin into the workflow
 
