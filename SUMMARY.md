@@ -7,11 +7,11 @@
 * [Catalogue Poller](administration/plugin_intranda_administration_catalogue_poller.md)
 * [Copy Master-Anchor](administration/plugin_intranda_administration_copyanchor.md)
 * [Goobi-to-Goobi](administration/plugin_intranda_adminstration_goobi2goobi/README.md)
-  * [Installation und Konfiguration](administration/plugin_intranda_adminstration_goobi2goobi/installation.md)
-  * [Erzeugung der Export-Verzeichnisse](administration/plugin_intranda_adminstration_goobi2goobi/step_1_export.md)
-  * [Transfer der Export-Verzeichnisse](administration/plugin_intranda_adminstration_goobi2goobi/step_2_transfer.md)
-  * [Einspielen der Export-Verzeichnisse](administration/plugin_intranda_adminstration_goobi2goobi/step_3_import.md)
-  
+  * [Installation and configuration](administration/plugin_intranda_adminstration_goobi2goobi/installation.md)
+  * [Creation of the export directories](administration/plugin_intranda_adminstration_goobi2goobi/step_1_export.md)
+  * [Transfer of the export directories](administration/plugin_intranda_adminstration_goobi2goobi/step_2_transfer.md)
+  * [Importing the export directories](administration/plugin_intranda_adminstration_goobi2goobi/step_3_import.md)
+
 ## Step Plugins <a id="step"></a>
 
 * [Automatic setting of the representative](step/intranda-step-representative-creation.md)
@@ -79,4 +79,3 @@
 ## Other
 
 * [Counterscript Application](other/counterscript-application.md)
-
