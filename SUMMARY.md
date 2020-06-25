@@ -50,6 +50,7 @@
 * [Quality control of images](step/intranda_step_imageqa.md)
 * [Generation of placeholder images](step/intranda_step_placeholder-creation.md)
 * [Replace images](step/intranda_step_replace-images.md)
+* [Upload files](step/intranda_step_fileUpload.md)
 
 ## Opac Plugins <a id="opac"></a>
 
