@@ -67,14 +67,14 @@ The block `<config>` can occur repeatedly for different projects or workflow ste
 
 | Value | Description |
 | :--- | :--- |
-| `project` | This parameter determines the project for which the current block `<config>' is to apply. The name of the project is used here. This parameter can occur several times per `<config>` block. |
-| `step` | This parameter controls for which workflow steps the block `<config>' is to apply. The name of the step is used here. This parameter can occur several times per `<config>` block. |
+| `project` | This parameter determines the project for which the current block `<config>` is to apply. The name of the project is used here. This parameter can occur several times per `<config>` block. |
+| `step` | This parameter controls for which workflow steps the block `<config>` is to apply. The name of the step is used here. This parameter can occur several times per `<config>` block. |
 | `regex` | This parameter can be used to specify which file types should be allowed for upload. In the above example, multiple image formats as well as pdf files are allowed. |
-| `folder` | With this parameter you can define where the upload of the files should take place. The two values 'master' and 'media' are available for this purpose, to allow the upload either to the folder for the master files or to the folder for the derivatives. |
+| `folder` | With this parameter you can define where the upload of the files should take place. The two values `master` and `media` are available for this purpose, to allow the upload either to the folder for the master files or to the folder for the derivatives. |
 
 ## Integration of the plugin into the workflow
 
-To put the plugin into operation, it must be activated for one or more desired tasks in the workflow. This is done as shown in the following screenshot by selecting the 'intranda_step_fileUpload' plugin from the list of installed plugins.
+To put the plugin into operation, it must be activated for one or more desired tasks in the workflow. This is done as shown in the following screenshot by selecting the `intranda_step_fileUpload` plugin from the list of installed plugins.
 
 ![Assigning the plugin to a specific task](../.gitbook/assets/intranda_step_fileUpload1_en.png)
 
