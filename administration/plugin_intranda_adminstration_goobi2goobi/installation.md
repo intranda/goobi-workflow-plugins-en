@@ -188,6 +188,8 @@ To import the data to the target system, you can specify in the configuration fi
             <valueReplacementRegex>example text</valueReplacementRegex>
             <position>top</position>
         </metadata>
+        <skipProcesslog>true</skipProcesslog>
+        <skipUserImport>true</skipUserImport>
     </config>
 </config_plugin>
 ```
@@ -275,3 +277,12 @@ With this rule the metadata can be changed. Values of existing metadata can be c
 | `position` | `top` | Describes the position at which the change is to be made. Allowed values are `all`, `anchor`, `top` and `physical`. |
 | `valueConditionRegex` | `/PPN\d+\w?(?:_\d+)?/` | This regular expression checks whether the previous field content matches a defined value. This specification can be a fixed value or a regular expression. |
 | `valueReplacementRegex` | `s/^PPN(.+)$/$1/g` | If the value `change` was used as `@type`, this parameter contains a regular expression for manipulating the previous metadata. If `@type` is set to `add`, the field content is used as the value of the metadata. |
+
+### Further configurations
+
+Further general settings can be defined within a rule.
+
+| Element | Example | Meaning |
+| :--- | :--- | :--- |
+| `skipProcesslog` | `true` | Determines whether the process log of the source system should be transferred (`false`) or ignored (`true`). |
+| `skipUserImport` | `true` | Specifies whether the users of imported tasks in a workflow within Goobi should be created as deleted users (`false`) or whether the information about execution by specific persons should be ignored and thus made anonymous. (`true`). |
