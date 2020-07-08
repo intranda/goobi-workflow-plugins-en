@@ -1,4 +1,4 @@
-# Import the export directories
+# Importing the export directories
 
 The import of data on the target system takes place using two different plugins. These must first be installed and configured accordingly. More information about their installation and configuration can be found here:
 
@@ -43,3 +43,4 @@ A click on the button `Perform import of data` then starts the actual import. Du
 You can configure the import and the underlying rules in detail in the configuration file `plugin_intranda_administration_goobi2goobi_import_data.xml`. Further information about this configuration can be found in the section `Configuration for import of data`:
 
 {% page-ref page="installation.md" %}
+

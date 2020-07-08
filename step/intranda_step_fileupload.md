@@ -1,6 +1,7 @@
 ---
 description: >-
-  This step plugin allows the upload of different files within tasks in the web interface.
+  This step plugin allows the upload of different files within tasks in the web
+  interface.
 ---
 
 # Upload files
@@ -42,23 +43,23 @@ The configuration of the plugin is structured as follows:
 ```markup
 <config_plugin>
 
-	<config>
-		<!-- which projects to use for (can be more than one, otherwise use *) -->
-		<project>*</project>
-		<step>*</step>
-		<!-- which file types to allow -->
-		<regex>/(\\.|\\/)(gif|jpe?g|png|tiff?|jp2|pdf)$/</regex>
-		<!-- which folder to use (master or media) -->
-		<folder>master</folder>
-	</config>
+    <config>
+        <!-- which projects to use for (can be more than one, otherwise use *) -->
+        <project>*</project>
+        <step>*</step>
+        <!-- which file types to allow -->
+        <regex>/(\\.|\\/)(gif|jpe?g|png|tiff?|jp2|pdf)$/</regex>
+        <!-- which folder to use (master or media) -->
+        <folder>master</folder>
+    </config>
 
-	<config>
-		<project>My special project</project>
-		<project>Archive_Project</project>
-		<step>Upload derivatives</step>
-		<regex>/(\\.|\\/)(gif|jpe?g|png|tiff?|jp2|pdf)$/</regex>
-		<folder>media</folder>
-	</config>
+    <config>
+        <project>My special project</project>
+        <project>Archive_Project</project>
+        <step>Upload derivatives</step>
+        <regex>/(\\.|\\/)(gif|jpe?g|png|tiff?|jp2|pdf)$/</regex>
+        <folder>media</folder>
+    </config>
 
 </config_plugin>
 ```
@@ -89,3 +90,4 @@ Files can either be uploaded to this area by drag & drop or alternatively select
 If you want to check which files are already present in the folder after the upload, you can switch the display in the upper right area. This enables the user to list all files already existing in the folder, download individual files or delete them.
 
 ![Display of an overview of all already existing files in the folder](../.gitbook/assets/intranda_step_fileUpload3_en.png)
+

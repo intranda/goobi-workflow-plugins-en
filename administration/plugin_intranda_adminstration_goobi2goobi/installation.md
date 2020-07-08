@@ -198,13 +198,13 @@ In the upper part of the file, some general settings are made that apply to all 
 
 #### General settings: globalConfig
 
-| Element | Example | Meaning |
-| :--- | :--- | :--- |
-| `dbExportPrefix` | `import/` | This specification is required if the database information to be imported is not located as xml files in the respective process folder. The specification contains the path to the database information within an s3 bucket and is not required when importing into a local file system. |
-| `importPath` | `/opt/digiverso/goobi/metadata/` | Target directory into which the data is to be imported. |
-| `bucket` | | `example-workflow-data` | Name of the s3-bucket in which the data to be imported is located. This value is not required for imports into a local file system. |
-| `createNewProcessIds` | `false` | This parameter defines whether the process identifiers from the old system should be reused or whether new IDs should be created. |
-| `temporaryImportFolder` | `/opt/digiverso/transfer/` | This parameter specifies the path to the folder containing the data to be imported. The value only needs to be configured if it differs from the value within `importPath`. |
+| Element | Example | Meaning |  |
+| :--- | :--- | :--- | :--- |
+| `dbExportPrefix` | `import/` | This specification is required if the database information to be imported is not located as xml files in the respective process folder. The specification contains the path to the database information within an s3 bucket and is not required when importing into a local file system. |  |
+| `importPath` | `/opt/digiverso/goobi/metadata/` | Target directory into which the data is to be imported. |  |
+| `bucket` |  | `example-workflow-data` | Name of the s3-bucket in which the data to be imported is located. This value is not required for imports into a local file system. |
+| `createNewProcessIds` | `false` | This parameter defines whether the process identifiers from the old system should be reused or whether new IDs should be created. |  |
+| `temporaryImportFolder` | `/opt/digiverso/transfer/` | This parameter specifies the path to the folder containing the data to be imported. The value only needs to be configured if it differs from the value within `importPath`. |  |
 
 The individual rules for the import operations will be defined within the `<config>` element. The name of the rule is defined in `<rulename>`. If no rule is explicitly selected during the import, it will be determined by the project name of the processes. The field is repeatable, so that several identical rules can be created, for example if the same workflow is used in different projects.
 
@@ -212,59 +212,47 @@ The individual rules for the import operations will be defined within the `<conf
 
 By means of `<step>` individual steps of the process can be manipulated. All fields are optional. If they are not specified, the original value is used. Otherwise the field is overwritten with the configured field content. If the field is of type String, it can also be specified empty to empty it.
 
-| Element | Example | Meaning |
-| :--- | :--- | :--- |
-| `@name` | `Example task` | Contains the name of the step to be changed. |
-| `@type` | `delete` | This value contains the type of manipulation. Possible values are `delete`, `change`, `insertBefore`, `insertAfter`. |
-| `NewStepName` | `New step name` | New name of the step. |
-| `priority` | `5` | New priority of the step. |
-| `order` | `10` | Order of the step. |
-| | `useHomeDirectory` | `0` | Controls whether to link to the user's home directory. |
-| `stepStatus` | `0` | Sets the step status. Allowed values are `0` \(locked\), `1` \(open\), `2` \(inwork\), `3` \(done\), `4` \(error\) and `5` \(deactivated\). |
-| `types` | `automatic="true"` | Contains in attributes the different settings of a step. |
-| `scriptStep` | `scriptStep="true" scriptName1="script 1" scriptPath1="/bin/true"` | Defines scripts for the workflow steps |
-| `httpStep` | `httpStep="true" httpMethod="POST" httpUrl="http://itm.example.com/itm/service"` | Defines the configuration of the HTTP call for the step. |
-| `usergroup` | `Administration` | Name of the assigned user group. This value can be repeated to define multiple user groups. |
+| Element | Example | Meaning |  |
+| :--- | :--- | :--- | :--- |
+| `@name` | `Example task` | Contains the name of the step to be changed. |  |
+| `@type` | `delete` | This value contains the type of manipulation. Possible values are `delete`, `change`, `insertBefore`, `insertAfter`. |  |
+| `NewStepName` | `New step name` | New name of the step. |  |
+| `priority` | `5` | New priority of the step. |  |
+| `order` | `10` | Order of the step. |  |
+|  | `useHomeDirectory` | `0` | Controls whether to link to the user's home directory. |
+| `stepStatus` | `0` | Sets the step status. Allowed values are `0` \(locked\), `1` \(open\), `2` \(inwork\), `3` \(done\), `4` \(error\) and `5` \(deactivated\). |  |
+| `types` | `automatic="true"` | Contains in attributes the different settings of a step. |  |
+| `scriptStep` | `scriptStep="true" scriptName1="script 1" scriptPath1="/bin/true"` | Defines scripts for the workflow steps |  |
+| `httpStep` | `httpStep="true" httpMethod="POST" httpUrl="http://itm.example.com/itm/service"` | Defines the configuration of the HTTP call for the step. |  |
+| `usergroup` | `Administration` | Name of the assigned user group. This value can be repeated to define multiple user groups. |  |
 
 ### Docket: docket
 
 In this element, the assigned docket can be replaced. The xsl file to be used must exist on the server. If a docket has already been defined with the new specifications, it will be used, otherwise a new docket will be defined and stored in the database.
 
-| Element | Example | Meaning |
-| :--- | :--- | :--- |
-| `@name` | | `Default docket` | Name of the previously used docket. The change is only made if the process has previously used a docket with this name. |
-| | `newDocketName` | `docket` | New name of the ticket. |
-| `newFileName` | `docket.xsl` | New file name for the docket. |
+| Element | Example | Meaning |  |
+| :--- | :--- | :--- | :--- |
+| `@name` |  | `Default docket` | Name of the previously used docket. The change is only made if the process has previously used a docket with this name. |
+|  | `newDocketName` | `docket` | New name of the ticket. |
+| `newFileName` | `docket.xsl` | New file name for the docket. |  |
 
 ### Project: project
 
 This rule can be used to change the assigned project. The project must already exist. Changes to the projects themselves can be made using `Import infrastructure`.
 
-| Element | Example | Meaning |
-| :--- | :--- | :— |
-| `@name` | | `Project A` | Old Project |
-| | `newProjectName` | `Project B` | New Project |
+\| Element \| Example \| Meaning \| \| :--- \| :--- \| :— \| \| `@name` \| \| `Project A` \| Old Project \| \| \| `newProjectName` \| `Project B` \| New Project \|
 
 ### Properties: property
 
 This rule is used to manipulate process properties.
 
-| Element | Example | Meaning |
-| :--- | :--- | :— |
-| `@name` | `CollectionName` | Name of the property to be adjusted. |
-| `oldPropertyValue` | `Digitised` | Value of the property to be adjusted. If a value is specified, the property must contain this value. |
-| `newPropertyName` | `Collection` | New name of the property. Optional. |
-| `newPropertyValue` | `default collection` | New value of the property. Optional. |
+\| Element \| Example \| Meaning \| \| :--- \| :--- \| :— \| \| `@name` \| `CollectionName` \| Name of the property to be adjusted. \| \| `oldPropertyValue` \| `Digitised` \| Value of the property to be adjusted. If a value is specified, the property must contain this value. \| \| `newPropertyName` \| `Collection` \| New name of the property. Optional. \| \| `newPropertyValue` \| `default collection` \| New value of the property. Optional. \|
 
 ### Ruleset: ruleset
 
 This rule can be used to change the assigned rule set. If the ruleset does not yet exist, it is created and saved in the database. The file must exist on the server.
 
-| Element | Example | Meaning |
-| :--- | :--- | :— |
-| `@name` | `Default` | Name of the ruleset used so far. |
-| `newRulesetName` | `default ruleset` | New name for the ruleset. |
-| `newFileName` | `ruleset.xml` | New file name for the ruleset. This must exist on the target system. |
+\| Element \| Example \| Meaning \| \| :--- \| :--- \| :— \| \| `@name` \| `Default` \| Name of the ruleset used so far. \| \| `newRulesetName` \| `default ruleset` \| New name for the ruleset. \| \| `newFileName` \| `ruleset.xml` \| New file name for the ruleset. This must exist on the target system. \|
 
 ### Metadata: metadata
 
@@ -284,5 +272,6 @@ Further general settings can be defined within a rule.
 
 | Element | Example | Meaning |
 | :--- | :--- | :--- |
-| `skipProcesslog` | `true` | Determines whether the process log of the source system should be transferred (`false`) or ignored (`true`). |
-| `skipUserImport` | `true` | Specifies whether the users of imported tasks in a workflow within Goobi should be created as deleted users (`false`) or whether the information about execution by specific persons should be ignored and thus made anonymous. (`true`). |
+| `skipProcesslog` | `true` | Determines whether the process log of the source system should be transferred \(`false`\) or ignored \(`true`\). |
+| `skipUserImport` | `true` | Specifies whether the users of imported tasks in a workflow within Goobi should be created as deleted users \(`false`\) or whether the information about execution by specific persons should be ignored and thus made anonymous. \(`true`\). |
+

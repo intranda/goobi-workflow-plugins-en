@@ -11,7 +11,7 @@ This documentation describes the installation, configuration and use of the plug
 | Details |  |
 | :--- | :--- |
 | Version | 1.0.0 |
-| Identifier | intranda_opac_xml |
+| Identifier | intranda\_opac\_xml |
 | Source code | [https://github.com/intranda/goobi-plugin-opac-generic-xml](https://github.com/intranda/goobi-plugin-opac-generic-xml) |
 | Licence | GPL 2.0 or newer |
 | Compatibility | Goobi workflow 2019.11 |

@@ -80,7 +80,7 @@ The configuration of the plugin is structured as follows:
         <thumbnailsOnly>false</thumbnailsOnly>
         <!-- use the high speed JavaScript fullscreen view -->
         <useJSFullscreen>false</useJSFullscreen>
-        
+
         <!-- allow deletion of images -->
         <allowDeletion>false</allowDeletion>
         <deletionCommand>/opt/digiverso/goobi/scripts/deleteImage.sh IMAGE_FOLDER IMAGE_FILE</deletionCommand>

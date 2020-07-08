@@ -37,3 +37,4 @@ rsync -avhP --stats --bwlimit=10000 --exclude 'taskmanager' --exclude '*.xml.*' 
 ## Transfer to an S3 Bucket of an AWS system
 
 To export to an S3 Bucket to AWS you can use the script `s3sync.py`.
+

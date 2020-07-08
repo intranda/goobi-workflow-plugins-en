@@ -8,7 +8,7 @@ description: >-
 
 ## Introduction
 
-This documentation describes how to install, configure and use a plug-in to upload documents to Goobi. This plugin can be used to determine on a single-page basis which images from a process are sent to OCR with which font.
+This documentation describes the installation, configuration and use of a page selection plugin for downstream OCR processing. This plugin can be used to determine on a single-page basis which images from a process are sent to OCR with which font.
 
 | Details |  |
 | :--- | :--- |

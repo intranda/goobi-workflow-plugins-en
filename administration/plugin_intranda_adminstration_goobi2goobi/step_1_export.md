@@ -35,8 +35,7 @@ Unlike exporting via GoobiScript, this starts a download of the xml file that co
 ## 2nd sub-step: Exporting the process templates
 
 {% hint style="info" %}
-**Notice:**
-This substep is optional and is only required in rare cases.
+**Notice:** This substep is optional and is only required in rare cases.
 {% endhint %}
 
 If you want to transfer more than just processes from one Goobi workflow to another, you can also generate export data for process templates. However, as GoobiScript is not available within the process template area, this export can be done from the provided `Goobi-to-Goobi Export` plugin within the `Administration` menu.
@@ -50,8 +49,7 @@ Now click on the button `Generate database files for process templates`. This wi
 ## 3rd sub-step: Export of the infrastructure
 
 {% hint style="info" %}
-**Notice:**
-This substep is optional and is only required in rare cases.
+**Notice:** This substep is optional and is only required in rare cases.
 {% endhint %}
 
 If, in addition to the actual Goobi processes, you also want to transfer more detailed information about the infrastructure from one Goobi workflow to another, you can also have this exported within the export plugin. To do this, select the checkboxes provided within the `Goobi-to-Goobi Export` plugin to influence the export in a targeted manner. The following parameters are available for this:
@@ -73,3 +71,4 @@ If, in addition to the actual Goobi processes, you also want to transfer more de
 Once you have selected the desired information and clicked on the `Download infrastructure as a zip file` button, Goobi generates a zip file and offers it for download under the name `goobi-to-goobi-export.zip`. This zip file now contains all the information selected from the Goobi database for transfer to the target system.
 
 ![Downloaded zip file with information about the infrastructure](../../.gitbook/assets/goobi-to-goobi-export-filesystem-zip.png)
+
