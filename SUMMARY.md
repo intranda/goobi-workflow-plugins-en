@@ -51,6 +51,7 @@
 * [Generation of placeholder images](step/intranda_step_placeholder-creation.md)
 * [Replace images](step/intranda_step_replace-images.md)
 * [Upload files](step/intranda_step_fileupload.md)
+* [Image scaling and watermarking](step/image-scaling-and-watermarking.md)
 
 ## Opac Plugins <a id="opac"></a>
 
