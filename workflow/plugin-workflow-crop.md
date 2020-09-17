@@ -15,7 +15,7 @@ This workflow plugin allows you to edit several images from different Goobi proc
 | :--- | :--- |
 | Version | 1.0.0 |
 | Identifier | intranda\_workflow\_crop |
-| Source code | Source code nicht öffentlich verfügbar |
+| Source code | Source code not publicly available |
 | Licence | GPL 2.0 or newer |
 | Compatibility | Goobi workflow 20.08 |
 | Documentation date | 02.09.2020 |
