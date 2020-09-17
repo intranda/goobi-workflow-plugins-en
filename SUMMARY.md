@@ -75,11 +75,10 @@
 
 ## Workflow plugins <a id="workflow"></a>
 
-* [Generic import plugin for excel files including validation](workflow/goobi-plugin-workflow-excelimport.md)
+* [Generic import plugin for excel files including validation](workflow/plugin-workflow-excelimport.md)
 * [Barcode Generator](workflow/plugin-workflow-barcode-generator.md)
-* [LayoutWizzard workflow plugin](workflow/layoutwizzard-workflow-plugin.md)
+* [LayoutWizzard workflow plugin](workflow/plugin-workflow-crop.md)
 
 ## Other
 
 * [Counterscript Application](other/counterscript-application.md)
-
