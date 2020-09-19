@@ -15,7 +15,7 @@ This plugin allows you to scale images to a maximum size and then render waterma
 | :--- | :--- |
 | Version | 1.0.0 |
 | Identifier | intranda_step_image_resize_and_watermark |
-| Source code | -noch kein öffentlicher source code verfügbar - |
+| Source code | https://github.com/intranda/goobi-plugin-step-image-resize-and-watermark |
 | Licence | GPL 2.0 or newer |
 | Compatibility | Goobi workflow 2020.06 |
 | Documentation date | 31.08.2020 |
