@@ -15,7 +15,7 @@ This documentation describes the installation, configuration and use of the plug
 | Source code | [https://github.com/intranda/goobi-plugin-opac-json](https://github.com/intranda/goobi-plugin-opac-json) |
 | Licence | GPL 2.0 or newer |
 | Compatibility | 2020.05 |
-| Documentation date | ​13.06.2020 |
+| Documentation date | ​19.09.2020 |
 
 ## Installation
 
