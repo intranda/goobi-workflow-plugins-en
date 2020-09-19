@@ -49,7 +49,7 @@ The configuration of the plugin is structured as follows:
 -->
     <config>
         <!-- define plugin type in which screen the plugin is displayed, allowed values are 'part', 'full' (default) or 'both' -->
-        <guiType>full</guiType> 
+        <guiType>full</guiType>
         <!-- which projects to use for (can be more then one, otherwise use *) -->
         <project>*</project>
         <step>*</step>
@@ -79,12 +79,12 @@ The configuration of the plugin is structured as follows:
 
         <!-- allow deletion of images -->
         <allowDeletion>false</allowDeletion>
-        <deletionCommand>/opt/digiverso/goobi/scripts/deleteImage.sh IMAGE_FOLDER IMAGE_FILE</deletionCommand>
+        <deletion command="/opt/digiverso/goobi/scripts/deleteImage.sh|IMAGE_FOLDER|IMAGE_FILE"/>
         <!-- allow rotation of images -->
         <allowRotation>false</allowRotation>
         <rotationCommands>
-            <left>/usr/local/bin/mogrify -rotate -90 IMAGE_FILE</left>
-            <right>/usr/local/bin/mogrify -rotate 90 IMAGE_FILE</right>
+            <left command="/usr/bin/mogrify|-rotate|-90|IMAGE_FILE" />
+            <right command="/usr/bin/mogrify|-rotate|90|IMAGE_FILE" />
         </rotationCommands>
         <!-- allow renaming of images -->
         <allowRenaming>false</allowRenaming>
@@ -116,12 +116,12 @@ The configuration of the plugin is structured as follows:
         <imagesize>3000</imagesize>
         <!-- allow deletion of images -->
         <allowDeletion>false</allowDeletion>
-        <deletionCommand>/opt/digiverso/goobi/scripts/deleteImage.sh IMAGE_FOLDER IMAGE_FILE</deletionCommand>
+        <deletion command="/opt/digiverso/goobi/scripts/deleteImage.sh|IMAGE_FOLDER|IMAGE_FILE"/>
         <!-- allow rotation of images -->
         <allowRotation>false</allowRotation>
         <rotationCommands>
-            <left>/usr/local/bin/mogrify -rotate -90 IMAGE_FILE</left>
-            <right>/usr/local/bin/mogrify -rotate 90 IMAGE_FILE</right>
+            <left command="/usr/bin/mogrify|-rotate|-90|IMAGE_FILE" />
+            <right command="/usr/bin/mogrify|-rotate|90|IMAGE_FILE" />
         </rotationCommands>
         <!-- allow renaming of images -->
         <allowRenaming>false</allowRenaming>
@@ -217,4 +217,3 @@ Besides the pure image display, the plugin can also handle other object types. F
 Depending on the individual configuration, the plugin allows many more functions, which are mostly visible within the thumbnail display. If these functions have been configured in the configuration file described above, they can be used, for example, for downloading PDF files, image files, rotations, deletions and other operations.
 
 ![Activated additional functions within the thumbnail display](../.gitbook/assets/intranda_step_imageqa6.png)
-
