@@ -78,6 +78,7 @@
 * [Generic import plugin for excel files including validation](workflow/plugin-workflow-excelimport.md)
 * [Barcode Generator](workflow/plugin-workflow-barcode-generator.md)
 * [LayoutWizzard workflow plugin](workflow/plugin-workflow-crop.md)
+* [Massenupload](workflow/plugin-workflow-massupload.md)
 
 ## Other
 
