@@ -144,23 +144,24 @@ Plugin_Goobi_CataloguePoller
 
 In order to assign this right, the desired user group must first be assigned the right authorization in the right-hand area.
 
-![Enter the required authorization](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LZ4vYcdbp6Dw7s7NKy0%2F-L_9Z1sxO7Fgg4z8TBZQ%2F-L_9c4R09Q6HdfAS3ft-%2Fcatalogue_poller_01.png?alt=media&token=2fbca660-dca4-4f3a-b21e-6eb62adced0f)
+![Enter the required authorization](../.gitbook/assets/administration_catalogue_poller_01.png)
 
-![User group with assigned authorization](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LZ4vYcdbp6Dw7s7NKy0%2F-L_9Z1sxO7Fgg4z8TBZQ%2F-L_9c4QxF68xOhKMbEco%2Fcatalogue_poller_02.png?alt=media&token=9faa07d0-c71c-43de-b0f1-0247cf0597b7)
+![User group with assigned authorization](../.gitbook/assets/administration_catalogue_poller_02.png)
+
 
 If the authorization for the user group is re-entered, the user must first log into Goobi again in order to be able to use this authorization level. The user can then click on the Catalogue Poller plugin in the Administration menu and manually trigger an update of the records at any time.
 
-![Successful run with the update of an affected Goobi transaction](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LZ4vYcdbp6Dw7s7NKy0%2F-L_9Z1sxO7Fgg4z8TBZQ%2F-L_9c4R2keipjfUCICJD%2Fcatalogue_poller_03.png?alt=media&token=a81a9a15-e11d-41e1-ab53-027a09a35796)
+![Successful run with the update of an affected Goobi process](../.gitbook/assets/administration_catalogue_poller_03.png)
 
 ## Automatic backups
 
 If the plugin finds updated metadata for a process and therefore updates the METS file, a backup of the current METS file `meta.xml` and, if relevant, the `meta_anchor.xml` is created automatically. The backup is saved next to the updated METS file.
 
-![Multiple versions of METS files are kept as backups](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LZ4vYcdbp6Dw7s7NKy0%2F-L_EqtM7dAC-gMDktGKg%2F-L_EsSABauq2kgEpsg5W%2Fcatalogue_poller_04.png?alt=media&token=0fd37d89-3c21-4866-bc5a-e9c1cd3f45e7)
+![Multiple versions of METS files are kept as backups](../.gitbook/assets/administration_catalogue_poller_04.png)
 
 ## Logging within the process log
 
 The updates of the metadata by the plugin usually take place fully automatically in the background. In order to be able to track what happened to a data record at any time, the events are logged. Detailed entries are automatically added to the process log for each process for which there were changes from this plugin. In addition to the timestamp, these entries also contain an exact list of the changed metadata fields and their contents. Thus, it is possible to trace the previous or the new value at any time.
 
-![Within the process log the changes of the Catalogue Poller are traceable](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LZ4vYcdbp6Dw7s7NKy0%2F-L_EqtM7dAC-gMDktGKg%2F-L_EsUQIB9e-ktMRQ3Nf%2Fcatalogue_poller_05.png?alt=media&token=ebefc340-2367-40d1-8c5d-63cc7d2716fa)
+![Within the process log the changes of the Catalogue Poller are traceable](../.gitbook/assets/administration_catalogue_poller_05.png)
 
