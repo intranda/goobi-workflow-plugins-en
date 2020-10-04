@@ -172,7 +172,7 @@ The two fields `metadata` and `person` are used to import individual content fro
 
 When you search for an identifier in Goobi, a request is sent to the configured URL in the background.
 
-![Goobi workflow interface for querying the catalogue](../.gitbook/assets/plugin_opac_json_en.png)
+![Goobi workflow interface for querying the catalogue](../.gitbook/assets/intranda_opac_json_en.png)
 
 According to the configuration described above, this corresponds approximately to the following URL:
 
@@ -182,7 +182,7 @@ https://example.com/opac?id=[IDENTIFIER]
 
 If further fields are defined for the catalogue query, these are also displayed in the user interface:
 
-![Additional fields for the catalogue query](../.gitbook/assets/plugin_opac_json_2_en.png)
+![Additional fields for the catalogue query](../.gitbook/assets/intranda_opac_json_2_en.png)
 
 If a valid record is found under this URL, it will be searched for the fields defined within `recordType` in which the document type should be located. If no fields are defined or they are not found, the type from the configured element `defaultPublicationType` is used instead. The required structure element is then created with the determined type.
 

@@ -108,11 +108,10 @@ When you search for an identifier in Goobi, a request is sent to the configured 
 https://example.com/Library/WebServices/SoutronAPI.svc/GetCatalogue?id=[VALUE]
 ```
 
-![Goobi workflow interface for querying the catalogue](../.gitbook/assets/plugin_opac_soutron_en.png)
+![Goobi workflow interface for querying the catalogue](../.gitbook/assets/intranda_opac_soutron_en.png)
 
 If a valid record is found, the record is searched for the field `/soutron/catalogs_view/ct/cat/rt/@name`. The value is compared with the configured `<docstructs>` list. If there is a match, the required structure element is created.
 
 The configured XPath expressions configured for `<metadata>` and `<person>` are then evaluated.
 
 The expressions apply to the element `/soutron/catalogs_view/ct/`. If data is found with an expression, the corresponding specified metadata is generated. For persons, the system checks whether the value contains a comma. If this is the case, first name and surname are separated by a comma, otherwise the value is interpreted as a surname.
-

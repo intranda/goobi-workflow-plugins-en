@@ -59,7 +59,6 @@ The content of a MARC data record is mapped within the Goobi workflow ruleset us
 
 When you search for an identifier in Goobi, a request is sent to the configured URL in the background.
 
-![Goobi workflow interface for querying the catalogue](../.gitbook/assets/plugin_opac_marc_en.png)
+![Goobi workflow interface for querying the catalogue](../.gitbook/assets/intranda_opac_marc_en.png)
 
 After retrieving the actual record from the catalog, the metadata is mapped according to the rules configured in the rule set.
-
