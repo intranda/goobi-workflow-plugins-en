@@ -82,7 +82,7 @@
 * [Generic import plugin for excel files including validation](workflow/intranda_workflow_excelimport.md)
 * [Barcode Generator](workflow/intranda_workflow_barcode_generator.md)
 * [LayoutWizzard workflow plugin](workflow/intranda_workflow_crop.md)
-* [Massenupload](workflow/intranda_workflow_massupload.md)
+* [Mass upload](workflow/intranda_workflow_massupload.md)
 
 ## Other
 

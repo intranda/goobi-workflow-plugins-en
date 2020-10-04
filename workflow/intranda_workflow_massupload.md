@@ -1,7 +1,6 @@
 ---
 description: >-
-This workflow plugin allows a mass upload of files with
-automatic allocation to the correct Goobi processes either on the basis of the file names or by means of the analysed barcodes.
+  This workflow plugin allows a mass upload of files with automatic allocation to the correct Goobi processes either on the basis of the file names or by means of the analysed barcodes.
 ---
 
 # Mass upload
