@@ -10,7 +10,7 @@ The first part of the newly developed solution is the Counterscript Application 
 
 ### 2.1. Overview
 
-The application can be used to track changes made to METS files exported from Goobi. In order to do this, the network drive of the Wellcome Player containing the exported METS files is regularly scanned for new, modified or deleted METS files. Information from the files is then stored in a database. 
+The application can be used to track changes made to METS files exported from Goobi. In order to do this, the network drive of the Wellcome Player containing the exported METS files is regularly scanned for new, modified or deleted METS files. Information from the files is then stored in a database.
 
 This database can then be examined and the results delivered in `xml`, `csv` or `json` format. For each METS file, the following information is stored on the database:
 
@@ -109,7 +109,7 @@ No other settings are required in order to configure the Apache Tomcat.
 
 ### 2.4. Use
 
-Once the Counterscript Application Server has been installed and configured, you can start using the RESTful API. Please note that the date used when accessing the API should always be written in the format `YYYY-MM-DD`. 
+Once the Counterscript Application Server has been installed and configured, you can start using the RESTful API. Please note that the date used when accessing the API should always be written in the format `YYYY-MM-DD`.
 
 The following calls are used to update the current store of data:
 
@@ -118,11 +118,11 @@ wt-winnipeg/Counterscript/api/run
 wt-winnipeg/Counterscript/api/run/{date}
 ```
 
-If a URL is called without a date, the entire store of data is analysed. As this is very time-consuming, you can add a date to the URL in order to return only those changes made since the specified date. 
+If a URL is called without a date, the entire store of data is analysed. As this is very time-consuming, you can add a date to the URL in order to return only those changes made since the specified date.
 
-In practice, however, neither instruction is necessary, since this task is performed automatically every day at 0:05 when the cronjob is called. 
+In practice, however, neither instruction is necessary, since this task is performed automatically every day at 0:05 when the cronjob is called.
 
-When an analysis of the stored data begins, the file system is scanned for new METS files. If a file is found with a more recent lastModifiedTime than on the previous scan, that file must be a new or modified file. If this is the case, the file is checked against the database to determine whether the b-number is already known. If it is unknown, the dataset is new; otherwise it is a modification. The required data are then read from the METS file using XPATH queries and written to the database. Next, the datasets from the individual folders are compared with the known datasets in the database. If a folder does not contain files which are still known in the database, that points to a deletion. This information is also added to the database. 
+When an analysis of the stored data begins, the file system is scanned for new METS files. If a file is found with a more recent lastModifiedTime than on the previous scan, that file must be a new or modified file. If this is the case, the file is checked against the database to determine whether the b-number is already known. If it is unknown, the dataset is new; otherwise it is a modification. The required data are then read from the METS file using XPATH queries and written to the database. Next, the datasets from the individual folders are compared with the known datasets in the database. If a folder does not contain files which are still known in the database, that points to a deletion. This information is also added to the database.
 
 The following calls can be used to search the database:
 
@@ -133,11 +133,11 @@ wt-winnipeg/Counterscript/api/{format}/{start date}/{end date}
 wt-winnipeg/Counterscript/api/{format}/withincative/{start date}/{end date}
 ```
 
-The results can be generated in three different formats: `xml`, `csv` and `json`. 
+The results can be generated in three different formats: `xml`, `csv` and `json`.
 
-If only the format is specified, the API will deliver all the active entries stored on the database. If the parameter withincative is added to the URL, it will also return outdated entries. 
+If only the format is specified, the API will deliver all the active entries stored on the database. If the parameter withincative is added to the URL, it will also return outdated entries.
 
-If you want to narrow the search, you can specify a period by giving the start and end date. The set of results will then be restricted to datasets that have been modified in that period. 
+If you want to narrow the search, you can specify a period by giving the start and end date. The set of results will then be restricted to datasets that have been modified in that period.
 
 If you are looking for a single dataset, you can request the information using the following URL:
 
@@ -147,7 +147,7 @@ wt-winnipeg/Counterscript/api/xml/bnumber/{number}
 
 ### 2.5.  Connection to external tools
 
-The simplest way to connect external tools is via the RESTful API. To do this, you will need to implement the commands listed above in section 2.4. Alternatively, you can use a MySQL client, although in this case you should note that for security reasons the MySQL server can only be accessed from localhost. 
+The simplest way to connect external tools is via the RESTful API. To do this, you will need to implement the commands listed above in section 2.4. Alternatively, you can use a MySQL client, although in this case you should note that for security reasons the MySQL server can only be accessed from localhost.
 
 The client can be launched using the following command on the Linux terminal:
 
@@ -179,7 +179,7 @@ The database has a files table with the following structure:
 describe files;
 ```
 
-The response from the database is shown below: 
+The response from the database is shown below:
 
 |  **Field**            |  **Type**            |  **Null** |  **Key**  |  **Default**  |  **Extra**  |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -235,7 +235,7 @@ select bnumber, access_status, access_licence, player_permission from files wher
 Deleted records, selectable by ‘Deleted date’ range:
 
 ```sql
-select bnumber from files where status = 'deleted' and deletion_date > '2015-11-01' and deletion_date < '2015-12-01'; 
+select bnumber from files where status = 'deleted' and deletion_date > '2015-11-01' and deletion_date < '2015-12-01';
 ```
 
 ## 3. Goobi Counterscript Plugin
@@ -266,19 +266,16 @@ The first two files contain the program logic and the GUI. The file `plugin_Coun
 
 Once the plugin has been installed and set up, it will be available to users in the drop-down `Administration` menu.
 
-![Figure 1: Accessing the plugin via the Goobi GUI](../.gitbook/assets/counterscript_03.png)
+![Figure 1: Accessing the plugin via the Goobi GUI](../.gitbook/assets/other_counterscript_03.png)
 
 Once the GUI has loaded, you can select a start and end date or search the entire period. There is also an option to include outdated entries.
 
-![Figure 2: Entering the period in the filter form](../.gitbook/assets/counterscript_05.png)
+![Figure 2: Entering the period in the filter form](../.gitbook/assets/other_counterscript_05.png)
 
 After filtering, the plugin will display a list of the datasets found for the specified period.
 
-![Figure 3: List displaying the filtered datasets](../.gitbook/assets/counterscript_06.png)
+![Figure 3: List displaying the filtered datasets](../.gitbook/assets/other_counterscript_06.png)
 
 You can use the paginator function at the bottom of the window to navigate through the list, or you can save the entire set of hits as a CSV file. For each entry, you can also click the button in the Details column to track the history of that file and view every documented change.
 
-![Figure 4: Viewing the &#x2018;Details&#x2019; box for the selected dataset](../.gitbook/assets/counterscript_07.png)
-
-
-
+![Figure 4: Viewing the &#x2018;Details&#x2019; box for the selected dataset](../.gitbook/assets/other_counterscript_07.png)
