@@ -1,6 +1,7 @@
 ---
 description: >-
-  This step plugin allows an automatic selective deletion of content from a process.
+  This step plugin allows an automatic selective deletion of content from a
+  process.
 ---
 
 # Delete Content
@@ -38,7 +39,7 @@ To configure how the plugin should behave, various values can be adjusted in the
 
 The configuration of the plugin is structured as follows:
 
-```xml
+```markup
 <config_plugin>
 
   <config>
@@ -92,24 +93,23 @@ The block `<config>` can occur repeatedly for different projects or workflow ste
 | :--- | :--- |
 | `project` | This parameter determines the project for which the current block `<config>` is to apply. The name of the project is used here. This parameter can occur several times per `<config>` block. |
 | `step` | This parameter controls for which workflow steps the block `<config>` is to apply. The name of the step is used here. This parameter can occur several times per `<config>` block. |
-| `deleteAllContentFromImageDirectory`  | Specify whether to delete all data from the `images` folder. |
-| `deleteMediaDirectory`                | Specify whether to delete the `media` folder. This option is not evaluated if `deleteAllContentFromImageDirectory` is enabled. |
-| `deleteMasterDirectory`               | Specify whether to delete the `master` folder. This option is not evaluated if `deleteAllContentFromImageDirectory` is enabled. |
-| `deleteSourceDirectory`               | Specify whether to delete the `source` folder. This option is not evaluated if `deleteAllContentFromImageDirectory` is enabled. |
-| `deleteFallbackDirectory`             | Specify whether to delete the configured fallback folder. This option is not evaluated if `deleteAllContentFromImageDirectory` is enabled. |
+| `deleteAllContentFromImageDirectory` | Specify whether to delete all data from the `images` folder. |
+| `deleteMediaDirectory` | Specify whether to delete the `media` folder. This option is not evaluated if `deleteAllContentFromImageDirectory` is enabled. |
+| `deleteMasterDirectory` | Specify whether to delete the `master` folder. This option is not evaluated if `deleteAllContentFromImageDirectory` is enabled. |
+| `deleteSourceDirectory` | Specify whether to delete the `source` folder. This option is not evaluated if `deleteAllContentFromImageDirectory` is enabled. |
+| `deleteFallbackDirectory` | Specify whether to delete the configured fallback folder. This option is not evaluated if `deleteAllContentFromImageDirectory` is enabled. |
 | `deleteAllContentFromThumbsDirectory` | Specify whether to delete all data from the `thumbs` folder. |
-| `deleteAllContentFromOcrDirectory`    | Specify whether to delete all data from the `ocr` folder. |
-| `deleteAltoDirectory`                 | Specify whether to delete the `alto` folder. This option is not evaluated if `deleteAllContentFromOcrDirectory` is enabled. |
-| `deletePdfDirectory`                  | Specify here whether the `pdf` folder is to be deleted. This option is not evaluated if `deleteAllContentFromOcrDirectory` is enabled. |
-| `deleteTxtDirectory`                  | Specify whether to delete the `txt` folder. This option is not evaluated if `deleteAllContentFromOcrDirectory` is enabled. |
-| `deleteWcDirectory`                   | Specify whether to delete the `wc` folder. This option is not evaluated if `deleteAllContentFromOcrDirectory` is enabled. |
-| `deleteXmlDirectory`                  | Specify whether to delete the `xml` folder. This option is not evaluated if `deleteAllContentFromOcrDirectory` is enabled. |
-| `deleteExportDirectory`               | Specify whether to delete the `export` folder. |
-| `deleteImportDirectory`               | Specify whether to delete the `import` folder. |
-| `deleteProcesslogDirectory`           | Specify whether to delete the folder where the files uploaded in the operation log are managed. |
-| `deleteMetadataFiles`                 | Specify here whether the metadata and associated backups should be deleted. |
-| `deactivateProcess`                   | When this option is enabled, all steps of the process are disabled if they have not been completed previously. |
-
+| `deleteAllContentFromOcrDirectory` | Specify whether to delete all data from the `ocr` folder. |
+| `deleteAltoDirectory` | Specify whether to delete the `alto` folder. This option is not evaluated if `deleteAllContentFromOcrDirectory` is enabled. |
+| `deletePdfDirectory` | Specify here whether the `pdf` folder is to be deleted. This option is not evaluated if `deleteAllContentFromOcrDirectory` is enabled. |
+| `deleteTxtDirectory` | Specify whether to delete the `txt` folder. This option is not evaluated if `deleteAllContentFromOcrDirectory` is enabled. |
+| `deleteWcDirectory` | Specify whether to delete the `wc` folder. This option is not evaluated if `deleteAllContentFromOcrDirectory` is enabled. |
+| `deleteXmlDirectory` | Specify whether to delete the `xml` folder. This option is not evaluated if `deleteAllContentFromOcrDirectory` is enabled. |
+| `deleteExportDirectory` | Specify whether to delete the `export` folder. |
+| `deleteImportDirectory` | Specify whether to delete the `import` folder. |
+| `deleteProcesslogDirectory` | Specify whether to delete the folder where the files uploaded in the operation log are managed. |
+| `deleteMetadataFiles` | Specify here whether the metadata and associated backups should be deleted. |
+| `deactivateProcess` | When this option is enabled, all steps of the process are disabled if they have not been completed previously. |
 
 ## Integration of the plugin into the workflow
 
@@ -121,7 +121,7 @@ Since this plugin is usually to be executed automatically, the step in the workf
 
 ## How the plugin works
 
-Once the plugin is fully installed and set up, it is usually executed automatically within the workflow, so there is no manual interaction with the user. Instead, the workflow calls the plugin in the background and starts the deletion of the configured data. In doing so, the configured folders and data are deleted, if they exist. Data that does not exist will be skipped.
-If it has been configured that the process is to be deactivated, all workflow steps are run through and checked whether they have already been closed regularly within the workflow. If this is not the case, the steps are deactivated.
+Once the plugin is fully installed and set up, it is usually executed automatically within the workflow, so there is no manual interaction with the user. Instead, the workflow calls the plugin in the background and starts the deletion of the configured data. In doing so, the configured folders and data are deleted, if they exist. Data that does not exist will be skipped. If it has been configured that the process is to be deactivated, all workflow steps are run through and checked whether they have already been closed regularly within the workflow. If this is not the case, the steps are deactivated.
 
 When the deletion is complete, a message is added to the process log to inform you that this plugin has been called and the data was deleted.
+

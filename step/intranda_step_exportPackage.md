@@ -1,9 +1,10 @@
 ---
 description: >-
-  This step plugin allows you to export the metadata and content of a Goobi process to a configurable path
+  This step plugin allows you to export the metadata and content of a Goobi
+  process to a configurable path
 ---
 
-# Export Package
+# Package Export
 
 ## Introduction
 
@@ -38,7 +39,7 @@ To configure how the plugin should behave, various values can be adjusted in the
 
 The configuration of the plugin is structured as follows:
 
-```xml
+```markup
 <config_plugin>
 
 <config>
@@ -98,7 +99,7 @@ The block `<config>` can occur repeatedly for different projects or workflow ste
 
 ## Integration of the plugin into the workflow
 
-To use the plugin, it must be activated for one or more desired tasks in the workflow. This is done as shown in the following screenshot by selecting the plugin 'intranda_step_exportPackage' from the list of installed plugins.
+To use the plugin, it must be activated for one or more desired tasks in the workflow. This is done as shown in the following screenshot by selecting the plugin 'intranda\_step\_exportPackage' from the list of installed plugins.
 
 ![Assigning the plugin to a specific task](../.gitbook/assets/intranda_step_exportPackage_en.png)
 
@@ -109,3 +110,4 @@ Since this plugin is usually to be executed automatically, the step in the workf
 Once the plugin is fully installed and set up, it is usually executed automatically within the workflow, so there is no manual interaction with the user. Instead, the workflow calls the plugin in the background and performs the configured export to the target directory. The specified contents are all copied into a subdirectory of the defined export path.
 
 Depending on the configuration, an XSLT transformation of the internal or the export METS file can be carried out in addition to the export of the data in order to bring it into a desired format. Depending on this transformation as well as the name of the transformation file, it is finally also saved in the folder of the exported processes.
+
