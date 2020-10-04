@@ -172,13 +172,12 @@ It has the following content:
 
 If the plugin has been installed and configured correctly, it can be found within the menu item Workflow. After entering it, the parameters described above can be adjusted individually in the interface.
 
-![User interface of the plugin](../.gitbook/assets/workflow_barcode_generator_04.png)
+![User interface of the plugin](../.gitbook/assets/intranda_workflow_barcode_generator_04.png)
 
 After clicking the Generate Barcodes button, a PDF file is available for download. A PDF file with the reference configuration listed here looks like this:
 
-![Generated PDF document with the contained barcodes](../.gitbook/assets/workflow_barcode_generator_02.png)
+![Generated PDF document with the contained barcodes](../.gitbook/assets/intranda_workflow_barcode_generator_02.png)
 
 To illustrate the operation, a screencast for the use of the plugin is available here:
 
 {% embed url="https://www.youtube.com/watch?v=Eh8H4k1sKvE" caption="Screencast on how to use the plugin" %}
-

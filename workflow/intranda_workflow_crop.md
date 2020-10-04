@@ -85,8 +85,8 @@ The content of this configuration file is as follows:
 
 If the plugin has been correctly installed and configured, it can be found within the menu item `Workflow`. After entering the plugin, a LayoutWizzard preview view is opened, which is very similar to the [Step plugin for Layoutwizzard](https://docs.goobi.io/goobi-workflow-plugins-en/step/layoutwizzard/01_use/01_preview).
 
-![Preview view in the LayoutWizzard workflow plugin](../.gitbook/assets/lw_workflow_01.png)
+![Preview view in the LayoutWizzard workflow plugin](../.gitbook/assets/intranda_workflow_crop_01.png)
 
 The operation of this plugin is largely identical to that of the regular LayoutWizard within the preview mode. The only difference worth mentioning here is the presentation of the individual processes, which are visually separated from each other and can be completed by a simple click on the corresponding button. The display of the images is then updated and shows the next process.
 
-![Completion of all images of a process](../.gitbook/assets/lw_workflow_02.png)
+![Completion of all images of a process](../.gitbook/assets/intranda_workflow_crop_02.png)

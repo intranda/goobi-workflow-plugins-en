@@ -77,10 +77,10 @@
 
 ## Workflow plugins <a id="workflow"></a>
 
-* [Generic import plugin for excel files including validation](workflow/plugin-workflow-excelimport.md)
-* [Barcode Generator](workflow/plugin-workflow-barcode-generator.md)
-* [LayoutWizzard workflow plugin](workflow/plugin-workflow-crop.md)
-* [Massenupload](workflow/plugin-workflow-massupload.md)
+* [Generic import plugin for excel files including validation](workflow/intranda_workflow_excelimport.md)
+* [Barcode Generator](workflow/intranda_workflow_barcode_generator.md)
+* [LayoutWizzard workflow plugin](workflow/intranda_workflow_crop.md)
+* [Massenupload](workflow/intranda_workflow_massupload.md)
 
 ## Other
 

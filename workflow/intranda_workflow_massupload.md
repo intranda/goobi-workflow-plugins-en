@@ -68,11 +68,11 @@ The contents of this configuration file are as follows:
 
 To use this plugin, the user must have the correct role authorisation.
 
-![Without correct authorization the plugin cannot be used](../.gitbook/assets/workflow_massupload1_en.png)
+![Without correct authorization the plugin cannot be used](../.gitbook/assets/intranda_workflow_massupload1_en.png)
 
 Therefore please assign the role `Plugin_Goobi_Massupload` to the group.
 
-![Correctly assigned role for users](../.gitbook/assets/workflow_massupload2_en.png)
+![Correctly assigned role for users](../.gitbook/assets/intranda_workflow_massupload2_en.png)
 
 ## Explanation of the configuration options
 
@@ -92,14 +92,14 @@ The configuration of the plugin is as follows:
 
 If the plugin has been correctly installed and configured, it can be found within the menu item 'Workflow'.
 
-![Opened plugin for upload](../.gitbook/assets/workflow_massupload3_en.png)
+![Opened plugin for upload](../.gitbook/assets/intranda_workflow_massupload3_en.png)
 
 At this point, files can either be uploaded or read from the user directory. Once the file names or images have been analysed, Goobi workflow shows the processes to which the imported images can be assigned.
 
-![Analysed files with display of the associated processes](../.gitbook/assets/workflow_massupload4_en.png)
+![Analysed files with display of the associated processes](../.gitbook/assets/intranda_workflow_massupload4_en.png)
 
 With a click on the button `Import files into processes` the images are now moved to the directories of the detected processes and the workflow is continued.
 
 Please note: If barcodes are to be recognised in order to determine the processes from them, it is important that the barcodes are also available in sufficient size and quality for the recognition to be successful.
 
-![Digitised separator sheets with barcodes for automatic recognition](../.gitbook/assets/workflow_massupload5.png)
+![Digitised separator sheets with barcodes for automatic recognition](../.gitbook/assets/intranda_workflow_massupload5.png)
