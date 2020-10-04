@@ -20,7 +20,7 @@ Export plugins are used to export data from Goobi workflow to another system. Th
 
 Export plug-ins within Goobi are set up in such a way that they are selected from the list of step plug-ins within a workflow for a step and the `Export` checkbox is also activated. Usually, the checkbox `Automatic task` is also selected in order to have the exports executed automatically in the course of the workflow.
 
-![Export Plugin for Fedora within a task](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LZ4vYcdbp6Dw7s7NKy0%2F-LZnn2ZtNTCCKiXobWA9%2F-LZnnEnsDf8TtAE84tHr%2Foverview_export_de.png?alt=media&token=594da179-6178-4ed1-90e6-f0ff25e56686)
+![Export Plugin for Fedora within a task](.gitbook/assets/overview_export_en.png)
 
 Some export plugins have their own configuration file. This file is generally named like the plugin itself and is usually located at the following path:
 
@@ -46,7 +46,7 @@ If a plugin also has a user interface in addition to the actual functionality, t
 
 Step plugins in Goobi are set up in such a way that they are selected as plugins within a task.
 
-![Step Plugin for Image Control within a Task](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LZ4vYcdbp6Dw7s7NKy0%2F-LZnn2ZtNTCCKiXobWA9%2F-LZnnHXkWmQ690kcz76y%2Foverview_step_de.png?alt=media&token=de702227-b691-425c-9d76-d1c031e8f5fe)
+![Step Plugin for Image Control within a Task](.gitbook/assets/overview_step_en.png)
 
 Please note that there are currently three different types within Step Plugins:
 
@@ -56,7 +56,7 @@ Please note that there are currently three different types within Step Plugins:
 | **Part GUI** | The plugin brings along a part for a user interface and is visually integrated within a processed task as if it were part of the Goobi core. Here the user can interact with the user interface. Example: A plugin for uploading images within a task. |
 | **Full GUI** | The plugin comes with a complete user interface. This is not directly integrated into the task. Instead, the user is offered a button to enter the plugin so that he can interact with it. Example: Plugin for image control. |
 
-![Step Plugin for image control within a task](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LZ4vYcdbp6Dw7s7NKy0%2F-LZoBGIGyj5S-p4ygs2S%2F-LZoBRcPBnhIxP9vIP8r%2Foverview_step2_de.png?alt=media&token=d0752552-3d61-40fe-999f-038eadbd03b4)
+![Step Plugin for image control within a task](.gitbook/assets/overview_step2_en.png)
 
 Some Step Plugins have their own configuration file. This file is generally named like the plugin itself and is usually located at the following path:
 
@@ -76,7 +76,7 @@ Opac plugins are usually installed in this path:
 
 After installing such a plugin, it is available in the `Search in Opac` field within the Create Processes in Goobi screen.
 
-![Opac Plugin for querying data from an external data source \(catalogue\)](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LZ4vYcdbp6Dw7s7NKy0%2F-LZnn2ZtNTCCKiXobWA9%2F-LZnnKSOopU9zjkQkcnP%2Foverview_opac_de.png?alt=media&token=f0be182c-c04a-49da-8334-a5df11188a3f)
+![Opac Plugin for querying data from an external data source \(catalogue\)](.gitbook/assets/overview_opac_en.png)
 
 ## Import Plugins
 
@@ -90,7 +90,7 @@ The import plugins are installed in the folder:
 
 These plugins are used in a separate mask for mass imports in which you select the different import mechanism and the desired plugin before selecting the data.
 
-![Import Plugin for data transfer from provided directories with xml files as data source](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LZ4vYcdbp6Dw7s7NKy0%2F-LZoBGIGyj5S-p4ygs2S%2F-LZoBfsdsUHN9J9U2ecg%2Foverview_import_de.png?alt=media&token=407fa8ca-a567-4d4c-96a9-7038f98978e2)
+![Import Plugin for data transfer from provided directories with xml files as data source](.gitbook/assets/overview_import_en.png)
 
 Some import plugins have their own configuration file. This is generally named like the plugin itself and is usually located at the following path:
 
@@ -114,7 +114,7 @@ The installation of the administration plugins takes place in the folder:
 /opt/digiverso/goobi/plugins/GUI/
 ```
 
-![The Vocabulary Manager as Administration Plugin](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LZ4vYcdbp6Dw7s7NKy0%2F-LZoBGIGyj5S-p4ygs2S%2F-LZoBpiUKp1Q_hn1Z36f%2Foverview_administration_de.png?alt=media&token=cabebc54-d91f-4212-897d-1c0b4eec5a80)
+![The Vocabulary Manager as Administration Plugin](.gitbook/assets/overview_administration_en.png)
 
 Some administration plugins have their own configuration file. This file is generally named like the plugin itself and is usually located at the following path:
 
@@ -138,7 +138,7 @@ Since most workflow plugins have a user interface in addition to the actual func
 /opt/digiverso/goobi/plugins/GUI/
 ```
 
-![The workflow plugin for mass upload of images for automatic assignment to existing processes](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LZ4vYcdbp6Dw7s7NKy0%2F-LZoBGIGyj5S-p4ygs2S%2F-LZoBuXhcAjAkMs4B5X9%2Foverview_workflow_de.png?alt=media&token=e2a7b3f4-2ee0-4db1-a001-9c73182dc073)
+![The workflow plugin for mass upload of images for automatic assignment to existing processes](.gitbook/assets/overview_workflow_en.png)
 
 Some administration plugins have their own configuration file. This file is generally named like the plugin itself and is usually located at the following path:
 
@@ -162,7 +162,7 @@ The user interface of the dashboards must also be installed in the following fol
 /opt/digiverso/goobi/plugins/GUI/
 ```
 
-![A dashboard plugin with advanced information about the Goobi instance](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LZ4vYcdbp6Dw7s7NKy0%2F-LZoBGIGyj5S-p4ygs2S%2F-LZoByyyrZnYO17qnknb%2Foverview_dashboard_de.png?alt=media&token=78b159ac-761f-4bf2-a8e1-d7c2b8a119e1)
+![A dashboard plugin with advanced information about the Goobi instance](.gitbook/assets/overview_dashboard_en.png)
 
 Some Dashboard plugins have their own configuration file. This is generally named like the plugin itself and is usually located at the following path:
 
@@ -192,7 +192,7 @@ The user interface of the statistic plugins must also be installed in the follow
 /opt/digiverso/goobi/plugins/GUI/
 ```
 
-![Statistics plugin for displaying completed tasks per year](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LZ4vYcdbp6Dw7s7NKy0%2F-LZoBGIGyj5S-p4ygs2S%2F-LZoC3py47dPGjz2q_Je%2Foverview_statistics_de.png?alt=media&token=67a4f9cb-77b4-4fa5-8811-3132054e7832)
+![Statistics plugin for displaying completed tasks per year](.gitbook/assets/overview_statistics_en.png)
 
 ## Validation Plugins <a id="validation-plugins"></a>
 
@@ -206,7 +206,7 @@ The validation plugins are installed in the folder:
 
 The validation plug-in must then be selected accordingly in the `Validation plug-in` field within the task for the required workflow step.
 
-![Validation Plugin for the validation of file names after the import of images](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LZ4vYcdbp6Dw7s7NKy0%2F-LZoBGIGyj5S-p4ygs2S%2F-LZoC8iMb0KQZdw0pUmD%2Foverview_validation_de.png?alt=media&token=0effebf7-fc56-4a74-aa5b-a76d5d767291)
+![Validation Plugin for the validation of file names after the import of images](.gitbook/assets/overview_validation_en.png)
 
 Some validation plugins have their own configuration file. This is generally named like the plugin itself and is usually located at the following path:
 
@@ -226,7 +226,7 @@ Web-API Plugins are installed in the following folder:
 
 Web-API plugins do not have their own user interface and are only used for communication via HTTP calls.
 
-![Web-API Plugin for executing a command via HTTP](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LZ4vYcdbp6Dw7s7NKy0%2F-LZoBGIGyj5S-p4ygs2S%2F-LZoCEIFUPd5nQ5wzi7g%2Foverview_webapi.png?alt=media&token=24be2697-62cb-4d50-9832-8eadc284870e)
+![Web-API Plugin for executing a command via HTTP](.gitbook/assets/overview_webapi.png)
 
 Please note that an access can be defined individually for each command. This is done via the following configuration file:
 
@@ -251,7 +251,3 @@ Like the Web-API plugins, the REST plugins do not have their own user interface.
 ```text
 /opt/digiverso/goobi/config/goobi_webapi.xml
 ```
-
-[  
-](https://app.gitbook.com/@intranda/s/goobi-workflow-plugins-de/administration-plugins/catalogue-poller)
-
