@@ -2,7 +2,7 @@
 
 Below the image area are several buttons to exit the plugin and continue the workflow.
 
-![Buttons for exiting the plugin below the image display](../../../../.gitbook/assets/layoutwizzard_04.png)
+![Buttons for exiting the plugin below the image display](../../../../.gitbook/assets/intranda_step_crop_04.png)
 
 <table>
   <thead>
@@ -14,7 +14,7 @@ Below the image area are several buttons to exit the plugin and continue the wor
   <tbody>
     <tr>
       <td style="text-align:left">
-        <img src="../../../../.gitbook/assets/layoutwizzard_51.png" alt/>
+        <img src="../../../../.gitbook/assets/intranda_step_crop_51.png" alt/>
       </td>
       <td style="text-align:left">This button saves all configurations and image data made in the interface
         for the current process and closes the plugin. The user is then returned
@@ -24,7 +24,7 @@ Below the image area are several buttons to exit the plugin and continue the wor
       <td style="text-align:left">
         <p></p>
         <p>
-          <img src="../../../../.gitbook/assets/layoutwizzard_49.png" alt/>
+          <img src="../../../../.gitbook/assets/intranda_step_crop_49.png" alt/>
         </p>
       </td>
       <td style="text-align:left">This button saves all the configurations and image data made in the interface
@@ -34,7 +34,7 @@ Below the image area are several buttons to exit the plugin and continue the wor
     </tr>
     <tr>
       <td style="text-align:left">
-        <img src="../../../../.gitbook/assets/layoutwizzard_50.png" alt/>
+        <img src="../../../../.gitbook/assets/intranda_step_crop_50.png" alt/>
       </td>
       <td style="text-align:left">This button saves all configurations and image data made in the interface
         for the current process and closes the plugin. The user is then taken to
@@ -44,7 +44,7 @@ Below the image area are several buttons to exit the plugin and continue the wor
     </tr>
     <tr>
       <td style="text-align:left">
-        <img src="../../../../.gitbook/assets/layoutwizzard_52.png" alt/>
+        <img src="../../../../.gitbook/assets/intranda_step_crop_52.png" alt/>
       </td>
       <td style="text-align:left">This button terminates the plugin immediately without saving any data
         before, except for image derivatives that have been saved via the save
@@ -53,4 +53,3 @@ Below the image area are several buttons to exit the plugin and continue the wor
     </tr>
   </tbody>
 </table>
-

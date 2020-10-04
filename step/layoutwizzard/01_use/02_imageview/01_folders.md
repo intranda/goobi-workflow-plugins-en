@@ -2,25 +2,25 @@
 
 In the Folder and File Options area, global settings for handling files can be made. You can also reset the complete LayoutWizzard workflow from here.
 
-![Activated area for folder and file options](../../../../.gitbook/assets/layoutwizzard_13%20%281%29.png)
+![Activated area for folder and file options](../../../../.gitbook/assets/intranda_step_crop_13.png)
 
 ## Switching between display modes
 
 Within the overview, the mode for the display can be switched in the upper left corner. Usually the LayoutWizard opens in normal mode. The most important settings can already be edited directly here. If you want to display the advanced settings options, you can activate the advanced mode. Switching between the two display modes is possible by using this button in the title bar:
 
-![Button for switching between normal and extended display mode](../../../../.gitbook/assets/layoutwizzard_40.png)
+![Button for switching between normal and extended display mode](../../../../.gitbook/assets/intranda_step_crop_40.png)
 
 ## Normal Mode
 
 The following options are available in normal display mode.
 
-![Activated normal mode](../../../../.gitbook/assets/layoutwizzard_47.png)
+![Activated normal mode](../../../../.gitbook/assets/intranda_step_crop_47.png)
 
 ### Page mode
 
 The page mode is used to define the page processing in right, left, double or single pages. Each mode sets the orientation for all images once. Subsequent changes to the orientation of individual pages change the orientation of all subsequent pages as specified by the page mode. The internal name within the table below is the one used in the LayoutWizzard page mode configuration file.
 
-![Drop-down element for selecting the mode](../../../../.gitbook/assets/layoutwizzard_44.png)
+![Drop-down element for selecting the mode](../../../../.gitbook/assets/intranda_step_crop_44.png)
 
 | Page mode | Description | Internal name |
 | :--- | :--- | :--- |
@@ -36,7 +36,7 @@ The page mode is used to define the page processing in right, left, double or si
 
 The setting for the writing direction determines the direction in which the text flows. If the writing direction is `right-to-left`, the first page after binding is a right page in alternating page mode. If the writing direction is `left-to-right`, the first page after the cover is a left page. In case of the `double page mode`, the respective part of the double page is saved as a separate file in the corresponding order before the other part of the double page.
 
-![Drop-down element for selecting the writing direction](../../../../.gitbook/assets/layoutwizzard_45.png)
+![Drop-down element for selecting the writing direction](../../../../.gitbook/assets/intranda_step_crop_45.png)
 
 | Writing direction | Description |
 | :--- | :--- |
@@ -47,13 +47,13 @@ The setting for the writing direction determines the direction in which the text
 
 With the button Discard and start over all LayoutWizzard data for this operation can be deleted. This includes all analysis data as well as the configuration specific to this process. After clicking on this button, a menu will open where you can select the desired template for the new configuration. A subsequent click on `OK` discards all previous data and creates a new configuration for the process based on the selected template.
 
-![Button to reprocess all images](../../../../.gitbook/assets/layoutwizzard_43.png)
+![Button to reprocess all images](../../../../.gitbook/assets/intranda_step_crop_43.png)
 
 ## Extended mode
 
 The following options are only available in advanced mode.
 
-![Activated extended mode with additional selection elements](../../../../.gitbook/assets/layoutwizzard_48.png)
+![Activated extended mode with additional selection elements](../../../../.gitbook/assets/intranda_step_crop_48.png)
 
 ### Input folder
 
@@ -76,7 +76,7 @@ This option allows you to specify how the compression of images created after cr
 
 Outliers are images that show strikingly different values in the analysis than the maximum of 12 images before and after them. Outliers are also images whose analysis could not be completed due to errors or timeouts. Outliers are displayed in red in the file list and surrounded by a red frame in the preview view.
 
-![Selected outliers within the preview view](../../../../.gitbook/assets/layoutwizzard_12.png)
+![Selected outliers within the preview view](../../../../.gitbook/assets/intranda_step_crop_12.png)
 
 The following outlier types are distinguished and can be selected as to be marked:
 
@@ -99,4 +99,3 @@ If right and left images are scanned separately, but still need to fit together 
 | **Adjustment of opposite sides, left to right** | Opposite sides are cut flush with each other. The opposite side of a left page is always the following right page. |
 | **Adjustment of opposite sides, right to left** | Opposite sides are cut flush with each other. The opposite side of a right-hand page is always the following left-hand page. |
 | **Adjustment on all sides** | All sides are cut as flush as possible. This often causes large untrimmed edges, requires relatively long processing time and is therefore usually not recommended. |
-

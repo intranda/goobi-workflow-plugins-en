@@ -23,7 +23,7 @@ The LayoutWizzard is a tool for the analysis of digitized book pages and similar
 
 The analysis in LayoutWizzard is semi-automatic. It usually starts with an automatic step in which all images are analyzed according to fixed algorithms. The results are then checked in a manual step and corrected if necessary. Finally, in a further automatic step, cropped derivatives of the source images are generated, usually within the derivatives folder in the corresponding Goobi process.
 
-![How the LayoutWizzard works within Goobi workflow](../../.gitbook/assets/layoutwizzard_workflow_en.png)
+![How the LayoutWizzard works within Goobi workflow](../../.gitbook/assets/intranda_step_crop_workflow_en.png)
 
 The automatic work steps \(`Automatic Image Analysis` and `Automatic Cropping`\) are generally outsourced in a TaskManager plug-in so that other work within Goobi is not restricted by a high computing load on the Goobi server. However, it is also possible to run them without the TaskManager plug-in, so that these automatic steps within Goobi Step plug-ins without their own user interface are carried out directly within Goobi workflow.
 
@@ -31,13 +31,13 @@ Manual control of the analysis results with the suggested cropping is carried ou
 
 Depending on the individual installation of Goobi workflow and the respective workflows, the individual work steps can of course be named individually. In the following screenshot, for example, the three successive work steps have been given different names:
 
-![Individual naming of the individual work steps that belong to the LayoutWizzard](../../.gitbook/assets/layoutwizzard_goobi_workflow.png)
+![Individual naming of the individual work steps that belong to the LayoutWizzard](../../.gitbook/assets/intranda_step_crop_goobi_workflow.png)
 
 ## 3. Details on image analysis
 
 LayoutWizzard's image analysis works in several phases in order to arrive at the desired image derivative starting from the original image. For this purpose, each image goes through an image analysis in which the pages are aligned, the object is recognized and the book fold is determined. Accordingly, the image analysis usually consists of the following phases:
 
-![Analysis phases of the LayoutWizzard](../../.gitbook/assets/layoutwizzard_diagramm_en.png)
+![Analysis phases of the LayoutWizzard](../../.gitbook/assets/intranda_step_crop_diagramm_en.png)
 
 <table>
   <thead>
@@ -49,7 +49,7 @@ LayoutWizzard's image analysis works in several phases in order to arrive at the
   <tbody>
     <tr>
       <td style="text-align:left">
-        <img src="../../.gitbook/assets/layoutwizzard_phases_1.png" alt/>
+        <img src="../../.gitbook/assets/intranda_step_crop_phases_1.png" alt/>
       </td>
       <td style="text-align:left">
         <p><b>Start</b>
@@ -60,7 +60,7 @@ LayoutWizzard's image analysis works in several phases in order to arrive at the
     </tr>
     <tr>
       <td style="text-align:left">
-        <img src="../../.gitbook/assets/layoutwizzard_phases_2.png" alt/>
+        <img src="../../.gitbook/assets/intranda_step_crop_phases_2.png" alt/>
       </td>
       <td style="text-align:left">
         <p><b>1. Phase: Deskew Page</b>
@@ -73,7 +73,7 @@ LayoutWizzard's image analysis works in several phases in order to arrive at the
     </tr>
     <tr>
       <td style="text-align:left">
-        <img src="../../.gitbook/assets/layoutwizzard_phases_3.png" alt/>
+        <img src="../../.gitbook/assets/intranda_step_crop_phases_3.png" alt/>
       </td>
       <td style="text-align:left">
         <p><b>2. Phase: Crop Page</b>
@@ -89,7 +89,7 @@ LayoutWizzard's image analysis works in several phases in order to arrive at the
     </tr>
     <tr>
       <td style="text-align:left">
-        <img src="../../.gitbook/assets/layoutwizzard_phases_4.png" alt/>
+        <img src="../../.gitbook/assets/intranda_step_crop_phases_4.png" alt/>
       </td>
       <td style="text-align:left">
         <p><b>3. Phase: Detect Book Spine</b>
@@ -105,7 +105,7 @@ LayoutWizzard's image analysis works in several phases in order to arrive at the
     </tr>
     <tr>
       <td style="text-align:left">
-        <img src="../../.gitbook/assets/layoutwizzard_phases_5.png" alt/>
+        <img src="../../.gitbook/assets/intranda_step_crop_phases_5.png" alt/>
       </td>
       <td style="text-align:left">
         <p><b>End</b>
@@ -119,4 +119,3 @@ LayoutWizzard's image analysis works in several phases in order to arrive at the
 
 [    
 ](https://app.gitbook.com/@intranda/s/goobi-workflow-plugins-de/~/drafts/-LgXmDFUB2JKs4qolX5U/primary/step-plugins/intranda_step_pdfupload)
-
