@@ -4,7 +4,7 @@ description: >-
   process to a configurable path
 ---
 
-# Package Export
+# Export Package
 
 ## Introduction
 
@@ -110,4 +110,3 @@ Since this plugin is usually to be executed automatically, the step in the workf
 Once the plugin is fully installed and set up, it is usually executed automatically within the workflow, so there is no manual interaction with the user. Instead, the workflow calls the plugin in the background and performs the configured export to the target directory. The specified contents are all copied into a subdirectory of the defined export path.
 
 Depending on the configuration, an XSLT transformation of the internal or the export METS file can be carried out in addition to the export of the data in order to bring it into a desired format. Depending on this transformation as well as the name of the transformation file, it is finally also saved in the folder of the exported processes.
-
