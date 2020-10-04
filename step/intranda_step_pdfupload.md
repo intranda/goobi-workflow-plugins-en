@@ -60,19 +60,19 @@ Once the plugin has been installed and configured, it can be used within Goobi's
 
 To do this, the plugin for the `intranda_step_pdfUpload` step must be entered within the desired task.
 
-![Figure 1: Task-Details](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LZ4vYcdbp6Dw7s7NKy0%2F-LZkm-8Idp0-dGY3FOVW%2F-LZkmDunlyVzMjXTYED8%2Fintranda_step_pdfUpload_01.png?alt=media&token=f64096fa-2fd0-46e0-b9de-c032cdcaf8bc)
+![Figure 1: Task-Details](../.gitbook/assets/intranda_step_pdfupload_01.png)
 
 ## Usage
 
 If the corresponding step has been opened by the respective user within which the plugin was configured, a new area for uploading files is available.
 
-![Figure 2: Upload-Plugin](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LZ4vYcdbp6Dw7s7NKy0%2F-LZkm-8Idp0-dGY3FOVW%2F-LZkmTukuSive0Epao8p%2Fintranda_step_pdfUpload_02.png?alt=media&token=b221abc3-b0a0-4e24-870c-0b2a3dcdad73)
+![Figure 2: Upload-Plugin](../.gitbook/assets/intranda_step_pdfupload_02.png)
 
 Using the `Select file` button, you can now select a file which is then transferred to the server using the `Upload file` button. You can optionally enter a comment.
 
 The uploaded file is then listed with some information. There you can also delete the file.
 
-![Figure 3: Uploaded files](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LZ4vYcdbp6Dw7s7NKy0%2F-LZkm-8Idp0-dGY3FOVW%2F-LZkmbWcTTw_g90XAUoT%2Fintranda_step_pdfUpload_03.png?alt=media&token=0edc91d1-a907-4a50-b186-95890348b79a)
+![Figure 3: Uploaded files](../.gitbook/assets/intranda_step_pdfupload_03.png)
 
 Only files whose file extension was previously entered in the list of permitted extensions are accepted. In addition, the file name may only consist of the characters `A-Za-z0-9äöüß-_`. `Spaces` are automatically replaced by `underscores`.
 
@@ -101,4 +101,3 @@ If a file is uploaded, the information is stored in the METS file.
 The transfer to the METS file ensures that the order of the uploaded files is saved persistently.
 
 If the task is then opened again, the information about the uploaded files is taken from the METS file and also displayed.
-

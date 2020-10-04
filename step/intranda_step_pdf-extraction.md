@@ -73,11 +73,10 @@ With `properties`, process properties are written depending on the result of the
 
 After the plugin has been installed, it can be configured in the user interface in a workflow step.
 
-![](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LZ4vYcdbp6Dw7s7NKy0%2F-Lc-k1xNvtCs01RhE-Ef%2F-Lc-sSR95iCb8DbtD_0d%2Fpdf_extraction_step.png?alt=media&token=c79b0f22-2b7a-4a5a-a249-025770343cf8)
+![Configuration of the step in Goobi workflow](../.gitbook/assets/intranda_step_pdf_extraction.png)
 
 ## Usage
 
 To use the plugin, a PDF file must be in the master folder of the process at the time of execution. This is then automatically divided into individual pages. In addition, the full text \(if available\) is extracted and the table of contents of the PDF file is read in order to be entered as structural elements in the METS file.
 
 It is therefore recommended to pre-store another workflow step for the workflow step with this plugin, in which files are loaded into the master folder. This can be done by linking the process folder to the home folder of the user or, for example, in the File-Upload plug-in.
-

@@ -53,7 +53,7 @@ The following is a sample configuration with comments:
         <!-- which projects to use for (can be more than one, otherwise use *) -->
         <project>Register</project>
         <step>Check</step>
-        
+
         <!-- multiple changes can be done within one configuration rule; simply add another 'change' element with other properties here -->
         <change>
             <!-- name of the property to check -->
@@ -84,7 +84,7 @@ The following is a sample configuration with comments:
         <!-- which projects to use for (can be more than one, otherwise use *) -->
         <project>*</project>
         <step>*</step>
-        
+
         <!-- multiple changes can be done within one configuration rule; simply add another 'change' element with other properties here -->
         <change>
             <!-- name of the property to check -->
@@ -110,7 +110,7 @@ The following is a sample configuration with comments:
                 <title>Create METS file</title>
                 <title>Ingest into DigiTool</title>
             </steps>
-        </change> 
+        </change>
     </config>
 
 </config_plugin>
@@ -132,9 +132,8 @@ In each `change` element it is then configured which process property is checked
 
 After the plugin has been installed and configured, it can be configured in the user interface in a workflow step. Make sure that the name of the step is the same as in the configuration file. In addition, a check mark should be set for `Automatic task`.
 
-![Configuration of the Workflow step](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LZ4vYcdbp6Dw7s7NKy0%2F-LddEhXfAu_y7axe1GeP%2F-LddX7uc7QkwOwTuGvva%2FchangeWorkflow_step.png?alt=media&token=26f24d10-1b13-4043-b847-daf3a1ba4780)
+![Configuration of the Workflow step](../.gitbook/assets/intranda_step_changeworkflow.png)
 
 ## Usage
 
 Since the plugin should run fully automatically, there is nothing else to consider for the use of the plugin.
-

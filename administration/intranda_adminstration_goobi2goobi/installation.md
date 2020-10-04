@@ -28,7 +28,7 @@ Plugin_goobi2goobi_export
 
 These roles can be configured within the Goobi workflow user groups. To do this, simply select the roles on the right-hand side or enter them in the input field and then click on the plus icon.
 
-![Adding the required export rights to the user group](../../.gitbook/assets/goobi-to-goobi-roles1_en.png)
+![Adding the required export rights to the user group](../../.gitbook/assets/intranda_administration_goobi_to_goobi_roles1_en.png)
 
 With this configuration the preparation on the side of the initial system is already completed.
 
@@ -64,7 +64,7 @@ Plugin_goobi2goobi_import
 
 This role can be configured within the Goobi workflow user groups by entering it in the input field on the right-hand side and clicking on the plus icon.
 
-![Adding the required import rights to the user group](../../.gitbook/assets/goobi-to-goobi-roles2_de.png)
+![Adding the required import rights to the user group](../../.gitbook/assets/intranda_administration_goobi_to_goobi_roles2_de.png)
 
 ### 2.3 Configuration for importing the infrastructure
 
@@ -274,4 +274,3 @@ Further general settings can be defined within a rule.
 | :--- | :--- | :--- |
 | `skipProcesslog` | `true` | Determines whether the process log of the source system should be transferred \(`false`\) or ignored \(`true`\). |
 | `skipUserImport` | `true` | Specifies whether the users of imported tasks in a workflow within Goobi should be created as deleted users \(`false`\) or whether the information about execution by specific persons should be ignored and thus made anonymous. \(`true`\). |
-

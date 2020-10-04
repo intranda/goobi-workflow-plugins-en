@@ -10,7 +10,7 @@ After configuring the required user rights, the actual export can begin. In most
 
 For most purposes, only this sub-step is required to generate the export files for all desired processes. For all selected processes within the file system, an xml file with all relevant information about the process is generated from the database in the folder of each selected process.
 
-![Exported xml file within a process folder](../../.gitbook/assets/goobi-to-goobi-export-filesystem-processes.png)
+![Exported xml file within a process folder](../../.gitbook/assets/intranda_administration_goobi_to_goobi_export_filesystem_processes.png)
 
 ### Export using GoobiScript
 
@@ -20,7 +20,7 @@ To perform such an export for several processes together, you can start it using
 action:exportDatabaseInformation
 ```
 
-![Calling the export using GoobiScript](../../.gitbook/assets/goobi-to-goobi-export-goobiscript_en.png)
+![Calling the export using GoobiScript](../../.gitbook/assets/intranda_administration_goobi_to_goobi_export_goobiscript_en.png)
 
 When you run this GoobiScript, you will find the relevant export xml file \(e.g. `5_db_export.xml`\) in each process folder.
 
@@ -28,7 +28,7 @@ When you run this GoobiScript, you will find the relevant export xml file \(e.g.
 
 To perform such an export for a single process, it is possible to start it within the details of a process. To do this, simply click on the corresponding icon for the export.
 
-![Operation details with the icon for exporting the data to a zip file](../../.gitbook/assets/goobi-to-goobi-export-single_en.png)
+![Operation details with the icon for exporting the data to a zip file](../../.gitbook/assets/intranda_administration_goobi_to_goobi_export_single_en.png)
 
 Unlike exporting via GoobiScript, this starts a download of the xml file that contains the database information.
 
@@ -40,11 +40,11 @@ Unlike exporting via GoobiScript, this starts a download of the xml file that co
 
 If you want to transfer more than just processes from one Goobi workflow to another, you can also generate export data for process templates. However, as GoobiScript is not available within the process template area, this export can be done from the provided `Goobi-to-Goobi Export` plugin within the `Administration` menu.
 
-![User interface of the Goobi-to-Goobi Export plugin](../../.gitbook/assets/goobi-to-goobi-export_en.png)
+![User interface of the Goobi-to-Goobi Export plugin](../../.gitbook/assets/intranda_administration_goobi_to_goobi_export_en.png)
 
 Now click on the button `Generate database files for process templates`. This will also save an xml file with the database information for each process template in the file system and can be used for the transfer to the target system.
 
-![Exported xml file within the folder of a process template](../../.gitbook/assets/goobi-to-goobi-export-filesystem-templates.png)
+![Exported xml file within the folder of a process template](../../.gitbook/assets/intranda_administration_goobi_to_goobi_export_filesystem_templates.png)
 
 ## 3rd sub-step: Export of the infrastructure
 
@@ -70,5 +70,4 @@ If, in addition to the actual Goobi processes, you also want to transfer more de
 
 Once you have selected the desired information and clicked on the `Download infrastructure as a zip file` button, Goobi generates a zip file and offers it for download under the name `goobi-to-goobi-export.zip`. This zip file now contains all the information selected from the Goobi database for transfer to the target system.
 
-![Downloaded zip file with information about the infrastructure](../../.gitbook/assets/goobi-to-goobi-export-filesystem-zip.png)
-
+![Downloaded zip file with information about the infrastructure](../../.gitbook/assets/intranda_administration_goobi_to_goobi_export_filesystem_zip.png)

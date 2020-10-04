@@ -168,7 +168,7 @@ With `docstruct` the following fields are expected:
 
 In Goobi, the `write-xmp` plugin must be selected in the steps in which the image metadata is to be written. In addition, these steps should be marked as `automatic` so that they do not have to be triggered manually. Since the writing of the metadata is based on the data of the METS file and expects a finished pagination and structuring, the writing of the XMP headers should happen only after the metadata processing.
 
-![Configuration of the step in Goobi workflow](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LZ4vYcdbp6Dw7s7NKy0%2F-LbgAJzDJpEa0NrU0j8n%2F-LbgBmsVUnwVl_KgznYD%2Fstep.png?alt=media&token=e990dffa-183c-4da9-9552-c4d88c53fbb1)
+![Configuration of the step in Goobi workflow](../.gitbook/assets/intranda_step_xmp.png)
 
 ## Example: Writing Dublin Core metadata to all Images of a process
 
@@ -375,4 +375,3 @@ XMP headers allow you to write the complete Dublin Core metadata record. With th
     </config>
 </config_plugin>
 ```
-

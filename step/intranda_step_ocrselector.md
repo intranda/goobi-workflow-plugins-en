@@ -44,27 +44,26 @@ The plugin does not have its own configuration, but reads the default value for 
 
 After the plugin has been installed, it can be configured in the user interface in a workflow step.
 
-![Task-Details](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LZ4vYcdbp6Dw7s7NKy0%2F-L_6jqwjfH1C-_n12KML%2F-L_6oO9dACHzIFva5oNK%2Fconfig.png?alt=media&token=5219732b-5940-45a1-9644-d800f7b6cd6e)
+![Task-Details](../.gitbook/assets/intranda_step_ocrselector_config.png)
 
 ## Usage
 
 If the corresponding task was opened by the respective user within which the plugin was configured, the plugin is displayed to the user in the task. After the plugin has been entered, a new view opens in which all images belonging to the process are displayed.
 
-![Plugin interface](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LZ4vYcdbp6Dw7s7NKy0%2F-L_6jqwjfH1C-_n12KML%2F-L_6pOSyTTKRz5ecTWxf%2Fentry.png?alt=media&token=e41b2d02-8331-4092-b559-d2bbe80fd878)
+![Plugin interface](../.gitbook/assets/intranda_step_ocrselector_entry.png)
 
 The current selection \(antiqua, fracture, no OCR\) is displayed below each image. The preselection is read from the `Font Type` process property.
 
 Individual images can now be selected here by left-clicking. Multiple selection is possible by `Ctrl + click` for individual pages and `Shift + click` for a range of pages.
 
-![Multiple selection](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LZ4vYcdbp6Dw7s7NKy0%2F-L_6jqwjfH1C-_n12KML%2F-L_6tdN2m3eviq9tCNhX%2Fselection.png?alt=media&token=ed314040-9bf0-4b95-85db-b09de1b574cb)
+![Multiple selection](../.gitbook/assets/intranda_step_ocrselector_selection.png)
 
 If one or more pages are selected, a context menu can be opened by right-clicking on one of the selected pages.
 
-![Context menu](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LZ4vYcdbp6Dw7s7NKy0%2F-L_6jqwjfH1C-_n12KML%2F-L_6uF1e05vQntgEiYmV%2Fcontext.png?alt=media&token=5156c3c8-b759-4cfe-92ac-d5f1c03d046f)
+![Context menu](../.gitbook/assets/intranda_step_ocrselector_context.png)
 
 Here you can choose between the three options `antiqua`, `fracture` and `no OCR`. Click on one of the three options to apply it to all selected pages.
 
-![Updated - no OCR for cover and blank pages](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LZ4vYcdbp6Dw7s7NKy0%2F-L_6jqwjfH1C-_n12KML%2F-L_6uYsYBJs2fmXtmJDf%2Fupdated.png?alt=media&token=09afe1f0-0af2-46d7-ba42-a92c235d215b)
+![Updated - no OCR for cover and blank pages](../.gitbook/assets/intranda_step_ocrselector_updated.png)
 
 The plugin can be exited by clicking on `Exit plugin` after successful selection. The plugin will automatically be saved again. The `Save` button can be used for temporary saving.
-

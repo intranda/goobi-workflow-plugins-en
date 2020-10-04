@@ -95,7 +95,6 @@ In addition to this plugin-specific configuration, the file `/opt/digiverso/goob
 
 After the plugin has been installed and configured, it must be added to a workflow step in Goobi workflow.
 
-![Configuration of the step in Goobi Workflow](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LZ4vYcdbp6Dw7s7NKy0%2F-L_6uw3ws9N-nqiCHz5A%2F-L_7-Ck0AlXZ4Ufa97aQ%2Fconfig_gui.png?alt=media&token=38a0e134-9da8-4b9d-bb68-6df1c8145efc)
+![Configuration of the step in Goobi Workflow](../.gitbook/assets/intranda_step_mixedocr_config_gui.png)
 
 The plugin is usually executed automatically, so you should check the box `Automatic task`. The plugin `intranda_step_mixedocr` must also be selected under `Plugin for step`.
-
