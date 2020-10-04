@@ -75,11 +75,11 @@ With this adjustment to the ruleset, the preparations for using the plugin are a
 
 After the plugin is fully configured, it can be used. To do this, first add the newly defined metadata `InternalNote` within the volume that is to be marked as the master anchor and enter as value `AnchorMaster`. The following screenshot illustrates this:
 
-![The periodical volume was assigned the metadata InternalNote with the value AnchorMaster](../.gitbook/assets/copy_anchor_01.png)
+![The periodical volume was assigned the metadata InternalNote with the value AnchorMaster](../.gitbook/assets/intranda_administration_copy_anchor_01.png)
 
 With this change, the thus adjusted periodical volume was defined as a master. From now on, the metadata of the parent work \(e.g. the periodical\) used there will serve as master for all other related volumes. Changes that are to be made for all volumes within the anchor files are therefore from now on made within this record.
 
-![Adjustments to this anchor can be applied to all associated volumes with the plugin from now on](../.gitbook/assets/copy_anchor_02.png)
+![Adjustments to this anchor can be applied to all associated volumes with the plugin from now on](../.gitbook/assets/intranda_administration_copy_anchor_02.png)
 
 ### Transfer of metadata for all associated volumes
 
@@ -87,9 +87,8 @@ Once a volume has been defined as the master within a Goobi process, the plug-in
 
 First open the plugin via the menu `Administration` and there the menu item `Copy Master-Anchor data`.
 
-![Open the plugin via the Administration menu](../.gitbook/assets/copy_anchor_03.png)
+![Open the plugin via the Administration menu](../.gitbook/assets/intranda_administration_copy_anchor_03.png)
 
 In the input field of the plugin, enter the catalog identifier of the parent work \(e.g. the ID of the periodical\) and then click on the button 'Start copying'. This will start the copy process, which automatically copies the metadata of the master anchor record to all associated volumes \(e.g. all volumes of the periodical\).
 
-![Performing the copy operation](../.gitbook/assets/copy_anchor_04.png)
-
+![Performing the copy operation](../.gitbook/assets/intranda_administration_copy_anchor_04.png)
