@@ -15,3 +15,4 @@ Since the individual workflow steps of the LayoutWizzard work on a common databa
 ```
 
 This file contains all configuration settings for the corresponding process as well as the analysis data for each image, from which the derivatives are created in the final saving step.
+

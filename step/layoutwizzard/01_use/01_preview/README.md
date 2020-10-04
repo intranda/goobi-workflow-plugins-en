@@ -18,3 +18,4 @@ Note that you can also adjust an image \(rotation, book fold or frame\) by holdi
 Besides the possibility to change each image directly from the preview view, the three buttons next to each image allow direct access to the detailed view of the image analysis for the corresponding image within the single page view.
 
 Using the `Forward` and `Backward` buttons above and below the preview list, the user can scroll through the pages of the displayed images.
+

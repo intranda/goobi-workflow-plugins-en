@@ -101,3 +101,4 @@ If a file is uploaded, the information is stored in the METS file.
 The transfer to the METS file ensures that the order of the uploaded files is saved persistently.
 
 If the task is then opened again, the information about the uploaded files is taken from the METS file and also displayed.
+

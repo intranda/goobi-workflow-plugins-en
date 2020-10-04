@@ -1,6 +1,7 @@
 ---
 description: >-
-  This workflow plugin allows you to process images from multiple Goobi processes within the LayoutWizzard interface.
+  This workflow plugin allows you to process images from multiple Goobi
+  processes within the LayoutWizzard interface.
 ---
 
 # LayoutWizzard workflow plugin
@@ -90,3 +91,4 @@ If the plugin has been correctly installed and configured, it can be found withi
 The operation of this plugin is largely identical to that of the regular LayoutWizard within the preview mode. The only difference worth mentioning here is the presentation of the individual processes, which are visually separated from each other and can be completed by a simple click on the corresponding button. The display of the images is then updated and shows the next process.
 
 ![Completion of all images of a process](../.gitbook/assets/intranda_workflow_crop_02.png)
+

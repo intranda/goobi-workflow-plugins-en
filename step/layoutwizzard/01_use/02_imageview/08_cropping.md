@@ -8,9 +8,10 @@ Additionally, this area has buttons to transfer the size and position of the cur
 
 | Icon | Description |
 | :--- | :--- |
-| ![](../../../../.gitbook/assets/intranda_step_crop_30.png)  | Transfer frame to all other images. |
-| ![](../../../../.gitbook/assets/intranda_step_crop_31.png)  | Transfer frame to all subsequent images. |
-| ![](../../../../.gitbook/assets/intranda_step_crop_41.png)  | Transfer frame to all right images. This is only available if the current image is a right image. |
-| ![](../../../../.gitbook/assets/intranda_step_crop_42.png)  | Transfer frame to all subsequent right images. This is only available if the current image is a right image. |
-| ![](../../../../.gitbook/assets/intranda_step_crop_32.png)  | Transfer frame to all left images. This is only available if the current image is a left image. |
-| ![](../../../../.gitbook/assets/intranda_step_crop_33.png)  | Transfer frame to all subsequent left images. This is only available if the current image is a left image. |
+| ![](../../../../.gitbook/assets/intranda_step_crop_30.png) | Transfer frame to all other images. |
+| ![](../../../../.gitbook/assets/intranda_step_crop_31.png) | Transfer frame to all subsequent images. |
+| ![](../../../../.gitbook/assets/intranda_step_crop_41.png) | Transfer frame to all right images. This is only available if the current image is a right image. |
+| ![](../../../../.gitbook/assets/intranda_step_crop_42.png) | Transfer frame to all subsequent right images. This is only available if the current image is a right image. |
+| ![](../../../../.gitbook/assets/intranda_step_crop_32.png) | Transfer frame to all left images. This is only available if the current image is a left image. |
+| ![](../../../../.gitbook/assets/intranda_step_crop_33.png) | Transfer frame to all subsequent left images. This is only available if the current image is a left image. |
+

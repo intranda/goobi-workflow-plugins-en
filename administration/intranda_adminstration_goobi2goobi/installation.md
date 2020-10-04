@@ -274,3 +274,4 @@ Further general settings can be defined within a rule.
 | :--- | :--- | :--- |
 | `skipProcesslog` | `true` | Determines whether the process log of the source system should be transferred \(`false`\) or ignored \(`true`\). |
 | `skipUserImport` | `true` | Specifies whether the users of imported tasks in a workflow within Goobi should be created as deleted users \(`false`\) or whether the information about execution by specific persons should be ignored and thus made anonymous. \(`true`\). |
+

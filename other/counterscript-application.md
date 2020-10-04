@@ -169,9 +169,9 @@ show tables;
 
 This will trigger the following response from the MySQL server:
 
-|  Tables\_in\_counterscript  |
+| Tables\_in\_counterscript |
 | :--- |
-|  files                     |
+| files |
 
 The database has a files table with the following structure:
 
@@ -181,20 +181,20 @@ describe files;
 
 The response from the database is shown below:
 
-|  **Field**            |  **Type**            |  **Null** |  **Key**  |  **Default**  |  **Extra**  |
+| **Field** | **Type** | **Null** | **Key** | **Default** | **Extra** |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-|  id                 |  int\(10\) unsigned  |  NO    |  PRI  |  NULL     |  auto\_increment  |
-|  filename           |  varchar\(255\)      |  YES   |  |  NULL     |  |
-|  bnumber            |  varchar\(255\)      |  YES   |  |  NULL     |  |
-|  material           |  varchar\(255\)      |  YES   |  |  NULL     |  |
-|  access\_status      |  varchar\(255\)      |  YES   |  |  NULL     |  |
-|  access\_licence     |  varchar\(255\)      |  YES   |  |  NULL     |  |
-|  player\_permission  |  varchar\(255\)      |  YES   |  |  NULL     |  |
-|  status             |  varchar\(255\)      |  YES   |  |  NULL     |  |
-|  creation\_date      |  datetime          |  YES   |  |  NULL     |  |
-|  modification\_date  |  datetime          |  YES   |  |  NULL     |  |
-|  deletion\_date      |  datetime          |  YES   |  |  NULL     |  |
-|  current            |  tinyint\(1\)        |  YES   |  |  0        |  |
+| id | int\(10\) unsigned | NO | PRI | NULL | auto\_increment |
+| filename | varchar\(255\) | YES |  | NULL |  |
+| bnumber | varchar\(255\) | YES |  | NULL |  |
+| material | varchar\(255\) | YES |  | NULL |  |
+| access\_status | varchar\(255\) | YES |  | NULL |  |
+| access\_licence | varchar\(255\) | YES |  | NULL |  |
+| player\_permission | varchar\(255\) | YES |  | NULL |  |
+| status | varchar\(255\) | YES |  | NULL |  |
+| creation\_date | datetime | YES |  | NULL |  |
+| modification\_date | datetime | YES |  | NULL |  |
+| deletion\_date | datetime | YES |  | NULL |  |
+| current | tinyint\(1\) | YES |  | 0 |  |
 
 The contents of the table are:
 
@@ -204,11 +204,11 @@ select * from files;
 
 A sample response from the database is given below:
 
-| **id**     | **filename**    | **bnumber**      | **material**  | **access\_status**  | **access\_licence**  | **player\_permission**  | **status**   | **creation\_date**     | **modification\_date**    | **deletion\_date**        | **current**  |
+| **id** | **filename** | **bnumber** | **material** | **access\_status** | **access\_licence** | **player\_permission** | **status** | **creation\_date** | **modification\_date** | **deletion\_date** | **current** |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-|  97297  |  /mnt/export/7/4/7/6/b21286747\_2.xml  |  b21286747\_2  |  |  Open           |  PDM             |  63                 |  deleted   |  2015-09-24 14:51:57  |  NULL                 |  2015-11-26 00:16:54  |        1  |
-|  98992  |  /mnt/export/9/6/7/5/b21355769.xml    |  b21355769    |  |  Open           |  CC-BY-NC        |  63                 |  modified  |  2015-08-18 22:21:33  |  2015-12-02 16:18:40  |  NULL                 |        1  |
-|  99001  |  /mnt/export/x/4/9/4/b2265494x.xml    |  b2265494x    |  t         |  Open           |  CC-BY-NC        |  63                 |  newly     |  2015-12-02 17:34:48  |  NULL                 |  NULL                 |        1   |
+| 97297 | /mnt/export/7/4/7/6/b21286747\_2.xml | b21286747\_2 |  | Open | PDM | 63 | deleted | 2015-09-24 14:51:57 | NULL | 2015-11-26 00:16:54 | 1 |
+| 98992 | /mnt/export/9/6/7/5/b21355769.xml | b21355769 |  | Open | CC-BY-NC | 63 | modified | 2015-08-18 22:21:33 | 2015-12-02 16:18:40 | NULL | 1 |
+| 99001 | /mnt/export/x/4/9/4/b2265494x.xml | b2265494x | t | Open | CC-BY-NC | 63 | newly | 2015-12-02 17:34:48 | NULL | NULL | 1 |
 
 ### 2.6. Sample database queries
 
@@ -279,3 +279,4 @@ After filtering, the plugin will display a list of the datasets found for the sp
 You can use the paginator function at the bottom of the window to navigate through the list, or you can save the entire set of hits as a CSV file. For each entry, you can also click the button in the Details column to track the history of that file and view every documented change.
 
 ![Figure 4: Viewing the &#x2018;Details&#x2019; box for the selected dataset](../.gitbook/assets/other_counterscript_07.png)
+

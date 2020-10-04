@@ -1,9 +1,11 @@
 ---
 description: >-
-  Dieses Workflow Plugin erlaubt einen Massenupload von Dateien mit automatischer Zuordnung zu den korrekten Goobi-Vorgängen entweder auf Basis der Dateinamen oder anhand der analysierten Barcodes.
+  Dieses Workflow Plugin erlaubt einen Massenupload von Dateien mit
+  automatischer Zuordnung zu den korrekten Goobi-Vorgängen entweder auf Basis
+  der Dateinamen oder anhand der analysierten Barcodes.
 ---
 
-# Massupload
+# Massenupload
 
 ## Introduction
 
@@ -16,8 +18,8 @@ As well as assigning files on the basis of their file name, it is also possible 
 | Details |  |
 | :--- | :--- |
 | Version | 1.0.0 |
-| Identifier | intranda_workflow_massupload |
-| Source code | https://github.com/intranda/goobi-plugin-workflow-massupload |
+| Identifier | intranda\_workflow\_massupload |
+| Source code | [https://github.com/intranda/goobi-plugin-workflow-massupload](https://github.com/intranda/goobi-plugin-workflow-massupload) |
 | Licence | GPL 2.0 or newer |
 | Compatibility | Goobi workflow 20.06 |
 | Documentation date | 20.09.2020 |
@@ -42,26 +44,26 @@ The contents of this configuration file are as follows:
 ```markup
 <config_plugin>
 
-	<!-- which file types shall be allowed for uploading these -->
-	<allowed-file-extensions>/(\.|\/)(gif|jpe?g|png|tiff?|jp2|pdf)$/</allowed-file-extensions>
+    <!-- which file types shall be allowed for uploading these -->
+    <allowed-file-extensions>/(\.|\/)(gif|jpe?g|png|tiff?|jp2|pdf)$/</allowed-file-extensions>
 
-	<!-- name of the folder inside of a users home directory to use as alternative for web upload -->
-	<user-folder-name>mass_upload</user-folder-name>
+    <!-- name of the folder inside of a users home directory to use as alternative for web upload -->
+    <user-folder-name>mass_upload</user-folder-name>
 
-	<!-- define if instead of the file naming a barcode shall be analyzed to match the following images to the corresponding process until the next barcode
-		gets recognized -->
-	<use-barcodes>true</use-barcodes>
+    <!-- define if instead of the file naming a barcode shall be analyzed to match the following images to the corresponding process until the next barcode
+        gets recognized -->
+    <use-barcodes>true</use-barcodes>
 
-	<!-- copy images using goobi script in the background (true or false) -->
-	<copy-images-using-goobiscript>false</copy-images-using-goobiscript>
+    <!-- copy images using goobi script in the background (true or false) -->
+    <copy-images-using-goobiscript>false</copy-images-using-goobiscript>
 
-	<!-- which workflow step has to be open to allow the upload into the process -->
-	<allowed-step>Scanning</allowed-step>
-	<allowed-step>Upload</allowed-step>
+    <!-- which workflow step has to be open to allow the upload into the process -->
+    <allowed-step>Scanning</allowed-step>
+    <allowed-step>Upload</allowed-step>
 
-	<!-- which part of the files shall be used to find the right process (prefix, suffix or complete) -->
-	<filename-part>prefix</filename-part>
-	<filename-separator>_</filename-separator>
+    <!-- which part of the files shall be used to find the right process (prefix, suffix or complete) -->
+    <filename-part>prefix</filename-part>
+    <filename-separator>_</filename-separator>
 
 </config_plugin>
 ```
@@ -84,7 +86,7 @@ The configuration of the plugin is as follows:
 | `user-folder-name` | If the files are to be read from the user directory, you can specify here the name of the folder within the user directory from which the files are to be read. |
 | `use-barcodes` | This parameter defines whether the assignment to the processes is to be based on barcodes or whether it is to be made on the basis of file names. |
 | `copy-images-using-goobiscript` | If the data transfer is to take place in the background using the GoobiScript queue functionality, this can be specified here. |
-| `allowed-step` | In this repeatable parameter, define which step in the determined process must currently be in the status `open`.
+| `allowed-step` | In this repeatable parameter, define which step in the determined process must currently be in the status `open`. |
 | `filename-part` | This parameter can be used to specify how the file names are to be assigned to the processes. |
 | `filename-separator` | Enter the separator character by which a prefix or suffix is to be cut off. Thus it can be determined that e.g. from a file `kleiuniv_987654321_00002.tif` with an filename-part by means of `prefix` and the filename-separator `_` a process is to be determined, which is called `kleinuniv_987654321`. |
 
@@ -103,3 +105,4 @@ With a click on the button `Import files into processes` the images are now move
 Please note: If barcodes are to be recognised in order to determine the processes from them, it is important that the barcodes are also available in sufficient size and quality for the recognition to be successful.
 
 ![Digitised separator sheets with barcodes for automatic recognition](../.gitbook/assets/intranda_workflow_massupload5.png)
+

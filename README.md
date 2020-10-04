@@ -108,7 +108,7 @@ The installation of the administration plugins takes place in the folder:
 /opt/digiverso/goobi/plugins/administration/
 ```
 
-‌Since most administration plugins have a user interface in addition to the actual functionality, this must also be installed in the following folder:
+‌Since most administration plugins have a user interface in addition to the actual functionality, this must also be installed into the following folder:
 
 ```text
 /opt/digiverso/goobi/plugins/GUI/

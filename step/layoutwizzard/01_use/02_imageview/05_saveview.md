@@ -8,6 +8,7 @@ In advanced mode, you can specify the folder where the images are saved. The pat
 
 | Icon | Description |
 | :--- | :--- |
-| ![](../../../../.gitbook/assets/intranda_step_crop_37.png)  | This button saves the current image cropped into the output folder. |
-| ![](../../../../.gitbook/assets/intranda_step_crop_39.png)  | This button saves the current and all following images cropped into the output folder. |
-| ![](../../../../.gitbook/assets/intranda_step_crop_38.png)  | This button saves all the images of the operation cropped into the output folder. |
+| ![](../../../../.gitbook/assets/intranda_step_crop_37.png) | This button saves the current image cropped into the output folder. |
+| ![](../../../../.gitbook/assets/intranda_step_crop_39.png) | This button saves the current and all following images cropped into the output folder. |
+| ![](../../../../.gitbook/assets/intranda_step_crop_38.png) | This button saves all the images of the operation cropped into the output folder. |
+

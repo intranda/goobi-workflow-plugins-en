@@ -8,6 +8,7 @@ Below the parameters, this area also has three buttons that control the executio
 
 | Icon | Description |
 | :--- | :--- |
-| ![](../../../../.gitbook/assets/intranda_step_crop_34.png)  | This button analyses the current image for the selected analysis step, regardless of the status of the analysis step. If previous analysis steps have not yet been executed, these steps are also executed. |
-| ![](../../../../.gitbook/assets/intranda_step_crop_35.png)  | This button resets the analysis status of all images for the selected analysis step. The step and all subsequent ones are then considered as not executed for all images. Existing analysis results are discarded. This is important if you want to perform an automatic analysis again, since analysis steps that are considered to have already been performed are not performed again otherwise. |
-| ![](../../../../.gitbook/assets/intranda_step_crop_36.png)  | This button resets the analysis status for the current and all subsequent images. |
+| ![](../../../../.gitbook/assets/intranda_step_crop_34.png) | This button analyses the current image for the selected analysis step, regardless of the status of the analysis step. If previous analysis steps have not yet been executed, these steps are also executed. |
+| ![](../../../../.gitbook/assets/intranda_step_crop_35.png) | This button resets the analysis status of all images for the selected analysis step. The step and all subsequent ones are then considered as not executed for all images. Existing analysis results are discarded. This is important if you want to perform an automatic analysis again, since analysis steps that are considered to have already been performed are not performed again otherwise. |
+| ![](../../../../.gitbook/assets/intranda_step_crop_36.png) | This button resets the analysis status for the current and all subsequent images. |
+

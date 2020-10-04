@@ -71,3 +71,4 @@ If, in addition to the actual Goobi processes, you also want to transfer more de
 Once you have selected the desired information and clicked on the `Download infrastructure as a zip file` button, Goobi generates a zip file and offers it for download under the name `goobi-to-goobi-export.zip`. This zip file now contains all the information selected from the Goobi database for transfer to the target system.
 
 ![Downloaded zip file with information about the infrastructure](../../.gitbook/assets/intranda_administration_goobi_to_goobi_export_filesystem_zip.png)
+

@@ -1,9 +1,10 @@
 ---
 description: >-
-  This step plugin scales images to configurable maximum sizes and renders a watermark into the scaled images.
+  This step plugin scales images to configurable maximum sizes and renders a
+  watermark into the scaled images.
 ---
 
-# Image scaling and watermark rendering
+# Image scaling and watermarking
 
 ## Introduction
 
@@ -14,8 +15,8 @@ This plugin allows you to scale images to a maximum size and then render waterma
 | Details |  |
 | :--- | :--- |
 | Version | 1.0.0 |
-| Identifier | intranda_step_image_resize_and_watermark |
-| Source code | https://github.com/intranda/goobi-plugin-step-image-resize-and-watermark |
+| Identifier | intranda\_step\_image\_resize\_and\_watermark |
+| Source code | [https://github.com/intranda/goobi-plugin-step-image-resize-and-watermark](https://github.com/intranda/goobi-plugin-step-image-resize-and-watermark) |
 | Licence | GPL 2.0 or newer |
 | Compatibility | Goobi workflow 2020.06 |
 | Documentation date | 31.08.2020 |
@@ -36,7 +37,7 @@ A configuration file is also required to run the plugin correctly:
 
 Furthermore, a successful installation of the following two packages is also required on the system:
 
-``` bash
+```bash
 ImageMagick
 GraphicsMagick
 ```
@@ -45,7 +46,7 @@ Both packages are included in common package managers and can be easily installe
 
 ## Configuration of the plugin
 
-The configuration of the plugin allows you to define the maximum size of the images and the watermark (images and text watermarks are supported). Also the positioning of the watermark can be defined individually. Several configurations are possible for this purpose, which are differentiated by the project, the name for the work step within the workflow, the digital collection as well as a media type (special metadata within the METS file of the respective process). When the plugin is executed, the first configuration that matches the currently processed task is used.
+The configuration of the plugin allows you to define the maximum size of the images and the watermark \(images and text watermarks are supported\). Also the positioning of the watermark can be defined individually. Several configurations are possible for this purpose, which are differentiated by the project, the name for the work step within the workflow, the digital collection as well as a media type \(special metadata within the METS file of the respective process\). When the plugin is executed, the first configuration that matches the currently processed task is used.
 
 Please note that the correct paths for GraphicMagick and ImageMagick must also be specified at the top of the configuration.
 
@@ -138,3 +139,4 @@ To use the plug-in, it must be activated for one or more desired tasks in the wo
 After running the plugin the images have the expected size and have the configured watermark.
 
 ![Possible results in the generated images](../.gitbook/assets/intranda_step_image_resize_and_watermark_result.png)
+

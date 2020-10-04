@@ -99,3 +99,4 @@ If right and left images are scanned separately, but still need to fit together 
 | **Adjustment of opposite sides, left to right** | Opposite sides are cut flush with each other. The opposite side of a left page is always the following right page. |
 | **Adjustment of opposite sides, right to left** | Opposite sides are cut flush with each other. The opposite side of a right-hand page is always the following left-hand page. |
 | **Adjustment on all sides** | All sides are cut as flush as possible. This often causes large untrimmed edges, requires relatively long processing time and is therefore usually not recommended. |
+

@@ -7,3 +7,4 @@ In the header, you can also switch to the next and previous image, as well as th
 ![Image display of a selected analysis step](../../../../.gitbook/assets/intranda_step_crop_08.png)
 
 In the actual image display, when one of the analysis steps is selected, the analysis result of the selected step is visible and can be edited directly with the mouse.
+

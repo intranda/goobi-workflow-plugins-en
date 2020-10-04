@@ -181,3 +181,4 @@ After clicking the Generate Barcodes button, a PDF file is available for downloa
 To illustrate the operation, a screencast for the use of the plugin is available here:
 
 {% embed url="https://www.youtube.com/watch?v=Eh8H4k1sKvE" caption="Screencast on how to use the plugin" %}
+

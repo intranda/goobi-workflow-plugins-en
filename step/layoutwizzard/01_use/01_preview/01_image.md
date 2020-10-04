@@ -38,3 +38,4 @@ The three buttons next to the image display allow you to enter the single page v
 Below the buttons for the detail view is the image number within the input folder. This is not the file name of the image file but a simple counter that in case of many similarly displayed images should give an orientation at which position within the image files one is currently located.
 
 Depending on the configuration of the LayoutWizard, a drop-down menu may also appear in this area. This allows you to change the orientation for the respective page. Please note that the change made here is only applied to the currently selected image and does not affect subsequent images.
+

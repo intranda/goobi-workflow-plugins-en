@@ -138,7 +138,7 @@ The configuration file contains four types of fields:
 | Field type | Description |
 | :--- | :--- |
 | `field` | This configuration can be used to define additional query fields to be listed within the user interface. |
-| `authentication`  | Enter the access data for accessing the catalogue interface here.   |
+| `authentication` | Enter the access data for accessing the catalogue interface here. |
 | `recordType` | This type is used to recognize the document type of the JSON record |
 | `defaultPublicationType` | This type is used if no document type was recognized before |
 | `metadata` | This type is used to map JSON fields to metadata |
@@ -195,3 +195,4 @@ The following URLs could be of further help for the installation or especially f
 JSONPath Online Evaluator: [https://jsonpath.com/](https://jsonpath.com/)
 
 JSONPath Description: [https://support.smartbear.com/alertsite/docs/monitors/api/endpoint/jsonpath.html](https://support.smartbear.com/alertsite/docs/monitors/api/endpoint/jsonpath.html)
+
