@@ -20,7 +20,7 @@
   * [Using the plugin](step/intranda_step_crop/01_use/README.md)
     * [Preview](step/intranda_step_crop/01_use/01_preview/README.md)
       * [Image area](step/intranda_step_crop/01_use/01_preview/01_image.md)
-      * [Display and navigation options](step/layoutwizzard/01_use/01_preview/02_navigation.md)
+      * [Display and navigation options](step/intranda_step_crop/01_use/01_preview/02_navigation.md)
     * [Single page view](step/intranda_step_crop/01_use/02_imageview/README.md)
       * [Folder and file options](step/intranda_step_crop/01_use/02_imageview/01_folders.md)
       * [Current image](step/intranda_step_crop/01_use/02_imageview/02_image.md)
