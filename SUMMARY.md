@@ -28,7 +28,7 @@
       * [File list](step/intranda_step_crop/01_use/02_imageview/04_filelist.md)
       * [Save view](step/intranda_step_crop/01_use/02_imageview/05_saveview.md)
       * [Working steps](step/intranda_step_crop/01_use/02_imageview/06_steps.md)
-      * [Ausgewählter Analyseschritt](step/intranda_step_crop/01_use/02_imageview/07_analysestep.md)
+      * [Selected analysis step](step/intranda_step_crop/01_use/02_imageview/07_analysestep.md)
       * [Global cutting options](step/intranda_step_crop/01_use/02_imageview/08_cropping.md)
   * [Technical details](step/intranda_step_crop/02_details/README.md)
     * [Installation](step/intranda_step_crop/02_details/01_installation.md)
