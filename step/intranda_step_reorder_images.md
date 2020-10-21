@@ -7,7 +7,7 @@ description: >-
 
 ## Introduction
 
-The plugin allows automatic sorting of image files that were not created continuously during creation and instead were saved separately for left and right pages.
+The plugin allows automatic sorting of image files that were not created continuously during creation and instead were saved separately for left and right pages. This is useful if, for example, an opening angle of a book that is too small prohibits the scanning of left and right pages simultaneously.
 
 ## Overview
 
