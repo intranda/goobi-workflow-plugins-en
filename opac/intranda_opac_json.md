@@ -15,7 +15,7 @@ This documentation describes the installation, configuration and use of the plug
 | Source code | [https://github.com/intranda/goobi-plugin-opac-json](https://github.com/intranda/goobi-plugin-opac-json) |
 | Licence | GPL 2.0 or newer |
 | Compatibility | 2020.05 |
-| Documentation date | ​19.09.2020 |
+| Documentation date | 30.10.2020 |
 
 ## Installation
 
@@ -23,6 +23,7 @@ The plugin consists of two files:
 
 ```bash
 plugin_intranda_opac_json.jar
+plugin_intranda_opac_json-GUI.jar
 plugin_intranda_opac_json.xml
 ```
 
@@ -30,6 +31,12 @@ The file `plugin_intranda_opac_json.jar` contains the program logic and must be 
 
 ```bash
 /opt/digiverso/goobi/plugins/opac/plugin_intranda_opac_json.jar
+```
+
+The file `plugin_intranda_opac_json-GUI.jar` contains the user interface and must be installed readable for the user `tomcat` at the following path:
+
+```bash
+/opt/digiverso/goobi/plugins/GUI/plugin_intranda_opac_json-GUI.jar
 ```
 
 The file `plugin_intranda_opac_json.xml` must also be readable by the user `tomcat` and must be located under the following path:
@@ -49,114 +56,146 @@ plugin_intranda_opac_json.xml
 
 In the file `goobi_opac.xml` the interface to the desired catalog system must be made known. This is done with an entry that looks like the following:
 
-```markup
+```xml
 <catalogue title="JSON">
-    <config description="JSON OPAC" address="https://example.com/opac?id="
+    <config description="JSON OPAC" address="x"
     port="443" database="x" iktlist="x" ucnf="x" opacType="intranda_opac_json" />
-    <searchFields>
-        <searchField label="Identifier" value="12"/>
-    </searchFields>
 </catalogue>
 ```
 
-The `title` attribute contains the name under which the catalog can be selected in the user interface, `address` the URL to the API endpoint and `opacType` the plugin to be used. In this case the entry must be `intranda_opac_json`.
+Das Attribut `title` enthält einen eindeutigen Namen und `opacType` das zu nutzende Plugin. In diesem Fall muss der Eintrag `intranda_opac_json` lauten. Die weiteren Felder werden nicht benötigt.
 
-Mapping the contents of the JSON record to Goobi metadata is done within the `plugin_intranda_opac_json.xml` file. The fields within the JSON record are defined using `JSONPath`, the XPath equivalent of JSON.
+Das Mapping der Inhalte des JSON-Datensatzes hin zu Goobi Metadaten geschieht innerhalb der Datei `plugin_intranda_opac_json.xml`. Die Definition der Felder innerhalb des JSON-Datensatzes geschieht mittels `JSONPath`, dem XPath-Equivalent für JSON.
 
-```markup
+```xml
 <config_plugin>
-    <config>
-        <recordType field="[?(@.recordType=='archival_object')]" docType="Monograph" />
-        <recordType field="$.children[?(@.itemCount &gt; 1)]"  docType="Volume" anchorType="MultiVolumeWork" />
-        <recordType field="$.children[?(@.itemCount == 1)]" docType="Monograph" />
+	<config name="Opac Name">
 
-        <defaultPublicationType>Monograph</defaultPublicationType>
+		<field id="repository">
+			<label>Repository</label>
+			<select>1</select>
+			<select>2</select>
+			<select>3</select>
+			<type>select</type>
+			<defaultText>1</defaultText>
+			<url></url>
+		</field>
 
-        <metadata metadata="PublicationYear" field="$.date" />
-        <metadata metadata="DocLanguage" field="$.language" />
-        <metadata metadata="CatalogIDDigital" field="$.identifier" docType="volume" />
-        <metadata metadata="CatalogIDDigital" field="$.children[?(@.itemCount > 1)].children[0].itemId" docType="volume"  />
-        <metadata metadata="CatalogIDDigital" field="$.uri" regularExpression="s/\/some-prefix\/(.+)/$1/g" docType="anchor"  />
-        <metadata metadata="shelfmarksource" field="$.identifierShelfMark" docType="volume" />
-        <metadata metadata="TitleDocMain" field="$.title" docType="volume" />  
-        <metadata metadata="OtherTitle"  field="$.alternativeTitle" docType="volume"  />
-        <metadata metadata="CurrentNo" field="$..children[0].children[0].sequenceNumber" docType="volume"  />
-        <metadata metadata="CurrentNoSorting" field="$..children[0].children[0].sequenceNumber" docType="volume"  />
+		<field id="id">
+			<label>Identifier</label>
+			<type>text</type>
+			<defaultText></defaultText>
+			<url></url>
+		</field>
 
-        <person metadata="Author" field="creator" firstname="s/^(.+?)\, (.+?)$/$2/g" lastname="s/^(.+?)\, (.+?)$/$1/g" validationExpression="/^.+?\, .+?\, .+$/" regularExpression="s/^(.+?)\, (.+?)\, .+/$1\, $2/g"/>
+		<field id="type">
+			<label></label>
+			<type>select+text</type>
+			<select>barcode</select>
+			<select>holding</select>
+			<select>item</select>
+			<defaultText></defaultText>
+			<url>https://example.com/repository/{repository.select}/}{type.select}/{type.text}?id={id.text}</url>
+		</field>
 
-    </config>
+		<authentication>
+			<username>user</username>
+			<password>password</password>
+		</authentication>
 
-    <config name="ArchivesSpace">
-        <field id="repo">
-                <label>Repository</label>
-                <type>text</type>
-                <defaultText>11</defaultText>
-                <url></url>
-        </field>
+		<defaultPublicationType>Monograph</defaultPublicationType>
 
-        <field id="ao">
-                <label>Identifier</label>
-                <type>text</type>
-                <defaultText></defaultText>
-                <url>https://example.goobi.io/api/aspace/repositories/{repo.text}/archival_objects/{ao.text}</url>
-        </field>
+		<metadata metadata="PublicationYear" field="$.date" />
+		<metadata metadata="DocLanguage" field="$.language" />
+		<metadata metadata="CatalogIDDigital" field="$.identifier" docType="volume" />
+		<metadata metadata="CatalogIDDigital" field="$.children[?(@.itemCount > 1)].children[0].itemId" docType="volume" />
+		<metadata metadata="CatalogIDDigital" field="$.uri" regularExpression="s/\/some-prefix\/(.+)/$1/g" docType="anchor" />
+		<metadata metadata="shelfmarksource" field="$.identifierShelfMark" docType="volume" />
+		<metadata metadata="TitleDocMain" field="$.title" docType="volume" />
+		<metadata metadata="OtherTitle" field="$.alternativeTitle" docType="volume" />
+		<metadata metadata="CurrentNo" field="$..children[0].children[0].sequenceNumber" docType="volume" />
+		<metadata metadata="CurrentNoSorting" field="$..children[0].children[0].sequenceNumber" docType="volume" />
 
-        <authentication>
-                <username>goobi</username>
-                <password>secretPassword</password>
-        </authentication>
+		<person metadata="Author" field="creator" firstname="s/^(.+?)\, (.+?)$/$2/g" lastname="s/^(.+?)\, (.+?)$/$1/g" validationExpression="/^.+?\, .+?\, .+$/" regularExpression="s/^(.+?)\, (.+?)\, .+/$1\, $2/g"/>
+	</config>
 
-        <defaultPublicationType>ArchivalObject</defaultPublicationType>
+	<config>
+		<field id="id">
+			<label>Identifier</label>
+			<type>text</type>
+			<defaultText></defaultText>
+			<url>http://example.com/repositories/2/archival_objects/{id.text}</url>
+		</field>
+		<authentication>
+			<username>user</username>
+			<password>password</password>
+			<loginUrl>http://example.com/users/{username}/login</loginUrl>
+			<sessionid>session</sessionid>
+			<headerParameter>Token</headerParameter>
+		</authentication>
+		<recordType field="[?(@.jsonmodel_type=='archival_object')]" docType="ArchivalObject" />
+		<metadata metadata="TitleDocMain" field="$.title" />
 
-        <!-- Title      title[0] -->
-        <metadata metadata="TitleDocMain" field="$.title[0]" docType="volume"/>
-        <!-- OR ancestorTitles[0] if title[0] doesn't exist -->
-        <metadata metadata="TitleDocMain" field="$.[?(!@.title[0])]ancestorTitles[0]" docType="volume"/>
+		<metadata metadata="PublicationStart" field="$.dates.begin" />
+		<metadata metadata="PublicationEnd" field="$.dates.end" />
+		<metadata metadata="PublicationRun" field="$.dates.expression" />
+		<person metadata="Author" field="$.linked_agents[?(@.role=='creator')].ref" followLink="true" templateName="Person" basisUrl="http://example.com"/>
+		<metadata metadata="DocLanguage" field="$.notes[?(@.type=='langmaterial')].content[*]" />
+		<metadata metadata="Note" field="$.notes[?(@.label=='Writing')].subnotes[*].content" />
+		<metadata metadata="Illustration" field="$.notes[?(@.label=='Illumination')].subnotes[*].content" />
+		<metadata metadata="Provenience" field="$.notes[?(@.type=='custodhist')].subnotes[*].content" />
+		<metadata metadata="CatalogIDDigital" field="$.uri" regularExpression="s/.*\/(.+)$/$1/" />
+	</config>
 
-        <!-- Collection Title is ancestorTitles[size – 1] -->
-        <metadata metadata="singleDigCollection" field="$.ancestorTitles[-1:]" docType="volume"/>
-
-        <!--System ID-->
-        <metadata metadata="CatalogIDSource" field="$.uri" docType="volume"/>
-
-        <!--Call Number-->
-        <metadata metadata="shelfmarksource" field="$.localRecordNumber" docType="volume" />
-
-        <!-- Container Information -->
-        <metadata metadata="ContainerInformation" field="$.containerGrouping" docType="volume" />
-
-        <!--Date Information-->
-        <metadata metadata="PublicationYear" field="$.date" />
-    </config>
-
+	<config>
+		<template>Person</template>
+		<person metadata="Author" field="$.title" firstname="s/^(.*?)\,(.*?)\,.*/$2/g" lastname="s/^(.*?)\,(.*?)\,.*$/$1/g" identifier="$.uri"/>
+	</config>
 </config_plugin>
 ```
 
-The configuration file contains four types of fields:
+The available catalogues are defined in individual `<config name="XYZ">` blocks. The attribute `name` contains the name under which the catalogue can be selected.
 
-| Field type | Description |
-| :--- | :--- |
-| `field` | This configuration can be used to define additional query fields to be listed within the user interface. |
-| `authentication` | Enter the access data for accessing the catalogue interface here. |
-| `recordType` | This type is used to recognize the document type of the JSON record |
-| `defaultPublicationType` | This type is used if no document type was recognized before |
-| `metadata` | This type is used to map JSON fields to metadata |
-| `person` | This type is used to map JSON fields to persons |
+Different field types can be used within the catalogue:
+
+|Field type|Description|
+|-- |-- |
+|`field`| This configuration can be used to define additional query fields to be listed within the user interface.|
+|`authentication`| Enter the access data for accessing the catalogue interface here.|
+|`recordType`|This type is used to detect the document type of the JSON record.|
+|`defaultPublicationType`|This type is used when no document type has been detected before.|
+|`metadata`|This type is used to map JSON fields to metadata.|
+|`person`|This type is used to map JSON fields to persons.|
+
+### Field type: field
+
+The element `<field>` is identified by the attribute `id`. Within the entries, the element `<type>` can be used to define which fields are available in the input mask. There are the different types `text`, `select` and `select+text`. The type `text` creates a simple input field, `select` a selection list and `select+text` both. The element `<label>` contains the name under which the field is displayed in the interface and the entries in `<select>` define which contents are contained in the selection list. Optionally, a default value can be specified. This is done with the element `<defaultText>`.
+
+The element is repeatable, so that the input mask can also contain several input fields.
+
+One of the fields must contain the URL to the catalogue. This is defined within the element `<url>`. To access the user input, the variables `{id.select}` and `{id.text}` are available, whereby `id` must be replaced by the desired field identifier.
+
+### Field type: authentication
+
+By means of `<authentication>` it can be defined how the authentication towards the catalogue is to take place. The element can be missing or remain free if the catalogue allows anonymous access.
+
+Otherwise two types are available. If only `<username>` and `<password>` are specified, a basic authentication takes place.
+
+The second possibility is a login. Here the API defined in the field `<loginUrl>` is called to get a valid session ID. Here the session ID is searched for in the field that is configured in `<sessionid>`. The session ID is then used as a header parameter for the actual request. The parameter is set in `<headerParameter>`.
 
 ### Field type: recordType
 
-The element `recordType` contains the attributes `field`, `docType` and `anchorType`. In `field` a JSONPath expression is specified that is applied to the record. If the type is a multi-volume work or newspaper/magazine, the `anchor` type to be used must be specified in the `anchorType` field. If a field with such an expression exists, the document type defined in `docType` is created. If not, the next configured `recordType` will be checked.
+The element `<recordType>` contains the attributes `field`, `docType` and `anchorType`. In `field` a JSONPath expression is specified that is applied to the record. If the type is a multi-volume work or newspaper/magazine, the `anchor` type to be used must be specified in the `anchorType` field. If a field with such an expression exists, the document type defined in `docType` is created. If not, the next configured `recordType` will be checked.
 
 There are a number of characters that are masked in this file. This includes characters such as `< > & "`, which have a special meaning in XML and must therefore be specified as `&lt; &gt; &amp; &quot;`. Also affected is the `comma`, which must also be masked as `\,` using a backslash.
 
 ### Field type: defaultPublicationType
 
-If none of the definitions apply, a document can be created with the type from `defaultPublicationType`. If this field is missing or empty, no record is created instead.
+If none of the definitions apply, a document can be created with the type from `<defaultPublicationType>`. If this field is missing or empty, no record is created instead.
 
 ### Field types: metadata & person
 
-The two fields `metadata` and `person` are used to import individual content from the JSON record into the respective metadata. A number of attributes are available for this purpose:
+The two fields `<metadata>` and `<person>` are used to import individual content from the JSON record into the respective metadata. A number of attributes are available for this purpose:
 
 | Attribute | Meaning |
 | :--- | :--- |
@@ -167,6 +206,9 @@ The two fields `metadata` and `person` are used to import individual content fro
 | `regularExpression` | A regular expression to manipulate the value. This is applied after the `validationExpression` check. |
 | `firstname` | A regular expression that determines the first name of a person from the field contents. |
 | `lastname` | A regular expression that determines the last name of a person from the field contents. |
+|`followLink`| Defines whether the contained value is imported directly or contains a link to another data record. |
+|`templateName`| Contains the name of the `<config>` block to be used to analyse the new record. |
+|`basisUrl`| Contains the base URL to be used if the link to the record is a relative path. |
 
 ## Use
 
@@ -195,4 +237,3 @@ The following URLs could be of further help for the installation or especially f
 JSONPath Online Evaluator: [https://jsonpath.com/](https://jsonpath.com/)
 
 JSONPath Description: [https://support.smartbear.com/alertsite/docs/monitors/api/endpoint/jsonpath.html](https://support.smartbear.com/alertsite/docs/monitors/api/endpoint/jsonpath.html)
-
