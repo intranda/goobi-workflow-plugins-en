@@ -19,7 +19,7 @@ This documentation describes the installation, configuration and use of the plug
 
 ## Installation
 
-The plugin consists of two files:
+The plugin consists of three files:
 
 ```bash
 plugin_intranda_opac_json.jar
@@ -27,19 +27,19 @@ plugin_intranda_opac_json-GUI.jar
 plugin_intranda_opac_json.xml
 ```
 
-The file `plugin_intranda_opac_json.jar` contains the program logic and must be installed readable for the user `tomcat` at the following path:
+The file `plugin_intranda_opac_json.jar` contains the program logic and must be installed readable for the user `tomcat8` at the following path:
 
 ```bash
 /opt/digiverso/goobi/plugins/opac/plugin_intranda_opac_json.jar
 ```
 
-The file `plugin_intranda_opac_json-GUI.jar` contains the user interface and must be installed readable for the user `tomcat` at the following path:
+The file `plugin_intranda_opac_json-GUI.jar` contains the user interface and must be installed readable for the user `tomcat8` at the following path:
 
 ```bash
 /opt/digiverso/goobi/plugins/GUI/plugin_intranda_opac_json-GUI.jar
 ```
 
-The file `plugin_intranda_opac_json.xml` must also be readable by the user `tomcat` and must be located under the following path:
+The file `plugin_intranda_opac_json.xml` must also be readable by the user `tomcat8` and must be located under the following path:
 
 ```bash
 /opt/digiverso/goobi/config/plugin_intranda_opac_json.xml
