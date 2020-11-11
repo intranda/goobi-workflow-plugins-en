@@ -56,6 +56,7 @@
 * [Delete Content](step/intranda_step_deleteContent.md)
 * [Generate Identifier](step/intranda_step_generateIdentifier.md)
 * [Reorder Images](step/intranda_step_reorder_images.md)
+* [Transcription of image content](step/intranda_step_transcription.md)
 * [Object Identifier Generation](step/intranda_step_oid_creation.md)
 
 ## Opac Plugins <a id="opac"></a>
@@ -84,6 +85,7 @@
 * [Barcode Generator](workflow/intranda_workflow_barcode_generator.md)
 * [LayoutWizzard workflow plugin](workflow/intranda_workflow_crop.md)
 * [Mass upload](workflow/intranda_workflow_massupload.md)
+* [Create process relationships](workflow/intranda_workflow_linkedprocesscreation.md)
 
 ## Other
 
