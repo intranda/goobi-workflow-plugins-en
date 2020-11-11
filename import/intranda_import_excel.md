@@ -14,8 +14,8 @@ This documentation describes the installation, configuration and use of the plug
 | Identifier | intranda\_import\_excel |
 | Source code | [https://github.com/intranda/goobi-plugin-import-excel](https://github.com/intranda/goobi-plugin-import-excel) |
 | Licence | GPL 2.0 or newer |
-| Compatibility | Goobi workflow 3.0 or newer |
-| Documentation date | 08.05.2020 |
+| Compatibility | Goobi workflow 2020.09 |
+| Documentation date | 11.11.2020 |
 
 ## Installation
 
