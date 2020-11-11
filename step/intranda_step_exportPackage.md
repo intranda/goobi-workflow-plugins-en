@@ -19,7 +19,7 @@ This plugin allows a flexible export of data of a process into a defined target 
 | Source code | [https://github.com/intranda/goobi-plugin-step-exportPackage](https://github.com/intranda/goobi-plugin-step-exportPackage) |
 | Licence | GPL 2.0 or newer |
 | Compatibility | Goobi workflow 2020.09 |
-| Documentation date | 03.10.2020 |
+| Documentation date | 11.11.2020 |
 
 ## Installation
 
@@ -41,37 +41,55 @@ The configuration of the plugin is structured as follows:
 
 ```markup
 <config_plugin>
+    <!--
+        order of configuration is:
+          1.) project name and step name matches
+          2.) step name matches and project is *
+          3.) project name matches and step name is *
+          4.) project name and step name are *
+	-->
 
-<config>
-    <!-- which projects to use for (can be more then one, otherwise use *) -->
-    <project>*</project>
-    <step>*</step>
+    <config>
+        <!-- which projects to use for (can be more then one, otherwise use *) -->
+        <project>*</project>
+        <step>*</step>
 
-    <!-- export path -->
-    <target>/opt/digiverso/export/</target>
+        <!-- export path -->
+        <target>/opt/digiverso/export/</target>
+        <!-- use subfolder for each process -->
+        <useSubFolderPerProcess>true</useSubFolderPerProcess>
 
-    <!-- which image folders to use (master|media|jpeg|source|...) -->
-    <imagefolder>master</imagefolder>
-    <imagefolder>media</imagefolder>
+        <!-- which image folders to use (master|media|jpeg|source|...) -->
+        <imagefolder>master</imagefolder>
+        <!-- use the attribute filegroup, if you want to add checksums to the files within the filegroup. The checksums are taken from the configured folder -->
+        <imagefolder filegroup="PRESENTATION">media</imagefolder>
 
-    <!-- which additional folders to use -->
-    <ocr>false</ocr>
-    <source>false</source>
-    <import>false</import>
-    <export>false</export>
-    <itm>false</itm>
-    <validation>false</validation>
+        <!-- which additional folders to use -->
+        <ocr>false</ocr>
+        <source>false</source>
+        <import>false</import>
+        <export>false</export>
+        <itm>false</itm>
+        <validation>false</validation>
 
-    <!-- if the internal METS file shall get transformed into another file define the path of the xsl file here -->
-    <transformMetaFile>true</transformMetaFile>
-    <transformMetaFileXsl>/opt/digiverso/goobi/xslt/export_meta.xsl</transformMetaFileXsl>
-    <transformMetaFileResultFileName>xslt_result_meta.xml</transformMetaFileResultFileName>
+        <!-- generate UUIDs for each mets:fileGrp and mets:file -->
+        <uuid>false</uuid>
+        <!-- add checksums to mets:files -->
+        <checksum>false</checksum>
+        <!-- command to use to validate the exported images -->
+        <checksumValidationCommand>/usr/bin/sha1sum</checksumValidationCommand>        
 
-    <!-- if the METS file shall get transformed into another file define the path of the xsl file here -->
-    <transformMetsFile>true</transformMetsFile>
-    <transformMetsFileXsl>/opt/digiverso/goobi/xslt/export_mets.xsl</transformMetsFileXsl>
-    <transformMetsFileResultFileName>xslt_result_mets.xml</transformMetsFileResultFileName>
-</config>
+        <!-- if the internal METS file shall get transformed into another file define the path of the xsl file here -->
+        <copyInternalMetaFile>true</copyInternalMetaFile>
+        <transformMetaFile>true</transformMetaFile>
+        <transformMetaFileXsl>/opt/digiverso/goobi/xslt/export_meta.xsl</transformMetaFileXsl>
+        <transformMetaFileResultFileName>xslt_result_meta.xml</transformMetaFileResultFileName>
+
+        <!-- if the METS file shall get transformed into another file define the path of the xsl file here -->
+        <transformMetsFile>true</transformMetsFile>
+        <transformMetsFileXsl>/opt/digiverso/goobi/xslt/export_mets.xsl</transformMetsFileXsl>
+        <transformMetsFileResultFileName>xslt_result_mets.xml</transformMetsFileResultFileName>
+    </config>
 
 </config_plugin>
 ```
@@ -83,13 +101,16 @@ The block `<config>` can occur repeatedly for different projects or workflow ste
 | `project` | This parameter determines the project for which the current block `<config>` is to apply. The name of the project is used here. This parameter can occur several times per `<config>` block. |
 | `step` | This parameter controls for which workflow steps the block `<config>` is to apply. The name of the step is used here. This parameter can occur several times per `<config>` block. |
 | `target` | This parameter defines the main path where the export of the process as a subfolder with the process name should be exported to. |
-| `imagefolder` | Several directories can be specified for the images or digital copies. This can include, for example, the master images and the derivatives. |
+| `imagefolder` | Several directories can be specified for the images or digital copies. This can include, for example, the master images and the derivatives. If the METS file is to contain checksums for the individual images, the attribute `filegroup` can be used here to specify for which `mets:fileGrp>` the checksums of the files from this folder are to be used. |
 | `ocr` | This parameter specifies whether the OCR results are to be exported as well. |
 | `source` | If the contents of the `source` folder should be included, this can be specified here. |
 | `import` | If the contents of the `import` folder should be included, this can be defined here. |
 | `export` | If the contents of the `export` folder are to be included, this can also be specified here. |
 | `itm` | If the contents of the TaskManager directory `itm` are to be exported as well, this is defined here. |
 | `validation` | With this parameter you can specify that the contents of the `validation` directory should also be exported. |
+| `uuid` | If UUIDs (v4) are to be used for linking between `<mets:structMap>`, `<mets:fptr>` and `<mets:fileGrp>`, `<mets:file>`, this can be specified here. |
+| `checksum` | When this option is enabled, the exported data is compared with previously generated checksums to verify successful export. If file groups were also configured when configuring the `image folders`, the checksums are also entered into the corresponding file groups. |
+| `checksumValidationCommand` | Contains the command line tool used to perform the verification. |
 | `transformMetaFile` | This parameter defines whether the Goobi workflow internal METS file should be copied to the target directory. |
 | `transformMetaFileXsl` | This parameter can be used to specify whether the internal METS file should be processed using the XSLT transformation file defined here. |
 | `transformMetaFileResultFileName` | If the internal METS file is to be transformed using XSLT, you can specify here what the name of the file to be generated should be. |
