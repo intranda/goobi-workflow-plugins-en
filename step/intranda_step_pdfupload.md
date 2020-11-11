@@ -12,7 +12,6 @@ This documentation describes how to install, configure and use a plug-in to uplo
 
 | Details |  |
 | :--- | :--- |
-| Version | 1.0.0 |
 | Identifier | intranda\_step\_pdfUpload |
 | Source code | [https://github.com/intranda/goobi-plugin-step-pdfupload](https://github.com/intranda/goobi-plugin-step-pdfupload) |
 | Licence | GPL 2.0 or newer |
@@ -101,4 +100,3 @@ If a file is uploaded, the information is stored in the METS file.
 The transfer to the METS file ensures that the order of the uploaded files is saved persistently.
 
 If the task is then opened again, the information about the uploaded files is taken from the METS file and also displayed.
-

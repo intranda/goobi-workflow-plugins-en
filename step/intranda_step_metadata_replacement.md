@@ -12,7 +12,6 @@ This plug-in allows you to automatically enrich metadata within the METS files o
 
 |  |  |
 | :--- | :--- |
-| Version | 1.0.0 |
 | Identifier | intranda\_step\_metadata\_replacement |
 | Source code | [https://github.com/intranda/goobi-plugin-step-yerusha-metadatareplacement](https://github.com/intranda/goobi-plugin-step-yerusha-metadatareplacement) |
 | Licence | GPL 2.0 or newer |
@@ -124,4 +123,3 @@ Within the Goobi workflow, the metadata available within the METS file of a Goob
 ![The publication place London is now available in a separate field with correct spelling and standard data](../.gitbook/assets/intranda_step_metadata_replacement4.png)
 
 The constant maintenance of vocabulary and the ability to integrate into a workflow, even at several points within tasks, means that content can be updated and published in the future.
-

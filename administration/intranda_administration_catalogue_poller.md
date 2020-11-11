@@ -12,7 +12,6 @@ This documentation describes how to install, configure and use the Administratio
 
 | Details | ​ |
 | :--- | :--- |
-| Version | 1.0.0 |
 | Identifier | intranda\_administration\_catalogue\_poller |
 | Source code | [https://github.com/intranda/goobi-plugin-administration-catalogue-poller](https://github.com/intranda/goobi-plugin-administration-catalogue-poller) |
 | Licence | GPL 2.0 or newer |
@@ -163,4 +162,3 @@ If the plugin finds updated metadata for a process and therefore updates the MET
 The updates of the metadata by the plugin usually take place fully automatically in the background. In order to be able to track what happened to a data record at any time, the events are logged. Detailed entries are automatically added to the process log for each process for which there were changes from this plugin. In addition to the timestamp, these entries also contain an exact list of the changed metadata fields and their contents. Thus, it is possible to trace the previous or the new value at any time.
 
 ![Within the process log the changes of the Catalogue Poller are traceable](../.gitbook/assets/intranda_administration_catalogue_poller_05.png)
-

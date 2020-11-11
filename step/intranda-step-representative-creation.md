@@ -14,7 +14,6 @@ This plugin can be used to automatically prepare METS files and set the represen
 
 | Details | ​ |
 | :--- | :--- |
-| Version | 1.0.0 |
 | Identifier | RepresentativeCreation |
 | Source code | [https://github.com/intranda/goobi-plugin-step-representative-creation](https://github.com/intranda/goobi-plugin-step-representative-creation) |
 | Licence | GPL 2.0 or newer |
@@ -80,4 +79,3 @@ The way the plugin works within the correctly configured workflow is as follows.
 4. The first assigned image of this element is set as the representative.
 5. If no structural element with this name is found or the data record does not contain any structural elements, an error message can be written to the process log and the workflow can be reset to a previous work step.
 6. However, this is only possible if a text has been configured for the error message and the name of the step.
-

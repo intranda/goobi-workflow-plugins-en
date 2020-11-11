@@ -13,7 +13,6 @@ The plugin allows the automatic generation of identifiers and the saving within 
 
 | Details |  |
 | :--- | :--- |
-| Version | 1.0.0 |
 | Identifier | intranda\_step\_generateIdentifier |
 | Source code | [https://github.com/intranda/goobi-plugin-step-generateIdentifier](https://github.com/intranda/goobi-plugin-step-generateIdentifier) |
 | Licence | GPL 2.0 or newer |

@@ -10,7 +10,6 @@ This documentation describes the installation, configuration and use of the plug
 
 | Details |  |
 | :--- | :--- |
-| Version | 1.0.0 |
 | Identifier | intranda\_opac\_marc |
 | Source code | [https://github.com/intranda/goobi-plugin-opac-marc](https://github.com/intranda/goobi-plugin-opac-marc) |
 | Licence | GPL 2.0 oder neuer |
@@ -62,4 +61,3 @@ When you search for an identifier in Goobi, a request is sent to the configured 
 ![Goobi workflow interface for querying the catalogue](../.gitbook/assets/intranda_opac_marc_en.png)
 
 After retrieving the actual record from the catalog, the metadata is mapped according to the rules configured in the rule set.
-

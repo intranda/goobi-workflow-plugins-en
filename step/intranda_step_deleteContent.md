@@ -14,7 +14,6 @@ The plugin is used to automatically delete data from a process. For this purpose
 
 | Details |  |
 | :--- | :--- |
-| Version | 1.0.0 |
 | Identifier | intranda\_step\_deleteContent |
 | Source code | [https://github.com/intranda/goobi-plugin-step-deleteContent](https://github.com/intranda/goobi-plugin-step-deleteContent) |
 | Licence | GPL 2.0 or newer |
@@ -124,4 +123,3 @@ Since this plugin is usually to be executed automatically, the step in the workf
 Once the plugin is fully installed and set up, it is usually executed automatically within the workflow, so there is no manual interaction with the user. Instead, the workflow calls the plugin in the background and starts the deletion of the configured data. In doing so, the configured folders and data are deleted, if they exist. Data that does not exist will be skipped. If it has been configured that the process is to be deactivated, all workflow steps are run through and checked whether they have already been closed regularly within the workflow. If this is not the case, the steps are deactivated.
 
 When the deletion is complete, a message is added to the process log to inform you that this plugin has been called and the data was deleted.
-

@@ -6,7 +6,6 @@ This documentation describes the installation, configuration and use of a plugin
 
 | Details |  |
 | :--- | :--- |
-| Version | 1.0.0 |
 | Identifier | intranda\_step\_lza\_ewig |
 | Source code | [https://github.com/intranda/goobi-plugin-step-ewig](https://github.com/intranda/goobi-plugin-step-ewig) |
 | Licence | GPL 2.0 or newer |
@@ -109,4 +108,3 @@ After the plugin has been installed and configured, it can be used within one st
 ## Miscellaneous
 
 This step within Goobi workflow exports all the files required for EWIG Ingest. The upload itself is carried out via the intranda TaskManager. This is useful to avoid several upload processes running in parallel having conflicts with each other and slowing down the system. For uploads, see [chapter 4.17 ](https://docs.intranda.com/intranda-taskmanager-de/4/4.17-upload-von-dateien-in-das-ewig-langzeitarchiv)in the intranda TaskManager documentation.
-

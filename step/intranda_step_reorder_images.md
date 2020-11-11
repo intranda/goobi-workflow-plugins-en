@@ -13,7 +13,6 @@ The plugin allows automatic sorting of image files that were not created continu
 
 | Details |  |
 | :--- | :--- |
-| Version | 1.0.0 |
 | Identifier | intranda\_step\_reorder_images |
 | Source code | [https://github.com/intranda/goobi-plugin-step-reorder-images](https://github.com/intranda/goobi-plugin-step-reorder-images) |
 | Licence | GPL 2.0 or newer |

@@ -14,7 +14,6 @@ This plugin is used to conditionally rename files within the different folders o
 
 | Details |  |
 | :--- | :--- |
-| Version | 1.0.0 |
 | Identifier | intranda\_step\_rename-files |
 | Source code | [https://github.com/intranda/goobi-plugin-step-rename-files](https://github.com/intranda/goobi-plugin-step-rename-files) |
 | Licence | GPL 2.0 or newer |
@@ -96,4 +95,3 @@ The plugin considers the files within the following subdirectories for naming:
 This plugin is integrated into the workflow in such a way that it is executed automatically. Manual interaction with the plugin is not necessary. For use within a step of the workflow it should be configured as shown in the following screenshot.
 
 ![Integration of the plugin into the workflow](../.gitbook/assets/intranda_step_rename-files.png)
-

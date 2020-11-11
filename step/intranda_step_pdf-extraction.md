@@ -12,7 +12,6 @@ This documentation describes how to install, configure and use a plugin to extra
 
 | Details |  |
 | :--- | :--- |
-| Version | 1.2.0 |
 | Identifier | intranda\_step\_pdf-extraction |
 | Source code | [https://github.com/intranda/goobi-plugin-step-pdf-extraction](https://github.com/intranda/goobi-plugin-step-pdf-extraction) |
 | Licence | GPL 2.0 or newer |
@@ -80,4 +79,3 @@ After the plugin has been installed, it can be configured in the user interface 
 To use the plugin, a PDF file must be in the master folder of the process at the time of execution. This is then automatically divided into individual pages. In addition, the full text \(if available\) is extracted and the table of contents of the PDF file is read in order to be entered as structural elements in the METS file.
 
 It is therefore recommended to pre-store another workflow step for the workflow step with this plugin, in which files are loaded into the master folder. This can be done by linking the process folder to the home folder of the user or, for example, in the File-Upload plug-in.
-

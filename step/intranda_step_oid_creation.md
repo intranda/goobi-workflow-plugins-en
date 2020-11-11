@@ -13,7 +13,6 @@ With this plugin, object identifiers for a work and all images can be retrieved 
 
 | Details |  |
 | :--- | :--- |
-| Version | 1.0.0 |
 | Identifier | intranda\_step\_oid\_creation |
 | Source code | [https://github.com/intranda/goobi-plugin-step-oid-creation](https://github.com/intranda/goobi-plugin-step-oid-creation) |
 | Licence | GPL 2.0 oder neuer |

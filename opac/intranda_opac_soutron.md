@@ -10,7 +10,6 @@ This documentation describes the installation, configuration and use of the plug
 
 | Details |  |
 | :--- | :--- |
-| Version | 1.0.0 |
 | Identifier | intranda\_opac\_soutron |
 | Source code | [https://github.com/intranda/goobi-plugin-opac-soutron](https://github.com/intranda/goobi-plugin-opac-soutron) |
 | Licence | GPL 2.0 or newer |
@@ -115,4 +114,3 @@ If a valid record is found, the record is searched for the field `/soutron/catal
 The configured XPath expressions configured for `<metadata>` and `<person>` are then evaluated.
 
 The expressions apply to the element `/soutron/catalogs_view/ct/`. If data is found with an expression, the corresponding specified metadata is generated. For persons, the system checks whether the value contains a comma. If this is the case, first name and surname are separated by a comma, otherwise the value is interpreted as a surname.
-

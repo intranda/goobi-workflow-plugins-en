@@ -12,7 +12,6 @@ This plugin is used to replace previously imported placeholder images within the
 
 | Details |  |
 | :--- | :--- |
-| Version | 1.0.0 |
 | Identifier | intranda\_step\_replace-images |
 | Source code | [https://github.com/intranda/goobi-plugin-step-replace-images](https://github.com/intranda/goobi-plugin-step-replace-images) |
 | Licence | GPL 2.0 or newer |
@@ -38,4 +37,3 @@ This plugin is integrated into the workflow so that it is available for a select
 This gives the user access to the plugin's user interface, where the current content of the master folder is listed. Here, single or many images can be copied by Drag & Drop to the place where the images to be inserted should replace the existing placeholder images. The plugin also ensures during the upload that the newly uploaded files are renamed correctly.
 
 ![User interface to replace the existing placeholder images](../.gitbook/assets/intranda_step_replace-images-2_en.png)
-

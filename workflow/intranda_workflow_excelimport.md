@@ -14,7 +14,6 @@ This workflow plugin was implemented in order to provide an individual user inte
 
 | Details |  |
 | :--- | :--- |
-| Version | 1.0.0 |
 | Identifier | intranda\_workflow\_excelimport |
 | Source code | [https://github.com/intranda/goobi-plugin-workflow-excelimport](https://github.com/intranda/goobi-plugin-workflow-excelimport) |
 | Licence | GPL 2.0 or newer |
@@ -157,4 +156,3 @@ For each individual metadata, you can specify how it is to be imported. Each fie
 After installing and starting the plugin, it is available within the `Workflow` menu. After the call, an Excel file can be uploaded here, so that all validation messages are immediately visible. You can then decide whether the processes should still be generated in Goobi despite any validation messages or whether the import should be cancelled.
 
 ![](../.gitbook/assets/intranda_workflow_excelimport.png)
-

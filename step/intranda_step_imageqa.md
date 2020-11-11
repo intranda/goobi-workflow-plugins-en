@@ -12,7 +12,6 @@ This plugin is used to visually check the quality of images. It allows different
 
 | Details |  |
 | :--- | :--- |
-| Version | 1.0.0 |
 | Identifier | intranda\_step\_imageQA |
 | Source code | [https://github.com/intranda/goobi-plugin-step-imageqa](https://github.com/intranda/goobi-plugin-step-imageqa) |
 | Licence | GPL 2.0 or newer |
@@ -217,4 +216,3 @@ Besides the pure image display, the plugin can also handle other object types. F
 Depending on the individual configuration, the plugin allows many more functions, which are mostly visible within the thumbnail display. If these functions have been configured in the configuration file described above, they can be used, for example, for downloading PDF files, image files, rotations, deletions and other operations.
 
 ![Activated additional functions within the thumbnail display](../.gitbook/assets/intranda_step_imageqa6.png)
-

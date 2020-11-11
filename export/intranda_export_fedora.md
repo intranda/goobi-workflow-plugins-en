@@ -10,7 +10,6 @@ This documentation describes the installation, configuration and use of the Fedo
 
 | Details |  |
 | :--- | :--- |
-| Version | 1.0.0 |
 | Identifier | intranda\_export\_fedora |
 | Source code | [https://github.com/intranda/goobi-plugin-export-fedora](https://github.com/intranda/goobi-plugin-export-fedora) |
 | Licence | GPL 2.0 or newer |
@@ -101,4 +100,3 @@ http(s)://<Fedora REST endpoint>/records/&lt;CatalogIdDigital>/
 ### URL for the derivatives of the images
 
 [http://localhost:8888/fedora/rest/records/PPN123456789/media/00000001.tif](http://localhost:8888/fedora/rest/records/PPN123456789/media/00000001.tif) [http://localhost:8888/fedora/rest/records/PPN123456789/media/00000002.tif](http://localhost:8888/fedora/rest/records/PPN123456789/media/00000002.tif) [http://localhost:8888/fedora/rest/records/PPN123456789/media/00000003.tif](http://localhost:8888/fedora/rest/records/PPN123456789/media/00000003.tif)
-

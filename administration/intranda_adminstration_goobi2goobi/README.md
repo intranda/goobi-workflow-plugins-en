@@ -12,7 +12,6 @@ The two plugins described here can be used to transfer data from one Goobi workf
 
 | Details |  |
 | :--- | :--- |
-| Version | 1.0.0 |
 | Identifier | intranda\_administration\_goobi2goobi\_export  intranda\_administration\_goobi2goobi\_import\_infrastructure  intranda\_administration\_goobi2goobi\_import\_data |
 | Source code | [https://github.com/intranda/goobi-plugin-administration-goobi2goobi-export](https://github.com/intranda/goobi-plugin-administration-goobi2goobi-export)  [https://github.com/intranda/goobi-plugin-administration-goobi2goobi-import](https://github.com/intranda/goobi-plugin-administration-goobi2goobi-import) |
 | Licence | GPL 2.0 oder neuer |
@@ -50,4 +49,3 @@ After the complete creation and enrichment of the export directories on the sour
 After the export directories have been successfully transferred to the target system, the data can be imported there. To do this, the data must be stored in the correct place in the system and some further precautions regarding the infrastructure must also be prepared.
 
 {% page-ref page="step\_3\_import.md" %}
-

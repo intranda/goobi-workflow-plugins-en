@@ -12,7 +12,6 @@ This plugin is used to generate placeholder images within the master folder of a
 
 | Details |  |
 | :--- | :--- |
-| Version | 1.0.0 |
 | Identifier | intranda\_step\_placeholder-creation |
 | Source code | [https://github.com/intranda/goobi-plugin-step-placeholder](https://github.com/intranda/goobi-plugin-step-placeholder) |
 | Lizenz | GPL 2.0 or newer |
@@ -39,4 +38,3 @@ This plugin is integrated into the workflow so that it is available for a select
 From this moment on, the generated placeholder images exist for the process and can be displayed and replaced in the course of the further workflow.
 
 ![Display of the placeholder images e.g. within the METS editor](../.gitbook/assets/intranda_step_placeholder-creation-2_en.png)
-

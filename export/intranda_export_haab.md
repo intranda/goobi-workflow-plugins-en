@@ -12,7 +12,6 @@ This documentation describes the installation, configuration and use of an expor
 
 | Details |  |
 | :--- | :--- |
-| Version | 1.0.0 |
 | Identifier | HaabExport |
 | Source code | [https://github.com/intranda/goobi-plugin-export-haab](https://github.com/intranda/goobi-plugin-export-haab) |
 | Licence | GPL 2.0 or newer |
@@ -53,4 +52,3 @@ The `exportFolder` list can be used to define various locations to which the exp
 In order to be able to use the export plug-in within the workflow after successful installation, a work step must be defined in which the Export DMS function was activated. In addition, the value `HaabExport` must be entered as the step plug-in.
 
 ![](../.gitbook/assets/intranda_export_haab.png)
-

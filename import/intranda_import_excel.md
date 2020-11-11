@@ -10,7 +10,6 @@ This documentation describes the installation, configuration and use of the plug
 
 | Details |  |
 | :--- | :--- |
-| Version | 1.0.0 |
 | Identifier | intranda\_import\_excel |
 | Source code | [https://github.com/intranda/goobi-plugin-import-excel](https://github.com/intranda/goobi-plugin-import-excel) |
 | Licence | GPL 2.0 or newer |
