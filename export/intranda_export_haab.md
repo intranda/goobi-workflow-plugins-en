@@ -52,3 +52,4 @@ The `exportFolder` list can be used to define various locations to which the exp
 In order to be able to use the export plug-in within the workflow after successful installation, a work step must be defined in which the Export DMS function was activated. In addition, the value `HaabExport` must be entered as the step plug-in.
 
 ![](../.gitbook/assets/intranda_export_haab.png)
+

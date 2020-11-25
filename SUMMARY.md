@@ -52,9 +52,9 @@
 * [Replace images](step/intranda_step_replace-images.md)
 * [Upload files](step/intranda_step_fileupload.md)
 * [Image scaling and watermarking](step/intranda_step_image_resize_and_watermark.md)
-* [Package Export](step/intranda_step_exportPackage.md)
-* [Delete Content](step/intranda_step_deleteContent.md)
-* [Generate Identifier](step/intranda_step_generateIdentifier.md)
+* [Package Export](step/intranda_step_exportpackage.md)
+* [Delete Content](step/intranda_step_deletecontent.md)
+* [Generate Identifier](step/intranda_step_generateidentifier.md)
 * [Reorder Images](step/intranda_step_reorder_images.md)
 * [Transcription of image content](step/intranda_step_transcription.md)
 * [Object Identifier Generation](step/intranda_step_oid_creation.md)
@@ -90,3 +90,4 @@
 ## Other
 
 * [Counterscript Application](other/counterscript-application.md)
+

@@ -81,3 +81,4 @@ The import takes place line by line. For each line, the process title is generat
 Now it is checked whether an issue should be created. This is done on the basis of the `Issue` column. If the field is empty, the article is appended directly to the year, otherwise the correct issue is searched for. If it does not exist yet, it will also be created. The sorting of the issues is based on the number of the `Issue` column.
 
 The article is then created and added to the issue or volume. If several articles exist, the sorting is done by specifying the start page from the `Pages` column.
+

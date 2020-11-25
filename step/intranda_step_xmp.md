@@ -374,3 +374,4 @@ XMP headers allow you to write the complete Dublin Core metadata record. With th
     </config>
 </config_plugin>
 ```
+

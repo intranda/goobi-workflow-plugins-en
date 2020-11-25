@@ -1,6 +1,8 @@
 ---
 description: >-
-  This workflow plugin allows a mass upload of files with automatic allocation to the correct Goobi processes either on the basis of the file names or by means of the analysed barcodes.
+  This workflow plugin allows a mass upload of files with automatic allocation
+  to the correct Goobi processes either on the basis of the file names or by
+  means of the analysed barcodes.
 ---
 
 # Mass upload
@@ -102,3 +104,4 @@ With a click on the button `Import files into processes` the images are now move
 Please note: If barcodes are to be recognised in order to determine the processes from them, it is important that the barcodes are also available in sufficient size and quality for the recognition to be successful.
 
 ![Digitised separator sheets with barcodes for automatic recognition](../.gitbook/assets/intranda_workflow_massupload5.png)
+

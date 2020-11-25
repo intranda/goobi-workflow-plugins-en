@@ -91,3 +91,4 @@ First open the plugin via the menu `Administration` and there the menu item `Cop
 In the input field of the plugin, enter the catalog identifier of the parent work \(e.g. the ID of the periodical\) and then click on the button 'Start copying'. This will start the copy process, which automatically copies the metadata of the master anchor record to all associated volumes \(e.g. all volumes of the periodical\).
 
 ![Performing the copy operation](../.gitbook/assets/intranda_administration_copy_anchor_04.png)
+

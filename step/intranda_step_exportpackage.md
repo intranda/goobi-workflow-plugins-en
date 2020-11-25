@@ -4,7 +4,7 @@ description: >-
   process to a configurable path
 ---
 
-# Export Package
+# Package Export
 
 ## Introduction
 
@@ -46,7 +46,7 @@ The configuration of the plugin is structured as follows:
           2.) step name matches and project is *
           3.) project name matches and step name is *
           4.) project name and step name are *
-	-->
+    -->
 
     <config>
         <!-- which projects to use for (can be more then one, otherwise use *) -->
@@ -107,7 +107,7 @@ The block `<config>` can occur repeatedly for different projects or workflow ste
 | `export` | If the contents of the `export` folder are to be included, this can also be specified here. |
 | `itm` | If the contents of the TaskManager directory `itm` are to be exported as well, this is defined here. |
 | `validation` | With this parameter you can specify that the contents of the `validation` directory should also be exported. |
-| `uuid` | If UUIDs (v4) are to be used for linking between `<mets:structMap>`, `<mets:fptr>` and `<mets:fileGrp>`, `<mets:file>`, this can be specified here. |
+| `uuid` | If UUIDs \(v4\) are to be used for linking between `<mets:structMap>`, `<mets:fptr>` and `<mets:fileGrp>`, `<mets:file>`, this can be specified here. |
 | `checksum` | When this option is enabled, the exported data is compared with previously generated checksums to verify successful export. If file groups were also configured when configuring the `image folders`, the checksums are also entered into the corresponding file groups. |
 | `checksumValidationCommand` | Contains the command line tool used to perform the verification. |
 | `transformMetaFile` | This parameter defines whether the Goobi workflow internal METS file should be copied to the target directory. |
@@ -130,3 +130,4 @@ Since this plugin is usually to be executed automatically, the step in the workf
 Once the plugin is fully installed and set up, it is usually executed automatically within the workflow, so there is no manual interaction with the user. Instead, the workflow calls the plugin in the background and performs the configured export to the target directory. The specified contents are all copied into a subdirectory of the defined export path.
 
 Depending on the configuration, an XSLT transformation of the internal or the export METS file can be carried out in addition to the export of the data in order to bring it into a desired format. Depending on this transformation as well as the name of the transformation file, it is finally also saved in the folder of the exported processes.
+

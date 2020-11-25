@@ -118,3 +118,4 @@ LayoutWizzard's image analysis works in several phases in order to arrive at the
 
 [    
 ](https://app.gitbook.com/@intranda/s/goobi-workflow-plugins-de/~/drafts/-LgXmDFUB2JKs4qolX5U/primary/step-plugins/intranda_step_pdfupload)
+

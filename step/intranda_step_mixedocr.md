@@ -97,3 +97,4 @@ After the plugin has been installed and configured, it must be added to a workfl
 ![Configuration of the step in Goobi Workflow](../.gitbook/assets/intranda_step_mixedocr_config_gui.png)
 
 The plugin is usually executed automatically, so you should check the box `Automatic task`. The plugin `intranda_step_mixedocr` must also be selected under `Plugin for step`.
+

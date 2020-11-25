@@ -49,3 +49,4 @@ After the complete creation and enrichment of the export directories on the sour
 After the export directories have been successfully transferred to the target system, the data can be imported there. To do this, the data must be stored in the correct place in the system and some further precautions regarding the infrastructure must also be prepared.
 
 {% page-ref page="step\_3\_import.md" %}
+

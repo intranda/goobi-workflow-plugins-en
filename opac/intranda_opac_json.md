@@ -55,7 +55,7 @@ plugin_intranda_opac_json.xml
 
 In the file `goobi_opac.xml` the interface to the desired catalog system must be made known. This is done with an entry that looks like the following:
 
-```xml
+```markup
 <catalogue title="JSON">
     <config description="JSON OPAC" address="x"
     port="443" database="x" iktlist="x" ucnf="x" opacType="intranda_opac_json" />
@@ -66,90 +66,90 @@ Das Attribut `title` enthält einen eindeutigen Namen und `opacType` das zu nutz
 
 Das Mapping der Inhalte des JSON-Datensatzes hin zu Goobi Metadaten geschieht innerhalb der Datei `plugin_intranda_opac_json.xml`. Die Definition der Felder innerhalb des JSON-Datensatzes geschieht mittels `JSONPath`, dem XPath-Equivalent für JSON.
 
-```xml
+```markup
 <config_plugin>
-	<config name="Opac Name">
+    <config name="Opac Name">
 
-		<field id="repository">
-			<label>Repository</label>
-			<select>1</select>
-			<select>2</select>
-			<select>3</select>
-			<type>select</type>
-			<defaultText>1</defaultText>
-			<url></url>
-		</field>
+        <field id="repository">
+            <label>Repository</label>
+            <select>1</select>
+            <select>2</select>
+            <select>3</select>
+            <type>select</type>
+            <defaultText>1</defaultText>
+            <url></url>
+        </field>
 
-		<field id="id">
-			<label>Identifier</label>
-			<type>text</type>
-			<defaultText></defaultText>
-			<url></url>
-		</field>
+        <field id="id">
+            <label>Identifier</label>
+            <type>text</type>
+            <defaultText></defaultText>
+            <url></url>
+        </field>
 
-		<field id="type">
-			<label></label>
-			<type>select+text</type>
-			<select>barcode</select>
-			<select>holding</select>
-			<select>item</select>
-			<defaultText></defaultText>
-			<url>https://example.com/repository/{repository.select}/}{type.select}/{type.text}?id={id.text}</url>
-		</field>
+        <field id="type">
+            <label></label>
+            <type>select+text</type>
+            <select>barcode</select>
+            <select>holding</select>
+            <select>item</select>
+            <defaultText></defaultText>
+            <url>https://example.com/repository/{repository.select}/}{type.select}/{type.text}?id={id.text}</url>
+        </field>
 
-		<authentication>
-			<username>user</username>
-			<password>password</password>
-		</authentication>
+        <authentication>
+            <username>user</username>
+            <password>password</password>
+        </authentication>
 
-		<defaultPublicationType>Monograph</defaultPublicationType>
+        <defaultPublicationType>Monograph</defaultPublicationType>
 
-		<metadata metadata="PublicationYear" field="$.date" />
-		<metadata metadata="DocLanguage" field="$.language" />
-		<metadata metadata="CatalogIDDigital" field="$.identifier" docType="volume" />
-		<metadata metadata="CatalogIDDigital" field="$.children[?(@.itemCount > 1)].children[0].itemId" docType="volume" />
-		<metadata metadata="CatalogIDDigital" field="$.uri" regularExpression="s/\/some-prefix\/(.+)/$1/g" docType="anchor" />
-		<metadata metadata="shelfmarksource" field="$.identifierShelfMark" docType="volume" />
-		<metadata metadata="TitleDocMain" field="$.title" docType="volume" />
-		<metadata metadata="OtherTitle" field="$.alternativeTitle" docType="volume" />
-		<metadata metadata="CurrentNo" field="$..children[0].children[0].sequenceNumber" docType="volume" />
-		<metadata metadata="CurrentNoSorting" field="$..children[0].children[0].sequenceNumber" docType="volume" />
+        <metadata metadata="PublicationYear" field="$.date" />
+        <metadata metadata="DocLanguage" field="$.language" />
+        <metadata metadata="CatalogIDDigital" field="$.identifier" docType="volume" />
+        <metadata metadata="CatalogIDDigital" field="$.children[?(@.itemCount > 1)].children[0].itemId" docType="volume" />
+        <metadata metadata="CatalogIDDigital" field="$.uri" regularExpression="s/\/some-prefix\/(.+)/$1/g" docType="anchor" />
+        <metadata metadata="shelfmarksource" field="$.identifierShelfMark" docType="volume" />
+        <metadata metadata="TitleDocMain" field="$.title" docType="volume" />
+        <metadata metadata="OtherTitle" field="$.alternativeTitle" docType="volume" />
+        <metadata metadata="CurrentNo" field="$..children[0].children[0].sequenceNumber" docType="volume" />
+        <metadata metadata="CurrentNoSorting" field="$..children[0].children[0].sequenceNumber" docType="volume" />
 
-		<person metadata="Author" field="creator" firstname="s/^(.+?)\, (.+?)$/$2/g" lastname="s/^(.+?)\, (.+?)$/$1/g" validationExpression="/^.+?\, .+?\, .+$/" regularExpression="s/^(.+?)\, (.+?)\, .+/$1\, $2/g"/>
-	</config>
+        <person metadata="Author" field="creator" firstname="s/^(.+?)\, (.+?)$/$2/g" lastname="s/^(.+?)\, (.+?)$/$1/g" validationExpression="/^.+?\, .+?\, .+$/" regularExpression="s/^(.+?)\, (.+?)\, .+/$1\, $2/g"/>
+    </config>
 
-	<config>
-		<field id="id">
-			<label>Identifier</label>
-			<type>text</type>
-			<defaultText></defaultText>
-			<url>http://example.com/repositories/2/archival_objects/{id.text}</url>
-		</field>
-		<authentication>
-			<username>user</username>
-			<password>password</password>
-			<loginUrl>http://example.com/users/{username}/login</loginUrl>
-			<sessionid>session</sessionid>
-			<headerParameter>Token</headerParameter>
-		</authentication>
-		<recordType field="[?(@.jsonmodel_type=='archival_object')]" docType="ArchivalObject" />
-		<metadata metadata="TitleDocMain" field="$.title" />
+    <config>
+        <field id="id">
+            <label>Identifier</label>
+            <type>text</type>
+            <defaultText></defaultText>
+            <url>http://example.com/repositories/2/archival_objects/{id.text}</url>
+        </field>
+        <authentication>
+            <username>user</username>
+            <password>password</password>
+            <loginUrl>http://example.com/users/{username}/login</loginUrl>
+            <sessionid>session</sessionid>
+            <headerParameter>Token</headerParameter>
+        </authentication>
+        <recordType field="[?(@.jsonmodel_type=='archival_object')]" docType="ArchivalObject" />
+        <metadata metadata="TitleDocMain" field="$.title" />
 
-		<metadata metadata="PublicationStart" field="$.dates.begin" />
-		<metadata metadata="PublicationEnd" field="$.dates.end" />
-		<metadata metadata="PublicationRun" field="$.dates.expression" />
-		<person metadata="Author" field="$.linked_agents[?(@.role=='creator')].ref" followLink="true" templateName="Person" basisUrl="http://example.com"/>
-		<metadata metadata="DocLanguage" field="$.notes[?(@.type=='langmaterial')].content[*]" />
-		<metadata metadata="Note" field="$.notes[?(@.label=='Writing')].subnotes[*].content" />
-		<metadata metadata="Illustration" field="$.notes[?(@.label=='Illumination')].subnotes[*].content" />
-		<metadata metadata="Provenience" field="$.notes[?(@.type=='custodhist')].subnotes[*].content" />
-		<metadata metadata="CatalogIDDigital" field="$.uri" regularExpression="s/.*\/(.+)$/$1/" />
-	</config>
+        <metadata metadata="PublicationStart" field="$.dates.begin" />
+        <metadata metadata="PublicationEnd" field="$.dates.end" />
+        <metadata metadata="PublicationRun" field="$.dates.expression" />
+        <person metadata="Author" field="$.linked_agents[?(@.role=='creator')].ref" followLink="true" templateName="Person" basisUrl="http://example.com"/>
+        <metadata metadata="DocLanguage" field="$.notes[?(@.type=='langmaterial')].content[*]" />
+        <metadata metadata="Note" field="$.notes[?(@.label=='Writing')].subnotes[*].content" />
+        <metadata metadata="Illustration" field="$.notes[?(@.label=='Illumination')].subnotes[*].content" />
+        <metadata metadata="Provenience" field="$.notes[?(@.type=='custodhist')].subnotes[*].content" />
+        <metadata metadata="CatalogIDDigital" field="$.uri" regularExpression="s/.*\/(.+)$/$1/" />
+    </config>
 
-	<config>
-		<template>Person</template>
-		<person metadata="Author" field="$.title" firstname="s/^(.*?)\,(.*?)\,.*/$2/g" lastname="s/^(.*?)\,(.*?)\,.*$/$1/g" identifier="$.uri"/>
-	</config>
+    <config>
+        <template>Person</template>
+        <person metadata="Author" field="$.title" firstname="s/^(.*?)\,(.*?)\,.*/$2/g" lastname="s/^(.*?)\,(.*?)\,.*$/$1/g" identifier="$.uri"/>
+    </config>
 </config_plugin>
 ```
 
@@ -157,14 +157,14 @@ The available catalogues are defined in individual `<config name="XYZ">` blocks.
 
 Different field types can be used within the catalogue:
 
-|Field type|Description|
-|-- |-- |
-|`field`| This configuration can be used to define additional query fields to be listed within the user interface.|
-|`authentication`| Enter the access data for accessing the catalogue interface here.|
-|`recordType`|This type is used to detect the document type of the JSON record.|
-|`defaultPublicationType`|This type is used when no document type has been detected before.|
-|`metadata`|This type is used to map JSON fields to metadata.|
-|`person`|This type is used to map JSON fields to persons.|
+| Field type | Description |
+| :--- | :--- |
+| `field` | This configuration can be used to define additional query fields to be listed within the user interface. |
+| `authentication` | Enter the access data for accessing the catalogue interface here. |
+| `recordType` | This type is used to detect the document type of the JSON record. |
+| `defaultPublicationType` | This type is used when no document type has been detected before. |
+| `metadata` | This type is used to map JSON fields to metadata. |
+| `person` | This type is used to map JSON fields to persons. |
 
 ### Field type: field
 
@@ -205,9 +205,9 @@ The two fields `<metadata>` and `<person>` are used to import individual content
 | `regularExpression` | A regular expression to manipulate the value. This is applied after the `validationExpression` check. |
 | `firstname` | A regular expression that determines the first name of a person from the field contents. |
 | `lastname` | A regular expression that determines the last name of a person from the field contents. |
-|`followLink`| Defines whether the contained value is imported directly or contains a link to another data record. |
-|`templateName`| Contains the name of the `<config>` block to be used to analyse the new record. |
-|`basisUrl`| Contains the base URL to be used if the link to the record is a relative path. |
+| `followLink` | Defines whether the contained value is imported directly or contains a link to another data record. |
+| `templateName` | Contains the name of the `<config>` block to be used to analyse the new record. |
+| `basisUrl` | Contains the base URL to be used if the link to the record is a relative path. |
 
 ## Use
 
@@ -236,3 +236,4 @@ The following URLs could be of further help for the installation or especially f
 JSONPath Online Evaluator: [https://jsonpath.com/](https://jsonpath.com/)
 
 JSONPath Description: [https://support.smartbear.com/alertsite/docs/monitors/api/endpoint/jsonpath.html](https://support.smartbear.com/alertsite/docs/monitors/api/endpoint/jsonpath.html)
+

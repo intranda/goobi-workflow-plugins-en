@@ -136,3 +136,4 @@ After the plugin has been installed and configured, it can be configured in the 
 ## Usage
 
 Since the plugin should run fully automatically, there is nothing else to consider for the use of the plugin.
+

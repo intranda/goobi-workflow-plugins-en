@@ -1,6 +1,7 @@
 ---
 description: >-
-  This step plugin allows you to generate configurable identifiers and save them within a metadata in the METS file.
+  This step plugin allows you to generate configurable identifiers and save them
+  within a metadata in the METS file.
 ---
 
 # Generate Identifier
@@ -65,9 +66,9 @@ The block `<config>` can occur repeatedly for different projects or workflow ste
 | `project` | This parameter determines the project for which the current block `<config>` is to apply. The name of the project is used here. This parameter can occur several times per `<config>` block. |
 | `step` | This parameter controls for which workflow steps the block `<config>` is to apply. The name of the step is used here. This parameter can occur several times per `<config>` block. |
 | `field` | This parameter can be used to specify in which metadata field the generated identifier is to be written. |
-| `type` | This parameter allows you to choose between different types for generating the identifier. Available are random numbers (`random`), time stamps (`timestamp`) and UUIDs (`uuid`). |
+| `type` | This parameter allows you to choose between different types for generating the identifier. Available are random numbers \(`random`\), time stamps \(`timestamp`\) and UUIDs \(`uuid`\). |
 | `length` | If a random number was selected as the type, the number of digits can be specified here. |
-| `overwrite` | If this parameter is set to `true`, a new identifier will always be created when the plugin is run again, thus overwriting any existing identifier again. Otherwise (`false`) a new identifier would only be created if the configured field (`field`) is still empty or does not exist. |
+| `overwrite` | If this parameter is set to `true`, a new identifier will always be created when the plugin is run again, thus overwriting any existing identifier again. Otherwise \(`false`\) a new identifier would only be created if the configured field \(`field`\) is still empty or does not exist. |
 
 ## Integration of the plugin into the workflow
 
@@ -80,3 +81,4 @@ Since this plugin is usually to be executed automatically, the step in the workf
 ## How the plugin works
 
 Once the plugin is fully installed and set up, it is usually executed automatically within the workflow, so there is no manual interaction with the user. Instead, the workflow calls the plugin in the background and starts the generation of an identifier depending on the selected configuration.
+

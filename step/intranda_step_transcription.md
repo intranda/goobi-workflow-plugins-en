@@ -1,7 +1,7 @@
 ---
 description: >-
-  This step plugin allows you to create transcriptions of works.
-  The transcriptions are recorded without word coordinates.
+  This step plugin allows you to create transcriptions of works. The
+  transcriptions are recorded without word coordinates.
 ---
 
 # Transcription of image content
@@ -65,3 +65,4 @@ If a user accepts a task with this plugin, he can enter its user interface. Ther
 {% hint style="info" %}
 Please note that this plugin only allows a simple transcription of page content. It is not possible to enter coordinates for paragraphs, lines or words.
 {% endhint %}
+

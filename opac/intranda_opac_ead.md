@@ -288,3 +288,4 @@ The file `goobi_projects.xml` needs a new definition for the publication type an
 {% endcode %}
 
 Once this configuration has been completed, a new data source is available within Goobi within the creation mask for processes. This can now be queried using identifiers in the same way as other data sources and catalogs.
+

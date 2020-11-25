@@ -128,3 +128,4 @@ https://example.com/opac?id=[VALUE]
 If a valid record is found here, it is searched for the field in which the document type is to be found. If the query is not defined, the document type is read from the configuration file instead. The required structure element is then created with the determined type.
 
 All XPath expressions that have been configured are then evaluated. If data is found with an expression, the corresponding metadata is generated. For persons, the system checks whether the value contains a comma. In this case, first and last names are separated by commas, otherwise the value is interpreted as last name.
+

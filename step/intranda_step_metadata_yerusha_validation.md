@@ -113,3 +113,4 @@ The plugin is executed and opened immediately after a task is entered. The resul
 ![Display the results of the validation within an accepted task](../.gitbook/assets/intranda_step_metadata_yerusha_validation2.png)
 
 If the task has been configured to allow access to the Goobi Metadata Editor and changes have been made to the metadata, validation can be carried out again at any time afterwards. If the validation rules within the configuration file have been changed, it is also helpful to run the validation again.
+

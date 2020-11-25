@@ -66,3 +66,4 @@ Here you can choose between the three options `antiqua`, `fracture` and `no OCR`
 ![Updated - no OCR for cover and blank pages](../.gitbook/assets/intranda_step_ocrselector_updated.png)
 
 The plugin can be exited by clicking on `Exit plugin` after successful selection. The plugin will automatically be saved again. The `Save` button can be used for temporary saving.
+
