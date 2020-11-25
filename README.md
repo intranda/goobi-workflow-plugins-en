@@ -246,9 +246,9 @@ REST plugins are installed in the following folder:
 /opt/digiverso/goobi/lib/
 ```
 
-Like the Web-API plugins, the REST plugins do not have their own user interface. Also the access permission is controlled by the same configuration file and controls the access from selected IP addresses and authentication. Also for the REST Plugins the configuration is done in the following file:
+Like the Web-API plugins, the REST plugins do not have their own user interface. Also the access permission is controlled by the same configuration file and controls the access from selected IP addresses and authentication. For the REST Plugins the configuration is done in the following file:
 
 ```text
-/opt/digiverso/goobi/config/goobi_webapi.xml
+/opt/digiverso/goobi/config/goobi_rest.xml
 ```
 
