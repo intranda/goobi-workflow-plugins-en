@@ -148,7 +148,7 @@ The configuration is done via the file `plugin_intranda_import_excel_read_header
 </config_plugin>
 ```
 
-### Individuelle Konfigurierbarkeit
+### Individual configurability
 
 It is possible to create a global configuration for all production templates as well as individual settings for individual production templates. The element `config` can be repeated in the XML file. If mass import has been selected in Goobi, the system always searches for the configuration block with the name of the selected production template in the `template` element. If such an entry does not exist, the `default` configuration is used. This is marked with `*`.
 
@@ -319,4 +319,3 @@ A metadata group consists of several metadata and persons. The configuration of 
 To use the import, the mass import area must be opened in the production templates and the plugin `intranda_import_excel_read_headerdata` selected in the File upload import tab. An Excel file can then be uploaded and imported.
 
 The import then takes place line by line. A new process is created for each line and the configured rules are applied. If a valid data record has been created and the generated task title has not yet been assigned, the task is actually created and saved.
-
