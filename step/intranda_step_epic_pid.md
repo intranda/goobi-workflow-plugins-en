@@ -40,7 +40,7 @@ In order to configure how the plugin should behave, the following two configurat
 
 The configuration of the file `plugin_intranda_step_epic_pid.xml` is structured as follows:
 
-```markup
+```xml
 <config_plugin>
 
 	<config>
