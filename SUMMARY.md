@@ -58,7 +58,7 @@
 * [Reorder Images](step/intranda_step_reorder_images.md)
 * [Transcription of image content](step/intranda_step_transcription.md)
 * [Object Identifier Generation](step/intranda_step_oid_creation.md)
-* [ePIC PID Registrierung (Handle & DOI)](step/intranda_step_epic_pid.md)
+* [ePIC PID Registration (Handle & DOI)](step/intranda_step_epic_pid.md)
 
 ## Opac Plugins <a id="opac"></a>
 
