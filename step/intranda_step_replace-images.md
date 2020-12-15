@@ -34,7 +34,7 @@ This plug-in also has a configuration file with the name `plugin_intranda_step_r
 
 The configuration file has the following structure:
 
-```xml
+```markup
 <config_plugin>
     <config>
         <project>*</project>
@@ -63,3 +63,4 @@ This plugin is integrated into the workflow so that it is available for a select
 This gives the user access to the plugin's user interface, where the current content of the master folder is listed. Here, single or many images can be copied by Drag & Drop to the place where the images to be inserted should replace the existing placeholder images. The plugin also ensures during the upload that the newly uploaded files are renamed correctly.
 
 ![User interface to replace the existing placeholder images](../.gitbook/assets/intranda_step_replace-images-2_en.png)
+

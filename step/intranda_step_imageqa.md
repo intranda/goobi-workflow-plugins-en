@@ -216,3 +216,4 @@ Besides the pure image display, the plugin can also handle other object types. F
 Depending on the individual configuration, the plugin allows many more functions, which are mostly visible within the thumbnail display. If these functions have been configured in the configuration file described above, they can be used, for example, for downloading PDF files, image files, rotations, deletions and other operations.
 
 ![Activated additional functions within the thumbnail display](../.gitbook/assets/intranda_step_imageqa6.png)
+
