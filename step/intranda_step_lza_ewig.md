@@ -12,7 +12,7 @@ This documentation describes the installation, configuration and use of a plugin
 | Compatibility | Goobi workflow 3.0 |
 | Documentation date | 05.12.2019 |
 
-### Installation and Configuration
+## Installation and Configuration
 
 The plugin consists of two files:
 
