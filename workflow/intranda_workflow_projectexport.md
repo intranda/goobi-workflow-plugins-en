@@ -17,7 +17,7 @@ If the initial check determines that the configured workflow step in the workflo
 | :--- | :--- |
 | Identifier | intranda\_workflow\_projectexport |
 | Source code | [https://github.com/intranda/goobi-plugin-workflow-projectexport](https://github.com/intranda/goobi-plugin-workflow-projectexport) |
-| Licence | GPL 2.0 oder neuer |
+| Licence | GPL 2.0 or newer |
 | Compatibility | Goobi workflow 20.11 |
 | Documentation date | 20.12.2020 |
 
@@ -79,7 +79,7 @@ The configuration of the plug-in is as follows:
 | `closeStepName` | Here you can specify the name of the workflow step that is closed after the export has been carried out. |
 | `imageFolder` | Specify here which directory is to be used for the export. Typical values for this are `master` or `media`. |
 | `exportDirectory` | A target directory for the export can be specified for each configuration block. All exports will take place within the folder specified here. |
-| If, in addition to exporting to the configured directory, it should also be possible to download the entire export as a zip file, this can be activated here. |
+| `allowZipDownload` | If, in addition to exporting to the configured directory, it should also be possible to download the entire export as a zip file, this can be activated here. |
 
 ## Operation of the plug-in
 
