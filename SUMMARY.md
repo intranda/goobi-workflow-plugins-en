@@ -87,8 +87,8 @@
 * [LayoutWizzard workflow plugin](workflow/intranda_workflow_crop.md)
 * [Mass upload](workflow/intranda_workflow_massupload.md)
 * [Create process relationships](workflow/intranda_workflow_linkedprocesscreation.md)
+* [Project export as folder with images and Excel file](workflow/intranda_workflow_projectexport.md)
 
 ## Other
 
 * [Counterscript Application](other/counterscript-application.md)
-
