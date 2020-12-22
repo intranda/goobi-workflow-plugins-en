@@ -59,7 +59,8 @@
 * [Transcription of image content](step/intranda_step_transcription.md)
 * [Object Identifier Generation](step/intranda_step_oid_creation.md)
 * [ePIC PID Registration \(Handle & DOI\)](step/intranda_step_epic_pid.md)
-
+* [Metadata edition](step/intranda_step_metadata_edition.md)
+*
 ## Opac Plugins <a id="opac"></a>
 
 * [PICA Import](opac/intranda_opac_pica.md)
