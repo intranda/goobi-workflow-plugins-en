@@ -51,7 +51,7 @@ Please note that the correct paths for GraphicMagick and ImageMagick must also b
 
 An example configuration for the file `plugin_intranda_step_image_resize_and_watermark.xml` looks like this:
 
-```markup
+```xml
 <config_plugin>
     <!-- path to GraphicsMagick -->
     <gmPath>/usr/bin/gm</gmPath>
@@ -82,7 +82,9 @@ An example configuration for the file `plugin_intranda_step_image_resize_and_wat
             <!-- The watermark configuration -->
             <watermark>
                 <!-- the image to use for watermarking -->
-                <image>/opt/digiverso/goobi/scripts/watermark1.png</image>
+                <image>/opt/digiverso/goobi/xslt/logo.png</image>
+                <!-- define the shade size here -->
+                <shadeSize>240x40</shadeSize>
                 <!-- the location of the watermark. Possible values: north,
                      northeast, east, southeast, south, southwest,
                      west, northwest -->
@@ -100,6 +102,12 @@ An example configuration for the file `plugin_intranda_step_image_resize_and_wat
             <watermark>
                 <!-- you can also use a text-only watermark. -->
                 <text>My watermark text</text>
+                <!-- define the shade size here -->
+                <shadeSize>240x40</shadeSize>
+                <!-- define the size of the box for the text -->
+                <boxSize>450x200</boxSize>
+                <!-- font to use for the text rendering -->
+                <font>Open-Sans</font>
                 <location>southeast</location>
                 <xDistance>600</xDistance>
                 <yDistance>100</yDistance>
@@ -124,7 +132,10 @@ The block `<config>` can occur repeatedly for different projects or workflow ste
 | `collection` | Restriction to the operations that belong to a selected digital collection. |
 | `resizeTo` | Maximum size of the image on the longest side. Specified in pixels. |
 | `watermark/image` | Path to an image to be used within the watermark. |
+| `watermark/shadeSize` | Define here which size specification should be used as shade. |
 | `watermark/text` | Text to be used within the watermark. |
+| `watermark/font` | Specify here which font should be used for the text. This font must be installed on the system. |
+| `watermark/boxSize` | Define here what dimensions the box should have within which the text is to be rendered. This thus determines the size of the displayed font. |
 | `watermark/location` | Determines where within the image the watermark should be rendered. Possible specifications are `north`, `northeast`, `east`, `southeast`, `south`, `southwest`, `west`, `northwest` |
 | `watermark/xDistance` | Lateral distance of the watermark |
 | `watermark/yDistance` | Distance of the watermark up or down |
@@ -138,4 +149,3 @@ To use the plug-in, it must be activated for one or more desired tasks in the wo
 After running the plugin the images have the expected size and have the configured watermark.
 
 ![Possible results in the generated images](../.gitbook/assets/intranda_step_image_resize_and_watermark_result.png)
-
