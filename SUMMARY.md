@@ -6,11 +6,15 @@
 
 * [Catalogue Poller](administration/intranda_administration_catalogue_poller.md)
 * [Copy Master-Anchor](administration/intranda_administration_copyanchor.md)
-* [Goobi-to-Goobi](administration/intranda_adminstration_goobi2goobi/README.md)
-  * [Installation and configuration](administration/intranda_adminstration_goobi2goobi/installation.md)
-  * [Creation of the export directories](administration/intranda_adminstration_goobi2goobi/step_1_export.md)
-  * [Transfer of the export directories](administration/intranda_adminstration_goobi2goobi/step_2_transfer.md)
-  * [Importing the export directories](administration/intranda_adminstration_goobi2goobi/step_3_import.md)
+* [Goobi-to-Goobi](administration/intranda_administration_goobi2goobi/README.md)
+  * [Installation and configuration](administration/intranda_administration_goobi2goobi/installation.md)
+  * [Creation of the export directories](administration/intranda_administration_goobi2goobi/step_1_export.md)
+  * [Transfer of the export directories](administration/intranda_administration_goobi2goobi/step_2_transfer.md)
+  * [Importing the export directories](administration/intranda_administration_goobi2goobi/step_3_import.md)
+* [Archive Management](administration/intranda_administration_archive_management/README.md)
+  * [Installation for productive use](administration/intranda_administration_archive_management/installation_for_productive_use.md)
+  * [Installation for development and tests](administration/intranda_administration_archive_management/installation_for_development.md)
+  * [Configuration](administration/intranda_administration_archive_management/configuration.md)
 
 ## Step Plugins <a id="step"></a>
 
