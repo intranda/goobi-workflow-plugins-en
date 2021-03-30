@@ -20,7 +20,7 @@ http://files.basex.org/releases/9.4.4/BaseX944.zip
 
 The downloaded zip file can then be unpacked. The database is usually installed under the following path:
 
-``` bash
+```bash
 /opt/digiverso/basex/
 ```
 

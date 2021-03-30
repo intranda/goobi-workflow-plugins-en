@@ -139,7 +139,7 @@ let $path := '/opt/digiverso/basex/import/' || $filename
 
 ## Use the archive management plugin within Goobi
 
-After the plugin has been successfully installed in Goobi, the corresponding user group in Goobi must be given the necessary rights to be able to use the plugin. To do this, the users must have the right 'Plugin_Administration_Archive_Management'.
+After the plugin has been successfully installed in Goobi, the corresponding user group in Goobi must be given the necessary rights to be able to use the plugin. To do this, the users must have the right `Plugin_Administration_Archive_Management`.
 
 ## Editing xhtml files and taglib directly from the Goobi project in Eclipse
 
