@@ -11,8 +11,8 @@ This documentation describes the installation, configuration and use of the plug
 
 | Details | |
 | :--- | :--- |
-| Identifier | plugin_intranda_step_datacite_doi |
-| Source code | [https://github.com/intranda/intranda_step_datacite_doi](https://github.com/intranda/intranda_step_datacite_doi) |
+| Identifier | intranda_step_datacite_doi |
+| Source code | [https://github.com/intranda/goobi-plugin-step-datacite-doi](https://github.com/intranda/goobi-plugin-step-datacite-doi) |
 | Licence | GPL 2.0 or newer |
 | Compatibility | Goobi workflow 2021.03 |
 | Documentation date | 15.03.2021 |

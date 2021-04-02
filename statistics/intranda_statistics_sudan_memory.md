@@ -14,7 +14,7 @@ This statistics plugin enables statistical recording of the activity of translat
 | Details |  |
 | :--- | :--- |
 | Identifier | intranda_statistics_sudan_memory_activity_by_user |
-| Source code | https://github.com/intranda/intranda_statistics_sudan_memory_activity_by_user |
+| Source code | https://github.com/intranda/goobi-plugin-statistics-sudan-memory |
 | Licence | GPL 2.0 or newer |
 | Compatibility | Goobi workflow 20.10 |
 | Documentation date | 03.01.2021 |
