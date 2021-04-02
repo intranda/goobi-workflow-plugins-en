@@ -15,9 +15,9 @@ With the help of this plugin, metadata can be extracted from image files and sto
 | :--- | :--- |
 | Identifier | intranda_step_imageMetadataExtraction |
 | Source code | [https://github.com/intranda/goobi-plugin-step-image-metadata-extraction](https://github.com/intranda/goobi-plugin-step-image-metadata-extraction) |
-| Licence | GPL 2.0 oder neuer |
+| Licence | GPL 2.0 or newer |
 | Compatibility | Goobi workflow 2020.12 |
-| Dokumentation date | 02.04.2021 |
+| Documentation date | 02.04.2021 |
 
 ## Installation
 
