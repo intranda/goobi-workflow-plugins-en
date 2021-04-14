@@ -1,5 +1,5 @@
 ---
-description: This is technical documentation for the plugin to import MAB files to processes in Goobi workflow..
+description: This is technical documentation for the plugin to import MAB files to processes in Goobi workflow.
 ---
 
 # Import of MAB Files
