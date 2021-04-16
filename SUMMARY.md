@@ -80,7 +80,7 @@
 
 * [Import for journal articles from an Endnote Export](import/intranda_import_endnote.md)
 * [Importing records from an Excel file](import/intranda_import_excel.md)
-* [Import of MAB Files](import/intranda_import_mab_files.md)
+* [Import of MAB Files](import/intranda_import_mab_file.md)
 
 
 ## Export Plugins <a id="export"></a>
