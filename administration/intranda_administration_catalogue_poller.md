@@ -15,8 +15,8 @@ This documentation describes how to install, configure and use the Administratio
 | Identifier | intranda\_administration\_catalogue\_poller |
 | Source code | [https://github.com/intranda/goobi-plugin-administration-catalogue-poller](https://github.com/intranda/goobi-plugin-administration-catalogue-poller) |
 | Licence | GPL 2.0 or newer |
-| Compatibility | Goobi workflow 3.0.4 and newer |
-| Documentation date | 05.03.2019 |
+| Compatibility | Goobi workflow 2021.02 |
+| Documentation date | 25.04.2021 |
 
 ## Installation
 
@@ -50,7 +50,7 @@ The plugin is configured via the configuration file `plugin_intranda_administrat
 <config_plugin>
 
    <!-- multiple different rules can be defined for individual use cases -->
-   <rule title="SampleProject">
+   <rule title="SampleProject" startTime="22:00:00" delay="24">
 
         <!-- filter which items to run through (can be more then one, otherwise use *)
         please notice that blanks inside of the filter query need to be surrounded by quotation marks -->
@@ -68,6 +68,9 @@ The plugin is configured via the configuration file `plugin_intranda_administrat
         otherwise a complete new mets file is created and overwrites the
         existing one (false) -->
         <mergeRecords>true</mergeRecords>
+
+        <!-- define if children shall be analysed as well. If a sub element contains an identifier, the metadata will get imported as well -->
+        <analyseSubElements>true</analyseSubElements>
 
         <!-- execute an automatic export of updated records;
         this is only executed if mergeRecords is set to true -->
@@ -88,6 +91,8 @@ The plugin is configured via the configuration file `plugin_intranda_administrat
 
 | Parameter | Description |
 | `rule title` | At this point, an internal name is specified, which is mainly used for the user interface to distinguish between the different rules |
+| `rule startTime` | This parameter sets the start time when the plugin should execute this rule. |
+| `rule delay` | This can be used to specify how often the plugin should be executed. The information is given here in the form of hours. |
 | `filter` | The filter can be used to define one or more Goobi projects for which the rules defined here apply. With `*` the rule applies to all projects. Any spaces contained within the filter must be enclosed in quotation marks in the same way as within the Goobi interface. |
 | `catalogue` | Here you can define which catalog is to be used for querying new data. This is the name of a catalog as it was defined within the global Goobi catalog configuration within `goobi_opac.xml`. |
 | `catalogueIdentifier` | Definition of the metadata from the METS file to be used for the catalog query. Usually this is the same identifier that was used for the first catalog query and is usually stored within the metadata `${meta.CatalogIDDigital}`. |
