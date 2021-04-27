@@ -15,8 +15,8 @@ This documentation describes how to install, configure, and use a plug-in to aut
 | Identifier | intranda\_step\_changeWorkflow |
 | Source code | [https://github.com/intranda/goobi-plugin-step-change-workflow](https://github.com/intranda/goobi-plugin-step-change-workflow) |
 | Licence | GPL 2.0 or newer |
-| Compatibility | Goobi Workflow 3.0.0 and newer |
-| Documentation date | 29.04.2019 |
+| Compatibility | Goobi workflow 2021.03 |
+| Documentation date | 27.04.2021 |
 
 ## Precondition
 
@@ -41,76 +41,85 @@ The following is a sample configuration with comments:
 ```markup
 <config_plugin>
     <!--
-        order of configuration is:
-        1.) project name and step name matches
-        2.) step name matches and project is *
-        3.) project name matches and step name is *
-        4.) project name and step name are *
+    	order of configuration is: 
+	    1.) project name and step name matches 
+	    2.) step name matches and project is * 
+	    3.) project name matches and step name is * 
+	    4.) project name and step name are * 
     -->
 
-    <config>
-        <!-- which projects to use for (can be more than one, otherwise use *) -->
-        <project>Register</project>
-        <step>Check</step>
+	<config>
+		<!-- which projects to use for (can be more then one, otherwise use *) -->
+		<project>Register</project>
+		<step>Check</step>
 
-        <!-- multiple changes can be done within one configuration rule; simply add another 'change' element with other properties here -->
-        <change>
-            <!-- name of the property to check -->
-            <propertyName>TemplateID</propertyName>
-            <!-- expected value -->
-            <propertyValue>183</propertyValue>
-            <!-- list of steps to open, if property value matches -->
-            <steps type="open">
-                <title>Box preparation</title>
-            </steps>
-            <!-- list of steps to deactivate -->
-            <steps type="deactivate">
-                <title>Image QA</title>
-            </steps>
-            <!-- list of steps to close -->
-            <steps type="close">
-                <title>Automatic LayoutWizzard Cropping</title>
-                <title>LayoutWizzard: Manual confirmation</title>
-            </steps>
-            <!-- list of steps to lock -->
-            <steps type="lock">
-                <title>Automatic export to Islandora</title>
-            </steps>
-        </change>    
-    </config>
+		<!-- multiple changes can be done within one configuration rule; simply add another 'change' element with other properties here -->
+		<change>
+			<!-- name of the property or metadata to check: please take care to use the syntax of the Variable replacer here -->
+	        <propertyName>{process.TemplateID}</propertyName>
+			<!-- expected value (can be blank too) -->
+			<propertyValue>183</propertyValue>
+			<!-- condition for value comparing, can be 'is' or 'not' or 'missing' or 'available' -->
+			<propertyCondition>is</propertyCondition>
+			<!-- list of steps to open, if property value matches -->
+			<steps type="open">
+				<title>Box preparation</title>
+			</steps>
+			<!-- list of steps to deactivate -->
+			<steps type="deactivate">
+				<title>Image QA</title>
+			</steps>
+			<!-- list of steps to close -->
+			<steps type="close">
+				<title>Automatic LayoutWizzard Cropping</title>
+				<title>LayoutWizzard: Manual confirmation</title>
+			</steps>
+			<!-- list of steps to lock -->
+			<steps type="lock">
+				<title>Automatic export to Islandora</title>
+			</steps>
 
-    <config>
-        <!-- which projects to use for (can be more than one, otherwise use *) -->
-        <project>*</project>
-        <step>*</step>
+			<usergroups step="Image QA">
+				<usergroup>Administration</usergroup>
+				<usergroup>AutomaticTasks</usergroup>
+			</usergroups>
+		</change>
+	</config>
 
-        <!-- multiple changes can be done within one configuration rule; simply add another 'change' element with other properties here -->
-        <change>
-            <!-- name of the property to check -->
-            <propertyName>upload to digitool</propertyName>
-            <!-- expected value -->
-            <propertyValue>No</propertyValue>
-            <!-- list of steps to open, if property value matches -->
-            <steps type="open">
-                <title>Create derivates</title>
-                <title>Jpeg 2000 generation and validation</title>
-            </steps>
-            <!-- list of steps to deactivate -->
-            <steps type="deactivate">
-                <title>Rename files</title>
-            </steps>
-            <!-- list of steps to close -->
-            <steps type="close">
-                <title>Upload raw tiffs to uploaddirectory Socrates</title>
-                <title>Automatic pagination</title>
-            </steps>
-            <!-- list of steps to lock -->
-            <steps type="lock">
-                <title>Create METS file</title>
-                <title>Ingest into DigiTool</title>
-            </steps>
-        </change>
-    </config>
+	<config>
+		<!-- which projects to use for (can be more then one, otherwise use *) -->
+		<project>*</project>
+		<step>*</step>
+
+		<!-- multiple changes can be done within one configuration rule; simply add another 'change' element with other properties here -->
+		<change>
+			<!-- name of the property or metadata to check: please take care to use the syntax of the Variable replacer here -->
+			<propertyName>{process.upload to digitool}</propertyName>
+			<!-- expected value (can be blank too) -->
+			<propertyValue>No</propertyValue>
+			<!-- condition for value comparing, can be 'is' or 'not' -->
+			<propertyCondition>is</propertyCondition>
+			<!-- list of steps to open, if property value matches -->
+			<steps type="open">
+				<title>Create derivates</title>
+				<title>Jpeg 2000 generation and validation</title>
+			</steps>
+			<!-- list of steps to deactivate -->
+			<steps type="deactivate">
+				<title>Rename files</title>
+			</steps>
+			<!-- list of steps to close -->
+			<steps type="close">
+				<title>Upload raw tiffs to uploaddirectory Socrates</title>
+				<title>Automatic pagination</title>
+			</steps>
+			<!-- list of steps to lock -->
+			<steps type="lock">
+				<title>Create METS file</title>
+				<title>Ingest into DigiTool</title>
+			</steps>
+		</change>
+	</config>
 
 </config_plugin>
 ```
@@ -126,6 +135,20 @@ Each `config` block is responsible for a certain project and a certain step, whe
 ```
 
 In each `change` element it is then configured which process property is checked \(`propertyName`\) and which value is expected \(`propertyValue`\). All following `step` elements then describe an action that will be executed if the previously configured property matches the expected value. Steps can be opened `type="open"`, deactivated `type="deactivate"`, closed `type="close"` and locked `type="lock"`.
+
+Please note that the specification for defining which property is to be used for checking a value must be specified with the syntax for the so-called variable replacer. Accordingly, the field to be checked must be defined as in the following examples:
+
+```xml
+<propertyName>{process.ABC}</propertyName>
+<propertyName>{{meta.ABC}}</propertyName>
+<propertyName>{meta.topstruct.ABC}</propertyName>
+<propertyName>{meta.firstchild.ABC}</propertyName>
+<propertyName>{db_meta.ABC}</propertyName>
+```
+
+Further explanations about the use of variables can be found here:
+
+{% embed url="https://docs.goobi.io/goobi-workflow-en/manager/8" caption="https://docs.goobi.io/goobi-workflow-en/manager/8" %}
 
 ## Settings in Goobi
 
