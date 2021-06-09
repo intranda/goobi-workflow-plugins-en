@@ -1,4 +1,4 @@
-# Installation of the archive management plugin for productive operation
+# Installation for productive use
 
 To install the plugin for productive use on a web server, proceed as follows:
 
@@ -6,7 +6,7 @@ To install the plugin for productive use on a web server, proceed as follows:
 
 First, the XML database BaseX must be downloaded from the BaseX website. The download can be done from here:
 
-```
+```text
 https://basex.org/download/
 ```
 
@@ -14,7 +14,7 @@ https://basex.org/download/
 
 The easiest way to download from there is as a `ZIP package`, for example in version 9.4.4:
 
-```
+```text
 http://files.basex.org/releases/9.4.4/BaseX944.zip
 ```
 
@@ -34,10 +34,9 @@ unzip BaseX944.zip
 
 After downloading and unpacking, the Jetty configuration must be adjusted so that the application is only accessible on `localhost`. To do this, ensure in the configuration file `/opt/digiverso/basex/webapp/WEB-INF/jetty.xml` that the `host` is set to `127.0.0.1`:
 
-```bash jetty.xml
-  <Set name="host">127.0.0.1</Set>
-```
+\`\`\`bash jetty.xml 127.0.0.1
 
+```text
 Then the `Systemd Unit File` is installed to this path:
 
 ```bash
@@ -90,14 +89,15 @@ systemctl restart apache2
 
 The XML database can be accessed after installation under the following URL:
 
-​<http://localhost:8984/>​
+​[http://localhost:8984/](http://localhost:8984/)​
 
 ![Started BaseX Server](../../.gitbook/assets/intranda_administration_archive_management_install_02.png)
 
 ## Administer database and import EAD file
+
 After BaseX has been downloaded and started, XML files can be imported as new databases. To do this, first open the menu item `Database Administration`, where a login can be made with these access data:
 
-```
+```text
 Login:      admin
 Password:   admin
 ```
@@ -110,7 +110,7 @@ After the successful login, an overview of the installed databases, log files, e
 
 ![Administrative overview](../../.gitbook/assets/intranda_administration_archive_management_install_04.png)
 
-New databases for the EAD files can be created under the menu item 'Databases'. 
+New databases for the EAD files can be created under the menu item 'Databases'.
 
 ![Create new database](../../.gitbook/assets/intranda_administration_archive_management_install_05.png)
 
@@ -120,7 +120,7 @@ There you can now enter a `name` for the new database. Then the button `Create` 
 
 After the new database has been created, an XML file can be imported as content. To do this, click on the `Add` button.
 
-![Details of the newly created database](../../.gitbook/assets/intranda_administration_archive_management_install_07.png)
+![Details of the newly created database](../../.gitbook/assets/intranda_administration_archive_management_install_07%20%281%29.png)
 
 Here, an EAD file can be selected as an XML file and a path can be assigned under which this data inventory is to be accessible. Then click on the 'Add' button.
 
@@ -128,7 +128,7 @@ Here, an EAD file can be selected as an XML file and a path can be assigned unde
 
 After importing the EAD file, the content is already available for the Goobi archive management plugin.
 
-![Details of the imported XML file](../../.gitbook/assets/intranda_administration_archive_management_install_09.png)
+![Details of the imported XML file](../../.gitbook/assets/intranda_administration_archive_management_install_09%20%281%29.png)
 
 In the administration area of BaseX, files can also be removed. To do this, these must be marked by means of the associated checkbox and then deleted by clicking on `Delete`. Updating an EAD file is only possible by deleting it first and then adding it again.
 
@@ -138,14 +138,13 @@ To set up BaseX for query from Goobi, the database must be made aware of what su
 
 To configure the queries, several new files have to be created in the path `/opt/digiverso/basex/webapp/`. These are located within the plugin repository under the path `plugin/src/main/resources/` and can also be copied from there into the folder `/opt/digiverso/basex/webapp/`.
 
-![*.xq-Files from the checked out plugin](../../.gitbook/assets/intranda_administration_archive_management_install_10.png)
+![\*.xq-Files from the checked out plugin](../../.gitbook/assets/intranda_administration_archive_management_install_10.png)
 
-![Copied *.xq files within the webapp directory of BaseX](../../.gitbook/assets/intranda_administration_archive_management_install_11.png)
+![Copied \*.xq files within the webapp directory of BaseX](../../.gitbook/assets/intranda_administration_archive_management_install_11.png)
 
 Content of the file `listDatabases.xq`:
 
-```xq
-
+```text
 (: XQuery file to return the names of all available databases :)
 module namespace page = 'http://basex.org/examples/web-pagepage';
 (:declare default element namespace "urn:isbn:1-931666-22-9";:)
@@ -157,7 +156,7 @@ declare
 
 function page:getDatabases() {
   let $ead := db:list()
-  
+
   return 
     <databases>
     {
@@ -182,7 +181,7 @@ function page:getDatabases() {
 
 Content of the file `openDatabase.xq`:
 
-```xq
+```text
 (: XQuery file to return a full ead record :)
 module namespace page = 'http://basex.org/examples/web-page';
 declare default element namespace "urn:isbn:1-931666-22-9";
@@ -203,7 +202,7 @@ function page:getDatbase($database, $filename) {
 
 Content of the file `importFile.xq`:
 
-```xq
+```text
 (: XQuery file to return a full ead record :)
 module namespace page = 'http://basex.org/examples/web-page';
 declare default element namespace "urn:isbn:1-931666-22-9";
@@ -226,24 +225,25 @@ updating function page:import($db, $filename) {
 
 Depending on where the BaseX database was installed, two adjustments must still be made for writing EAD files in the file system. First, a folder must be created and given the appropriate rights so that EAD files can be saved in it. This folder could be, for example, as follows:
 
-``` bash
+```bash
 /opt/digiverso/basex/import/
 ```
 
 In order to be able to access this specified directory, it must of course actually exist on the system and therefore needs to be created if necessary:
 
-``` bash
+```bash
 mkdir /opt/digiverso/basex/import
 ```
 
 This directory must now be configured correctly within two configuration files. First of all, the adjustment is made in configuration file `plugin_intranda_administration_archive_management.xml` so that the path is defined there:
 
-``` xml
+```markup
 <eadExportFolder>/opt/digiverso/basex/import</eadExportFolder>
 ```
 
 In addition, the previously created file `importFile.xq` must also be adapted so that the following line refers to the correct path in it:
 
-``` bash
+```bash
 let $path := '/opt/digiverso/basex/import/' || $filename
 ```
+

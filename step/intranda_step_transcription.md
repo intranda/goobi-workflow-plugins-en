@@ -1,6 +1,7 @@
 ---
 description: >-
-  This step plugin allows you to create transcriptions of works. The transcriptions are recorded without word or line coordinates.
+  This step plugin allows you to create transcriptions of works. The
+  transcriptions are recorded without word or line coordinates.
 ---
 
 # Transcription of image content
@@ -12,7 +13,7 @@ The transcription plugin allows the user to edit the txt OCR results of a Goobi 
 | Details |  |
 | :--- | :--- |
 | Identifier | intranda\_step\_transcription |
-| Source code | https://github.com/intranda/goobi-plugin-step-transcription |
+| Source code | [https://github.com/intranda/goobi-plugin-step-transcription](https://github.com/intranda/goobi-plugin-step-transcription) |
 | Licence | GPL 2.0 or newer |
 | Compatibility | Goobi workflow 20.09 |
 | Documentation date | 11.11.2020 |
@@ -89,3 +90,4 @@ After entering the plugin, the user can browse through the image files. A rich t
 {% hint style="info" %}
 Please note that this plugin only allows a simple transcription of page content. It is not possible to enter coordinates for paragraphs, lines or words.
 {% endhint %}
+

@@ -65,7 +65,7 @@
 * [ePIC PID Registration \(Handle & DOI\)](step/intranda_step_epic_pid.md)
 * [Metadata edition](step/intranda_step_metadata_edition.md)
 * [Plugin for registering DOI via the DataCite API](step/intranda_step_datacite_doi.md)
-* [Extraction of image metadata](step/intranda_step_imageMetadataExtraction.md)
+* [Extraction of image metadata](step/intranda_step_imagemetadataextraction.md)
 * [Catalogue Request](step/intranda_step_catalogue_request.md)
 
 ## Opac Plugins <a id="opac"></a>
@@ -83,7 +83,6 @@
 * [Importing records from an Excel file](import/intranda_import_excel.md)
 * [Import of MAB Files](import/intranda_import_mab_file.md)
 
-
 ## Export Plugins <a id="export"></a>
 
 * [Fedora Export](export/intranda_export_fedora.md)
@@ -100,10 +99,11 @@
 * [Project export as folder with images and Excel file](workflow/intranda_workflow_projectexport.md)
 * [Process creation through file upload](workflow/intranda_workflow_fileupload_processcreation.md)
 
-## Statistics <a id="statistics"></a>
+## Statistics
 
 * [Sudan Memory Translations](statistics/intranda_statistics_sudan_memory.md)
 
 ## Other
 
 * [Counterscript Application](other/counterscript-application.md)
+

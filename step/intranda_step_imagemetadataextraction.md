@@ -1,9 +1,10 @@
 ---
 description: >-
-  This Step Plugin allows the extraction of metadata from image files in order to store them within the METS files.
+  This Step Plugin allows the extraction of metadata from image files in order
+  to store them within the METS files.
 ---
 
-# Image Metadata Extraction
+# Extraction of image metadata
 
 ## Introduction
 
@@ -13,7 +14,7 @@ With the help of this plugin, metadata can be extracted from image files and sto
 
 | Details |  |
 | :--- | :--- |
-| Identifier | intranda_step_imageMetadataExtraction |
+| Identifier | intranda\_step\_imageMetadataExtraction |
 | Source code | [https://github.com/intranda/goobi-plugin-step-image-metadata-extraction](https://github.com/intranda/goobi-plugin-step-image-metadata-extraction) |
 | Licence | GPL 2.0 or newer |
 | Compatibility | Goobi workflow 2020.12 |
@@ -40,20 +41,20 @@ The configuration of the plugin is structured as follows:
 ```markup
 <config_plugin>
 
-	<config>
-		<!-- which projects to use for (can be more then one, otherwise use *) -->
-		<project>*</project>
-		<step>*</step>
+    <config>
+        <!-- which projects to use for (can be more then one, otherwise use *) -->
+        <project>*</project>
+        <step>*</step>
 
-		<command>/usr/bin/exiftool</command>
-		<field line="Object Name" metadata="TitleDocMain" />
-		<field line="Keywords" metadata="SubjectTopic" />
-		<field line="Special Instructions" metadata="Footnote" />
-		<field line="City" metadata="PlaceOfPublication" />
-		<field line="Source" metadata="singleDigCollection" />
-		<field line="Copyright Notice" metadata="AccessCondition" />
-		<field line="Caption-Abstract" metadata="Abstract" />
-	</config>
+        <command>/usr/bin/exiftool</command>
+        <field line="Object Name" metadata="TitleDocMain" />
+        <field line="Keywords" metadata="SubjectTopic" />
+        <field line="Special Instructions" metadata="Footnote" />
+        <field line="City" metadata="PlaceOfPublication" />
+        <field line="Source" metadata="singleDigCollection" />
+        <field line="Copyright Notice" metadata="AccessCondition" />
+        <field line="Caption-Abstract" metadata="Abstract" />
+    </config>
 
 </config_plugin>
 ```
@@ -64,7 +65,7 @@ The block `<config>` can occur repeatedly for different projects or workflow ste
 | :--- | :--- |
 | `project` | This parameter determines for which project the current block `<config>` should apply. The name of the project is used here. This parameter can occur several times per `<config>` block. |
 | `step` | This parameter controls for which workflow steps the block `<config>` should apply. The name of the work step is used here. This parameter can occur several times per `<config>` block. |
-| `command` | Within this parameter, the path to the programme 'ExifTool' is specified. This is a programme installed on the server that can read the metadata from image files.|
+| `command` | Within this parameter, the path to the programme 'ExifTool' is specified. This is a programme installed on the server that can read the metadata from image files. |
 | `field` | For each desired metadata to be read out per image, a `field` can be given in each case, consisting of the attributes `line` and `metadata`. |
 
 The definition of fields is done with the following parameters:
@@ -72,7 +73,7 @@ The definition of fields is done with the following parameters:
 | Value | Description |
 | :--- | :--- |
 | `line` | This parameter defines the name of the metadata within the result of ExifTool. Enter here accordingly the name how the metadata is present within the image. |
-| `metadata` | This parameter determines under which metadata type the content of the read metatum is stored in the METS file. The internal name of the metadata type as defined in the corresponding rule set is used. It should be noted here that the metadata are always stored at the level of the highest logical structural element (e.g. a monograph) and not at subordinate logical or physical elements. |
+| `metadata` | This parameter determines under which metadata type the content of the read metatum is stored in the METS file. The internal name of the metadata type as defined in the corresponding rule set is used. It should be noted here that the metadata are always stored at the level of the highest logical structural element \(e.g. a monograph\) and not at subordinate logical or physical elements. |
 
 ## Integration into the workflow
 
@@ -82,5 +83,5 @@ To put the plugin into operation, it must be activated in a task in the workflow
 
 ## How the plugin works
 
-Once the plugin has been fully installed and set up, it is usually run automatically within the workflow, so there is no manual interaction with the user. Instead, the workflow calls the plugin in the background and automatically performs the extraction of the image metadata.
-This is done by opening the first image file from the media directory of the Goobi process, reading its metadata and storing it on the top logical level of the METS file as the configured metadata.
+Once the plugin has been fully installed and set up, it is usually run automatically within the workflow, so there is no manual interaction with the user. Instead, the workflow calls the plugin in the background and automatically performs the extraction of the image metadata. This is done by opening the first image file from the media directory of the Goobi process, reading its metadata and storing it on the top logical level of the METS file as the configured metadata.
+

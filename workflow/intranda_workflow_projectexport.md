@@ -1,13 +1,15 @@
 ---
 description: >-
-  This workflow plugin allows an export of an entire project into a directory structure with an Excel file and the associated images according to specific project specifications
+  This workflow plugin allows an export of an entire project into a directory
+  structure with an Excel file and the associated images according to specific
+  project specifications
 ---
 
 # Project export as folder with images and Excel file
 
 ## Introduction
 
-This workflow plugin allows a very specific export of an entire project. For this purpose, the plugin first checks whether the configured step in the workflow has actually been completed in all processes of the selected project. Depending on this check, the plugin then allows an export of all images of a defined image directory (e.g. the master images) and an export of defined metadata within an Excel file. The structure of the Excel file is such that the respective metadata is redundantly listed in a separate line for each image.
+This workflow plugin allows a very specific export of an entire project. For this purpose, the plugin first checks whether the configured step in the workflow has actually been completed in all processes of the selected project. Depending on this check, the plugin then allows an export of all images of a defined image directory \(e.g. the master images\) and an export of defined metadata within an Excel file. The structure of the Excel file is such that the respective metadata is redundantly listed in a separate line for each image.
 
 If the initial check determines that the configured workflow step in the workflow has already been completed for all processes of the project, the configured export workflow step is also set to completed for all processes of the project.
 
@@ -38,7 +40,7 @@ To configure how the plugin should behave, various values can be adjusted in the
 
 The content of this configuration file looks like this:
 
-```xml
+```markup
 <config_plugin>
 
     <config>
@@ -96,3 +98,4 @@ The export result is structured in such a way that for each process a subfolder 
 ![Structure of an exported Excel file with all associated metadata per image](../.gitbook/assets/intranda_workflow_projectexport5.png)
 
 Within each line of this Excel file there is now the respective metadata that was read from the METS file, whereby these are listed redundantly for each image repeatedly.
+

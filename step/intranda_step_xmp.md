@@ -66,8 +66,8 @@ This configuration file can be adapted during operation. An example configuratio
                 <type>metadata</type>
                 <!-- name: - name of the metadata field -->
                 <name>PlaceOfPublication</name>
-                <!-- use: - default is logical , use value from the physical, logical, anchor, current, page docstruct or from all elements -->
-                <use>logical</use> <!-- physical|logical|anchor|page|current|all-->
+                <!-- use: - default is logical , use value from the physical, logical, anchor, current, page docstruct, last (lowest in hierarchy that has the metadata) or from all elements -->
+                <use>logical</use> <!-- physical|logical|anchor|page|current|last|all-->
                 <!-- separator - use this separator to separate the different occurences of a field, default is blank -->
                 <separator>;</separator>
                 <!-- useFirst: - use only the first occurence or all - default is true -->
@@ -148,7 +148,8 @@ If it is a `metadata` field, a number of additional sub-elements are expected:
   * `physical`: the search is limited to the element `physSequence`. Here, for example, the URN of the work can be found.
   * `current`: the search is only performed in the element that has been assigned to the current image and is at the lowest level in the hierarchy. For example a chapter or an article.
   * `page`: the search is only done inside the page element. Usually the granular URNs or the physical and logical page number are displayed here.
-  * `all`: the search is performed in all logical elements assigned to the image. The search starts with the highest element.
+  * `last`: the search is carried out in all logical elements that are assigned to the image. The metadatum with the lowest hierarchy level is taken.
+  * `all`: the search is performed in all logical elements assigned to the image. The search starts with the highest element. All values found are concatenated.
 * `separator`: the characters configured here are used as separator if more than one entry is found.
 * `useFirst`: if this field contains the value true, the first value found will be used, otherwise further values will be searched for.
 * `staticPrefix`: this text is placed before the metadata content

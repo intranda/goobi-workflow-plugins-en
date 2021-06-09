@@ -51,7 +51,7 @@ Please note that the correct paths for GraphicMagick and ImageMagick must also b
 
 An example configuration for the file `plugin_intranda_step_image_resize_and_watermark.xml` looks like this:
 
-```xml
+```markup
 <config_plugin>
     <!-- path to GraphicsMagick -->
     <gmPath>/usr/bin/gm</gmPath>
@@ -149,3 +149,4 @@ To use the plug-in, it must be activated for one or more desired tasks in the wo
 After running the plugin the images have the expected size and have the configured watermark.
 
 ![Possible results in the generated images](../.gitbook/assets/intranda_step_image_resize_and_watermark_result.png)
+

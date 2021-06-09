@@ -1,6 +1,7 @@
 ---
 description: >-
-  This step plugin for Goobi workflow allows you to edit metadata directly from an open task without using the METS editor.
+  This step plugin for Goobi workflow allows you to edit metadata directly from
+  an open task without using the METS editor.
 ---
 
 # Metadata edition
@@ -36,7 +37,7 @@ To configure how the plugin should behave, various values can be adjusted in the
 
 The configuration of the plugin is structured as follows:
 
-```xml
+```markup
 <config_plugin>
     <config>
         <!-- which projects to use for (can be more then one, otherwise use *) -->
@@ -144,12 +145,12 @@ For each metadata to be displayed, an element `<displayfield>` can be defined. T
 | `validationRegex` | This parameter can be used to define a regular expression to check the field content for validity. |
 | `validationErrorText` | Here you can define the message to be displayed if the validation was not successful. |
 | `label` | The parameter can be used to define a label that is displayed to users for the field. |
-| `structType` | This parameter defines the structural element from which the metadata is to be used for the display (e.g. `anchor`). |
+| `structType` | This parameter defines the structural element from which the metadata is to be used for the display \(e.g. `anchor`\). |
 | `defaultValue` | Here you can define a default value to be set if no value is available. |
 | `searchable` | This parameter can be used to define whether the content of this field is to be used for the execution of a search. |
 | `suffix` | This allows you to specify a suffix to be added to the search query when searching for other processes with the same field content. |
-| `vocabularyName` | The name of the vocabulary is defined here if it is to be used for the display of selectable data records (e.g. technical terms). |
-| `searchParameter` | This paremeter is optional and repeatable. It is used to further restrict records from the vocabulary (e.g. `type=AccessLocations`) |
+| `vocabularyName` | The name of the vocabulary is defined here if it is to be used for the display of selectable data records \(e.g. technical terms\). |
+| `searchParameter` | This paremeter is optional and repeatable. It is used to further restrict records from the vocabulary \(e.g. `type=AccessLocations`\) |
 
 ### Configuration: importfield
 
@@ -182,3 +183,4 @@ Within the dialogue with the processes found, it is now possible to select which
 A click on one of the displayed thumbnails allows the representative to be set.
 
 Please note that the edits are only saved when the button provided is clicked.
+

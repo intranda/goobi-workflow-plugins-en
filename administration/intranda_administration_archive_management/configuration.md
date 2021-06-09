@@ -1,8 +1,8 @@
-# Configuration of the plugin 
+# Configuration
 
 After installing the plugin and the associated database, the plugin must also be configured. This takes place within the configuration file `plugin_intranda_administration_archive_management.xml` and is structured as follows:
 
-```xml
+```markup
 <config_plugin>
 
     <basexUrl>http://localhost:8984/</basexUrl>
@@ -158,15 +158,16 @@ After installing the plugin and the associated database, the plugin must also be
             <value>val 4</value>
         </metadata>
 
-    	<node name="file" ruleset="File" icon="fa fa-file-text-o" processTemplateId="309544" />
-    	<node name="folder" ruleset="Folder" icon="fa fa-folder-open-o" processTemplateId="309544"/>
-    	<node name="image" ruleset="Picture" icon="fa fa-file-image-o" processTemplateId="309544" />
-    	<node name="audio" ruleset="Audio" icon="fa fa-file-audio-o" processTemplateId="309544"/>
-    	<node name="video" ruleset="Video" icon="fa fa-file-video-o" processTemplateId="309544"/>
-    	<node name="other" ruleset="Other" icon="fa fa-file-o" processTemplateId="309544" />
+        <node name="file" ruleset="File" icon="fa fa-file-text-o" processTemplateId="309544" />
+        <node name="folder" ruleset="Folder" icon="fa fa-folder-open-o" processTemplateId="309544"/>
+        <node name="image" ruleset="Picture" icon="fa fa-file-image-o" processTemplateId="309544" />
+        <node name="audio" ruleset="Audio" icon="fa fa-file-audio-o" processTemplateId="309544"/>
+        <node name="video" ruleset="Video" icon="fa fa-file-video-o" processTemplateId="309544"/>
+        <node name="other" ruleset="Other" icon="fa fa-file-o" processTemplateId="309544" />
     </config>
 </config_plugin>
 ```
+
 ## General configuration
 
 The two parameters `<basexUrl>` and `<eadExportFolder>` configure the connection to the BaseX XML database. The URL to the REST API of the XML database is configured via `basexUrl`, `eadExportFolder` contains the folder name into which the plugin exports the EAD files. This folder is monitored by the XML database.
@@ -185,9 +186,9 @@ Each metadata field consists of at least three mandatory fields:
 
 | Value | Description |
 | :--- | :--- |
-| `name`| This value identifies the field. It must therefore contain a unique designation. If the value has not been configured separately in the messages files, it is also used as the label of the field.|
-| `level`| This defines the area in which the metadatum is inserted. The numbers 1-7 are allowed: `1. Identity Statement Area`, `2. Context Area`, `3. Content and Structure Area`, `4. Condition of Access and Use Area`, `5. Allied Materials Area`, `6. Note Area`, `7. Description Control Area`|
-| `xpath`| Defines an XPath expression that is used both to read from existing EAD files and to write to the EAD file. The path is relative to the `<ead>` element in the case of the main element, and always relative to the `<c>` element for all other nodes.|
+| `name` | This value identifies the field. It must therefore contain a unique designation. If the value has not been configured separately in the messages files, it is also used as the label of the field. |
+| `level` | This defines the area in which the metadatum is inserted. The numbers 1-7 are allowed: `1. Identity Statement Area`, `2. Context Area`, `3. Content and Structure Area`, `4. Condition of Access and Use Area`, `5. Allied Materials Area`, `6. Note Area`, `7. Description Control Area` |
+| `xpath` | Defines an XPath expression that is used both to read from existing EAD files and to write to the EAD file. The path is relative to the `<ead>` element in the case of the main element, and always relative to the `<c>` element for all other nodes. |
 
 ### Optional information
 
@@ -195,37 +196,37 @@ There are also a number of other optional specifications:
 
 | Value | Description |
 | :--- | :--- |
-| `@xpathType`| This defines whether the XPath expression returns an `element` (default), an `attribute` or a `text`.|
-| `@visible`| This can be used to control whether the metadata is displayed in the mask or is hidden. The field may contain the two values `true` (default) and `false`.|
-| `@repeatable`| Defines whether the field is repeatable. The field may contain the two values `true` and `false` (default).|
-| `@showField`| Defines whether the field is displayed open in the detail display, even if no value is available yet. The field may contain the two values `true` and `false` (default).|
-| `@rulesetName`| A metadata from the rule set can be specified here. When a Goobi process is created for the node, the configured metadata is created.|
-| `@importMetadataInChild`| This can be used to control whether the metadate should also be created in Goobi processes of child nodes. The field may contain the two values `true` and `false` (default).|
-| `@fieldType`| Controls the behaviour of the field. Possible are `input` (default) , `textarea`, `dropdown`, `multiselect`, `vocabulary`.|
-| `value`| This sub-element is only used with the two types `dropdown` and `multiselect` and contains the possible values that are to be available for selection.|
-| `vocabulary`| This subelement contains the name of the vocabulary to be used. It is only evaluated if `vocabulary` is set in the type of the field. The selection list contains the main value of each record.|
-| `searchParameter`| This repeatable subfield can be used to define search parameters with which to filter the vocabulary, the syntax is `fieldname=value`.|
-| `@validationType`| Here you can set whether the field should be validated. Three different rules are possible, which can be combined. `unique` checks that the content of the field has not been used again in another place, `required` ensures that the field contains a value. The type `regex` can be used to check whether the filled value corresponds to a regular expression. With `unique+required`, `regex+required`, `regex+unique` and `regex+unique+required` several validation rules can be applied.|
-| `@regularExpression`| The regular expression to be used for `regex` validation is specified here. IMPORTANT: the backslash must be masked by a second backslash. A class is therefore not defined by `\w` but by `\\w`.|
-| `validationError`| This subfield contains a text that is displayed if the field content violates the validation rules.|
+| `@xpathType` | This defines whether the XPath expression returns an `element` \(default\), an `attribute` or a `text`. |
+| `@visible` | This can be used to control whether the metadata is displayed in the mask or is hidden. The field may contain the two values `true` \(default\) and `false`. |
+| `@repeatable` | Defines whether the field is repeatable. The field may contain the two values `true` and `false` \(default\). |
+| `@showField` | Defines whether the field is displayed open in the detail display, even if no value is available yet. The field may contain the two values `true` and `false` \(default\). |
+| `@rulesetName` | A metadata from the rule set can be specified here. When a Goobi process is created for the node, the configured metadata is created. |
+| `@importMetadataInChild` | This can be used to control whether the metadate should also be created in Goobi processes of child nodes. The field may contain the two values `true` and `false` \(default\). |
+| `@fieldType` | Controls the behaviour of the field. Possible are `input` \(default\) , `textarea`, `dropdown`, `multiselect`, `vocabulary`. |
+| `value` | This sub-element is only used with the two types `dropdown` and `multiselect` and contains the possible values that are to be available for selection. |
+| `vocabulary` | This subelement contains the name of the vocabulary to be used. It is only evaluated if `vocabulary` is set in the type of the field. The selection list contains the main value of each record. |
+| `searchParameter` | This repeatable subfield can be used to define search parameters with which to filter the vocabulary, the syntax is `fieldname=value`. |
+| `@validationType` | Here you can set whether the field should be validated. Three different rules are possible, which can be combined. `unique` checks that the content of the field has not been used again in another place, `required` ensures that the field contains a value. The type `regex` can be used to check whether the filled value corresponds to a regular expression. With `unique+required`, `regex+required`, `regex+unique` and `regex+unique+required` several validation rules can be applied. |
+| `@regularExpression` | The regular expression to be used for `regex` validation is specified here. IMPORTANT: the backslash must be masked by a second backslash. A class is therefore not defined by `\w` but by `\\w`. |
+| `validationError` | This subfield contains a text that is displayed if the field content violates the validation rules. |
 
 ## Examples of different field configurations
 
 ### Simple input field
 
-```xml
+```markup
 <metadata xpath="./ead:control/ead:maintenanceagency/ead:agencycode" xpathType="element" name="agencycode" level="1" repeatable="false" fieldType="input"/>
 ```
 
 ### Text area
 
-```xml
+```markup
 <metadata xpath="(./ead:archdesc/ead:did/ead:unittitle | ./ead:did/ead:unittitle)[1]" xpathType="element" name="unittitle" level="1" repeatable="false" fieldType="textarea" rulesetName="TitleDocMain" importMetadataInChild="false" />
 ```
 
 ### Selection list
 
-```xml
+```markup
 <metadata xpath="(./ead:archdesc/@level | ./@level)[1]" xpathType="attribute" name="descriptionLevel" level="1" repeatable="false" fieldType="dropdown">
     <value>collection</value>
     <value>fonds</value>
@@ -243,7 +244,7 @@ There are also a number of other optional specifications:
 
 ### Multiple selection
 
-```xml
+```markup
 <metadata xpath="(./ead:archdesc/ead:did/ead:langmaterial[@label='Language']/ead:language | ./ead:did/ead:langmaterial[@label='Language']/ead:language)[1]" xpathType="element" name="langmaterial" level="4" repeatable="false" fieldType="multiselect" rulesetName="DocLanguage" importMetadataInChild="false">
     <value>eng</value>
     <value>ger</value>
@@ -260,7 +261,7 @@ There are also a number of other optional specifications:
 
 ### Validation of dates
 
-```xml
+```markup
 <metadata xpath="(./ead:archdesc/ead:did/ead:unitdate | ./ead:did/ead:unitdate)[1]" xpathType="element" name="unitdate" level="1" repeatable="false" rulesetName="PublicationYear" importMetadataInChild="false" regularExpression="^([0-9]{4}\\-[0-9]{2}\\-[0-9]{2}|[0-9]{4})(\\s?\\-\s?([0-9]{4}\\-[0-9]{2}\\-[0-9]{2}|[0-9]{4}))?$" validationType="regex">
   <validationError>The value is not a date specification. Permitted values are either years (YYYY), exact dates (YYYY-MM-DD) or time periods (YYYY - YYYY, YYYY-MM-DD-YYYY-MM-DD).</validationError>
 </metadata>
@@ -268,10 +269,11 @@ There are also a number of other optional specifications:
 
 ### Connection of a controlled vocabulary
 
-```xml
+```markup
 <metadata xpath="(./ead:archdesc/ead:dsc/ead:acqinfo | ./ead:dsc/ead:acqinfo)[1]" xpathType="element" name="acqinfo" level="2" repeatable="false" fieldType="vocabulary" rulesetName="AquisitionInformation" >
   <vocabulary>Aquisition</vocabulary>
   <searchParameter>type=visible</searchParameter>
   <searchParameter>active=true</searchParameter>
 </metadata>
 ```
+

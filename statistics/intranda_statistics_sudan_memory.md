@@ -1,6 +1,7 @@
 ---
 description: >-
-  This statistics plugin determines the activity of edits to translations within specific metadata fields.
+  This statistics plugin determines the activity of edits to translations within
+  specific metadata fields.
 ---
 
 # Sudan Memory Translations
@@ -13,8 +14,8 @@ This statistics plugin enables statistical recording of the activity of translat
 
 | Details |  |
 | :--- | :--- |
-| Identifier | intranda_statistics_sudan_memory_activity_by_user |
-| Source code | https://github.com/intranda/goobi-plugin-statistics-sudan-memory |
+| Identifier | intranda\_statistics\_sudan\_memory\_activity\_by\_user |
+| Source code | [https://github.com/intranda/goobi-plugin-statistics-sudan-memory](https://github.com/intranda/goobi-plugin-statistics-sudan-memory) |
 | Licence | GPL 2.0 or newer |
 | Compatibility | Goobi workflow 20.10 |
 | Documentation date | 03.01.2021 |
@@ -57,7 +58,7 @@ DROP FUNCTION IF EXISTS wordcount;
      DELIMITER ;
 ```
 
-A UTF8-encoded text can be passed to this function. The text is checked character by character. If the current character is an alnumeric character (letters, numbers, full stop, comma, letters with diacritics, brackets) but the previous character is not (nothing, space, newline, tab), a new word starts at this point and the word counter is incremented. At the end, the word counter is returned.
+A UTF8-encoded text can be passed to this function. The text is checked character by character. If the current character is an alnumeric character \(letters, numbers, full stop, comma, letters with diacritics, brackets\) but the previous character is not \(nothing, space, newline, tab\), a new word starts at this point and the word counter is incremented. At the end, the word counter is returned.
 
 ## Configuration of the plugin
 
@@ -89,8 +90,7 @@ The evaluation `Overview` lists for each period within the start and end date wh
 
 ### Evaluation: Detailed View
 
-The `Detailed View` lists each workflow step `Translation of Arabic content to English` or `Translation of English content to Arabic` that was completed within the specified start and end date.
-For each step, the user, the associated process, and the content and number of words from the four fields `Title (Arabic)`, `Title (English)`, `Description (English)` and `Description (Arabic)` are also displayed.
+The `Detailed View` lists each workflow step `Translation of Arabic content to English` or `Translation of English content to Arabic` that was completed within the specified start and end date. For each step, the user, the associated process, and the content and number of words from the four fields `Title (Arabic)`, `Title (English)`, `Description (English)` and `Description (Arabic)` are also displayed.
 
 ![Display of results with possibility for download](../.gitbook/assets/intranda_statistics_sudan_memory5_en.png)
 
@@ -175,3 +175,4 @@ SQL query for a detailed report:
         AND s.Bearbeitungsstatus = 3
         AND s.BearbeitungsEnde BETWEEN '2019-01-01' AND '2020-12-31';
 ```
+

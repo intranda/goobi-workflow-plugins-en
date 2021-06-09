@@ -1,5 +1,7 @@
 ---
-description: This is technical documentation for the plugin to import MAB files to processes in Goobi workflow.
+description: >-
+  This is technical documentation for the plugin to import MAB files to
+  processes in Goobi workflow.
 ---
 
 # Import of MAB Files
@@ -29,9 +31,10 @@ There is also a configuration file, which must be located at the following locat
 ```bash
 /opt/digiverso/goobi/config/plugin_intranda_import_mab_file.xml
 ```
+
 Additionally there is a `tags` file, whose location is specified in the configuration file:
 
-```xml
+```markup
 <tags>/path/to/tags.txt</tags>
 ```
 
@@ -39,7 +42,7 @@ Additionally there is a `tags` file, whose location is specified in the configur
 
 The configuration is done via the configuration file `plugin_intranda_import_mab_file.xml` and can be adapted during operation.
 
-```xml
+```markup
 <config_plugin>
     <config>
         <!-- which workflow template shall be used -->
@@ -85,16 +88,15 @@ The configuration is done via the configuration file `plugin_intranda_import_mab
 The configuration allows different configurations for different process templates. For this purpose, only the name of the desired template must be entered in the `template` field. The entry with the value `*` is used for all templates for which no separate configuration exists.
 
 | Configuration Element | Use |
-|---|---|
-| `rulesetPath` | This is the path to the ruleset for the MetsMods files. | 
+| :--- | :--- |
+| `rulesetPath` | This is the path to the ruleset for the MetsMods files. |
 | `imagePathFile` | This parameter defines the path to the image files, which are located either in the folder itself or in subfolders with the name of the Catalogue identifier. |
 | `tags` | This parameter defines the translation file that translates mab2 codes into metadata. |
-| `withSGML` |  If this parameter is set to `true`, then SGML files are used. Note that this is currently not in use, but intended for a later version. |
+| `withSGML` | If this parameter is set to `true`, then SGML files are used. Note that this is currently not in use, but intended for a later version. |
 | `sgmlPath` | If SGML files are used, this is the folder in which they are found. |
 | `defaultPublicationType` | With this parameter the Type of the document is defined if it has no children or parents. A document with children is imported as MultiVolumeWork, the children are imported as Volumes. |
 | `collection` | This specifies the metadata `singleDigCollection` for the MetsMods files, the name of the collection to which the works belong. |
 | `listIDs` | Here you define the path to a text file containing a list of Catalogue Identifiers. If this field is not empty, then only datasets with these Catalogue Identifiers will be imported from the MAB file. |
-
 
 ## Tags
 
@@ -149,8 +151,9 @@ Each line contains a MAB code, followed by the name of the metadata which it sho
 
 To use the import, the mass import area must be opened in the process templates and the `intranda_import_mab_file` plugin must be selected in the `File upload import` tab. A MAB file can then be uploaded and imported.
 
-The import takes place in several steps. First the whole file is read, and the maps child-parent and parent-children are created and saved (as JSON files) in the Goobi `temp` folder for the current user. These maps are used to create anchor files in the next step.
+The import takes place in several steps. First the whole file is read, and the maps child-parent and parent-children are created and saved \(as JSON files\) in the Goobi `temp` folder for the current user. These maps are used to create anchor files in the next step.
 
-The MAB file is then broken into individual records. For each record, the process title is generated from the Catalogue Identifier (and any prefix specified in the configuration file) and checked to see whether the process already exists in Goobi. If this is not the case, the process is created and the configured metadata for `anchor` and `volume` is saved temporarily in a folder in the output path specified in the configuration. Any images are copied into an ´images` subfolder.
+The MAB file is then broken into individual records. For each record, the process title is generated from the Catalogue Identifier \(and any prefix specified in the configuration file\) and checked to see whether the process already exists in Goobi. If this is not the case, the process is created and the configured metadata for `anchor` and `volume` is saved temporarily in a folder in the output path specified in the configuration. Any images are copied into an ´images\` subfolder.
 
 In the next step all these folders, containing the MetsMods files and the images, are imported into Goobi workflow as processes, and moved to the appropriate folders in Goobi.
+
