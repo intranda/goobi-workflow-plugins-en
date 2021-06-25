@@ -34,9 +34,28 @@ unzip BaseX944.zip
 
 After downloading and unpacking, the Jetty configuration must be adjusted so that the application is only accessible on `localhost`. To do this, ensure in the configuration file `/opt/digiverso/basex/webapp/WEB-INF/jetty.xml` that the `host` is set to `127.0.0.1`:
 
-\`\`\`bash jetty.xml 127.0.0.1
+```xml
+<?xml version="1.0"?>
+<!DOCTYPE Configure PUBLIC "-//Jetty//Configure//EN"
+  "http://www.eclipse.org/jetty/configure_9_3.dtd">
 
-```text
+<Configure id="Server" class="org.eclipse.jetty.server.Server">
+  <!-- Default connector. The Jetty stop port can be specified 
+       in the .basex or pom.xml configuration file.  -->
+  <Call name="addConnector">
+    <Arg>
+      <New id="httpConnector" class="org.eclipse.jetty.server.ServerConnector">
+        <Arg name="server"><Ref refid="Server"/></Arg>
+        <Set name="host">127.0.0.1</Set>
+        <Set name="port">8984</Set>
+        <Set name="idleTimeout">60000</Set>
+        <Set name="reuseAddress">true</Set>
+      </New>
+    </Arg>
+  </Call>
+</Configure>
+```
+
 Then the `Systemd Unit File` is installed to this path:
 
 ```bash
@@ -46,7 +65,6 @@ Then the `Systemd Unit File` is installed to this path:
 This has the following structure:
 
 ```bash
-basexhttp.service
 [Unit]
 Description=BaseX HTTP server
 ​
