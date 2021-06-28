@@ -154,7 +154,15 @@ In the administration area of BaseX, files can also be removed. To do this, thes
 
 To set up BaseX for query from Goobi, the database must be made aware of what such a query looks like, what is to be done with the result of the query and what the result of the query is to look like. BaseX offers various options for this. We have chosen 'RESTXQ' because, in contrast to the REST interface, it does not require any additional authentication.
 
-To configure the queries, several new files have to be created in the path `/opt/digiverso/basex/webapp/`. These are located within the plugin repository under the path `plugin/src/main/resources/` and can also be copied from there into the folder `/opt/digiverso/basex/webapp/`.
+To configure the queries, several new files have to be created in the path `/opt/digiverso/basex/webapp/`. These are located within the plugin repository under the path `plugin/src/main/resources/` and can also be copied from there into the folder `/opt/digiverso/basex/webapp/`. Alternatively, they can also be created automatically with the following commands:
+
+```bash
+cd /opt/digiverso/basex/webapp/
+wget https://raw.githubusercontent.com/intranda/goobi-plugin-administration-archive-management/master/plugin/src/main/resources/importFile.xq
+wget https://github.com/intranda/goobi-plugin-administration-archive-management/blob/master/plugin/src/main/resources/listDatabases.xq
+wget https://github.com/intranda/goobi-plugin-administration-archive-management/blob/master/plugin/src/main/resources/openDatabase.xq
+chown tomcat8. *.xq
+```
 
 ![\*.xq-Files from the checked out plugin](../../.gitbook/assets/intranda_administration_archive_management_install_10.png)
 
