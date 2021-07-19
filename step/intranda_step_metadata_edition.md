@@ -15,8 +15,8 @@ This plugin allows the editing of configurable properties and metadata within th
 | Identifier | intranda\_step\_metadata\_edition |
 | Source code | [https://github.com/intranda/goobi-plugin-step-metadata-edition](https://github.com/intranda/goobi-plugin-step-metadata-edition) |
 | Licence | GPL 2.0 or newer |
-| Compatibility | Goobi workflow 2020.11 |
-| Documentation date | 20.12.2020 |
+| Compatibility | Goobi workflow 2021.06 |
+| Documentation date | 19.07.2021 |
 
 ## Installation
 
@@ -51,6 +51,14 @@ The configuration of the plugin is structured as follows:
 
         <!-- which image folder should be used? Possible values are master/media, default is media -->
         <imageFolder>media</imageFolder>
+
+        <!-- configure here if the images shall be rendered inside of the user interface; 
+             if switched off then the representative image cannot be set -->
+        <showImages>true</showImages>
+        
+        <!-- this switch allows to hide the search and import functionality for other processes;
+            if switched off the button will disappear -->
+        <showImportMetadata>true</showImportMetadata>
 
         <!-- each displayfield defines what shall be shown in the user interface
                 source: where shall the field get its content from, possible values are property, metadata, person
@@ -130,6 +138,8 @@ The block `<config>` can occur repeatedly for different projects or workflow ste
 | `hideEmptyFields` | This can be used to specify that fields that have no content should nevertheless be displayed empty. |
 | `imageFolder` | This parameter determines from which directory the images are to be used for display. Common values here are, for example, `master` or `media`. |
 | `preselectFields` | This parameter can be used to specify whether the metadata found within the process search of this plugin should already be preselected so that a simple transfer of the metadata can take place. |
+| `showImages` | This parameter determines whether the image area for selecting the representative is to be displayed. |
+| `showImportMetadata` | This parameter controls whether the button for searching in existing processes and their data transfer should be possible. |
 
 ### Configuration: displayfield
 
