@@ -62,9 +62,9 @@ In the file `goobi_opac.xml` the interface to the desired catalog system must be
 </catalogue>
 ```
 
-Das Attribut `title` enthält einen eindeutigen Namen und `opacType` das zu nutzende Plugin. In diesem Fall muss der Eintrag `intranda_opac_json` lauten. Die weiteren Felder werden nicht benötigt.
+The attribute `title` contains a unique name and `opacType` the plugin to be used. In this case the entry must be `intranda_opac_json`. The other fields are not required.
 
-Das Mapping der Inhalte des JSON-Datensatzes hin zu Goobi Metadaten geschieht innerhalb der Datei `plugin_intranda_opac_json.xml`. Die Definition der Felder innerhalb des JSON-Datensatzes geschieht mittels `JSONPath`, dem XPath-Equivalent für JSON.
+The mapping of the contents of the JSON dataset to Goobi metadata is done within the file `plugin_intranda_opac_json.xml`. The definition of the fields within the JSON record is done using `JSONPath`, the XPath equivalent for JSON.
 
 ```markup
 <config_plugin>
