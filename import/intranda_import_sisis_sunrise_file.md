@@ -1,7 +1,7 @@
 ---
 description: >-
-  This is technical documentation for the plugin to import Sisis SunRise files to
-  processes in Goobi workflow.
+  This is technical documentation for the plugin to import Sisis SunRise files
+  to processes in Goobi workflow.
 ---
 
 # Import of Sisis SunRise Files

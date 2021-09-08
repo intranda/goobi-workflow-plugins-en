@@ -10,7 +10,7 @@ First, the XML database BaseX must be downloaded from the BaseX website. The dow
 https://basex.org/download/
 ```
 
-![BaseX website](../../.gitbook/assets/intranda_administration_archive_management_install_01.png)
+![BaseX website](../../.gitbook/assets/intranda_administration_archive_management_install_01%20%281%29%20%281%29.png)
 
 The easiest way to download from there is as a `ZIP package`, for example in version 9.4.4:
 
@@ -34,7 +34,7 @@ unzip BaseX944.zip
 
 After downloading and unpacking, the Jetty configuration must be adjusted so that the application is only accessible on `localhost`. To do this, ensure in the configuration file `/opt/digiverso/basex/webapp/WEB-INF/jetty.xml` that the `host` is set to `127.0.0.1`:
 
-```xml
+```markup
 <?xml version="1.0"?>
 <!DOCTYPE Configure PUBLIC "-//Jetty//Configure//EN"
   "http://www.eclipse.org/jetty/configure_9_3.dtd">
@@ -109,7 +109,7 @@ The XML database can be accessed after installation under the following URL:
 
 ​[http://localhost:8984/](http://localhost:8984/)​
 
-![Started BaseX Server](../../.gitbook/assets/intranda_administration_archive_management_install_02.png)
+![Started BaseX Server](../../.gitbook/assets/intranda_administration_archive_management_install_02%20%281%29%20%281%29.png)
 
 ## Administer database and import EAD file
 
@@ -142,7 +142,7 @@ After the new database has been created, an XML file can be imported as content.
 
 Here, an EAD file can be selected as an XML file and a path can be assigned under which this data inventory is to be accessible. Then click on the 'Add' button.
 
-![Upload an XML file](../../.gitbook/assets/intranda_administration_archive_management_install_08.png)
+![Upload an XML file](../../.gitbook/assets/intranda_administration_archive_management_install_08%20%281%29%20%282%29.png)
 
 After importing the EAD file, the content is already available for the Goobi archive management plugin.
 
@@ -164,9 +164,9 @@ wget https://github.com/intranda/goobi-plugin-administration-archive-management/
 chown tomcat8. *.xq
 ```
 
-![\*.xq-Files from the checked out plugin](../../.gitbook/assets/intranda_administration_archive_management_install_10.png)
+![\*.xq-Files from the checked out plugin](../../.gitbook/assets/intranda_administration_archive_management_install_10%20%281%29%20%282%29.png)
 
-![Copied \*.xq files within the webapp directory of BaseX](../../.gitbook/assets/intranda_administration_archive_management_install_11.png)
+![Copied \*.xq files within the webapp directory of BaseX](../../.gitbook/assets/intranda_administration_archive_management_install_11%20%281%29.png)
 
 Content of the file `listDatabases.xq`:
 

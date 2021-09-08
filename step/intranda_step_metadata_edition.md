@@ -55,7 +55,7 @@ The configuration of the plugin is structured as follows:
         <!-- configure here if the images shall be rendered inside of the user interface; 
              if switched off then the representative image cannot be set -->
         <showImages>true</showImages>
-        
+
         <!-- this switch allows to hide the search and import functionality for other processes;
             if switched off the button will disappear -->
         <showImportMetadata>true</showImportMetadata>
