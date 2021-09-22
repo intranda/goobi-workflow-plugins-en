@@ -1,14 +1,14 @@
 ---
 description: >-
-  This is the technical documentation for the Goobi plug-in for changing the
-  workflow based on process properties.
+  This is the technical documentation for the Goobi plugin for automatically modifying
+  workflows based on task properties.
 ---
 
 # Changing the workflow based on process properties
 
 ## Introduction
 
-This documentation describes how to install, configure, and use a plug-in to automatically change workflows at runtime. The plugin can open, close or deactivate steps \(depending on the configuration\). The decision as to what should happen is made on the basis of process properties.
+This documentation describes the installation, configuration and use of a plugin for automatically changing workflows at runtime. The plugin can open, close or deactivate \(depending on configuration\) steps. User groups can be assigned and production templates can also be completely exchanged. The decision as to what exactly should happen in each case is made on the basis of process properties.
 
 | Details |  |
 | :--- | :--- |
@@ -16,7 +16,7 @@ This documentation describes how to install, configure, and use a plug-in to aut
 | Source code | [https://github.com/intranda/goobi-plugin-step-change-workflow](https://github.com/intranda/goobi-plugin-step-change-workflow) |
 | Licence | GPL 2.0 or newer |
 | Compatibility | Goobi workflow 2021.03 |
-| Documentation date | 27.04.2021 |
+| Documentation date | 22.09.2021 |
 
 ## Precondition
 
@@ -38,7 +38,7 @@ The configuration of the plugin is expected under the following path:
 
 The following is a sample configuration with comments:
 
-```markup
+```xml
 <config_plugin>
     <!--
         order of configuration is: 
@@ -97,7 +97,7 @@ The following is a sample configuration with comments:
             <propertyName>{process.upload to digitool}</propertyName>
             <!-- expected value (can be blank too) -->
             <propertyValue>No</propertyValue>
-            <!-- condition for value comparing, can be 'is' or 'not' -->
+            <!-- condition for value comparing, can be 'is' or 'not' or 'missing' or 'available' -->
             <propertyCondition>is</propertyCondition>
             <!-- list of steps to open, if property value matches -->
             <steps type="open">
@@ -121,6 +121,23 @@ The following is a sample configuration with comments:
         </change>
     </config>
 
+    <config>
+        <!-- which projects to use for (can be more then one, otherwise use *) -->
+        <project>Archive_Project</project>
+        <step>Check process template change</step>
+
+        <!-- multiple changes can be done within one configuration rule; simply add another 'change' element with other properties here -->
+        <change>
+            <!-- name of the property or metadata to check: please take care to use the syntax of the Variable replacer here -->
+            <propertyName>{process.TemplateID}</propertyName>
+            <!-- expected value (can be blank too) -->
+            <propertyValue>309919</propertyValue>
+            <!-- condition for value comparing, can be 'is' or 'not' or 'missing' or 'available' -->
+            <propertyCondition>is</propertyCondition>
+            <!-- Name of the new process template -->
+            <workflow>Manuscript workflow</workflow>
+        </change>
+    </config>
 </config_plugin>
 ```
 
@@ -134,9 +151,7 @@ Each `config` block is responsible for a certain project and a certain step, whe
 </config>
 ```
 
-In each `change` element it is then configured which process property is checked \(`propertyName`\) and which value is expected \(`propertyValue`\). All following `step` elements then describe an action that will be executed if the previously configured property matches the expected value. Steps can be opened `type="open"`, deactivated `type="deactivate"`, closed `type="close"` and locked `type="lock"`.
-
-Please note that the specification for defining which property is to be used for checking a value must be specified with the syntax for the so-called variable replacer. Accordingly, the field to be checked must be defined as in the following examples:
+In each `<change>` element it is then configured which process property is checked \(`<propertyName>`\) and which value is expected \(`<propertyValue>`\). Please note that the specification for defining which property is to be used for checking a value must be specified with the syntax for the so-called variable replacer. Accordingly, when defining the field to be checked, the specification must be as in the following examples:
 
 ```markup
 <propertyName>{process.ABC}</propertyName>
@@ -149,6 +164,65 @@ Please note that the specification for defining which property is to be used for
 Further explanations about the use of variables can be found here:
 
 {% embed url="https://docs.goobi.io/goobi-workflow-en/manager/8" caption="https://docs.goobi.io/goobi-workflow-en/manager/8" %}
+
+After defining how the properties are to be evaluated, the action to be performed is determined. The following possibilities exist here:
+
+### Changing the status of workflow steps.
+
+Depending on existing properties, the status of defined steps within the workflow can be changed automatically. Workflow steps can be opened `type="open"`, deactivated `type="deactivate"`, closed `type="close"` or locked `type="lock"`.
+
+```xml
+<steps type="open">
+    <title>Create derivates</title>
+    <title>Jpeg 2000 generation and validation</title>
+</steps>
+<steps type="deactivate">
+    <title>Rename files</title>
+</steps>
+<steps type="close">
+    <title>Upload raw tiffs to uploaddirectory Socrates</title>
+    <title>Automatic pagination</title>
+</steps>
+<steps type="lock">
+    <title>Create METS file</title>
+    <title>Ingest into DigiTool</title>
+</steps>
+```
+
+| Parameter | Explanation |
+| :--- | :--- |
+| `type` | Determine which status the workflow steps are to receive. |
+| `title` | Define here the name of the workflow steps that are to be set to the desired status. |
+
+### Changing the responsibility of user groups for workflow steps
+
+Depending on existing properties, the responsible user groups can be defined for several workflow steps. The configuration is done as shown here:
+
+```xml
+<usergroups step="Image QA">
+    <usergroup>Administration</usergroup>
+    <usergroup>AutomaticTasks</usergroup>
+</usergroups>
+```
+
+| Parameter | Explanation |
+| :--- | :--- |
+| `step` | Determine for which workflow step you want to enter the user groups. |
+| `usergroup` | Define here the name of the user group that is to be entered as responsible for the configured step. |
+
+
+### Changing the process template on which the process is based
+
+With a configuration like the following example, the process template can be exchanged while the workflow is running. Depending on existing properties, a workflow can thus be replaced by another workflow during execution. Workflow steps that are also present in the new workflow are automatically set to the correct status.
+
+```xml
+ <workflow>Manuscript workflow</workflow>
+```
+
+| Parameter | Explanation |
+| :--- | :--- |
+| `workflow` | Define here the name of the process template to be used for the process. |
+
 
 ## Settings in Goobi
 
