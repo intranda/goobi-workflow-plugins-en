@@ -70,6 +70,9 @@ The mapping of the contents of the JSON dataset to Goobi metadata is done within
 <config_plugin>
     <config name="Opac Name">
 
+        <showResultList>true</showResultList>
+        <urlForSecondCall>https://example.goobi.io/metadatacloud/api</urlForSecondCall>
+
         <field id="repository">
             <label>Repository</label>
             <select>1</select>
@@ -165,6 +168,8 @@ Different field types can be used within the catalogue:
 | `defaultPublicationType` | This type is used when no document type has been detected before. |
 | `metadata` | This type is used to map JSON fields to metadata. |
 | `person` | This type is used to map JSON fields to persons. |
+| `showResultList` | This parameter can be used to specify that a selection list should be displayed after a catalogue query, allowing selection of the subrecord to be imported from a list. |
+| `urlForSecondCall` | The URL specified here is used to have the ID of the selected sub-record for the query appended to the URL specified here. |
 
 ### Field type: field
 
@@ -228,6 +233,8 @@ If further fields are defined for the catalogue query, these are also displayed 
 If a valid record is found under this URL, it will be searched for the fields defined within `recordType` in which the document type should be located. If no fields are defined or they are not found, the type from the configured element `defaultPublicationType` is used instead. The required structure element is then created with the determined type.
 
 The configured expressions of the `metadata` and `person` are then evaluated in sequence. If data is found with an expression, the corresponding specified metadata is generated.
+
+![Dialogue for selecting the data set to be imported from a hit list after the initial catalogue query](../.gitbook/assets/intranda_opac_json_3_en.png)
 
 ## Useful links
 
