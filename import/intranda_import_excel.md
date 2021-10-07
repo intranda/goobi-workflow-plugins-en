@@ -32,7 +32,7 @@ There is also a configuration file, which must be located at the following place
 
 ## Configuration
 
-The configuration is done via the file `plugin_intranda_import_excel_read_headerdata.xml`. This file can be adapted during operation.
+The configuration is done via the file `plugin_intranda_import_excel.xml`. This file can be adapted during operation.
 
 ```markup
 <config_plugin>
