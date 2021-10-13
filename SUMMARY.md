@@ -92,6 +92,7 @@
 * [Fedora Export](export/intranda_export_fedora.md)
 * [Fedora Export PROV](export/intranda_export_fedora_prov.md)
 * [HAAB Export](export/intranda_export_haab.md)
+* [Single Page Export](export/intranda_export_bda_singleImage.md)
 
 ## Workflow plugins <a id="workflow"></a>
 
