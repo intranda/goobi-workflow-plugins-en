@@ -48,7 +48,7 @@ Integration of the plugin into the workflow
 ---------------------------------------------------------------------------
 To put the plugin into operation, it must be activated for one or more desired tasks in the workflow. This is done as shown in the following screenshot by selecting the plugin `intranda_step_herisimport` from the list of installed plugins.
 
-![Assigning the plugin to a specific task](intranda_step_heris_en.png)
+![Assigning the plugin to a specific task](../.gitbook/assets/intranda_step_heris_en.png)
 
 Since this plugin should usually be executed automatically, the workflow step should be configured as `automatic`.
 
