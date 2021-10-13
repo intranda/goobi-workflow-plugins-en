@@ -18,7 +18,7 @@ Overview
 
 Details             |  
 ------------------- | -----------------------------------------------------
-Identifier          | intranda_step_herisimport |
+Identifier          | intranda_step_herisimport 
 Source code         | [https://github.com/intranda/goobi-plugin-step-herisimport](https://github.com/intranda/goobi-plugin-step-herisimport)
 License             | GPL 2.0 or newer 
 Documentation date  | 13.10.2021
