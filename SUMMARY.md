@@ -84,6 +84,7 @@
 * [Import for journal articles from an Endnote Export](import/intranda_import_endnote.md)
 * [Importing records from an Excel file](import/intranda_import_excel.md)
 * [Import of Sisis SunRise Files](import/intranda_import_sisis_sunrise_file.md)
+* [Import of data records of the BDA Austria](import/intranda_import_bka_bda.md)
 
 ## Export Plugins <a id="export"></a>
 
