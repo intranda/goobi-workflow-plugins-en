@@ -70,6 +70,7 @@
 * [Extraction of image metadata](step/intranda_step_imagemetadataextraction.md)
 * [Catalogue Request](step/intranda_step_catalogue_request.md)
 * [Heris data import](step/intranda_step_herisimport.md)
+* [Batch Progress](step/intranda_step_batch_progress.md)
 
 ## Opac Plugins <a id="opac"></a>
 
