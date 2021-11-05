@@ -23,7 +23,7 @@ Details             |  Description
 Identifier          | intranda_step_batch_progress |
 Source code         | [https://github.com/intranda/goobi-plugin-step-batch-progress](https://github.com/intranda/goobi-plugin-step-batch-progress)
 License             | GPL 2.0 or newer 
-Documentation date  | 20.10.2021 
+Documentation date  | 05.11.2021 
 
 
 Installation
