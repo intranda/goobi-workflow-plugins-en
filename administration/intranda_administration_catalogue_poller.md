@@ -16,7 +16,40 @@ This documentation describes how to install, configure and use the Administratio
 | Source code | [https://github.com/intranda/goobi-plugin-administration-catalogue-poller](https://github.com/intranda/goobi-plugin-administration-catalogue-poller) |
 | Licence | GPL 2.0 or newer |
 | Compatibility | Goobi workflow 2021.02 |
-| Documentation date | 25.04.2021 |
+| Documentation date | 06.11.2021 |
+
+## How the plugin works
+
+The Catalogue Poller plugin is automatically activated by Goobi. Its runtime starts at the configured start time and repeats according to the configured number of hours.
+
+If, in addition to this automatic process, a user also wants access to the plugin's user interface, he or she must belong to a user group that has been granted the following plugin-specific right to do so:
+
+```text
+Plugin_Goobi_CataloguePoller
+```
+
+In order to assign this right, the desired user group must first be assigned the right authorization in the right-hand area.
+
+![Enter the required authorization](../.gitbook/assets/intranda_administration_catalogue_poller_01.png)
+
+![User group with assigned authorization](../.gitbook/assets/intranda_administration_catalogue_poller_02.png)
+
+If the authorization for the user group is re-entered, the user must first log into Goobi again in order to be able to use this authorization level. The user can then click on the Catalogue Poller plugin in the Administration menu and manually trigger an update of the records at any time.
+
+![Successful run with the update of an affected Goobi process](../.gitbook/assets/intranda_administration_catalogue_poller_03.png)
+
+## Automatic backups
+
+If the plugin finds updated metadata for a process and therefore updates the METS file, a backup of the current METS file `meta.xml` and, if relevant, the `meta_anchor.xml` is created automatically. The backup is saved next to the updated METS file.
+
+![Multiple versions of METS files are kept as backups](../.gitbook/assets/intranda_administration_catalogue_poller_04.png)
+
+## Logging within the process log
+
+The updates of the metadata by the plugin usually take place fully automatically in the background. In order to be able to track what happened to a data record at any time, the events are logged. Detailed entries are automatically added to the process log for each process for which there were changes from this plugin. In addition to the timestamp, these entries also contain an exact list of the changed metadata fields and their contents. Thus, it is possible to trace the previous or the new value at any time.
+
+![Within the process log the changes of the Catalogue Poller are traceable](../.gitbook/assets/intranda_administration_catalogue_poller_05.png)
+
 
 ## Installation
 
@@ -65,9 +98,9 @@ The plugin is configured via the configuration file `plugin_intranda_administrat
         <!-- which catalogue to use (GBV, Wiener, CBL Adlib ...) -->
         <catalogue>Wiener</catalogue>
 
-        <!-- which identifier to use for the catalogue request (use
+        <!-- which catalogue field to use and which identifier to use for the catalogue request (use
         standard variable replacer compatible value here) -->
-        <catalogueIdentifier>$(meta.CatalogIDDigital)</catalogueIdentifier>
+        <catalogueField fieldName="12" fieldValue="$(meta.CatalogIDDigital)" />
 
         <!-- define if existing structure subelements shall be kept (true),
         otherwise a complete new mets file is created and overwrites the
@@ -94,35 +127,16 @@ The plugin is configured via the configuration file `plugin_intranda_administrat
 </config_plugin>
 ```
 
-\| Parameter \| Description \| \| `rule title` \| At this point, an internal name is specified, which is mainly used for the user interface to distinguish between the different rules \| \| `rule startTime` \| This parameter sets the start time when the plugin should execute this rule. \| \| `rule delay` \| This can be used to specify how often the plugin should be executed. The information is given here in the form of hours. \| \| `filter` \| The filter can be used to define one or more Goobi projects for which the rules defined here apply. With `*` the rule applies to all projects. Any spaces contained within the filter must be enclosed in quotation marks in the same way as within the Goobi interface. \| \| `catalogue` \| Here you can define which catalog is to be used for querying new data. This is the name of a catalog as it was defined within the global Goobi catalog configuration within `goobi_opac.xml`. \| \| `catalogueIdentifier` \| Definition of the metadata from the METS file to be used for the catalog query. Usually this is the same identifier that was used for the first catalog query and is usually stored within the metadata `${meta.CatalogIDDigital}`. \| \| `exportUpdatedRecords` \| If this value is set to `true`, the catalog query is followed by a new data export for all records that were actually updated during the catalog query. In this case, the data export is the step that was defined as the first export step within the workflow for the operation. This usually refers to the export and publication of the process within the Goobi viewers. It should be noted here that the processes are only exported if the mechanism for `mergeRecords` is also set to `false`. \| \|`mergeRecords`\|If the value `true` is set, the existing METS file is updated with the current data from the catalog. Any additional metadata can be excluded from the update. The logical and physical structure tree within the METS file also remains unchanged. If the value is set to `false`, the existing METS file will be completely replaced by a new METS file generated by the catalog query.\| \|`analyseSubElements` \| This parameter can be used to define whether metadata for structural elements already existing within the METS files should also be queried by the catalogue. For this, the specified metadata for the identifier to be queried must be available for each sub-element. \| \| `skipField` \| Several metadata fields can be defined here, which should not be changed by a catalog query. This is particularly useful for those fields that do not come from a catalog query and were therefore previously entered in addition to the catalog data. Typical examples for such fields are `singleDigCollection`, `accesscondition` and `pathimagefiles`. Please note that this parameter is only used if the value for `mergeRecords` is `true`. \|
-
-The Catalogue Poller plugin is automatically activated by Goobi. Its runtime starts at the configured start time and repeats according to the configured number of hours.
-
-If, in addition to this automatic process, a user also wants access to the plugin's user interface, he or she must belong to a user group that has been granted the following plugin-specific right to do so:
-
-```text
-Plugin_Goobi_CataloguePoller
-```
-
-In order to assign this right, the desired user group must first be assigned the right authorization in the right-hand area.
-
-![Enter the required authorization](../.gitbook/assets/intranda_administration_catalogue_poller_01.png)
-
-![User group with assigned authorization](../.gitbook/assets/intranda_administration_catalogue_poller_02.png)
-
-If the authorization for the user group is re-entered, the user must first log into Goobi again in order to be able to use this authorization level. The user can then click on the Catalogue Poller plugin in the Administration menu and manually trigger an update of the records at any time.
-
-![Successful run with the update of an affected Goobi process](../.gitbook/assets/intranda_administration_catalogue_poller_03.png)
-
-## Automatic backups
-
-If the plugin finds updated metadata for a process and therefore updates the METS file, a backup of the current METS file `meta.xml` and, if relevant, the `meta_anchor.xml` is created automatically. The backup is saved next to the updated METS file.
-
-![Multiple versions of METS files are kept as backups](../.gitbook/assets/intranda_administration_catalogue_poller_04.png)
-
-## Logging within the process log
-
-The updates of the metadata by the plugin usually take place fully automatically in the background. In order to be able to track what happened to a data record at any time, the events are logged. Detailed entries are automatically added to the process log for each process for which there were changes from this plugin. In addition to the timestamp, these entries also contain an exact list of the changed metadata fields and their contents. Thus, it is possible to trace the previous or the new value at any time.
-
-![Within the process log the changes of the Catalogue Poller are traceable](../.gitbook/assets/intranda_administration_catalogue_poller_05.png)
-
+| Parameter | Description | 
+| :--- | :--- |
+| `rule title` | At this point, an internal name is specified, which is mainly used for the user interface to distinguish between the different rules | 
+| `rule startTime` | This parameter sets the start time when the plugin should execute this rule. |
+| `rule delay` | This can be used to specify how often the plugin should be executed. The information is given here in the form of hours. | 
+| `filter` | The filter can be used to define one or more Goobi projects for which the rules defined here apply. With `*` the rule applies to all projects. Any spaces contained within the filter must be enclosed in quotation marks in the same way as within the Goobi interface. | 
+| `catalogue` | Here you can define which catalog is to be used for querying new data. This is the name of a catalog as it was defined within the global Goobi catalog configuration within `goobi_opac.xml`. | 
+| `fieldName` | This parameter controls within which field the catalogue is queried. Often this value is `12` for example. |
+| `fieldValue` | Definition of the metadata from the METS file to be used for the catalog query. Usually this is the same identifier that was used for the first catalog query and is usually stored within the metadata `${meta.CatalogIDDigital}`. | 
+| `exportUpdatedRecords` | If this value is set to `true`, the catalog query is followed by a new data export for all records that were actually updated during the catalog query. In this case, the data export is the step that was defined as the first export step within the workflow for the operation. This usually refers to the export and publication of the process within the Goobi viewers. It should be noted here that the processes are only exported if the mechanism for `mergeRecords` is also set to `false`. | 
+|`mergeRecords`|If the value `true` is set, the existing METS file is updated with the current data from the catalog. Any additional metadata can be excluded from the update. The logical and physical structure tree within the METS file also remains unchanged. If the value is set to `false`, the existing METS file will be completely replaced by a new METS file generated by the catalog query.| 
+|`analyseSubElements` | This parameter can be used to define whether metadata for structural elements already existing within the METS files should also be queried by the catalogue. For this, the specified metadata for the identifier to be queried must be available for each sub-element. | 
+| `skipField` | Several metadata fields can be defined here, which should not be changed by a catalog query. This is particularly useful for those fields that do not come from a catalog query and were therefore previously entered in addition to the catalog data. Typical examples for such fields are `singleDigCollection`, `accesscondition` and `pathimagefiles`. Please note that this parameter is only used if the value for `mergeRecords` is `true`. |
