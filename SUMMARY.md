@@ -104,6 +104,7 @@
 * [Create process relationships](workflow/intranda_workflow_linkedprocesscreation.md)
 * [Project export as folder with images and Excel file](workflow/intranda_workflow_projectexport.md)
 * [Process creation through file upload](workflow/intranda_workflow_fileupload_processcreation.md)
+* [AEON data transfer](workflow/intranda_workflow_aeon_process_creation.md)
 
 ## Statistics
 
