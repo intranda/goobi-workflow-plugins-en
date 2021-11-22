@@ -78,7 +78,7 @@ The configuration of the plugin is structured as follows:
             <duplicateIfMissing>false</duplicateIfMissing>
 
             <!-- if the same value in fieldTo exists more than once remove the duplicates -->
-			<removeDuplicatedFieldTo>false</removeDuplicatedFieldTo>
+            <removeDuplicatedFieldTo>false</removeDuplicatedFieldTo>
 
         </entry>
     </config>
