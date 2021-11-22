@@ -23,7 +23,7 @@ This plug-in allows you to automatically enrich metadata within the METS files o
 To use the plugin, it must be copied to the following location:
 
 ```text
-/opt/digiverso/goobi/plugins/step/plugin_intranda_step_metadata-replacement.jar
+/opt/digiverso/goobi/plugins/step/plugin_intranda_step_metadata_replacement.jar
 ```
 
 The configuration of the plugin takes place within its configuration file `intranda_step_metadata_replacement.xml`. This file is expected to be located under the following path:
