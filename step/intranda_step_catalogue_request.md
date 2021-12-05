@@ -16,7 +16,17 @@ This documentation describes the installation, configuration and use of the Step
 | Source code | [https://github.com/intranda/goobi-plugin-step-catalogue-request](https://github.com/intranda/goobi-plugin-step-catalogue-request) |
 | Licence | GPL 2.0 oder newer |
 | Compatibility | Goobi workflow 2021.02 |
-| Documentation date | 25.04.2021 |
+| Documentation date | 06.11.2021 |
+
+## How the plugin works
+
+The plugin is usually executed fully automatically within the workflow. It first determines whether there is a block in the configuration file that has been configured for the current workflow with regard to the project name and work step. If this is the case, the other parameters are evaluated and the catalogue query is executed with the field content of the METS file specified within the configuration file as identifier.
+
+## Operation of the plugin
+
+This plugin is integrated into the workflow in such a way that it is executed automatically. Manual interaction with the plugin is not necessary. For use within a workflow step, it should be configured as shown in the screenshot below.
+
+![Integration of the plugin into the workflow](../.gitbook/assets/intranda_step_catalogue_request_en.png)
 
 ## Installation
 
@@ -55,11 +65,9 @@ The plugin is configured via the configuration file `plugin_intranda_step_catalo
         <!-- which catalogue to use ('GBV', 'Wiener', 'CBL Adlib' ...), can use variable replacer compatible value as well, e.g. '$(meta.Catalogue)' -->
         <catalogue>Wiener</catalogue>
 
-        <!-- which field to use for the catalogue request (typically '12' for identifier, sometimes '1007' for barcodes -->
-        <catalogueField>12</catalogueField>
-
-        <!-- which identifier to use for the catalogue request (use standard variable replacer compatible value here, e.g. '$(meta.CatalogIDDigital)') -->
-        <catalogueIdentifier>$(meta.CatalogIDDigital)</catalogueIdentifier>
+        <!-- which field to use for the catalogue request (typically '12' for identifier, sometimes '1007' for barcodes, and 
+          which identifier to use for the catalogue request (use standard variable replacer compatible value here, e.g. '$(meta.CatalogIDDigital)') -->
+        <catalogueField fieldName="12" fieldValue="$(meta.CatalogIDDigital)" />
 
         <!-- define if existing structure subelements shall be kept (true), otherwise a complete new mets file is created and overwrites the existing one (false) -->
         <mergeRecords>true</mergeRecords>
@@ -96,14 +104,4 @@ The plugin is configured via the configuration file `plugin_intranda_step_catalo
 | `ignoreRequestIssues` | Here you can define how the plugin should behave in the event of a query error, for example in the event of network problems. In this way, it can be defined that the workflow should be interrupted or nevertheless continued. |
 | `analyseSubElements` | This parameter can be used to define whether metadata for structural elements already existing within the METS files should also be queried by the catalogue. For this, the specified metadata for the identifier to be queried must be available for each sub-element. |
 | `skipField` | Several metadata fields can be defined here that are not to be changed by a catalogue query under any circumstances. This is particularly useful for those fields that do not come from a catalogue query and were therefore previously recorded in addition to the catalogue data. Typical examples of such fields include `singleDigCollection`,`accesscondition` and `pathimagefiles`. Please note that this parameter only applies when the value for `mergeRecords` is set to `true`. |
-
-## How the plugin works
-
-The plugin is usually executed fully automatically within the workflow. It first determines whether there is a block in the configuration file that has been configured for the current workflow with regard to the project name and work step. If this is the case, the other parameters are evaluated and the catalogue query is executed with the field content of the METS file specified within the configuration file as identifier.
-
-## Operation of the plugin
-
-This plugin is integrated into the workflow in such a way that it is executed automatically. Manual interaction with the plugin is not necessary. For use within a workflow step, it should be configured as shown in the screenshot below.
-
-![Integration of the plugin into the workflow](../.gitbook/assets/intranda_step_catalogue_request_en.png)
 

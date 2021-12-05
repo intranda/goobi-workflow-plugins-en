@@ -13,17 +13,17 @@ This plug-in allows you to automatically enrich metadata within the METS files o
 |  |  |
 | :--- | :--- |
 | Identifier | intranda\_step\_metadata\_replacement |
-| Source code | [https://github.com/intranda/goobi-plugin-step-yerusha-metadatareplacement](https://github.com/intranda/goobi-plugin-step-yerusha-metadatareplacement) |
+| Source code | [https://github.com/intranda/goobi-plugin-step-metadata-replacement](https://github.com/intranda/goobi-plugin-step-metadata-replacement) |
 | Licence | GPL 2.0 or newer |
-| Compatibility | Goobi workflow 2020.06 |
-| Dokumentation date | 14.06.2020 |
+| Compatibility | Goobi workflow 2021.10 |
+| Dokumentation date | 22.11.2021 |
 
 ## Installation
 
 To use the plugin, it must be copied to the following location:
 
 ```text
-/opt/digiverso/goobi/plugins/step/plugin_intranda_step_metadata-replacement.jar
+/opt/digiverso/goobi/plugins/step/plugin_intranda_step_metadata_replacement.jar
 ```
 
 The configuration of the plugin takes place within its configuration file `intranda_step_metadata_replacement.xml`. This file is expected to be located under the following path:
@@ -77,6 +77,9 @@ The configuration of the plugin is structured as follows:
                 shall the original value be duplicated then? -->
             <duplicateIfMissing>false</duplicateIfMissing>
 
+            <!-- if the same value in fieldTo exists more than once remove the duplicates -->
+            <removeDuplicatedFieldTo>false</removeDuplicatedFieldTo>
+
         </entry>
     </config>
 </config_plugin>
@@ -99,6 +102,7 @@ The parameters within this configuration file have the following meanings:
 | `contentAuthorityUri` | If standard data are to be transferred, the field within the vocabulary for the Authority URI can be defined here. |
 | `contentAuthorityValueUri` | If standard data are to be transferred, the field within the vocabulary for the data record can be defined here. |
 | `duplicateIfMissing` | If the original value is to be used if no match is found within the vocabulary, this value must be set to `true`. |
+| `removeDuplicatedFieldTo` | If a target field with the same content exists several times, this parameter can be used to specify that duplicates are to be removed. Only the field type and value are checked. Persons, corporate bodies, metadata groups and authority information are not taken into account. |
 
 To put the plugin into operation, it must be activated for one or more desired tasks in the workflow. This is done as shown in the following screenshot by selecting the `intranda_step_metadata_replacement` plugin from the list of installed plugins.
 
