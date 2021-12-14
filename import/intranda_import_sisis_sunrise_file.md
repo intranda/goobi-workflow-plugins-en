@@ -91,7 +91,7 @@ The configuration allows different configurations for different process template
 | :--- | :--- |
 | `rulesetPath` | This is the path to the ruleset for the MetsMods files. |
 | `imagePathFile` | This parameter defines the path to the image files, which are located either in the folder itself or in subfolders with the name of the Catalogue identifier. |
-| `tags` | This parameter defines the translation file that translates mab2 codes into metadata. |
+| `tags` | This parameter defines the translation file that translates the codes into metadata. |
 | `withSGML` | If this parameter is set to `true`, then SGML files are used. Note that this is currently not in use, but intended for a later version. |
 | `sgmlPath` | If SGML files are used, this is the folder in which they are found. |
 | `defaultPublicationType` | With this parameter the Type of the document is defined if it has no children or parents. A document with children is imported as MultiVolumeWork, the children are imported as Volumes. |
@@ -145,7 +145,7 @@ A tags file may look something like this:
 1371 OtherTitle
 ```
 
-Each line contains a MAB code, followed by the name of the metadata which it should be translated to. Every metadata type in the list must be defined in the ruleset used for the project into which the file is to be imported, and the `CatalogIDDigital` must be defined, as it is used to create the process ID.
+Each line contains a code, followed by the name of the metadata which it should be translated to. Every metadata type in the list must be defined in the ruleset used for the project into which the file is to be imported, and the `CatalogIDDigital` must be defined, as it is used to create the process ID.
 
 ## Usage
 
