@@ -17,8 +17,8 @@ The plugin is used to automatically delete data from a process. For this purpose
 | Identifier | intranda\_step\_deleteContent |
 | Source code | [https://github.com/intranda/goobi-plugin-step-deleteContent](https://github.com/intranda/goobi-plugin-step-deleteContent) |
 | Licence | GPL 2.0 or newer |
-| Compatibility | Goobi workflow 2020.09 |
-| Documentation date | 03.10.2020 |
+| Compatibility | Goobi workflow 2021.10 |
+| Documentation date | 05.12.2021 |
 
 ## Installation
 
@@ -81,6 +81,15 @@ The configuration of the plugin is structured as follows:
 
       <!-- deactivate all unfinished tasks -->
       <deactivateProcess>false</deactivateProcess>
+
+      <!-- delete specific metadata in the structure main object (e.g. Monograph or Volume) 
+        use the internal ruleset name here, e.g. singleDigCollection, DocLanguage etc. 
+        this field is repeatable -->
+      <deleteMetadata name="myMetadataType"/>
+
+      <!-- delete specific process properties, e.g. Font type, Opening angle etc. 
+        this field is repeatable -->
+      <deleteProperty name="Opening angle"/>
   </config>
 
 </config_plugin>
@@ -109,6 +118,8 @@ The block `<config>` can occur repeatedly for different projects or workflow ste
 | `deleteProcesslogDirectory` | Specify whether to delete the folder where the files uploaded in the operation log are managed. |
 | `deleteMetadataFiles` | Specify here whether the metadata and associated backups should be deleted. |
 | `deactivateProcess` | When this option is enabled, all steps of the process are disabled if they have not been completed previously. |
+| `deleteMetadata` | Here a specific metadata can be deleted that is at the level of the work in the metadata file. The item is repeatable and must use a valid name for a metadata type from the rule set. |
+| `deleteProperty` | Here a specific operation property can be deleted., The element is repeatable and must list the name of the property. |
 
 ## Integration of the plugin into the workflow
 
