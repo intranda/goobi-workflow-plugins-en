@@ -67,14 +67,14 @@ This has the following structure:
 ```bash
 [Unit]
 Description=BaseX HTTP server
-​
+
 [Service]
-User=tomcat8
-Group=tomcat8
+User=tomcat
+Group=tomcat
 ProtectSystem=full
 ExecStart=/opt/digiverso/basex/bin/basexhttp
 ExecStop=/opt/digiverso/basex/bin/basexhttp stop
-​
+
 [Install]
 WantedBy=multi-user.target
 ```
@@ -158,10 +158,10 @@ To configure the queries, several new files have to be created in the path `/opt
 
 ```bash
 cd /opt/digiverso/basex/webapp/
-wget https://raw.githubusercontent.com/intranda/goobi-plugin-administration-archive-management/master/plugin/src/main/resources/importFile.xq
-wget https://github.com/intranda/goobi-plugin-administration-archive-management/blob/master/plugin/src/main/resources/listDatabases.xq
-wget https://github.com/intranda/goobi-plugin-administration-archive-management/blob/master/plugin/src/main/resources/openDatabase.xq
-chown tomcat8. *.xq
+sudo -u tomcat wget https://raw.githubusercontent.com/intranda/goobi-plugin-administration-archive-management/master/plugin/src/main/resources/importFile.xq
+sudo -u tomcat wget https://raw.githubusercontent.com/intranda/goobi-plugin-administration-archive-management/master/plugin/src/main/resources/listDatabases.xq
+sudo -u tomcat wget https://raw.githubusercontent.com/intranda/goobi-plugin-administration-archive-management/master/plugin/src/main/resources/openDatabase.xq
+chown tomcat. *.xq
 ```
 
 ![\*.xq-Files from the checked out plugin](../../.gitbook/assets/intranda_administration_archive_management_install_10%20%281%29%20%282%29.png)
