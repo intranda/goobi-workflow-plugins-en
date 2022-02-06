@@ -15,8 +15,8 @@ This documentation describes the installation, configuration and use of the plug
 | Identifier | intranda\_step\_datacite\_doi |
 | Source code | [https://github.com/intranda/goobi-plugin-step-datacite-doi](https://github.com/intranda/goobi-plugin-step-datacite-doi) |
 | Licence | GPL 2.0 or newer |
-| Compatibility | Goobi workflow 2021.03 |
-| Documentation date | 15.03.2021 |
+| Compatibility | Goobi workflow 2021.12 |
+| Documentation date | 06.02.2022 |
 
 ## Installation
 
@@ -54,35 +54,41 @@ The configuration is done via the configuration file `plugin_intranda_step_datac
 
 ```markup
 <config_plugin>
-    <config>
-        <!-- which projects to use for (can be more then one, otherwise use *) -->
-        <project>*</project>
-        <step>*</step>
+	<!-- order of configuration is: 
+      1.) project name and step name matches 
+      2.) step name matches and project is * 
+      3.) project name matches and step name is *
+      4.) project name and step name are * 
+  -->
 
-        <!-- authentication and main information -->
-        <!-- For testing: for deployment, remove "test" -->
-        <SERVICE_ADDRESS>https://mds.test.datacite.org/</SERVICE_ADDRESS>
+	<config>
+		<!-- which projects to use for (can be more then one, otherwise use *) -->
+		<project>*</project>
+		<step>*</step>
 
-        <base>10.80831</base>
-        <url>https://viewer.goobi.io/idresolver?doi=</url>
-        <USERNAME>YZVP.GOOBI</USERNAME>
-        <PASSWORD>password</PASSWORD>
+    <!-- authentication and main information -->
+    <!-- For testing: for deployment, remove "test" -->
+    <serviceAddress>https://mds.test.datacite.org/</serviceAddress>
+        
+		<!-- authentication and main information -->
+		<base>10.123456789</base>
+		<url>https://viewer.goobi.io/idresolver?handle=</url>
+		<username></username>
+		<password></password>
 
-        <!-- configuration for DOIs -->
-        <prefix>go</prefix>
-        <name>goobi</name>
-        <separator>-</separator>
-        <handleMetadata>DOI</handleMetadata>
+		<!-- configuration for Handles -->
+		<prefix>go</prefix>
+		<name>goobi</name>
+		<separator>-</separator>
+		<doiMetadata>DOI</doiMetadata>
 
-        <!-- configuration for DOIs -->
-        <doiMapping>/opt/digiverso/goobi/config/plugin_intranda_step_datacite_mapping.xml</doiMapping>
+		<!-- configuration for DOIs -->
+		<doiMapping>/opt/digiverso/goobi/config/plugin_intranda_step_datacite_mapping.xml</doiMapping>
 
-        <!-- Type of DocStruct which should be given DOIs -->
-        <typeForDOI>Article</typeForDOI>
+    <!-- Type of DocStruct which should be given DOIs -->
+    <typeForDOI>Article</typeForDOI>
 
-        <!-- display button to finish the task directly from within the entered plugin -->
-        <allowTaskFinishButtons>true</allowTaskFinishButtons>
-    </config>
+	</config>
 
 </config_plugin>
 ```
@@ -93,17 +99,17 @@ The block `<config>` can occur repeatedly for different projects or workflow ste
 | :--- | :--- |
 | `project` | This parameter determines for which project the current block `<config>` is to apply. The name of the project is used here. This parameter can occur several times per `<config>` block. |
 | `step` | This parameter controls for which workflow steps the block `<config>` should apply. The name of the workflow step is used here. This parameter can occur several times per `<config>` block. |
-| `SERVICE_ADDRESS` | This parameter defines the URL for the Datacite service. In the example above, it is the test server. |
+| `serviceAddress` | This parameter defines the URL for the Datacite service. In the example above, it is the test server. |
 | `base` | This parameter defines the DOI base for the institution, which has been registered with Datacite. |
 | `url` | The url parameter defines the prefix accorded to each DOI link. A DOI "10.80831/goobi-1", for example, will here be given the hyperlink "[https://viewer.goobi.io/idresolver?doi=10.80831/goobi-1](https://viewer.goobi.io/idresolver?doi=10.80831/goobi-1)" |
-| `USERNAME` | This is the username that is used for the DataCite registration. |
-| `PASSWORD` | This is the password that is used for the DataCite registration. |
+| `username` | This is the username that is used for the DataCite registration. |
+| `password` | This is the password that is used for the DataCite registration. |
 | `prefix` | This is the prefix that may be given to the DOI before the name and ID of the document. |
 | `name` | This is the name that may be given to the DOI before the ID number of the document. |
 | `separator` | Define here a separator that shall be used between the different parts of the DOI. |
-| `handleMetadata` | This parameter specifies under which metadata name the DOI is to be saved in the METS-MODS file. Default is `_urn`. |
+| `doiMetadata` | This parameter specifies under which metadata name the DOI is to be saved in the METS-MODS file. Default is `DOI`. |
 | `doiMapping` | In this parameter the path to the mapping file for the DOI registration is defined. |
-| `typeForDOI` | With this parameter the DocStruct type can be defined which will be given DOIs. If this is empty or missing, the top DocStruct elemtnet only will be given a DOI. If the parameter contains the name of a sub-DocStruct, then these will be given DOIs. |
+| `typeForDOI` | With this parameter the DocStruct type can be defined which will be given DOIs. If this is empty or missing, the top DocStruct element only will be given a DOI. If the parameter contains the name of a sub-DocStruct, then these will be given DOIs. |
 
 ## Configuration inside of the Mapping file
 
@@ -114,71 +120,178 @@ The mapping configuration file looks something like this:
 <Mapping>
   <!-- Mandatory fields: -->
   <map>
-    <field>title</field>
-    <metadata>TitleDocMain</metadata>
-    <altMetadata>TitleDocMainShort</altMetadata>
-    <altMetadata>Title</altMetadata>
-    <default>Fragment</default>
+      <field>title</field>
+      <metadata>TitleDocMain</metadata>
+      <altMetadata>TitleDocMainShort</altMetadata>
+      <altMetadata>Title</altMetadata>
+      <default>unkn</default>
   </map>
 
   <map>
-    <field>author</field>
-    <metadata>Author</metadata>
-    <altMetadata>Composer</altMetadata>
-    <altMetadata>IllustratorArtist</altMetadata>
-    <altMetadata>WriterCorporate</altMetadata>
-    <default>unkn</default>
+      <field>creators</field>
+      <metadata>Author</metadata>
+      <altMetadata>Composer</altMetadata>
+      <altMetadata>IllustratorArtist</altMetadata>
+      <altMetadata>WriterCorporate</altMetadata>
+      <default>unkn</default>
   </map>
 
   <map>
-    <field>publisher</field>
-    <metadata>Publisher</metadata>
-    <altMetadata>PublisherName</altMetadata>
-    <altMetadata>PublisherPerson</altMetadata>
-    <default>unkn</default>
+      <field>publisher</field>
+      <metadata>Publisher</metadata>
+      <altMetadata>PublisherName</altMetadata>
+      <altMetadata>PublisherPerson</altMetadata>
+      <default>unkn</default>
   </map>
 
   <map>
-    <field>publicationYear</field>
-    <metadata>_dateDigitization</metadata>
-    <default>#CurrentYear</default>
+      <field>publicationYear</field>
+      <metadata>_dateDigitization</metadata>
+      <default>#CurrentYear</default>
   </map>
 
   <map>
-    <field>inst</field>
-    <default>intranda</default>
+      <field>hostingInstitution</field>
+      <metadata>_electronicPublisher</metadata>
+      <default>intranda GmbH</default>
   </map>
 
-
   <map>
-    <field>resourceType</field>
-    <default>document</default>
+      <field>resourceType</field>
+      <default>document</default>
   </map>
 
   <!-- Optional fields: -->
-  <map>
-    <field>editor</field>
-    <metadata>Editor</metadata>
-  </map>
+
+  <listMap alternateIdentifierType="Goobi identifier">
+      <field>alternateIdentifier</field>
+      <list>alternateIdentifiers</list>
+      <metadata>CatalogIDDigital</metadata>
+  </listMap>
+
+  <listMap>
+      <field>contributors</field>
+      <list>contributors</list>
+      <metadata>Editor</metadata>
+  </listMap>
+  
+  <listMap relatedIdentifierType="ISSN" relationType="IsPublishedIn">
+      <field>relatedIdentifier</field>
+      <list>relatedIdentifiers</list>
+      <metadata>anchor_ISSN</metadata>
+  </listMap>
+
+  <listMap descriptionType="SeriesInformation">
+      <field>description</field>
+      <list>descriptions</list>
+      <metadata>anchor_TitleDocMain</metadata>
+  </listMap>
+
+  <listMap descriptionType="SeriesInformation">
+      <field>description</field>
+      <list>descriptions</list>
+      <metadata>CurrentNo</metadata>
+  </listMap>
+
+  <listMap dateType="Created">
+      <field>date</field>
+      <list>dates</list>
+      <metadata>Dating</metadata>
+      <altMetadata>PublicationYear</altMetadata>
+      <altMetadata>anchor_PublicationYear</altMetadata>
+  </listMap>
+
+	<!-- create related item information just for the following publication types -->
+	<publicationTypeWithRelatedItem>Article</publicationTypeWithRelatedItem>
+
+  <!-- Specific fields for publication info: -->
+
+  <publicationData>
+      <field>ISSN</field>
+      <metadata>anchor_ISSN</metadata>
+  </publicationData>
+
+  <publicationData>
+      <field>title</field>
+      <metadata>anchor_TitleDocMain</metadata>
+  </publicationData>
+
+  <publicationData>
+      <field>publicationYear</field>
+      <metadata>anchor_PublicationYear</metadata>
+  </publicationData>
+
+  <publicationData>
+      <field>volume</field>
+      <metadata>CurrentNo</metadata>
+  </publicationData>
 
 </Mapping>
 ```
 
-For each `<map>`, the `<field>` specifies the name of the DOI element, and the `<metadata>` and `<altMetadata>` entries indicate from which metadata of the DocStruct the value should be taken, in order. If there is no such entry in the DocStruct, then the `<default>` value is taken. The value `"unkn"` for "unknown" is recommended by Datacite for data which is missing.
+For each `<map>`, the `<field>` specifies the name of the DOI element, and the `<metadata>` and `<altMetadata>` entries specify from which metadata of the structure elements the value is to be taken in turn. If there is no such entry in the structure elements, then the `<default>` value is taken. The value `"unkn"` for "unknown" is recommended by Datacite for missing data.
 
-For the mandatory fields, a `<default>` must be specified; for optional fields this is not necessary, but may be done if wished.
+The elements `<listMap>` allow to create list elements within the generated Datacite structure, so that repeating values can be defined. Attributes can also be specified, which are taken over itentically with name and value for the list element to be created (e.g. `alternateIdentifierType="Goobi identifier"`);
 
-The default entry `#CurrentYear` is a special case: it is replaced with the current year in the DOI.
+For mandatory fields a `<default>` must be specified; for optional fields this is not necessary, but can be done if desired.
 
-## Integration of the plugin into the workflow
+The default entry `#CurrentYear` is a special case: it is replaced by the current year during DOI generation.
+
+If, for selected structural elements, a reference is to be made to the work in which this element was published, several elements can be listed as `publicationTypeWithRelatedItem`. For these, the block of elements `<publicationData>` can also be evaluated. This could be used for scientific articles, for example.
+
+## Integration of the plug-in into the workflow
 
 To put the plugin into operation, it must be activated for one or more desired tasks in the workflow. This is done as shown in the following screenshot by selecting the plugin `intranda_step_datacite_doi` from the list of installed plugins.
 
-![Assigning the plugin to a specific task](../.gitbook/assets/intranda_step_datacite_doi_en.png)
+![Assign the plugin to a specific task](../.gitbook/assets/intranda_step_datacite_doi_en.png)
 
-Since this plugin is usually to be executed automatically, the workflow step should be configured as automatic in the workflow. As the plugin writes the DOI to the metadata file of the process, the checkbox for `Update metadata index when finishing` should be ticked.
+Since this plugin should usually be executed automatically, the workflow step should be configured as automatic in the workflow. Since the plugin writes the DOI to the metadata file of the operation, the checkbox for 'Update metadata index when finishing' should also be activated.
 
-## Operation of the plugin
+## How the plugin works
 
-The program examines the metadata fields of a METS-MODS file from a Goobi process. If a `<typeForDOI>` is specified, then it will go through each DocStruct of this type in the file. If not, then it will take the top DocStruct. From these it creates the data for a DOI, using the mapping file to translate. It then registers the DOI via the MDS API of DataCite, with DOI given by the `<base>` together with any `<prefix>` and `<name>`, and the ID of the document \(its `CatalogIDDigital`\) plus an increment, if there are more than one DOIs generated for the given document. The record is given a registered URL defined by the `<url>` followed by the DOI. The generated DOI is written into the METS/MODS file under the metadata specified in `<handleMetadata>`. If the `<typeForDOI>` is `Article` for example, then each Article in the METS/MODS file will be given a DOI, which is saved in the metadata under `<handleMetadata>` for each Article.
+The programme examines the metadata fields of the METS/MODS file from the Goobi operation. If a `<typeForDOI>` is specified, then it goes through every structure element of that type in the file. If not, it takes the top structure item. From this it creates the data for a DOI, using the mapping file to translate it. Then it registers the DOI using DataCite's MDS API, specifying the DOI by `<base>` along with any `<prefix>` and `<name>` and the ID of the document \(its `CatalogIDDigital`\) plus an incremented counter if more than one DOI was created for the given document. The record is given a registered URL defined by `<url>` followed by the DOI. The generated DOI is stored in the METS/MODS file under the metadata specified in `<doiMetadata>`. For example, if the value for `<typeForDOI>` is `Article`, then each article in the METS/MODS file will have a DOI stored in the metadata under `<doiMetadata>` for each article.
 
+## Useful additional information
+
+- Datacite documentation: https://support.datacite.org/docs/getting-started
+- Metadata schema overview: https://schema.datacite.org/
+- Metadata schema for the version 4.4 mit Beispieldateien: https://schema.datacite.org/meta/kernel-4.4/
+- Admin area for Datacite customers: https://doi.datacite.org/
+- Admin area in the test system for Datacite customers: https://doi.test.datacite.org/
+
+## Example
+- Example of a Datacite XML file from Goobi:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<resource
+    xmlns="http://datacite.org/schema/kernel-4"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://datacite.org/schema/kernel-4 http://schema.datacite.org/meta/kernel-4.2/metadata.xsd">
+    <identifier identifierType="DOI">10.48644/1776214552</identifier>
+    <titles>
+        <title>Della forza de'corpi che chiamano viva libri tre</title>
+    </titles>
+    <publisher>Pisarri</publisher>
+    <publicationYear>2022</publicationYear>
+    <resourceType resourceTypeGeneral="Text">document</resourceType>
+    <creators>
+        <creator>
+            <creatorName>Zanotti, Francesco Maria</creatorName>
+            <givenName>Francesco Maria</givenName>
+            <familyName>Zanotti</familyName>
+        </creator>
+    </creators>
+    <dates>
+        <date dateType="Created">1752</date>
+    </dates>
+    <alternateIdentifiers>
+        <alternateIdentifier alternateIdentifierType="Goobi identifier">1776214552</alternateIdentifier>
+    </alternateIdentifiers>
+    <contributors>
+        <contributor contributorType="HostingInstitution">
+            <contributorName>Max-Planck-Institut für Wissenschaftsgeschichte</contributorName>
+        </contributor>
+    </contributors>
+</resource>
+```
