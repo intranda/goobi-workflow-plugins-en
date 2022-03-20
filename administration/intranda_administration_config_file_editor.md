@@ -33,6 +33,10 @@ After installation, the plugin can be found in its own entry in the `Administrat
 
 After opening, all Goobi configuration files are listed on the left-hand side. These can be opened by clicking on the respective icon in order to edit them.
 
+Please note that the configuration file of this plugin does not appear in the list by default for security reasons and is editable only by super administrators.
+
+Also, no hidden files and no files from hidden folders are displayed.
+
 ![Open plugin without loaded file](../.gitbook/assets/intranda_administration_config_file_editor4_en.png)
 
 If you open a file, a text editor appears on the right-hand side in which the file can be edited. If you edit and save a file, a backup is automatically created in the defined backup directory. 
@@ -78,11 +82,16 @@ The plugin is configured via the configuration file `plugin_intranda_administrat
 ```xml
 <config_plugin>
 
-	<configFileDirectory>/opt/digiverso/goobi/config/</configFileDirectory>
-	<!-- By editing a config file in the browser GUI, a backup file will be stored in the backup directory -->
-	<configFileBackupDirectory>/opt/digiverso/goobi/config/backup/</configFileBackupDirectory>
-	<!-- backup files will be stored as config.xml.1, config.xml.2, ..., config.xml.n -->
-	<numberOfBackupFiles>8</numberOfBackupFiles>
+    <configFileDirectories>
+        <directory backupFiles="16">/opt/digiverso/goobi/config/</directory>
+        <directory backupFolder="wizzardBackup/" backupFiles="4">/opt/digiverso/layoutwizzard/</directory>
+        <directory backupFolder="itmPluginsBackup/" backupFiles="4" fileRegex="\.xml">/opt/digiverso/itm/plugins/config/</directory>
+        <directory backupFolder="itmBackup/" fileRegex="\.xml">/opt/digiverso/itm/config/</directory>
+        <!--
+        Example:
+        <directory backupFolder="exampleBackup/" backupFiles="12" fileRegex="\.xml">/opt/digiverso/example/config/</directory>
+        -->
+    </configFileDirectories>
 
 </config_plugin>
 ```
@@ -91,9 +100,11 @@ The parameters within this configuration file have the following meanings:
 
 Parameter           |  Description
 ------------------- | ----------------------------------------------------- 
-`configFileDirectory`         | This is the path where the configuration files are located.
-`configFileBackupDirectory`   | This sets the path for the backup files where the backups of the configuration files are to be saved after editing.
-`numberOfBackupFiles`         | This integer value specifies how many backup files remain stored per configuration file before they are overwritten by new backups.
+`configFileDirectories`       | This is the list that contains all selected configuration file paths. The configuration file path preset in Goobi Workflow is always used.
+`directory`                   | Configuration files from the absolute path specified here are displayed in the user interface. The path is ignored if it does not exist.
+`backupFolder`                | This parameter specifies a relative path in `directory` where the backup files should be stored. By default, `backup/` is used if the parameter is not specified. To have backup files stored in the same directory as `directory`, override the value with `backupFolder=""`.
+`backupFiles`                 | This integer value specifies how many backup files are kept per configuration file before they are overwritten by new backups. The default value is 8.
+`fileRegex`                   | This parameter enables filtering of the displayed configuration files in the corresponding folder. Any regex expression can be entered. If this parameter is not used or an empty text is specified, all files are displayed.
 
 If help texts for individual configuration files are to be displayed, these must be stored within the messages files. For this purpose, an adjustment is made in these files, for example:
 
@@ -123,7 +134,7 @@ Setting up required rights
 ---------------------------------------------------------------------------
 This plugin has its own permission level for use. For this reason, users must have the necessary rights. 
 
-![Kein Zugriff ohne korrekte Rechte](../.gitbook/assets/intranda_administration_config_file_editor1_en.png)
+![No access without correct rights](../.gitbook/assets/intranda_administration_config_file_editor1_en.png)
 
 Therefore, please assign the following right to the user group of the corresponding users:
 
@@ -131,4 +142,4 @@ Therefore, please assign the following right to the user group of the correspond
 Plugin_administration_config_file_editor
 ```
 
-![Korrekt zugewiesenes Recht für die Nutzer](../.gitbook/assets/intranda_administration_config_file_editor2_en.png)
+![Correctly assigned right for the users](../.gitbook/assets/intranda_administration_config_file_editor2_en.png)

@@ -74,7 +74,6 @@ The plugin is configured via the configuration file `plugin_intranda_administrat
 ```xml
 <config_plugin>
 	
-	<rulesetDirectory>/opt/digiverso/goobi/rulesets/</rulesetDirectory>
 	<!-- By editing a ruleset file in the browser GUI, a backup file will be stored in the backup directory -->
 	<rulesetBackupDirectory>/opt/digiverso/goobi/rulesets/backup/</rulesetBackupDirectory>
 	<!-- backup files will be stored as ruleset.xml.1, ruleset.xml.2, ..., ruleset.xml.n -->
@@ -87,7 +86,6 @@ The parameters within this configuration file have the following meanings:
 
 Parameter           |  Description
 ------------------- | ----------------------------------------------------- 
-`rulesetDirectory`         | This is the path where the ruleset files are located.
 `rulesetBackupDirectory`   | This sets the path for the backup files where the backups of the ruleset files are to be saved after editing.
 `numberOfBackupFiles`         | This integer value specifies how many backup files remain stored per ruleset file before they are overwritten by new backups.
 
@@ -96,7 +94,7 @@ Setting up required rights
 ---------------------------------------------------------------------------
 This plugin has its own permission level for use. For this reason, users must have the necessary rights. 
 
-![Kein Zugriff ohne korrekte Rechte](../.gitbook/assets/intranda_administration_ruleset_editor1_en.png)
+![No access without correct rights](../.gitbook/assets/intranda_administration_ruleset_editor1_en.png)
 
 Therefore, please assign the following right to the user group of the corresponding users:
 
@@ -104,4 +102,4 @@ Therefore, please assign the following right to the user group of the correspond
 Plugin_administration_ruleset_editor
 ```
 
-![Korrekt zugewiesenes Recht für die Nutzer](../.gitbook/assets/intranda_administration_ruleset_editor2_en.png)
+![Correctly assigned right for the users](../.gitbook/assets/intranda_administration_ruleset_editor2_en.png)
