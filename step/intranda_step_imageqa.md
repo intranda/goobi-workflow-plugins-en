@@ -15,8 +15,8 @@ description: >-
 | Identifier | intranda\_step\_imageQA |
 | Source code | [https://github.com/intranda/goobi-plugin-step-imageqa](https://github.com/intranda/goobi-plugin-step-imageqa) |
 | Licence | GPL 2.0 or newer |
-| Compatibility | Goobi workflow 2020.03 |
-| Dokumentation date | 12.04.2021 |
+| Compatibility | Goobi workflow 2021.02 |
+| Dokumentation date | 21.03.2022 |
 
 ## Installation
 
@@ -85,6 +85,12 @@ description: >-
             <left command="/usr/bin/mogrify|-rotate|-90|IMAGE_FILE" />
             <right command="/usr/bin/mogrify|-rotate|90|IMAGE_FILE" />
         </rotationCommands>
+        <!-- allow flipping of images -->
+        <allowFlipping>true</allowFlipping>
+        <flippingCommands>
+            <horizontal command="/bin/true" />
+            <vertical command="/bin/true" />
+        </flippingCommands>
         <!-- allow renaming of images -->
         <allowRenaming>false</allowRenaming>
         <!-- allow selection of images -->
@@ -123,6 +129,12 @@ description: >-
             <left command="/usr/bin/mogrify|-rotate|-90|IMAGE_FILE" />
             <right command="/usr/bin/mogrify|-rotate|90|IMAGE_FILE" />
         </rotationCommands>
+        <!-- allow flipping of images -->
+        <allowFlipping>true</allowFlipping>
+        <flippingCommands>
+            <horizontal command="/bin/true" />
+            <vertical command="/bin/true" />
+        </flippingCommands>
         <!-- allow renaming of images -->
         <allowRenaming>false</allowRenaming>
         <!-- allow selection of images -->
@@ -188,6 +200,8 @@ description: >-
 | `allowTaskFinishButtons` | This parameter can be used to enable buttons to complete the task to be displayed in the regular plugin interface, so that the plugin does not have to be exited first. |
 | `displayocr` | Here you can determine whether the button for displaying full text results should be activated. |
 | `useJSFullscreen` | This parameter can be used to specify that the full screen display is to be done using JavaScript alone. This display is much more performant, but does not allow the full text to be displayed parallel to the image. |
+| `allowFlipping` | If this function is activated, the displayed images may be mirrored horizontally and vertically
+| `flippingCommands` | This allows you to specify which command line calls should be used to mirror the images.
 
 ### Integration of the plugin into the workflow
 
@@ -215,7 +229,7 @@ Images can also be displayed in a full-screen view for a larger view. In both th
 
 Besides the pure image display, the plugin can also handle other object types. For example, it is possible to display 3D objects, which can also be rotated and enlarged for display using additional navigation buttons. ​
 
-Depending on the individual configuration, the plugin allows many more functions, which are mostly visible within the thumbnail display. If these functions have been configured in the configuration file described above, they can be used, for example, for downloading PDF files, image files, rotations, deletions and other operations. ​
+Depending on the individual configuration, the plugin allows many more functions, which are mostly visible within the thumbnail display. If these functions have been configured in the configuration file described above, they can be used, for example, for downloading PDF files, image files, rotations, flippings, deletions and other operations. ​
 
 ![Activated additional functions within the thumbnail display](../.gitbook/assets/intranda_step_imageqa6.png)
 
