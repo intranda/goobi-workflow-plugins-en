@@ -73,7 +73,9 @@
 * [Catalogue Request](step/intranda_step_catalogue_request.md)
 * [Heris data import](step/intranda_step_herisimport.md)
 * [Batch Progress](step/intranda_step_batch_progress.md)
-
+* [Generate URNs](step/intranda_step_urn.md)
+* [Generate ARKs](step/intranda_step_ark.md)
+*
 ## Opac Plugins <a id="opac"></a>
 
 * [PICA Import](opac/intranda_opac_pica.md)
@@ -115,4 +117,3 @@
 ## Other
 
 * [Counterscript Application](other/counterscript-application.md)
-
