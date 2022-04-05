@@ -75,7 +75,8 @@
 * [Batch Progress](step/intranda_step_batch_progress.md)
 * [Generate URNs](step/intranda_step_urn.md)
 * [Generate ARKs](step/intranda_step_ark.md)
-*
+* [Send Mails](step/intranda_step_sendMail.md)
+
 ## Opac Plugins <a id="opac"></a>
 
 * [PICA Import](opac/intranda_opac_pica.md)

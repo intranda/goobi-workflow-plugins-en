@@ -12,7 +12,7 @@ This documentation describes the installation, configuration and use of the Step
 | Details |  |
 | :--- | :--- |
 | Identifier | intranda_step_urn |
-| Source code | [https://gitea.intranda.com/goobi-workflow/goobi-plugin-step-urn](https://gitea.intranda.com/goobi-workflow/goobi-plugin-step-urn) |
+| Source code | [https://github.com/intranda/goobi-plugin-step-urn](https://github.com/intranda/goobi-plugin-step-urn) |
 | Licence | GPL 2.0 or newer |
 | Compatibility | Goobi workflow 2022.03 |
 | Documentation date | 25.03.2022 |
