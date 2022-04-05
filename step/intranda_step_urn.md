@@ -25,7 +25,7 @@ The plugin is usually executed fully automatically within the workflow. It first
 ## Operation of the plugin
 This plugin is integrated into the workflow in such a way that it is executed automatically. Manual interaction with the plugin is not necessary. For use within a workflow step, it should be configured as shown in the screenshot below.
 
-![Integration of the plugin into the workflow](../.gitbook/assets/intranda_step_urn_de.png)
+![Integration of the plugin into the workflow](../.gitbook/assets/intranda_step_urn_en.png)
 
 
 ## Installation
