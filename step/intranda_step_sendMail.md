@@ -3,7 +3,7 @@ description: >-
   Goobi Step Plugin for sending emails within a task.
 ---
 
-# Sending e-mails
+# Sending emails
 
 
 ## Introduction

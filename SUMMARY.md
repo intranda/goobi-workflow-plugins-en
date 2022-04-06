@@ -99,7 +99,8 @@
 * [Fedora Export PROV](export/intranda_export_fedora_prov.md)
 * [HAAB Export](export/intranda_export_haab.md)
 * [Single Page Export](export/intranda_export_bda_singleImage.md)
-
+* [Newspaper export](export/intranda_export_newspaper.md)
+*
 ## Workflow plugins <a id="workflow"></a>
 
 * [Generic import plugin for excel files including validation](workflow/intranda_workflow_excelimport.md)
