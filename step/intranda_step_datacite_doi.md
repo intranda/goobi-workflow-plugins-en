@@ -54,11 +54,11 @@ The configuration is done via the configuration file `plugin_intranda_step_datac
 
 ```markup
 <config_plugin>
-	<!-- order of configuration is: 
-      1.) project name and step name matches 
-      2.) step name matches and project is * 
+	<!-- order of configuration is:
+      1.) project name and step name matches
+      2.) step name matches and project is *
       3.) project name matches and step name is *
-      4.) project name and step name are * 
+      4.) project name and step name are *
   -->
 
 	<config>
@@ -69,11 +69,11 @@ The configuration is done via the configuration file `plugin_intranda_step_datac
     <!-- authentication and main information -->
     <!-- For testing: for deployment, remove "test" -->
     <serviceAddress>https://mds.test.datacite.org/</serviceAddress>
-        
+
 		<!-- authentication and main information -->
 		<base>10.123456789</base>
-		<url>https://viewer.goobi.io/idresolver?handle=</url>
-		<username></username>
+		<url>https://viewer.example.org/resolver?field=MD_PI_DOI&identifier=</url>
+    <username></username>
 		<password></password>
 
 		<!-- configuration for Handles -->
@@ -174,7 +174,7 @@ The mapping configuration file looks something like this:
       <list>contributors</list>
       <metadata>Editor</metadata>
   </listMap>
-  
+
   <listMap relatedIdentifierType="ISSN" relationType="IsPublishedIn">
       <field>relatedIdentifier</field>
       <list>relatedIdentifiers</list>
@@ -266,7 +266,7 @@ The programme examines the metadata fields of the METS/MODS file from the Goobi 
 <?xml version="1.0" encoding="UTF-8"?>
 <resource
     xmlns="http://datacite.org/schema/kernel-4"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://datacite.org/schema/kernel-4 http://schema.datacite.org/meta/kernel-4.2/metadata.xsd">
     <identifier identifierType="DOI">10.48644/1776214552</identifier>
     <titles>
