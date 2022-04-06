@@ -48,6 +48,12 @@ The information from where the data is to be fetched is stored in the respective
 
 For authentication on ssh servers, public keys are searched for in the usual places (`$USER_HOME/.ssh`). Other authentication methods such as username/password are not provided.  
 
+To use this plugin, the user must have the correct role authorisation. Therefore, please assign the role `Plugin_administration_restorearchivedimagefolders` to the user group.
+
+![Correctly assigned role for the users](../.gitbook/assets/intranda_administration_restorearchivedimagefolders1_en.png)
+
 
 ## Operation of the plugin
 The plugin offers a graphical user interface that can be opened via the menu `Administration`. There, a search filter can be used, as it is used in other parts of Goobi workflow (e.g. for the task list). Clicking on 'Run Plugin' will then restore the images for the tasks found via the filter entered. The user interface updates automatically.
+
+![User interface of the plugin](../.gitbook/assets/intranda_administration_restorearchivedimagefolders2_en.png)
