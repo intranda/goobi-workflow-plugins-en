@@ -76,6 +76,7 @@
 * [Generate URNs](step/intranda_step_urn.md)
 * [Generate ARKs](step/intranda_step_ark.md)
 * [Send Mails](step/intranda_step_sendMail.md)
+* [Archiving image folders](step/intranda_step_archiveimagefolder.md)
 
 ## Opac Plugins <a id="opac"></a>
 
