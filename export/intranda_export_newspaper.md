@@ -11,9 +11,11 @@ The plugin is used to create the METS structure for the import into the newspape
 
 Each output is created as individual METS files and linked in the METS anchor file of the vintage. The issue may contain further structural data such as article descriptions or supplements. The digitised images are also referenced here.
 
-<https://wiki.deutsche-digitale-bibliothek.de/display/DFD/Gesamtaufnahme+Zeitung+1.0>
-<https://wiki.deutsche-digitale-bibliothek.de/display/DFD/Jahrgang+Zeitung+1.0>
-<https://wiki.deutsche-digitale-bibliothek.de/display/DFD/Ausgabe+Zeitung+1.0>
+{% embed url="https://wiki.deutsche-digitale-bibliothek.de/display/DFD/Gesamtaufnahme+Zeitung+1.0" caption="https://wiki.deutsche-digitale-bibliothek.de/display/DFD/Gesamtaufnahme+Zeitung+1.0" %}
+
+{% embed url="https://wiki.deutsche-digitale-bibliothek.de/display/DFD/Jahrgang+Zeitung+1.0" caption="https://wiki.deutsche-digitale-bibliothek.de/display/DFD/Jahrgang+Zeitung+1.0" %}
+
+{% embed url="https://wiki.deutsche-digitale-bibliothek.de/display/DFD/Ausgabe+Zeitung+1.0" caption="https://wiki.deutsche-digitale-bibliothek.de/display/DFD/Ausgabe+Zeitung+1.0" %}
 
 
 | Details |  |
