@@ -12,7 +12,7 @@ This documentation describes the installation, configuration and use of the Step
 | Details |  |
 | :--- | :--- |
 | Identifier | intranda_step_sendMail |
-| Source code | [https://github.com/intranda/goobi-plugin-step-ark](https://github.com/intranda/goobi-plugin-step-ark) |
+| Source code | [https://github.com/intranda/goobi-plugin-step-sendMail](https://github.com/intranda/goobi-plugin-step-sendMail) |
 | Licence | GPL 2.0 or newer |
 | Compatibility | Goobi workflow 2022.03 |
 | Documentation date | 30.03.2022 |
