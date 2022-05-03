@@ -30,6 +30,7 @@ From a Linux or Mac terminal, downloading and unpacking would be done as follows
 cd /opt/digiverso/
 wget http://files.basex.org/releases/9.4.4/BaseX944.zip
 unzip BaseX944.zip
+chown -R tomcat. basex/
 ```
 
 After downloading and unpacking, the Jetty configuration must be adjusted so that the application is only accessible on `localhost`. To do this, ensure in the configuration file `/opt/digiverso/basex/webapp/WEB-INF/jetty.xml` that the `host` is set to `127.0.0.1`:
@@ -40,7 +41,7 @@ After downloading and unpacking, the Jetty configuration must be adjusted so tha
   "http://www.eclipse.org/jetty/configure_9_3.dtd">
 
 <Configure id="Server" class="org.eclipse.jetty.server.Server">
-  <!-- Default connector. The Jetty stop port can be specified 
+  <!-- Default connector. The Jetty stop port can be specified
        in the .basex or pom.xml configuration file.  -->
   <Call name="addConnector">
     <Arg>
@@ -161,6 +162,7 @@ cd /opt/digiverso/basex/webapp/
 sudo -u tomcat wget https://raw.githubusercontent.com/intranda/goobi-plugin-administration-archive-management/master/plugin/src/main/resources/importFile.xq
 sudo -u tomcat wget https://raw.githubusercontent.com/intranda/goobi-plugin-administration-archive-management/master/plugin/src/main/resources/listDatabases.xq
 sudo -u tomcat wget https://raw.githubusercontent.com/intranda/goobi-plugin-administration-archive-management/master/plugin/src/main/resources/openDatabase.xq
+sudo -u tomcat wget https://raw.githubusercontent.com/intranda/goobi-plugin-administration-archive-management/master/plugin/src/main/resources/findDb.xq
 chown tomcat. *.xq
 ```
 
@@ -183,11 +185,11 @@ declare
 function page:getDatabases() {
   let $ead := db:list()
 
-  return 
+  return
     <databases>
     {
       for $c in $ead
-      return 
+      return
         <database>
           <name>
             {$c}
@@ -219,7 +221,7 @@ declare
 
 function page:getDatbase($database, $filename) {
   let $ead := db:open($database, $filename)/ead
-  return 
+  return
   <collection>
     {$ead}
   </collection>
@@ -241,10 +243,10 @@ updating function page:import($db, $filename) {
   let $path := '/opt/digiverso/basex/import/' || $filename
   let $details := db:list-details($db, $filename)
 
-  return 
+  return
     if (fn:empty($details)) then
       db:add($db, doc($path), $filename)
-    else 
+    else
       db:replace($db, $filename, doc($path))
 };
 ```
@@ -272,4 +274,3 @@ In addition, the previously created file `importFile.xq` must also be adapted so
 ```bash
 let $path := '/opt/digiverso/basex/import/' || $filename
 ```
-
