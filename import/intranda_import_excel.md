@@ -76,7 +76,7 @@ The configuration is done via the file `plugin_intranda_import_excel.xml`. This 
         <imageFolderHeaderName>images</imageFolderHeaderName>
 
         <!-- defines, if images are moved from the source folder to the destination (true) or copied (false) -->
-        <moveImages>true</moveImages>
+        <moveFiles>true</moveFiles>
 
         <!-- Run the import as GoobiScript -->
         <runAsGoobiScript>true</runAsGoobiScript>
@@ -231,9 +231,9 @@ The element `processTitleRule` is used to generate the operation title. The same
 
 ### Transfer of images
 
-The elements `imageFolderHeaderName`, `imageFolderPath` and `moveImages` can be used to import images in addition to metadata. In `imageFolderHeaderName` the column name is entered, in which the folder names containing the images can be found in the Excel file. Either an absolute path or a relative path can be specified there.
+The elements `imageFolderHeaderName`, `imageFolderPath` and `moveFiles` can be used to import images in addition to metadata. In `imageFolderHeaderName` the column name is entered, in which the folder names containing the images can be found in the Excel file. Either an absolute path or a relative path can be specified there.
 
-If a relative path is specified, the element `imageFolderPath` must contain the root path to the images. The element `moveImages` can be used to control whether the images should be copied or moved.
+If a relative path is specified, the element `imageFolderPath` must contain the root path to the images. The element `moveFiles` can be used to control whether the images should be copied or moved.
 
 ```markup
 <!-- define which column contains the image folder name. Can be combined with <imageFolderPath> prefix or an absolute path.
@@ -244,7 +244,7 @@ If a relative path is specified, the element `imageFolderPath` must contain the 
 <imageFolderPath>/mnt/images/</imageFolderPath>
 
 <!-- defines, if images are moved from the source folder to the destination (true) or copied (false) -->
-<moveImages>true</moveImages>
+<moveFiles>true</moveFiles>
 ```
 
 ### Execution using GoobiScript
@@ -319,4 +319,3 @@ A metadata group consists of several metadata and persons. The configuration of 
 To use the import, the mass import area must be opened in the production templates and the plugin `intranda_import_excel` selected in the File upload import tab. An Excel file can then be uploaded and imported.
 
 The import then takes place line by line. A new process is created for each line and the configured rules are applied. If a valid data record has been created and the generated task title has not yet been assigned, the task is actually created and saved.
-
