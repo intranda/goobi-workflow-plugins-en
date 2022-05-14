@@ -15,7 +15,7 @@ This documentation describes the installation, configuration and use of the Step
 | Source code | [https://github.com/intranda/goobi-plugin-step-urn](https://github.com/intranda/goobi-plugin-step-urn) |
 | Licence | GPL 2.0 or newer |
 | Compatibility | Goobi workflow 2022.03 |
-| Documentation date | 25.03.2022 |
+| Documentation date | 06.05.2022 |
 
 
 ## How the plugin works
@@ -51,40 +51,68 @@ In addition, there is a configuration file that must be located in the following
 ## Configuration
 The configuration of the plugin is done via the configuration file `plugin_intranda_step_urn.xml` and can be adjusted during operation. The following is an example configuration file:
 
-```markup
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <config_plugin>
+	<!-- order of configuration is:
+    1.) project name and step name matches
+    2.) step name matches and project is *
+    3.) project name matches and step name is *
+    4.) project name and step name are *
+  -->
+
+	<config>
+		<!-- which projects to use for (can be more then one, otherwise use *) -->
+		<project>*</project>
+		<step>*</step>
+
+		<!-- name of the API user -->
+		<apiUser>user</apiUser>
+
+		<!-- password of the API user -->
+		<apiPassword>password</apiPassword>
+
+		<!-- URI of the URN API, must use httos -->
+		<apiUri>https://api.nbn-resolving.org/v2/</apiUri>
+
+		<!-- namespace in which new URNs shall be created -->
+		<!-- example urn:nbn:de:gbv:{SIGIL} -->
+		<namespace>urn:nbn:de:{SIGIL}</namespace>
+
+		<!-- infix that you want to use (optional) -->
+		<infix>-goobi-</infix>
+
+		<!-- example URN urn:nbn:de:gbv:48-goobi-20220404122233 -->
+
+		<!--target url the newly generated urn will forward to. {pi.urn} will be
+			replaced with the newly minted urn -->
+		<publicationUrl>https://viewer.example.org/viewer/resolver?urn={pi.urn}
+		</publicationUrl>
+
+		<!--Generate URN for the work (e.g. for Monograph, Manuscript, Volume, etc.)  -->
+		<work>true</work>
+
+		<!--Generate URN for the anchor Element -->
+		<anchor>false</anchor>
+
+		<!--Elements listed here will receive a URN. If work is set to true the
+			work element will receive a URN, even if it is not listed here -->
     <!--
-        order of configuration is:
-          1.) project name and step name matches
-          2.) step name matches and project is *
-          3.) project name matches and step name is *
-          4.) project name and step name are *
-	  -->
+		<allowed>
+			<type>Monograph</type>
+		</allowed>
+    -->
 
-    <config>
-        <!-- which projects to use for (can be more then one, otherwise use *) -->
-        <project>*</project>
-        <step>*</step>
+		<!-- metadata name for urns in METS-bloc "_urn" -->
+		<typeNameMets>_urn</typeNameMets>
 
-        <!-- URI of the URN API, must use httos -->
-        <uri>https://api.nbn-resolving.org/v2/</uri>
+		<!--metadata name for URNs in MODS-bloc. -->
+		<typeNameMods>URN</typeNameMods>
 
-        <!-- namespace in which new URNs shall be created -->
-        <namespace>urn:nbn:de:gbv:XX</namespace>
-
-        <!-- name of the API user -->
-        <apiUser>UserName</apiUser>
-
-        <!-- password of the API user -->
-        <apiPassword>Password</apiPassword>
-
-        <!--target url URN will forward to -->
-        <publicationUrl>https://viewer.example.org/{meta.CatalogIDDigital}</publicationUrl>
-
-        <!--metadataType in METS-File -->
-        <metadataType>_urn</metadataType>
-    </config>
+		<!--Shall the plugin create URNs in the MODS-bloc. The rule set entries
+			of certain elements may have to be altered, if you wish to use this -->
+		<createModsUrns>false</createModsUrns>
+	</config>
 </config_plugin>
 ```
 
@@ -92,9 +120,15 @@ The configuration of the plugin is done via the configuration file `plugin_intra
 | :--- | :--- |
 | `project` | This parameter determines for which project the current block `<config>` should apply. The name of the project is used here. This parameter can occur several times per `<config>` block. |
 | `step` | This parameter controls for which workflow steps the block `<config>` should apply. The name of the workflow step is used here. This parameter can occur several times per `<config>` block. |
-| `uri` | The URL of the API must be stored in this parameter. As a rule, the standard entry `https://api.nbn-resolving.org/v2/` can be used.  |
-| `namespace` | The namespace in which the new URNs are created. |
 | `apiUser` | The name of the API user. |
-| `apiPassword` | The password of the API user. |
-| `publicationUrl`   | The URL under which the digitised work will be available in the future. As a rule, the publication URL will follow a pattern, e.g. `https://viewer.example.org/{meta.CatalogIDDigital}`. In this case, it is assumed that the works will be published in the future under a URL containing the metadate 'identifier'. |
-| `metadataType`  | Specifies the metadata type under which the URN is to be recorded. The default should not be changed here.  |
+| `apiPassword` | The name of the API user. |
+| `apiUri` | The URL of the API must be stored in this parameter. As a rule, the standard entry `https://api.nbn-resolving.org/v2/` can be used.  |
+| `namespace` | The namespace in which the new URNs are created. |
+| `infix` | Infix to be inserted in the generated URNs after the namespace. A new URN would have the form `{namespace}{infix}{generatedValue}`. |
+| `publicationUrl`   | The URL under which the digitised work will be available in the future. As a rule, the publication URL will follow a pattern, e.g. `https://viewer.example.org/viewer/resolver?urn={pi.urn}`. The placeholder {pi.urn} will be replaced by the plugin with the new URN. |
+| `work` | Switch that activates the setting of work URNs (Monograph, Manuscript, Volume, etc.). |
+| `anchor` | Switch that activates the setting of URNs for the anchor element. |
+| `allowed -> type` | Here you can list elements for which a URN is to be generated. For each element, a `<type>ElementName</type>` entry must be created in the `<allowed>` element. <br/>**Note:** If you set anchor or work to true, the anchor element and the work element will receive a URN even if their type names are not listed. |
+| `typeNameMets` | Specifies the metadata type under which METS-URNs are to be recorded. The default should not be changed here. |
+| `typeNameMods`  | Specifies the metadata type under which MODS-URNs are to be recorded. The default should not be changed here.  |
+| `createModsUrns`  | If you want to write URNs in the MODS block, set this switch to `true`. However, bear in mind that it may be necessary to adjust the rule sets of individual structural elements.  |
