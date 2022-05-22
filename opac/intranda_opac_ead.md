@@ -10,13 +10,13 @@ description: >-
 
 This documentation describes the installation, configuration and use of an XML-based database to manage EAD files and integrate them into Goobi.
 
-| Details |  |
-| :--- | :--- |
-| Identifier | intranda\_opac\_ead |
-| Source code | [https://github.com/intranda/goobi-plugin-opac-ead](https://github.com/intranda/goobi-plugin-opac-ead) |
-| Licence | GPL 2.0 or newer |
-| Compatibility | Goobi workflow 3.0 and newer |
-| Documentation date | 28.02.2019 |
+| Details            |                                                                                                        |
+| ------------------ | ------------------------------------------------------------------------------------------------------ |
+| Identifier         | intranda\_opac\_ead                                                                                    |
+| Source code        | [https://github.com/intranda/goobi-plugin-opac-ead](https://github.com/intranda/goobi-plugin-opac-ead) |
+| Licence            | GPL 2.0 or newer                                                                                       |
+| Compatibility      | Goobi workflow 3.0 and newer                                                                           |
+| Documentation date | 28.02.2019                                                                                             |
 
 ## Preparation of the EAD memory
 
@@ -34,7 +34,7 @@ First you have to download the database:
 
 To install BaseX on a Linux system, first download the zip file and install it on the server. For example, this could be done in this path:
 
-```text
+```
 /opt/digiverso/basex
 ```
 
@@ -48,7 +48,7 @@ The Jetty configuration must then be adapted so that the application can only be
 
 Then the Systemd Unit File is installed to this path:
 
-```text
+```
 /etc/systemd/system/basexhttp.service
 ```
 
@@ -73,7 +73,7 @@ WantedBy=multi-user.target
 
 The daemon must then be reloaded, the unit file activated and the database restarted:
 
-```text
+```
 systemctl daemon-reload
 systemctl enable basexhttp.service
 systemctl start basexhttp.service
@@ -166,7 +166,7 @@ Once the database has been set up, it can be configured in Goobi. Since the meta
 
 The file `goobi_opac.xml` must be extended by two more entries. On the one hand, the document type to be used must be defined. This happens in the `doctypes` area:
 
-{% code title="goobi\_opac.xml" %}
+{% code title="goobi_opac.xml" %}
 ```markup
 <type isContainedWork="false" isMultiVolume="false" isPeriodical="false" rulesetType="SingleRecord" tifHeaderType="Record" title="Record">
     <label language="de">Akte</label>
@@ -176,11 +176,11 @@ The file `goobi_opac.xml` must be extended by two more entries. On the one hand,
 ```
 {% endcode %}
 
-In this example, the file type \(`SingleRecord` in the rule record\) is used.
+In this example, the file type (`SingleRecord` in the rule record) is used.
 
 The data source must also be defined:
 
-{% code title="goobi\_opac.xml" %}
+{% code title="goobi_opac.xml" %}
 ```markup
 <catalogue title="EAD Import">
     <config address="http://localhost:8984/search/" database="hu-ead-example" description="EAD Import" iktlist="IKTLIST-GBV.xml"
@@ -198,7 +198,7 @@ The `title` attribute contains the name under which the data source can be selec
 
 This file is located in the `/opt/digiverso/goobi/config/` folder and contains the mapping of the EAD elements to Goobi metadata.
 
-{% code title="plugin\_opac\_ead.xml" %}
+{% code title="plugin_opac_ead.xml" %}
 ```markup
 <?xml version="1.0" encoding="UTF-8"?>
 <config_plugin>
@@ -242,7 +242,7 @@ In `xpath` is the [XPath](https://www.w3.org/TR/1999/REC-xpath-19991116/) expres
 
 The file `goobi_projects.xml` needs a new definition for the publication type and the new metadata.
 
-{% code title="goobi\_projects.xml" %}
+{% code title="goobi_projects.xml" %}
 ```markup
 <project name="EAD-Import">
     <createNewProcess>
@@ -288,4 +288,3 @@ The file `goobi_projects.xml` needs a new definition for the publication type an
 {% endcode %}
 
 Once this configuration has been completed, a new data source is available within Goobi within the creation mask for processes. This can now be queried using identifiers in the same way as other data sources and catalogs.
-

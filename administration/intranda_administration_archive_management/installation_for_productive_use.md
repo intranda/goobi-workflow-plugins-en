@@ -6,15 +6,15 @@ To install the plugin for productive use on a web server, proceed as follows:
 
 First, the XML database BaseX must be downloaded from the BaseX website. The download can be done from here:
 
-```text
+```
 https://basex.org/download/
 ```
 
-![BaseX website](../../.gitbook/assets/intranda_administration_archive_management_install_01%20%281%29%20%281%29.png)
+![BaseX website](<../../.gitbook/assets/intranda\_administration\_archive\_management\_install\_01 (1) (1).png>)
 
 The easiest way to download from there is as a `ZIP package`, for example in version 9.4.4:
 
-```text
+```
 http://files.basex.org/releases/9.4.4/BaseX944.zip
 ```
 
@@ -110,44 +110,44 @@ The XML database can be accessed after installation under the following URL:
 
 ​[http://localhost:8984/](http://localhost:8984/)​
 
-![Started BaseX Server](../../.gitbook/assets/intranda_administration_archive_management_install_02%20%281%29%20%281%29.png)
+![Started BaseX Server](<../../.gitbook/assets/intranda\_administration\_archive\_management\_install\_02 (1) (1).png>)
 
 ## Administer database and import EAD file
 
 After BaseX has been downloaded and started, XML files can be imported as new databases. To do this, first open the menu item `Database Administration`, where a login can be made with these access data:
 
-```text
+```
 Login:      admin
 Password:   admin
 ```
 
-![Login for the database administration](../../.gitbook/assets/intranda_administration_archive_management_install_03.png)
+![Login for the database administration](<../../.gitbook/assets/intranda\_administration\_archive\_management\_install\_03 (1).png>)
 
 Therefore, after logging in for the first time, a new password should be assigned. To do this, open the menu item Users. Here you can click on the account name and set the new password.
 
 After the successful login, an overview of the installed databases, log files, etc. is displayed.
 
-![Administrative overview](../../.gitbook/assets/intranda_administration_archive_management_install_04.png)
+![Administrative overview](<../../.gitbook/assets/intranda\_administration\_archive\_management\_install\_04 (1).png>)
 
 New databases for the EAD files can be created under the menu item 'Databases'.
 
-![Create new database](../../.gitbook/assets/intranda_administration_archive_management_install_05.png)
+![Create new database](<../../.gitbook/assets/intranda\_administration\_archive\_management\_install\_05 (1).png>)
 
 There you can now enter a `name` for the new database. Then the button `Create` must be clicked.
 
-![Definition of the name of the new database](../../.gitbook/assets/intranda_administration_archive_management_install_06.png)
+![Definition of the name of the new database](<../../.gitbook/assets/intranda\_administration\_archive\_management\_install\_06 (1).png>)
 
 After the new database has been created, an XML file can be imported as content. To do this, click on the `Add` button.
 
-![Details of the newly created database](../../.gitbook/assets/intranda_administration_archive_management_install_07%20%281%29.png)
+![Details of the newly created database](<../../.gitbook/assets/intranda\_administration\_archive\_management\_install\_07 (1).png>)
 
 Here, an EAD file can be selected as an XML file and a path can be assigned under which this data inventory is to be accessible. Then click on the 'Add' button.
 
-![Upload an XML file](../../.gitbook/assets/intranda_administration_archive_management_install_08%20%281%29%20%282%29.png)
+![Upload an XML file](<../../.gitbook/assets/intranda\_administration\_archive\_management\_install\_08 (1) (2) (1).png>)
 
 After importing the EAD file, the content is already available for the Goobi archive management plugin.
 
-![Details of the imported XML file](../../.gitbook/assets/intranda_administration_archive_management_install_09%20%281%29.png)
+![Details of the imported XML file](<../../.gitbook/assets/intranda\_administration\_archive\_management\_install\_09 (1) (1).png>)
 
 In the administration area of BaseX, files can also be removed. To do this, these must be marked by means of the associated checkbox and then deleted by clicking on `Delete`. Updating an EAD file is only possible by deleting it first and then adding it again.
 
@@ -165,13 +165,13 @@ sudo -u tomcat wget https://raw.githubusercontent.com/intranda/goobi-plugin-admi
 sudo -u tomcat wget https://raw.githubusercontent.com/intranda/goobi-plugin-administration-archive-management/master/plugin/src/main/resources/findDb.xq
 ```
 
-![\*.xq-Files from the checked out plugin](../../.gitbook/assets/intranda_administration_archive_management_install_10%20%281%29%20%282%29.png)
+![\*.xq-Files from the checked out plugin](<../../.gitbook/assets/intranda\_administration\_archive\_management\_install\_10 (1) (2).png>)
 
-![Copied \*.xq files within the webapp directory of BaseX](../../.gitbook/assets/intranda_administration_archive_management_install_11%20%281%29.png)
+![Copied \*.xq files within the webapp directory of BaseX](<../../.gitbook/assets/intranda\_administration\_archive\_management\_install\_11 (1) (2).png>)
 
 Content of the file `listDatabases.xq`:
 
-```text
+```
 (: XQuery file to return the names of all available databases :)
 module namespace page = 'http://basex.org/examples/web-pagepage';
 (:declare default element namespace "urn:isbn:1-931666-22-9";:)
@@ -208,7 +208,7 @@ function page:getDatabases() {
 
 Content of the file `openDatabase.xq`:
 
-```text
+```
 (: XQuery file to return a full ead record :)
 module namespace page = 'http://basex.org/examples/web-page';
 declare default element namespace "urn:isbn:1-931666-22-9";
@@ -229,7 +229,7 @@ function page:getDatbase($database, $filename) {
 
 Content of the file `importFile.xq`:
 
-```text
+```
 (: XQuery file to return a full ead record :)
 module namespace page = 'http://basex.org/examples/web-page';
 declare default element namespace "urn:isbn:1-931666-22-9";

@@ -29,13 +29,13 @@ This database can then be examined and the results delivered in `xml`, `csv` or 
 
 The Counterscript Server Application should be installed using the following path:
 
-```text
+```
 /var/lib/tomcat7/webapps/Counterscript.war
 ```
 
 To ensure access to the application, it must also be enabled on the Apache web server. This is done in the file shown below:
 
-```text
+```
 /etc/apache2/sites-enabled/000-default
 ```
 
@@ -53,7 +53,7 @@ redirect /Counterscript http://pl-winslow/Counterscript/
 
 Alongside the actual application, there is also a cronjob that launches a scheduled data update every day at 0:05. The cronjob is located at:
 
-```text
+```
 /etc/cron.d/intranda-triggerCounterscript
 ```
 
@@ -84,7 +84,7 @@ CREATE TABLE `counterscript`.`files` (
 
 You also need to identify this database on the Apache Tomcat in the file shown below:
 
-```text
+```
 /var/lib/tomcat7/conf/context.xml
 ```
 
@@ -113,7 +113,7 @@ Once the Counterscript Application Server has been installed and configured, you
 
 The following calls are used to update the current store of data:
 
-```text
+```
 wt-winnipeg/Counterscript/api/run
 wt-winnipeg/Counterscript/api/run/{date}
 ```
@@ -126,7 +126,7 @@ When an analysis of the stored data begins, the file system is scanned for new M
 
 The following calls can be used to search the database:
 
-```text
+```
 wt-winnipeg/Counterscript/api/{format}
 wt-winnipeg/Counterscript/api/{format}/withincative
 wt-winnipeg/Counterscript/api/{format}/{start date}/{end date}
@@ -141,7 +141,7 @@ If you want to narrow the search, you can specify a period by giving the start a
 
 If you are looking for a single dataset, you can request the information using the following URL:
 
-```text
+```
 wt-winnipeg/Counterscript/api/xml/bnumber/{number}
 ```
 
@@ -170,8 +170,8 @@ show tables;
 This will trigger the following response from the MySQL server:
 
 | Tables\_in\_counterscript |
-| :--- |
-| files |
+| ------------------------- |
+| files                     |
 
 The database has a files table with the following structure:
 
@@ -181,20 +181,20 @@ describe files;
 
 The response from the database is shown below:
 
-| **Field** | **Type** | **Null** | **Key** | **Default** | **Extra** |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| id | int\(10\) unsigned | NO | PRI | NULL | auto\_increment |
-| filename | varchar\(255\) | YES |  | NULL |  |
-| bnumber | varchar\(255\) | YES |  | NULL |  |
-| material | varchar\(255\) | YES |  | NULL |  |
-| access\_status | varchar\(255\) | YES |  | NULL |  |
-| access\_licence | varchar\(255\) | YES |  | NULL |  |
-| player\_permission | varchar\(255\) | YES |  | NULL |  |
-| status | varchar\(255\) | YES |  | NULL |  |
-| creation\_date | datetime | YES |  | NULL |  |
-| modification\_date | datetime | YES |  | NULL |  |
-| deletion\_date | datetime | YES |  | NULL |  |
-| current | tinyint\(1\) | YES |  | 0 |  |
+| **Field**          | **Type**         | **Null** | **Key** | **Default** | **Extra**       |
+| ------------------ | ---------------- | -------- | ------- | ----------- | --------------- |
+| id                 | int(10) unsigned | NO       | PRI     | NULL        | auto\_increment |
+| filename           | varchar(255)     | YES      |         | NULL        |                 |
+| bnumber            | varchar(255)     | YES      |         | NULL        |                 |
+| material           | varchar(255)     | YES      |         | NULL        |                 |
+| access\_status     | varchar(255)     | YES      |         | NULL        |                 |
+| access\_licence    | varchar(255)     | YES      |         | NULL        |                 |
+| player\_permission | varchar(255)     | YES      |         | NULL        |                 |
+| status             | varchar(255)     | YES      |         | NULL        |                 |
+| creation\_date     | datetime         | YES      |         | NULL        |                 |
+| modification\_date | datetime         | YES      |         | NULL        |                 |
+| deletion\_date     | datetime         | YES      |         | NULL        |                 |
+| current            | tinyint(1)       | YES      |         | 0           |                 |
 
 The contents of the table are:
 
@@ -204,33 +204,33 @@ select * from files;
 
 A sample response from the database is given below:
 
-| **id** | **filename** | **bnumber** | **material** | **access\_status** | **access\_licence** | **player\_permission** | **status** | **creation\_date** | **modification\_date** | **deletion\_date** | **current** |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 97297 | /mnt/export/7/4/7/6/b21286747\_2.xml | b21286747\_2 |  | Open | PDM | 63 | deleted | 2015-09-24 14:51:57 | NULL | 2015-11-26 00:16:54 | 1 |
-| 98992 | /mnt/export/9/6/7/5/b21355769.xml | b21355769 |  | Open | CC-BY-NC | 63 | modified | 2015-08-18 22:21:33 | 2015-12-02 16:18:40 | NULL | 1 |
-| 99001 | /mnt/export/x/4/9/4/b2265494x.xml | b2265494x | t | Open | CC-BY-NC | 63 | newly | 2015-12-02 17:34:48 | NULL | NULL | 1 |
+| **id** | **filename**                         | **bnumber**  | **material** | **access\_status** | **access\_licence** | **player\_permission** | **status** | **creation\_date**  | **modification\_date** | **deletion\_date**  | **current** |
+| ------ | ------------------------------------ | ------------ | ------------ | ------------------ | ------------------- | ---------------------- | ---------- | ------------------- | ---------------------- | ------------------- | ----------- |
+| 97297  | /mnt/export/7/4/7/6/b21286747\_2.xml | b21286747\_2 |              | Open               | PDM                 | 63                     | deleted    | 2015-09-24 14:51:57 | NULL                   | 2015-11-26 00:16:54 | 1           |
+| 98992  | /mnt/export/9/6/7/5/b21355769.xml    | b21355769    |              | Open               | CC-BY-NC            | 63                     | modified   | 2015-08-18 22:21:33 | 2015-12-02 16:18:40    | NULL                | 1           |
+| 99001  | /mnt/export/x/4/9/4/b2265494x.xml    | b2265494x    | t            | Open               | CC-BY-NC            | 63                     | newly      | 2015-12-02 17:34:48 | NULL                   | NULL                | 1           |
 
 ### 2.6. Sample database queries
 
 By way of example, we have prepared a number of SQL queries.
 
-#### 2.6.1. Query 1: New records <a id="H2.6.1.Query1:Newrecords"></a>
+#### 2.6.1. Query 1: New records <a href="#h2.6.1.query1-newrecords" id="h2.6.1.query1-newrecords"></a>
 
-Recently created \(‘New’\) open access records, selectable by date range:
+Recently created (‘New’) open access records, selectable by date range:
 
 ```sql
 select * from files where status = 'newly' and creation_date > '2015-11-01' and creation_date < '2015-12-01';
 ```
 
-#### 2.6.2. Query 2: Modified records <a id="H2.6.2.Query2:Modifiedrecords"></a>
+#### 2.6.2. Query 2: Modified records <a href="#h2.6.2.query2-modifiedrecords" id="h2.6.2.query2-modifiedrecords"></a>
 
-Amended records, selectable by date range, where Access conditions \(Status, Licence, and Player\) have been changed or deleted:
+Amended records, selectable by date range, where Access conditions (Status, Licence, and Player) have been changed or deleted:
 
 ```sql
 select bnumber, access_status, access_licence, player_permission from files where status = 'modified' and modification_date > '2015-11-01' and modification_date < '2015-12-01';
 ```
 
-#### 2.6.3. Query 3: Deleted records <a id="H2.6.3.Query3:Deletedrecords"></a>
+#### 2.6.3. Query 3: Deleted records <a href="#h2.6.3.query3-deletedrecords" id="h2.6.3.query3-deletedrecords"></a>
 
 Deleted records, selectable by ‘Deleted date’ range:
 
@@ -246,7 +246,7 @@ The second Counterscript development was designed as a Goobi administration plug
 
 The Goobi plugin is made up of three components:
 
-```text
+```
 /opt/digiverso/goobi/plugins/administration/plugin_intranda_administration_Wellcome.jar
 /opt/digiverso/goobi/plugins/GUI/plugin_intranda_administration_Wellcome-GUI.jar
 /opt/digiverso/goobi/config/plugin_CounterscriptPlugin.xml
@@ -254,7 +254,7 @@ The Goobi plugin is made up of three components:
 
 The first two files contain the program logic and the GUI. The file `plugin_CounterscriptPlugin.xml` is used to configure the RESTful URL, and the contents of the file are shown below:
 
-{% code title="plugin\_CounterscriptPlugin.xml" %}
+{% code title="plugin_CounterscriptPlugin.xml" %}
 ```markup
 <config_plugin>
     <rest_url>http://localhost:8080/Counterscript/api/</rest_url>
@@ -266,17 +266,16 @@ The first two files contain the program logic and the GUI. The file `plugin_Coun
 
 Once the plugin has been installed and set up, it will be available to users in the drop-down `Administration` menu.
 
-![Figure 1: Accessing the plugin via the Goobi GUI](../.gitbook/assets/other_counterscript_03.png)
+![Figure 1: Accessing the plugin via the Goobi GUI](../.gitbook/assets/other\_counterscript\_03.png)
 
 Once the GUI has loaded, you can select a start and end date or search the entire period. There is also an option to include outdated entries.
 
-![Figure 2: Entering the period in the filter form](../.gitbook/assets/other_counterscript_05.png)
+![Figure 2: Entering the period in the filter form](../.gitbook/assets/other\_counterscript\_05.png)
 
 After filtering, the plugin will display a list of the datasets found for the specified period.
 
-![Figure 3: List displaying the filtered datasets](../.gitbook/assets/other_counterscript_06.png)
+![Figure 3: List displaying the filtered datasets](../.gitbook/assets/other\_counterscript\_06.png)
 
 You can use the paginator function at the bottom of the window to navigate through the list, or you can save the entire set of hits as a CSV file. For each entry, you can also click the button in the Details column to track the history of that file and view every documented change.
 
-![Figure 4: Viewing the &#x2018;Details&#x2019; box for the selected dataset](../.gitbook/assets/other_counterscript_07.png)
-
+![Figure 4: Viewing the ‘Details’ box for the selected dataset](../.gitbook/assets/other\_counterscript\_07.png)

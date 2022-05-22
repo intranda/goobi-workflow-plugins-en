@@ -8,13 +8,13 @@ description: Goobi Administration Plugin for the management of Archival Record G
 
 This documentation describes the installation, configuration and use of the Administration Plugin for managing archive records from within Goobi workflow. In doing so, the data of several records is stored within standardized EAD files, allowing even small archives to manage their data in a standardised way without the need to start using third-party software for which a fee is charged.
 
-| Details |  |
-| :--- | :--- |
-| Identifier | intranda\_administration\_archive\_management |
-| Source code | [https://github.com/intranda/goobi-plugin-administration-archive-management](https://github.com/intranda/goobi-plugin-administration-archive-management) |
-| Licence | GPL 2.0 or newer |
-| Compatibility | Goobi workflow 2020.12 |
-| Documentation date | 28.03.2021 |
+| Details            |                                                                                                                                                          |
+| ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Identifier         | intranda\_administration\_archive\_management                                                                                                            |
+| Source code        | [https://github.com/intranda/goobi-plugin-administration-archive-management](https://github.com/intranda/goobi-plugin-administration-archive-management) |
+| Licence            | GPL 2.0 or newer                                                                                                                                         |
+| Compatibility      | Goobi workflow 2020.12                                                                                                                                   |
+| Documentation date | 28.03.2021                                                                                                                                               |
 
 ## Installing the plugin
 
@@ -42,31 +42,37 @@ Furthermore, the plugin needs an additional configuration file, which must be lo
 
 The plugin reads and writes standardised EAD files. The XML database BaseX is used for this purpose, within which the EAD files are stored and indexed, so that this processing of the data can take place with high performance. The prerequisite for the installation of BaseX is Java 1.8. The commissioning of this database is carried out somewhat differently depending on the intended use, depending on whether the plugin is to be installed for productive operation or for further development.
 
-{% page-ref page="installation\_for\_productive\_use.md" %}
+{% content-ref url="installation_for_productive_use.md" %}
+[installation\_for\_productive\_use.md](installation\_for\_productive\_use.md)
+{% endcontent-ref %}
 
-{% page-ref page="installation\_for\_development.md" %}
+{% content-ref url="installation_for_development.md" %}
+[installation\_for\_development.md](installation\_for\_development.md)
+{% endcontent-ref %}
 
 ## Configuration of the plugin
 
 After the installation has been completed, the configuration of the plugin and the corresponding interface can take place. This is described in detail on the following page:
 
-{% page-ref page="configuration.md" %}
+{% content-ref url="configuration.md" %}
+[configuration.md](configuration.md)
+{% endcontent-ref %}
 
 ## Using the plugin within Goobi
 
 The plugin for editing archive records can be found below the menu item 'Administration'.
 
-![Entering the plugin](../../.gitbook/assets/intranda_administration_archive_management_03_en.png)
+![Entering the plugin](../../.gitbook/assets/intranda\_administration\_archive\_management\_03\_en.png)
 
 ### Assigning the rights required to use the plugin
 
 To use the plugin, the user must first have the right `Plugin_Administration_Archive_Management`. If this right has not yet been assigned, the user will receive the following notice:
 
-![Reference to missing user rights](../../.gitbook/assets/intranda_administration_archive_management_01_en.png)
+![Reference to missing user rights](../../.gitbook/assets/intranda\_administration\_archive\_management\_01\_en.png)
 
 The corresponding rights must therefore first be assigned to the respective user groups.
 
-![Assignment of the required user rights](../../.gitbook/assets/intranda_administration_archive_management_02_en.png)
+![Assignment of the required user rights](../../.gitbook/assets/intranda\_administration\_archive\_management\_02\_en.png)
 
 After the required rights have been assigned and, if necessary, a new login has been made, the plugin can be used.
 
@@ -74,15 +80,15 @@ After the required rights have been assigned and, if necessary, a new login has 
 
 After the plugin has been opened, a list of the available archive records is displayed first. Here, the user can select an archive file and start editing it.
 
-![Opening an existing archive file](../../.gitbook/assets/intranda_administration_archive_management_05_en.png)
+![Opening an existing archive file](../../.gitbook/assets/intranda\_administration\_archive\_management\_05\_en.png)
 
 Alternatively, a new archive file can also be created. In this case, the desired XML database within which the new archive file is to be created must first be selected. A name must also be assigned here.
 
-![Creating a new archive file](../../.gitbook/assets/intranda_administration_archive_management_04_en.png)
+![Creating a new archive file](../../.gitbook/assets/intranda\_administration\_archive\_management\_04\_en.png)
 
 After selecting the archive file to be edited, you will be forwarded to the editing screen. Here, the structure tree can be edited in the left-hand area. In the right-hand area, the details of the selected node can be edited..
 
-![Editing mask for the archive file](../../.gitbook/assets/intranda_administration_archive_management_06_en.png)
+![Editing mask for the archive file](../../.gitbook/assets/intranda\_administration\_archive\_management\_06\_en.png)
 
 Clicking on the buttons 'Cancel' or 'Save and exit archive group' takes you back to the page for selecting an archive file.
 
@@ -90,18 +96,18 @@ Clicking on the buttons 'Cancel' or 'Save and exit archive group' takes you back
 
 In the left-hand area of the editing screen, the structure of the archive file can be edited. Here, all nodes including their hierarchy can be viewed at a glance. In front of each element is an icon with which the sub-elements of the node can be displayed or hidden. To select a node, it can be clicked on. It will then be highlighted and the details of the selected node will be displayed on the right. If a node is selected in the left-hand area of the edit screen, the buttons on the right-hand edge of the left-hand box can also be used to change the node. The following options are possible:
 
-| Function | Explanation |
-| :--- | :--- |
-| `Insert new node` | With this button, a new node can be added as a sub-node to the end of the already existing sub-nodes. |
-| `Delete node` | With this function the selected node including all sub-nodes can be deleted. This function cannot be used at the level of the main node. |
-| `Execute validation` | With this function, a validation of the selected node can be carried out. Violations of the configured validation specifications are listed accordingly. |
-| `Move up` | This button allows moving the selected node up within the same hierarchy level. |
-| `Move down` | This button allows moving the selected node down within the same hierarchy level. |
-| `Move down the hierarchy` | With this button it is possible to move the selected node to a lower hierarchy level. |
-| `Move up the hierarchy` | With this button it is possible to move the selected node to a higher hierarchy level. |
+| Function                        | Explanation                                                                                                                                                                                                                                                                                          |
+| ------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Insert new node`               | With this button, a new node can be added as a sub-node to the end of the already existing sub-nodes.                                                                                                                                                                                                |
+| `Delete node`                   | With this function the selected node including all sub-nodes can be deleted. This function cannot be used at the level of the main node.                                                                                                                                                             |
+| `Execute validation`            | With this function, a validation of the selected node can be carried out. Violations of the configured validation specifications are listed accordingly.                                                                                                                                             |
+| `Move up`                       | This button allows moving the selected node up within the same hierarchy level.                                                                                                                                                                                                                      |
+| `Move down`                     | This button allows moving the selected node down within the same hierarchy level.                                                                                                                                                                                                                    |
+| `Move down the hierarchy`       | With this button it is possible to move the selected node to a lower hierarchy level.                                                                                                                                                                                                                |
+| `Move up the hierarchy`         | With this button it is possible to move the selected node to a higher hierarchy level.                                                                                                                                                                                                               |
 | `Mode node to another location` | This function opens another editing screen that makes it possible to move the currently selected node to a completely different position in the hierarchy tree. The complete hierarchy is displayed so that the node can be selected within which the selected node is to be inserted as a sub-node. |
 
-![Search within the inventory](../../.gitbook/assets/intranda_administration_archive_management_07_en.png)
+![Search within the inventory](../../.gitbook/assets/intranda\_administration\_archive\_management\_07\_en.png)
 
 In the upper area of the hierarchy display, a search can also be made within the titles of the nodes. The nodes found, including the hierarchy, are displayed and highlighted in colour. To reset the search, it is sufficient to empty the content of the search term again and perform an empty search accordingly.
 
@@ -118,7 +124,7 @@ The right pane is divided into several categories. The topmost part of the right
 * Video
 * Other
 
-Below the document type, the individual metadata of the node are listed. They are divided into the following areas according to the ISAD\(G\) standard:
+Below the document type, the individual metadata of the node are listed. They are divided into the following areas according to the ISAD(G) standard:
 
 * Identity Statement Area
 * Context Area
@@ -136,7 +142,7 @@ When the details of a field are expanded, the individual metadata are displayed.
 
 Both the button 'Download as EAD file' and the button 'Execute validation' ensure that the metadata are valid. The configured rules are applied and checked whether individual values violate them. If this is the case, the affected nodes are highlighted in colour in the left-hand area. If such an invalid node is selected, the affected badges are displayed with a red color and the configured error text is displayed in the metadata in addition to the border.
 
-![Display of an incorrect validation](../../.gitbook/assets/intranda_administration_archive_management_09_en.png)
+![Display of an incorrect validation](../../.gitbook/assets/intranda\_administration\_archive\_management\_09\_en.png)
 
 A failed validation does not prevent the archive file from being saved or Goobi processes from being created.
 
@@ -145,4 +151,3 @@ A failed validation does not prevent the archive file from being saved or Goobi 
 The two buttons for `Download as EAD file` and `Save and exit archive group` create a new EAD based on the current state of the nodes. With the exception of the top node, each node is represented as an independent `<c>` element. The top node data is written within `<archdesc>` below the `<ead>` element.
 
 In addition to the captured metadata, a new `create` or `modified event` including date and user information is created and added to the list of events. When the archive is saved, the current state is also automatically exported to the XML database.
-

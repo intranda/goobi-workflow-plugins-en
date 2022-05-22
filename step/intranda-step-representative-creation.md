@@ -12,42 +12,42 @@ This documentation describes how to install, configure and use a plug-in to set 
 
 This plugin can be used to automatically prepare METS files and set the representative of a work.
 
-| Details | ​ |
-| :--- | :--- |
-| Identifier | RepresentativeCreation |
-| Source code | [https://github.com/intranda/goobi-plugin-step-representative-creation](https://github.com/intranda/goobi-plugin-step-representative-creation) |
-| Licence | GPL 2.0 or newer |
-| Compatibility | Goobi workflow 2.2 |
-| Documentation date | 28.04.2017 |
+| Details            | ​                                                                                                                                              |
+| ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| Identifier         | RepresentativeCreation                                                                                                                         |
+| Source code        | [https://github.com/intranda/goobi-plugin-step-representative-creation](https://github.com/intranda/goobi-plugin-step-representative-creation) |
+| Licence            | GPL 2.0 or newer                                                                                                                               |
+| Compatibility      | Goobi workflow 2.2                                                                                                                             |
+| Documentation date | 28.04.2017                                                                                                                                     |
 
 ## Precondition
 
 The precondition for using the plugin is the use of Goobi at least version 2.2, the correct installation and configuration of the plugin as well as the correct integration of the plugin into the desired work steps of the workflows.
 
-## Installation und Configuration <a id="installation-und-konfiguration"></a>
+## Installation und Configuration <a href="#installation-und-konfiguration" id="installation-und-konfiguration"></a>
 
 The plugin consists of two files:
 
-```text
+```
 plugin_intranda_step_representative-creator.jar
 plugin_RepresentativeCreationPlugin.xml
 ```
 
 The file `plugin_intranda_step_representative-creator.jar` contains the program logic and must be installed in the following directory so that the tomcat user can read it:
 
-```text
+```
 /opt/digiverso/goobi/plugins/step/
 ```
 
 The file `plugin_RepresentativeCreationPlugin.xml` must also be readable by the tomcat user and installed into the following directory:
 
-```text
+```
 /opt/digiverso/goobi/config/
 ```
 
 The following file is used to configure the plugin and must be structured as follows:
 
-{% code title="plugin\_RepresentativeCreationPlugin.xml" %}
+{% code title="plugin_RepresentativeCreationPlugin.xml" %}
 ```markup
 <config_plugin>
     <RepresentativeStructureElement>TitlePage</RepresentativeStructureElement>
@@ -79,4 +79,3 @@ The way the plugin works within the correctly configured workflow is as follows.
 4. The first assigned image of this element is set as the representative.
 5. If no structural element with this name is found or the data record does not contain any structural elements, an error message can be written to the process log and the workflow can be reset to a previous work step.
 6. However, this is only possible if a text has been configured for the error message and the name of the step.
-

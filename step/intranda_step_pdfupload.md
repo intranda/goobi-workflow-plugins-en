@@ -10,13 +10,13 @@ description: >-
 
 This documentation describes how to install, configure and use a plug-in to upload documents to Goobi. With the help of this plug-in, born-digital documents such as PDF files can be uploaded and managed directly in Goobi.
 
-| Details |  |
-| :--- | :--- |
-| Identifier | intranda\_step\_pdfUpload |
-| Source code | [https://github.com/intranda/goobi-plugin-step-pdfupload](https://github.com/intranda/goobi-plugin-step-pdfupload) |
-| Licence | GPL 2.0 or newer |
-| Compatibility | Goobi workflow 2.1 |
-| Documentation date | 04.02.2016 |
+| Details            |                                                                                                                    |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------ |
+| Identifier         | intranda\_step\_pdfUpload                                                                                          |
+| Source code        | [https://github.com/intranda/goobi-plugin-step-pdfupload](https://github.com/intranda/goobi-plugin-step-pdfupload) |
+| Licence            | GPL 2.0 or newer                                                                                                   |
+| Compatibility      | Goobi workflow 2.1                                                                                                 |
+| Documentation date | 04.02.2016                                                                                                         |
 
 ## Precondition
 
@@ -26,7 +26,7 @@ The precondition for using the plugin is the use of Goobi 2.1, the use of the ne
 
 The following three files must be installed to use the plugin:
 
-```text
+```
 /opt/digiverso/goobi/plugins/step/plugin_intranda_step_pdfUpload.jar
 /opt/digiverso/goobi/plugins/GUI/plugin_intranda_step_pdfUpload-GUI.jar
 /opt/digiverso/goobi/config/plugin_PdfUploadPlugin.xml
@@ -36,7 +36,7 @@ The first file contains the actual program logic, the second file provides the g
 
 The content of the configuration file `plugin_PdfUploadPlugin.xml` must be structured as follows:
 
-{% code title="plugin\_PdfUploadPlugin.xml" %}
+{% code title="plugin_PdfUploadPlugin.xml" %}
 ```markup
 <config_plugin>
  <!-- allowed values: master, source, derivate -->
@@ -59,19 +59,19 @@ Once the plugin has been installed and configured, it can be used within Goobi's
 
 To do this, the plugin for the `intranda_step_pdfUpload` step must be entered within the desired task.
 
-![Figure 1: Task-Details](../.gitbook/assets/intranda_step_pdfupload_01.png)
+![Figure 1: Task-Details](../.gitbook/assets/intranda\_step\_pdfupload\_01.png)
 
 ## Usage
 
 If the corresponding step has been opened by the respective user within which the plugin was configured, a new area for uploading files is available.
 
-![Figure 2: Upload-Plugin](../.gitbook/assets/intranda_step_pdfupload_02.png)
+![Figure 2: Upload-Plugin](../.gitbook/assets/intranda\_step\_pdfupload\_02.png)
 
 Using the `Select file` button, you can now select a file which is then transferred to the server using the `Upload file` button. You can optionally enter a comment.
 
 The uploaded file is then listed with some information. There you can also delete the file.
 
-![Figure 3: Uploaded files](../.gitbook/assets/intranda_step_pdfupload_03.png)
+![Figure 3: Uploaded files](../.gitbook/assets/intranda\_step\_pdfupload\_03.png)
 
 Only files whose file extension was previously entered in the list of permitted extensions are accepted. In addition, the file name may only consist of the characters `A-Za-z0-9äöüß-_`. `Spaces` are automatically replaced by `underscores`.
 
@@ -100,4 +100,3 @@ If a file is uploaded, the information is stored in the METS file.
 The transfer to the METS file ensures that the order of the uploaded files is saved persistently.
 
 If the task is then opened again, the information about the uploaded files is taken from the METS file and also displayed.
-
