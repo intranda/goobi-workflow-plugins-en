@@ -1,9 +1,8 @@
 # Table of contents
-
 * [Overview](README.md)
 
-## Administration Plugins <a id="administration"></a>
 
+## Administration Plugins <a id="administration"></a>
 * [Catalogue Poller](administration/intranda_administration_catalogue_poller.md)
 * [Copy Master-Anchor](administration/intranda_administration_copyanchor.md)
 * [Goobi-to-Goobi](administration/intranda_administration_goobi2goobi/README.md)
@@ -21,8 +20,8 @@
 * [Ruleset editor](administration/intranda_administration_ruleset_editor.md)
 * [Restoring archived image folders](administration/intranda_administration_restorearchivedimagefolders.md)
 
-## Step Plugins <a id="step"></a>
 
+## Step Plugins <a id="step"></a>
 * [Automatic setting of the representative](step/intranda-step-representative-creation.md)
 * [Electronic Publications](step/intranda_step_pdfupload.md)
 * [LayoutWizzard](step/intranda_step_crop/README.md)
@@ -82,8 +81,8 @@
 * [GeoNames Correction](step/intranda_step_geonamescorrection.md)
 * [Generate dockets files](step/intranda_step_save_docket_file.md)
 
-## Opac Plugins <a id="opac"></a>
 
+## Opac Plugins <a id="opac"></a>
 * [PICA Import](opac/intranda_opac_pica.md)
 * [MARC Import](opac/intranda_opac_marc.md)
 * [EAD data transfer](opac/intranda_opac_ead.md)
@@ -91,15 +90,15 @@
 * [Generic JSON Import](opac/intranda_opac_json.md)
 * [Soutron Import](opac/intranda_opac_soutron.md)
 
-## Import Plugins <a id="import"></a>
 
+## Import Plugins <a id="import"></a>
 * [Import for journal articles from an Endnote Export](import/intranda_import_endnote.md)
 * [Importing records from an Excel file](import/intranda_import_excel.md)
 * [Import of Sisis SunRise Files](import/intranda_import_sisis_sunrise_file.md)
 * [Import of data records of the BDA Austria](import/intranda_import_bka_bda.md)
 
-## Export Plugins <a id="export"></a>
 
+## Export Plugins <a id="export"></a>
 * [Fedora Export](export/intranda_export_fedora.md)
 * [Fedora Export PROV](export/intranda_export_fedora_prov.md)
 * [HAAB Export](export/intranda_export_haab.md)
@@ -107,8 +106,8 @@
 * [Newspaper export](export/intranda_export_newspaper.md)
 * [Configurable Export](export/intranda_export_configurable.md)
 
-## Workflow plugins <a id="workflow"></a>
 
+## Workflow plugins <a id="workflow"></a>
 * [Generic import plugin for excel files including validation](workflow/intranda_workflow_excelimport.md)
 * [Barcode Generator](workflow/intranda_workflow_barcode_generator.md)
 * [LayoutWizzard workflow plugin](workflow/intranda_workflow_crop.md)
@@ -118,10 +117,10 @@
 * [Process creation through file upload](workflow/intranda_workflow_fileupload_processcreation.md)
 * [AEON data transfer](workflow/intranda_workflow_aeon_process_creation.md)
 
-## Statistics
 
+## Statistics
 * [Sudan Memory Translations](statistics/intranda_statistics_sudan_memory.md)
 
-## Other
 
+## Other
 * [Counterscript Application](other/counterscript-application.md)
