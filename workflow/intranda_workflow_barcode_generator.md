@@ -12,13 +12,13 @@ This workflow plugin is used for flexible generation of barcodes in a multi-page
 
 ## Overview
 
-| Details            |                                                                                                                                            |
-| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| Identifier         | intranda\_workflow\_barcode\_generator                                                                                                     |
-| Source code        | [https://github.com/intranda/goobi-plugin-workflow-barcode-generator](https://github.com/intranda/goobi-plugin-workflow-barcode-generator) |
-| Licence            | GPL 2.0 or newer                                                                                                                           |
-| Compatibility      | Goobi workflow 2020.02                                                                                                                     |
-| Documentation date | 15.02.2020                                                                                                                                 |
+| Details |  |
+| :--- | :--- |
+| Identifier | intranda\_workflow\_barcode\_generator |
+| Source code | [https://github.com/intranda/goobi-plugin-workflow-barcode-generator](https://github.com/intranda/goobi-plugin-workflow-barcode-generator) |
+| Licence | GPL 2.0 or newer |
+| Compatibility | Goobi workflow 2020.02 |
+| Documentation date | 15.02.2020 |
 
 ## Installation
 
@@ -67,18 +67,18 @@ The content of this configuration file looks like this:
 
 The plugin is configured within the configuration file mentioned above. There you can define default values for different fields. These are as follows:
 
-| Value       | Description                                                                                                                                                                            |
-| ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `format`    | This parameter determines whether the counters should be padded with leading zeros. For example, the value `00000` specifies that all numbers are displayed with at least five digits. |
-| `amount`    | This parameter determines how many barcodes are defined.                                                                                                                               |
-| `start`     | If the counter for the barcodes is to start at a certain starting value, this value can be defined here.                                                                               |
-| `prefix`    | This parameter defines a prefix that is prefixed to the counter with an underscore `_`.                                                                                                |
-| `separator` | With this parameter you can specify a separator to be used between the prefix and the counter. If the prefix is not specified, the separator is not used.                              |
-| `xslt-path` | The parameter `xslt-path` allows the definition of any number of xsl files. The files configured here are then offered to the user for selection within the user interface.            |
+| Value | Description |
+| :--- | :--- |
+| `format` | This parameter determines whether the counters should be padded with leading zeros. For example, the value `00000` specifies that all numbers are displayed with at least five digits. |
+| `amount` | This parameter determines how many barcodes are defined. |
+| `start` | If the counter for the barcodes is to start at a certain starting value, this value can be defined here. |
+| `prefix` | This parameter defines a prefix that is prefixed to the counter with an underscore `_`. |
+| `separator` | With this parameter you can specify a separator to be used between the prefix and the counter. If the prefix is not specified, the separator is not used. |
+| `xslt-path` | The parameter `xslt-path` allows the definition of any number of xsl files. The files configured here are then offered to the user for selection within the user interface. |
 
 ## Layout of the barcodes
 
-The barcodes are generated on the basis of so-called [XSLT transformation](https://www.w3schools.com/xml/xsl\_transformation.asp). For this purpose, a PDF file is generated on the basis of an XSL file and then offered for download. The definition of how the PDF file to be generated should look like and which contents it displays and how is done within such an XSL file. Just like the other XSL files that Goobi workflow already uses to generate the routing slips, the XSL files should ideally be located in the central `xslt` directory of Goobi. This is usually located here:
+The barcodes are generated on the basis of so-called [XSLT transformation](https://www.w3schools.com/xml/xsl_transformation.asp). For this purpose, a PDF file is generated on the basis of an XSL file and then offered for download. The definition of how the PDF file to be generated should look like and which contents it displays and how is done within such an XSL file. Just like the other XSL files that Goobi workflow already uses to generate the routing slips, the XSL files should ideally be located in the central `xslt` directory of Goobi. This is usually located here:
 
 ```bash
 /opt/digiverso/goobi/xslt/
@@ -171,14 +171,13 @@ It has the following content:
 
 If the plugin has been installed and configured correctly, it can be found within the menu item Workflow. After entering it, the parameters described above can be adjusted individually in the interface.
 
-![User interface of the plugin](../.gitbook/assets/intranda\_workflow\_barcode\_generator\_04.png)
+![User interface of the plugin](../.gitbook/assets/intranda_workflow_barcode_generator_04.png)
 
 After clicking the Generate Barcodes button, a PDF file is available for download. A PDF file with the reference configuration listed here looks like this:
 
-![Generated PDF document with the contained barcodes](../.gitbook/assets/intranda\_workflow\_barcode\_generator\_02.png)
+![Generated PDF document with the contained barcodes](../.gitbook/assets/intranda_workflow_barcode_generator_02.png)
 
 To illustrate the operation, a screencast for the use of the plugin is available here:
 
-{% embed url="https://www.youtube.com/watch?v=Eh8H4k1sKvE" %}
-Screencast on how to use the plugin
-{% endembed %}
+{% embed url="https://www.youtube.com/watch?v=Eh8H4k1sKvE" caption="Screencast on how to use the plugin" %}
+

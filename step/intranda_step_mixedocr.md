@@ -11,13 +11,13 @@ description: >-
 
 This documentation describes the installation, configuration and use of a plug-in for OCR with mixed fonts. This plugin is only useful in combination with the plugin "OCR Page Selection".
 
-| Details            |                                                                                                                  |
-| ------------------ | ---------------------------------------------------------------------------------------------------------------- |
-| Identifier         | intranda\_step\_mixedocr                                                                                         |
-| Source code        | [https://github.com/intranda/goobi-plugin-step-mixedocr](https://github.com/intranda/goobi-plugin-step-mixedocr) |
-| Licence            | GPL 2.0 or newer                                                                                                 |
-| Compatibility      | Goobi workflow 3.0.4 and newer                                                                                   |
-| Documentation date | 04.03.2019                                                                                                       |
+| Details |  |
+| :--- | :--- |
+| Identifier | intranda\_step\_mixedocr |
+| Source code | [https://github.com/intranda/goobi-plugin-step-mixedocr](https://github.com/intranda/goobi-plugin-step-mixedocr) |
+| Licence | GPL 2.0 or newer |
+| Compatibility | Goobi workflow 3.0.4 and newer |
+| Documentation date | 04.03.2019 |
 
 ## Precondition
 
@@ -27,7 +27,7 @@ The precondition for using the plugin is the use of Goobi workflow in version 3.
 
 The following files must be installed to use the plugin:
 
-```
+```text
 /opt/digiverso/goobi/plugins/step/plugin_intranda_step_mixedocr.jar
 /opt/digiverso/goobi/config/plugin_intranda_step_mixedocr.xml
 ```
@@ -36,7 +36,7 @@ The first file contains the actual plugin. The second file is the configuration 
 
 The content of the configuration file `plugin_intranda_step_mixedocr.xml` must be structured as follows:
 
-{% code title="plugin_intranda_step_mixedocr.xml" %}
+{% code title="plugin\_intranda\_step\_mixedocr.xml" %}
 ```markup
 <config_plugin>
 <!--
@@ -80,7 +80,7 @@ The `template` is the template that the TaskManager should use, the `itmUrl` is 
 
 In addition to this plugin-specific configuration, the file `/opt/digiverso/goobi/config/goobi_rest.xml` must be released so that the TaskManager can report the successful processing of the jobs to the plugin:
 
-{% code title="/opt/digiverso/goobi/config/goobi_rest.xml" %}
+{% code title="/opt/digiverso/goobi/config/goobi\_rest.xml" %}
 ```markup
 <endpoint path="/plugins/ocr.*">
     <method name="post">
@@ -94,6 +94,7 @@ In addition to this plugin-specific configuration, the file `/opt/digiverso/goob
 
 After the plugin has been installed and configured, it must be added to a workflow step in Goobi workflow.
 
-![Configuration of the step in Goobi Workflow](../.gitbook/assets/intranda\_step\_mixedocr\_config\_gui.png)
+![Configuration of the step in Goobi Workflow](../.gitbook/assets/intranda_step_mixedocr_config_gui.png)
 
 The plugin is usually executed automatically, so you should check the box `Automatic task`. The plugin `intranda_step_mixedocr` must also be selected under `Plugin for step`.
+

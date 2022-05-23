@@ -1,34 +1,39 @@
 ---
 description: >-
-  This is a Workflow Plugin for Goobi workflow. It allows to create multiple
-  Goobi processes based on an initial AEON request. It allows to manually select
-  items from the AEON response to decide for whi
+  This is a Workflow Plugin for Goobi workflow. It allows to create multiple Goobi processes based on an initial AEON request. It allows to manually select items from the AEON response to decide for which items a Goobi process shall be started.
+  
 ---
 
-# AEON data transfer
+AEON data transfer
+===========================================================================
 
-## Introduction
 
+Introduction
+---------------------------------------------------------------------------
 This plugin can be used to query individual data sets from AEON. After a record has been queried, all metadata from the so-called Metadata Cloud are retrieved and listed. The user can then select which data sets he or she would like to create as a Goobi operation.
 
-## Overview
 
-| Details            | Explanation                                                                                                                                        |
-| ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Identifier         | intranda\_workflow\_aeon\_process\_creation                                                                                                        |
-| Source code        | [https://github.com/intranda/goobi-plugin-workflow-aeon-process-creation](https://github.com/intranda/goobi-plugin-workflow-aeon-process-creation) |
-| Licence            | GPL 2.0 or neeer                                                                                                                                   |
-| Documentation date | 05.11.2021                                                                                                                                         |
+Overview
+---------------------------------------------------------------------------
 
-## How the plugin works
+Details             |  Explanation
+------------------- | -----------------------------------------------------
+Identifier          | intranda_workflow_aeon_process_creation
+Source code         | [https://github.com/intranda/goobi-plugin-workflow-aeon-process-creation](https://github.com/intranda/goobi-plugin-workflow-aeon-process-creation)
+Licence             | GPL 2.0 or neeer 
+Documentation date  | 05.11.2021 
+
+
+How the plugin works
+---------------------------------------------------------------------------
 
 If the user has the authorisation to use the plugin, the plugin `AEON Query Plugin` can be opened in the menu item `Worklow`.
 
-![Opened plugin without executed search](../.gitbook/assets/intranda\_workflow\_aeon\_process\_creation3\_en.png)
+![Opened plugin without executed search](../.gitbook/assets/intranda_workflow_aeon_process_creation3_en.png)
 
 A transaction identifier can now be entered here to start the search for an AEON record.
 
-![Displaying the data after performing a search](../.gitbook/assets/intranda\_workflow\_aeon\_process\_creation4\_en.png)
+![Displaying the data after performing a search](../.gitbook/assets/intranda_workflow_aeon_process_creation4_en.png)
 
 If a successful search was performed, the `query details` area was filled with the fields that were defined within the configuration in the `<transaction>` area. In the area `Properties for all transactions` the freely definable properties from the configuration area `<properties>` are displayed.
 
@@ -36,19 +41,19 @@ These fields can be edited if this has been provided for in the configuration fi
 
 In the right-hand area of the user interface, the individual data records found within the Metadata Cloud for the barcode of the AEON record are listed. Each box represents an independent data record. More details of a data record can be displayed by expanding further fields of the boxes. The corresponding icons per box can be used to select the data sets for which processes are to be generated in Goobi.
 
-![Expanded boxes with additional fields displayed](../.gitbook/assets/intranda\_workflow\_aeon\_process\_creation5\_en.png)
+![Expanded boxes with additional fields displayed](../.gitbook/assets/intranda_workflow_aeon_process_creation5_en.png)
 
 Provided at least one record has been selected and there are no unfulfilled strict validations, clicking on the `Create processes` button allows the user to create the individual Goobi processes for the selected records based on the configured process template. This then takes the user to another view.
 
-![Second page with the option of downloading a docket](../.gitbook/assets/intranda\_workflow\_aeon\_process\_creation6\_en.png)
+![Second page with the option of downloading a docket](../.gitbook/assets/intranda_workflow_aeon_process_creation6_en.png)
 
 The left-hand pane lists the records for which processes have been created in Goobi. The right-hand pane offers the option of generating and downloading a docket for all created processes, where the associated processes are all listed together within a common batch.
 
-## Installation
-
+Installation
+---------------------------------------------------------------------------
 The plug-in consists of the following files to be installed:
 
-```
+```text
 plugin_intranda_workflow_aeon_process_creation.jar
 plugin_intranda_workflow_aeon_process_creation-GUI.jar
 plugin_intranda_workflow_aeon_process_creation.xml
@@ -62,8 +67,9 @@ These files must be installed in the correct directories so that they are availa
 /opt/digiverso/goobi/config/plugin_intranda_workflow_aeon_process_creation.xml
 ```
 
-## Configuration
 
+Configuration
+---------------------------------------------------------------------------
 The plugin is configured via the configuration file `plugin_intranda_workflow_aeon_process_creation.xml` and can be adapted during operation. The following is an example configuration file:
 
 ```xml
@@ -229,30 +235,30 @@ This is followed by the configuration of the fields that are displayed and can b
 
 The configuration within the three areas is almost identical. Each field is defined by a `<field>` element. Within this, the following options are subsequently provided:
 
-| Parameter         | Explanation                                                                                                                                                                            |
-| ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `title`           | display name of the field                                                                                                                                                              |
-| `type`            | Type of the field, possible values are `input`, `select`, `vocabulary`, `checkbox`.                                                                                                    |
-| `readonly`        | The values `true` or `false` define whether the content of the field may be edited.                                                                                                    |
-| `aeon`            | Name of the json element from which the field is filled. This parameter is not evaluated for the freely definable properties.                                                          |
-| `displayAlways`   | The values `true` or `false` define whether the field is displayed when only a minimised record is displayed. This parameter is only evaluated for the fields from the Metadata Cloud. |
-| `displayInTitle`  | The values `true` or `false` define whether the field is listed within the header of the box. This parameter is only evaluated for the fields from the Metadata Cloud.                 |
-| `variable`        | This parameter defines the name of the property to be created. This parameter is not evaluated for data from the Metadata Cloud.                                                       |
-| `place`           | This parameter defines the type of the property. Possible values are `work` (workpiece property), `process` (process property), `template` (template property).                        |
-| `value`           | This parameter can be used to set a default value. If an AEON element is configured and obtained by the query, the configured default value is overwritten with the content from AEON. |
-| `help`            | This parameter can be used to define a help text that can optionally be displayed.                                                                                                     |
-| `validation`      | This parameter defines a regular expression against which the field content can be validated.                                                                                          |
-| `strict`          | The values `true` or `false` define whether a validation violation must be resolved before operations can be created.                                                                  |
-| `message`         | This parameter specifies a message to be displayed in case of validation errors.                                                                                                       |
-| `vocabularyName`  | This parameter defines a vocabulary to be used.                                                                                                                                        |
-| `vocabularyField` | The parameter `fieldname=value` can be used to restrict the hit set to values that meet this definition. The field is repeatable to define several restrictions at the same time.      |
+Parameter           |  Explanation
+------------------- | ----------------------------------------------------- 
+`title` | display name of the field
+`type` | Type of the field, possible values are `input`, `select`, `vocabulary`, `checkbox`.
+`readonly` | The values `true` or `false` define whether the content of the field may be edited.
+`aeon` | Name of the json element from which the field is filled. This parameter is not evaluated for the freely definable properties.
+`displayAlways` | The values `true` or `false` define whether the field is displayed when only a minimised record is displayed. This parameter is only evaluated for the fields from the Metadata Cloud.
+`displayInTitle` | The values `true` or `false` define whether the field is listed within the header of the box. This parameter is only evaluated for the fields from the Metadata Cloud.
+`variable` | This parameter defines the name of the property to be created. This parameter is not evaluated for data from the Metadata Cloud.
+`place` | This parameter defines the type of the property. Possible values are `work` (workpiece property), `process` (process property), `template` (template property).
+`value` | This parameter can be used to set a default value. If an AEON element is configured and obtained by the query, the configured default value is overwritten with the content from AEON.
+`help` | This parameter can be used to define a help text that can optionally be displayed.
+`validation` | This parameter defines a regular expression against which the field content can be validated.
+`strict` | The values `true` or `false` define whether a validation violation must be resolved before operations can be created. 
+`message` | This parameter specifies a message to be displayed in case of validation errors.
+`vocabularyName` |  This parameter defines a vocabulary to be used. 
+`vocabularyField` | The parameter `fieldname=value` can be used to restrict the hit set to values that meet this definition. The field is repeatable to define several restrictions at the same time.
 
-## Setting up required permissions
-
+Setting up required permissions
+---------------------------------------------------------------------------
 This plugin has its own permission level for use. For this reason, users must have the required permissions. Therefore, please assign the following right to the user group of the corresponding users:
 
 ```
 Plugin_workflow_aeon_process_creation
 ```
 
-![Correctly assigned right for the users](../.gitbook/assets/intranda\_workflow\_aeon\_process\_creation2\_en.png)
+![Correctly assigned right for the users](../.gitbook/assets/intranda_workflow_aeon_process_creation2_en.png)

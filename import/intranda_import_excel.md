@@ -8,25 +8,25 @@ description: This is the technical documentation for the plugin for importing Ex
 
 This documentation describes the installation, configuration and use of the plugin for mass importing data sets from Excel files.
 
-| Details            |                                                                                                                |
-| ------------------ | -------------------------------------------------------------------------------------------------------------- |
-| Identifier         | intranda\_import\_excel                                                                                        |
-| Source code        | [https://github.com/intranda/goobi-plugin-import-excel](https://github.com/intranda/goobi-plugin-import-excel) |
-| Licence            | GPL 2.0 or newer                                                                                               |
-| Compatibility      | Goobi workflow 2020.09                                                                                         |
-| Documentation date | 11.11.2020                                                                                                     |
+| Details |  |
+| :--- | :--- |
+| Identifier | intranda\_import\_excel |
+| Source code | [https://github.com/intranda/goobi-plugin-import-excel](https://github.com/intranda/goobi-plugin-import-excel) |
+| Licence | GPL 2.0 or newer |
+| Compatibility | Goobi workflow 2020.09 |
+| Documentation date | 11.11.2020 |
 
 ## Installation
 
 The plugin must be installed in the following folder:
 
-```
+```text
 /opt/digiverso/goobi/plugins/import/plugin_intranda_import_excel.jar
 ```
 
 There is also a configuration file, which must be located at the following place:
 
-```
+```text
 /opt/digiverso/goobi/config/plugin_intranda_import_excel.xml
 ```
 
@@ -76,7 +76,7 @@ The configuration is done via the file `plugin_intranda_import_excel.xml`. This 
         <imageFolderHeaderName>images</imageFolderHeaderName>
 
         <!-- defines, if images are moved from the source folder to the destination (true) or copied (false) -->
-        <moveImages>true</moveImages>
+        <moveFiles>true</moveFiles>
 
         <!-- Run the import as GoobiScript -->
         <runAsGoobiScript>true</runAsGoobiScript>
@@ -168,7 +168,7 @@ With the optional element `collection` it is possible to define a collection to 
 
 ### Catalogue import
 
-The next four elements `use-Opac`, `opacName`, `opacHeader` and `searchField` control whether a catalogue query should be performed during the import. If `useOpac` contains the value `true`, such a query is performed. The catalogue and the search field configured in the fields are used for this. The name of the catalogue must correspond to an entry in the Goobi configuration file `goobi_projects.xml`. It can either be permanently defined in the `opacName` parameter or used dynamically from a line of the relevant record (the `opacHeader`). The structure type is automatically recognised by the OPAC data.
+The next four elements `use-Opac`, `opacName`, `opacHeader` and `searchField` control whether a catalogue query should be performed during the import. If `useOpac` contains the value `true`, such a query is performed. The catalogue and the search field configured in the fields are used for this. The name of the catalogue must correspond to an entry in the Goobi configuration file `goobi_projects.xml`. It can either be permanently defined in the `opacName` parameter or used dynamically from a line of the relevant record \(the `opacHeader`\). The structure type is automatically recognised by the OPAC data.
 
 ```markup
 <!-- define if an opac request is made -->
@@ -231,9 +231,9 @@ The element `processTitleRule` is used to generate the operation title. The same
 
 ### Transfer of images
 
-The elements `imageFolderHeaderName`, `imageFolderPath` and `moveImages` can be used to import images in addition to metadata. In `imageFolderHeaderName` the column name is entered, in which the folder names containing the images can be found in the Excel file. Either an absolute path or a relative path can be specified there.
+The elements `imageFolderHeaderName`, `imageFolderPath` and `moveFiles` can be used to import images in addition to metadata. In `imageFolderHeaderName` the column name is entered, in which the folder names containing the images can be found in the Excel file. Either an absolute path or a relative path can be specified there.
 
-If a relative path is specified, the element `imageFolderPath` must contain the root path to the images. The element `moveImages` can be used to control whether the images should be copied or moved.
+If a relative path is specified, the element `imageFolderPath` must contain the root path to the images. The element `moveFiles` can be used to control whether the images should be copied or moved.
 
 ```markup
 <!-- define which column contains the image folder name. Can be combined with <imageFolderPath> prefix or an absolute path.
@@ -244,7 +244,7 @@ If a relative path is specified, the element `imageFolderPath` must contain the 
 <imageFolderPath>/mnt/images/</imageFolderPath>
 
 <!-- defines, if images are moved from the source folder to the destination (true) or copied (false) -->
-<moveImages>true</moveImages>
+<moveFiles>true</moveFiles>
 ```
 
 ### Execution using GoobiScript
@@ -268,16 +268,16 @@ The fields `metadata`, `person` and `group` can be used to import individual col
 
 The `metadata` element is used to generate descriptive metadata..
 
-| Name                 | Type     | Description                                                                                                                     |
-| -------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| `headerName`         | Attribut | Column header in the Excel file                                                                                                 |
-| `ugh`                | Attribut | Name of the metadata                                                                                                            |
-| `property`           | Attribut | Name of the property                                                                                                            |
-| `docType`            | Attribut | `anchor` or `child`                                                                                                             |
-| `normdataHeaderName` | Attribut | Column header of a column with associated identifiers                                                                           |
-| `opacSearchField`    | Attribut | Definition of which search field should be used for the catalogue query. This is necessary for the use of the JSON-Opac-Plugin. |
+| Name | Type | Description |
+| :--- | :--- | :--- |
+| `headerName` | Attribut | Column header in the Excel file |
+| `ugh` | Attribut | Name of the metadata |
+| `property` | Attribut | Name of the property |
+| `docType` | Attribut | `anchor` or `child` |
+| `normdataHeaderName` | Attribut | Column header of a column with associated identifiers |
+| `opacSearchField` | Attribut | Definition of which search field should be used for the catalogue query. This is necessary for the use of the JSON-Opac-Plugin. |
 
-The `headerName` attribute contains the column header. The rule only applies if the Excel file contains a column with this title and the cell is not empty. At least one of the two attributes `ugh` and `name` must exist. The `ugh` field can contain the name of a metadata. If this is the case (and the metadata is allowed for the configured publication type), a new metadata is created. `name` creates a property with this name.
+The `headerName` attribute contains the column header. The rule only applies if the Excel file contains a column with this title and the cell is not empty. At least one of the two attributes `ugh` and `name` must exist. The `ugh` field can contain the name of a metadata. If this is the case \(and the metadata is allowed for the configured publication type\), a new metadata is created. `name` creates a property with this name.
 
 The `docType` attribute becomes relevant if a multi-volume work or journal has been imported from the catalog. This can be used to control whether the field should belong to the entire recording or to the volume.
 
@@ -287,17 +287,17 @@ If, in addition to the content, there is another column with standard data ident
 
 The `person` element can be used to automatically create persons.
 
-| Name                   | Type     | Description                                                                   |
-| ---------------------- | -------- | ----------------------------------------------------------------------------- |
-| `ugh`                  | Attribut | Name of the person role                                                       |
-| `docType`              | Attribut | `anchor` or `child`                                                           |
-| `normdataHeaderName`   | Attribut | Column header of a column with associated identifiers                         |
-| `firstnameFieldHeader` | Element  | Column header of field for first name                                         |
-| `lastnameFieldHeader`  | Element  | Column header for surnames                                                    |
-| `nameFieldHeader`      | Element  | Column header for the complete name                                           |
-| `splitName`            | Element  | Defines whether the value in `nameFieldHeader` should be split.               |
-| `splitChar`            | Element  | Element at which splitting takes place. Default is the first space character. |
-| `firstNameIsFirstPart` | Attribut | Defines the order in which the data was entered.                              |
+| Name | Type | Description |
+| :--- | :--- | :--- |
+| `ugh` | Attribut | Name of the person role |
+| `docType` | Attribut | `anchor` or `child` |
+| `normdataHeaderName` | Attribut | Column header of a column with associated identifiers |
+| `firstnameFieldHeader` | Element | Column header of field for first name |
+| `lastnameFieldHeader` | Element | Column header for surnames |
+| `nameFieldHeader` | Element | Column header for the complete name |
+| `splitName` | Element | Defines whether the value in `nameFieldHeader` should be split. |
+| `splitChar` | Element | Element at which splitting takes place. Default is the first space character. |
+| `firstNameIsFirstPart` | Attribut | Defines the order in which the data was entered. |
 
 Persons differ from normal metadata in that they consist of first and last names. This specification can be in two different columns, then the elements `firstnameFieldHeader` and `lastnameFieldHeader` are used. If the names are only in one column, the field `nameFieldHeader` is used. In this case, the system checks whether the specifications should only contain the surname or whether the content must be split. With `splitChar` you can set the character/sequence at which the splitting should take place. The attribute `firstNameIsFirstPart` contains the information whether the name is to be imported as `First name Last name` or `Last name First name`.
 
@@ -305,12 +305,12 @@ Persons differ from normal metadata in that they consist of first and last names
 
 Metadata groups can be created using the `group` element.
 
-| Name       | Type     | Description                |
-| ---------- | -------- | -------------------------- |
-| `ugh`      | Attribut | Name of the metadata group |
-| `docType`  | Attribut | `anchor` or `child`        |
-| `metadata` | Element  | Metadata within the group  |
-| `person`   | Element  | Person within the group    |
+| Name | Type | Description |
+| :--- | :--- | :--- |
+| `ugh` | Attribut | Name of the metadata group |
+| `docType` | Attribut | `anchor` or `child` |
+| `metadata` | Element | Metadata within the group |
+| `person` | Element | Person within the group |
 
 A metadata group consists of several metadata and persons. The configuration of the individual sub-elements is identical to that of the individual metadata and persons.
 

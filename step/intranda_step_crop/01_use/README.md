@@ -4,14 +4,11 @@ Most of the work in the LayoutWizzard generally takes place in the background of
 
 However, checking these cropping suggestions is the most important point of interaction between Goobi users and LayoutWizzard. Here, the user can see for each image how it has been analyzed and how LayoutWizzard would crop it. For each individual image, the user can now decide whether cropping should be carried out differently. Accordingly, the plugin provides a user interface that allows to rotate the images, to change the position of the book fold and also to edit the cropping frame in its size and position. To perform this processing, LayoutWizzard offers two different views: the `preview view` for viewing and directly correcting all images of an operation and the `single page view` for detailed processing of individual images.
 
-![Preview view and single page view in comparison](../../../.gitbook/assets/intranda\_step\_crop\_views.png)
+![Preview view and single page view in comparison](../../../.gitbook/assets/intranda_step_crop_views.png)
 
 All general settings for configuration and analysis workflow are located in the `Single page view`. However, the actual checking and correction will in most cases only take place in the `Preview view`. For this reason, LayoutWizzard should be configured so that the entry into the plugin from an accepted task is as direct as possible to the preview view.
 
-{% content-ref url="01_preview/" %}
-[01\_preview](01\_preview/)
-{% endcontent-ref %}
+{% page-ref page="01\_preview/" %}
 
-{% content-ref url="02_imageview/" %}
-[02\_imageview](02\_imageview/)
-{% endcontent-ref %}
+{% page-ref page="02\_imageview/" %}
+

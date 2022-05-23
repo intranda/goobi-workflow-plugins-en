@@ -6,15 +6,15 @@ If the archive management plugin is to be put into operation for test purposes o
 
 First, the XML database BaseX must be downloaded from the BaseX website. The download can be done from here:
 
-```
+```text
 https://basex.org/download/
 ```
 
-![BaseX website](<../../.gitbook/assets/intranda\_administration\_archive\_management\_install\_01 (1) (3).png>)
+![BaseX website](../../.gitbook/assets/intranda_administration_archive_management_install_01%20%281%29%20%282%29.png)
 
 The easiest way to download from there is as a `ZIP package`, for example in version 9.4.4:
 
-```
+```text
 http://files.basex.org/releases/9.4.4/BaseX944.zip
 ```
 
@@ -32,46 +32,46 @@ cd basex/bin/
 
 The database server BaseX is now started and can be accessed via a web browser:
 
-```
+```text
 http://localhost:8984/
 ```
 
-![Started BaseX Server](../../.gitbook/assets/intranda\_administration\_archive\_management\_install\_02.png)
+![Started BaseX Server](../../.gitbook/assets/intranda_administration_archive_management_install_02%20%281%29%20%283%29.png)
 
 ## Administer database and import EAD file
 
 After BaseX has been downloaded and started, XML files can be imported as new databases. To do this, first open the menu item `Database Administration`, where a login can be made with these access data:
 
-```
+```text
 Login:      admin
 Password:   admin
 ```
 
-![Login for the database administration](../../.gitbook/assets/intranda\_administration\_archive\_management\_install\_03.png)
+![Login for the database administration](../../.gitbook/assets/intranda_administration_archive_management_install_03%20%281%29.png)
 
 After the successful login, one gets an overview of the installed database, log files, etc.
 
-![Administrative overview](../../.gitbook/assets/intranda\_administration\_archive\_management\_install\_04.png)
+![Administrative overview](../../.gitbook/assets/intranda_administration_archive_management_install_04%20%281%29.png)
 
 From there you can now go to the menu item `Databases` and then click on the button `Create`.
 
-![Create new database](../../.gitbook/assets/intranda\_administration\_archive\_management\_install\_05.png)
+![Create new database](../../.gitbook/assets/intranda_administration_archive_management_install_05%20%281%29.png)
 
 There you can now enter a `name` for the new database. Then the button `Create` must be clicked.
 
-![Definition of the name of the new database](../../.gitbook/assets/intranda\_administration\_archive\_management\_install\_06.png)
+![Definition of the name of the new database](../../.gitbook/assets/intranda_administration_archive_management_install_06%20%281%29.png)
 
 After the new database has been created, an XML file can be imported as content. To do this, click on the `Add` button.
 
-![Details of the newly created database](<../../.gitbook/assets/intranda\_administration\_archive\_management\_install\_07 (1) (1).png>)
+![Details of the newly created database](../../.gitbook/assets/intranda_administration_archive_management_install_07%20%281%29.png)
 
 Here, an EAD file can be selected as an XML file and a path can be assigned under which this data stock is to be accessible. Then click on the 'Add' button.
 
-![Upload an XML file](../../.gitbook/assets/intranda\_administration\_archive\_management\_install\_08.png)
+![Upload an XML file](../../.gitbook/assets/intranda_administration_archive_management_install_08%20%281%29%20%283%29.png)
 
 After importing the EAD file, the content is already available for the Goobi archive management plugin.
 
-![Details of the imported XML file](<../../.gitbook/assets/intranda\_administration\_archive\_management\_install\_09 (1).png>)
+![Details of the imported XML file](../../.gitbook/assets/intranda_administration_archive_management_install_09%20%281%29.png)
 
 ## Install archive management plugin for Goobi
 
@@ -83,9 +83,9 @@ git clone git@gitea.intranda.com:goobi-workflow/goobi-plugin-administration-arch
 
 From the checked-out project, the three `*.xq` files must now be copied from the `plugin/src/main/resources/` directory into the `webapp` subfolder of BaseX.
 
-![\*.xq-Files from the checked out plugin](../../.gitbook/assets/intranda\_administration\_archive\_management\_install\_10.png)
+![\*.xq-Files from the checked out plugin](../../.gitbook/assets/intranda_administration_archive_management_install_10%20%281%29%20%283%29.png)
 
-![Copied \*.xq files within the webapp directory of BaseX](../../.gitbook/assets/intranda\_administration\_archive\_management\_install\_11.png)
+![Copied \*.xq files within the webapp directory of BaseX](../../.gitbook/assets/intranda_administration_archive_management_install_11%20%281%29%20%283%29.png)
 
 The plugin can then be compiled:
 
@@ -156,3 +156,4 @@ For development directly in the Goobi project in Eclipse, the following adjustme
    <param-value>/WEB-INF/intranda.taglib.xml</param-value>
 </context-param>
 ```
+

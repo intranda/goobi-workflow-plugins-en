@@ -8,13 +8,13 @@ description: OPAC Plugin for the data transfer of PICA data records
 
 This documentation describes the installation, configuration and use of the plugin. You can use this plugin to retrieve data from an external system and transfer it to Goobi. The catalog must have an API or URL that can be used to deliver records as OPACs.
 
-| Details            |                                                                                                          |
-| ------------------ | -------------------------------------------------------------------------------------------------------- |
-| Identifier         | intranda\_opac\_pica                                                                                     |
-| Source code        | [https://github.com/intranda/goobi-plugin-opac-pica](https://github.com/intranda/goobi-plugin-opac-pica) |
-| Licence            | GPL 2.0 oder neuer                                                                                       |
-| Compatibility      | 2020.05                                                                                                  |
-| Documentation date | ​13.06.2020                                                                                              |
+| Details |  |
+| :--- | :--- |
+| Identifier | intranda\_opac\_pica |
+| Source code | [https://github.com/intranda/goobi-plugin-opac-pica](https://github.com/intranda/goobi-plugin-opac-pica) |
+| Licence | GPL 2.0 oder neuer |
+| Compatibility | 2020.05 |
+| Documentation date | ​13.06.2020 |
 
 ## Installation
 
@@ -48,14 +48,13 @@ The `title` attribute contains the name under which the catalog can be selected 
 
 The content of a PICA record is mapped within the Goobi workflow ruleset used in each case. For more information on how to configure this mapping, see the UGH documentation here:
 
-{% embed url="https://docs.goobi.io/ugh-en/4/4.3/4.3.2/" %}
-https://docs.goobi.io/ugh-en/4/4.3/4.3.2
-{% endembed %}
+{% embed url="https://docs.goobi.io/ugh-en/4/4.3/4.3.2/" caption="https://docs.goobi.io/ugh-en/4/4.3/4.3.2" %}
 
 ## Use
 
 When you search for an identifier in Goobi, a request is sent to the configured URL in the background.
 
-![Goobi workflow interface for querying the catalogue](../.gitbook/assets/intranda\_opac\_pica\_en.png)
+![Goobi workflow interface for querying the catalogue](../.gitbook/assets/intranda_opac_pica_en.png)
 
 After retrieving the actual record from the PICA-catalog, the metadata is mapped according to the rules configured in the rule set.
+

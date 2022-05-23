@@ -10,19 +10,19 @@ description: >-
 
 This documentation describes the installation, configuration and use of the plugin. This plugin can be used to automatically prepare METS-files, create a basic structure and set a pagination.
 
-| Details            |                                                                                                                                      |
-| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
-| Identifier         | intranda\_step\_imagename\_analyse                                                                                                   |
-| Source code        | [https://github.com/intranda/goobi-plugin-step-analyse-imagenames](https://github.com/intranda/goobi-plugin-step-analyse-imagenames) |
-| Licence            | GPL 2.0 or newer                                                                                                                     |
-| Compatibility      | Goobi workflow 3.0.10                                                                                                                |
-| Documentation date | 14.08.2019                                                                                                                           |
+| Details |  |
+| :--- | :--- |
+| Identifier | intranda\_step\_imagename\_analyse |
+| Source code | [https://github.com/intranda/goobi-plugin-step-analyse-imagenames](https://github.com/intranda/goobi-plugin-step-analyse-imagenames) |
+| Licence | GPL 2.0 or newer |
+| Compatibility | Goobi workflow 3.0.10 |
+| Documentation date | 14.08.2019 |
 
 ## Precondition
 
 The precondition for using the plugin is the use of Goobi at least version 3.0.10, the correct installation and configuration of the plugin and the correct integration of the plugin into the desired work steps of the workflows..
 
-## Installation and configuration <a href="#installation-und-konfiguration" id="installation-und-konfiguration"></a>
+## Installation and configuration <a id="installation-und-konfiguration"></a>
 
 The plugin consists of two files:
 
@@ -45,7 +45,7 @@ The file `plugin_intranda_step_imagename_analyse.xml` must also be readable by t
 
 This file is used to configure the plugin and must have the following structure:
 
-{% code title="plugin_intranda_step_imagename_analyse.xml" %}
+{% code title="plugin\_intranda\_step\_imagename\_analyse.xml" %}
 ```markup
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
@@ -71,7 +71,7 @@ The element `skipWhenDataExists` defines how the plugin behaves if a pagination 
 
 The element `paginationRegex` contains a regular expression which tries to extract the logical page number from the filename. The value from the first group is copied to the METS file.
 
-If the regular expression was not successful, the system then checks whether the file name describes a special structure such as `Cover`, `Titlepage` or `Contents`. This structure is defined within `structureList`. A (partial) string, which must occur in the file name, is defined within the item element in the `filepart` attribute. In the `docstruct` attribute, the structural element is defined that is to be created in this case.
+If the regular expression was not successful, the system then checks whether the file name describes a special structure such as `Cover`, `Titlepage` or `Contents`. This structure is defined within `structureList`. A \(partial\) string, which must occur in the file name, is defined within the item element in the `filepart` attribute. In the `docstruct` attribute, the structural element is defined that is to be created in this case.
 
 ## Settings in Goobi
 
@@ -88,21 +88,22 @@ The way the plugin works within the correctly configured workflow looks like thi
 * Then the files are read from the master folder and sorted alphanumerically.
 * For each file it is now checked whether it corresponds to the configured regular expression.
 * If this is the case, a new page is created. The physical order corresponds to the sorting in the file system, the logical page number is taken from the first group of the regular expression.
-* If the regular expression does not apply, the system then runs through the list of configured items and checks whether the file name ends with the expression followed by an optional number and an optional recto-verso specification (r or v). If this is the case, the configured structural element is created and the page is assigned to this element. By specifying a count, new structural elements of the same type can be defined. If two or more files have no count or the same count, they are assigned to the same structural element.
+* If the regular expression does not apply, the system then runs through the list of configured items and checks whether the file name ends with the expression followed by an optional number and an optional recto-verso specification \(r or v\). If this is the case, the configured structural element is created and the page is assigned to this element. By specifying a count, new structural elements of the same type can be defined. If two or more files have no count or the same count, they are assigned to the same structural element.
 * If neither the regular expression nor the list of structural elements apply to the file names, a page with the logical sorting "uncounted" is created and an entry is written in the process log.
 
 ## Samples
 
 The following examples are based on the configuration defined above:
 
-| Filename                          | Output                                                                         |
-| --------------------------------- | ------------------------------------------------------------------------------ |
-| BxSem-A02\_010v.tif               | Page 010v                                                                      |
-| BxSem-A02\_146r.tif               | Page 146r                                                                      |
-| BxSem-A02\_NSr.tif                | first page of the Postscript structural element                                |
-| BxSem-A02\_NSv.tif                | second page of the Postscript structural element                               |
+| Filename | Output |
+| :--- | :--- |
+| BxSem-A02\_010v.tif | Page 010v |
+| BxSem-A02\_146r.tif | Page 146r |
+| BxSem-A02\_NSr.tif | first page of the Postscript structural element |
+| BxSem-A02\_NSv.tif | second page of the Postscript structural element |
 | BxSem-B04\_Farbkarte\_Einband.jpg | not configured, therefore no assignment possible, is taken over as "uncounted" |
-| BxSem-A22\_VS1r.jpg               | first end sheet, first page                                                    |
-| BxSem-A22\_VS1v.jpg               | first end sheet, second page                                                   |
-| BxSem-A22\_VS2.jpg                | second end sheet                                                               |
-| BxSem-B08\_SV.jpg                 | single picture of the FrontSection                                             |
+| BxSem-A22\_VS1r.jpg | first end sheet, first page |
+| BxSem-A22\_VS1v.jpg | first end sheet, second page |
+| BxSem-A22\_VS2.jpg | second end sheet |
+| BxSem-B08\_SV.jpg | single picture of the FrontSection |
+

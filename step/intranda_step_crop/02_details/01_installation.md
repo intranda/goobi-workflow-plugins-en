@@ -4,11 +4,11 @@
 
 The installation consists of a total of four program libraries that must be accessible in Apache Tomcat or Goobi:
 
-| File                                         | Location                                                    |
-| -------------------------------------------- | ----------------------------------------------------------- |
-| `layoutwizzard.jar`                          | In the `lib` folder of the Goobi webapp in the Tomcat       |
-| `plugin_intranda_step_LayoutWizzard.jar`     | In the `plugins/step` folder in the Goobi working directory |
-| `plugin_intranda_step_LayoutWizzard-GUI.jar` | In the `plugins/GUI` folder in the Goobi working directory  |
+| File | Location |
+| :--- | :--- |
+| `layoutwizzard.jar` | In the `lib` folder of the Goobi webapp in the Tomcat |
+| `plugin_intranda_step_LayoutWizzard.jar` | In the `plugins/step` folder in the Goobi working directory |
+| `plugin_intranda_step_LayoutWizzard-GUI.jar` | In the `plugins/GUI` folder in the Goobi working directory |
 
 ## Configuration files
 
@@ -18,14 +18,14 @@ In addition to these program files, two configuration files are required, one fo
 
 The configuration file of the plugin `plugin_LayoutWizzardPlugin.xml` must be located in the `config` configuration directory within the Goobi working directory. This is usually the path to the file:
 
-```
+```text
 /opt/digiverso/goobi/config/plugin_LayoutWizzardPlugin.xml
 ```
 
 Within this configuration file the path to the actual central configuration of the LayoutWizard is specified. The structure of this file looks like this:
 
 {% tabs %}
-{% tab title="plugin_LayoutWizzardPlugin.xml" %}
+{% tab title="plugin\_LayoutWizzardPlugin.xml" %}
 ```markup
 <!-- Goobi Plugin configuration file -->
 <config_plugin>
@@ -41,7 +41,7 @@ Within this configuration file the path to the actual central configuration of t
 
 The actual configuration file specifies various parameters for the layout analysis process. These parameters are listed as examples in the following configuration file. As defined in the plugin configuration file, it is located under the following path:
 
-```
+```text
 /opt/digiverso/intranda/LayoutWizzard/layoutwizzard_config.xml
 ```
 
@@ -124,4 +124,5 @@ As an example, this configuration file has the following content:
 </config>
 ```
 
-For details on customizing the configurations, see the [Configuration section](02\_configuration.md).
+For details on customizing the configurations, see the [Configuration section](02_configuration.md).
+
