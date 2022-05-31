@@ -1,6 +1,6 @@
 ---
 description: >-
-	This Step Plugin allows you to automatically generate docket files in various file formats.
+  This Step Plugin allows you to automatically generate docket files in various file formats.
 ---
 
 # Generation of docket files
