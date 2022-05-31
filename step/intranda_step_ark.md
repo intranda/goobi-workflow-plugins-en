@@ -15,7 +15,7 @@ This documentation describes the installation, configuration and use of the Step
 | Source code | [https://github.com/intranda/goobi-plugin-step-ark](https://github.com/intranda/goobi-plugin-step-ark) |
 | Licence | GPL 2.0 or newer |
 | Compatibility | Goobi workflow 2022.03 |
-| Documentation date | 25.03.2022 |
+| Documentation date | 31.05.2022 |
 
 
 ## How the plug-in works
