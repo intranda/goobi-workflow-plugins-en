@@ -102,7 +102,7 @@ The configuration of the plugin is done via the configuration file `plugin_intra
 		<metadataResourceType>Text</metadataResourceType>
 
 		<!--target url ark will forward to -->
-		<publicationUrl>https://viewer.example.org/{meta.CatalogIDDigital}</publicationUrl>
+		<publicationUrl>https://viewer.example.org/image/{meta.CatalogIDDigital}</publicationUrl>
 
 		<!--metadatatype in METS-File -->
 		<metadataType>ARK</metadataType>
