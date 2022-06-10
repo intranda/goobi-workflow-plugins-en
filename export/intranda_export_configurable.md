@@ -23,7 +23,7 @@ Using this export plugin for Goobi, Goobi operations can be exported to multiple
 
 This plugin is integrated into the workflow in such a way that it is executed automatically. Manual interaction with the plugin is not necessary. For use within a work step of the workflow, it should be configured as shown in the screenshot below.
 
-![Integration of the plug-in into the workflow](../.gitbook/assets/plugin_intranda_export_configurable-step.png)
+![Integration of the plug-in into the workflow](../.gitbook/assets/intranda_plugin_export_configurable1_en.png)
 
 The plugin must first be copied into the following directory:
 
@@ -118,4 +118,4 @@ The default value for each of these parameters except `ocr` is `false`. If the r
 
 The configuration of the destination folder can be done within the project settings in the Goobi workflow user interface. If the checkbox for `Create task folder` is set there, the task will be stored in a subfolder with its title as name in the target folder.
 
-![Project settings within Goobi workflow](../.gitbook/assets/plugin_intranda_export_configurable-project.png)
+![Project settings within Goobi workflow](../.gitbook/assets/intranda_plugin_export_configurable2_en.png)
