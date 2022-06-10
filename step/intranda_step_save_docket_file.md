@@ -77,3 +77,8 @@ The configuration of the plugin is as follows:
 ## Use of the plugin
 
 In case of an automatic task, the plugin will be executed automatically as soon as the corresponding task is executed. There is an additional button at the corresponding task in the task details, with which the docket can be generated manually at any time.
+
+## Anwendung des Plugins
+This plugin is integrated into the workflow in such a way that it is executed automatically. Manual interaction with the plugin is not necessary. For use within a work step of the workflow, it should be configured as shown in the screenshot below.
+
+![Integration of the plugin into the workflow](../.gitbook/assets/intranda_step_save_docket_file_en.png)
