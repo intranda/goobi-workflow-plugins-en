@@ -1,7 +1,7 @@
 ---
 description: >-
-  This is an Administration Plugin for Goobi workflow which allow to get reading and writing access to all important configuration files of Goobi workflow which are usually located inside of the folder `/opt/digiverso/goobi/config/`.
-  
+    This is a plugin for Goobi workflow that allows you to edit all the important configuration files of Goobi workflow.
+
 ---
 
 Configuration editor
@@ -20,7 +20,7 @@ Details             |  Description
 ------------------- | -----------------------------------------------------
 Identifier          | intranda_administration_config_file_editor
 Source code         | [https://github.com/intranda/goobi-plugin-administration-config-file-editor](https://github.com/intranda/goobi-plugin-administration-config-file-editor)
-License             | GPL 2.0 or newer 
+License             | GPL 2.0 or newer
 Documentation date  | 06.11.2021
 
 
@@ -39,7 +39,7 @@ Also, no hidden files and no files from hidden folders are displayed.
 
 ![Open plugin without loaded file](../.gitbook/assets/intranda_administration_config_file_editor4_en.png)
 
-If you open a file, a text editor appears on the right-hand side in which the file can be edited. If you edit and save a file, a backup is automatically created in the defined backup directory. 
+If you open a file, a text editor appears on the right-hand side in which the file can be edited. If you edit and save a file, a backup is automatically created in the defined backup directory.
 
 ![Saved file](../.gitbook/assets/intranda_administration_config_file_editor5_en.png)
 
@@ -99,7 +99,7 @@ The plugin is configured via the configuration file `plugin_intranda_administrat
 The parameters within this configuration file have the following meanings:
 
 Parameter           |  Description
-------------------- | ----------------------------------------------------- 
+------------------- | -----------------------------------------------------
 `configFileDirectories`       | This is the list that contains all selected configuration file paths. The configuration file path preset in Goobi Workflow is always used.
 `directory`                   | Configuration files from the absolute path specified here are displayed in the user interface. The path is ignored if it does not exist.
 `backupFolder`                | This parameter specifies a relative path in `directory` where the backup files should be stored. By default, `backup/` is used if the parameter is not specified. To have backup files stored in the same directory as `directory`, override the value with `backupFolder=""`.
@@ -132,7 +132,7 @@ Note that the prefix `plugin_administration_config_file_editor_help_` is added b
 
 Setting up required rights
 ---------------------------------------------------------------------------
-This plugin has its own permission level for use. For this reason, users must have the necessary rights. 
+This plugin has its own permission level for use. For this reason, users must have the necessary rights.
 
 ![No access without correct rights](../.gitbook/assets/intranda_administration_config_file_editor1_en.png)
 
