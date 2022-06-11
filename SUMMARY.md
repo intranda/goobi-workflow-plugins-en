@@ -79,7 +79,8 @@
 * [Archiving image folders](step/intranda_step_archiveimagefolder.md)
 * [GeoNames Annotation](step/intranda_step_geonamesautoannotator.md)
 * [GeoNames Correction](step/intranda_step_geonamescorrection.md)
-* [Generate dockets files](step/intranda_step_save_docket_file.md)
+* [Generate Docket Files](step/intranda_step_save_docket_file.md)
+* [Metadata Cleanup](step/intranda_step_kiel_archive_cleanup.md)
 
 
 ## Opac Plugins <a id="opac"></a>
