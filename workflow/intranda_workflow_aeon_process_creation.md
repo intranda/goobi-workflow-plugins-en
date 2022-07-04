@@ -238,7 +238,7 @@ The configuration within the three areas is almost identical. Each field is defi
 Parameter           |  Explanation
 ------------------- | -----------------------------------------------------
 `title` | display name of the field
-`type` | Type of field, possible values are `input` (text field), `select` (selection field), `vocabulary` (selection field from a vocabulary), `checkbox` (checkbox), `radio-dont-overwrite` (radio buttons editable in the left area but not in the right area).
+`type` | Type of field, possible values are `input` (text field), `select` (selection field), `vocabulary` (selection field from a vocabulary), `checkbox` (checkbox), `input-dont-overwrite` (text field editable on the left but not on the right),`radio-dont-overwrite` (radio buttons editable in the left area but not in the right area).
 `readonly` | The values `true` or `false` define whether the content of the field may be edited.
 `aeon` | Name of the json element from which the field is filled. This parameter is not evaluated for the freely definable properties.
 `displayAlways` | The values `true` or `false` define whether the field is displayed when only a minimised record is displayed. This parameter is only evaluated for the fields from the Metadata Cloud.
