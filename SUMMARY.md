@@ -93,6 +93,7 @@
 * [Generic JSON Import](opac/intranda_opac_json.md)
 * [Soutron Import](opac/intranda_opac_soutron.md)
 * [Kalliope Import](opac/intranda_opac_kalliope.md)
+* [Ariadne Import](opac/intranda_opac_ariadne.md)
 
 ## Import Plugins <a id="import"></a>
 * [Import for journal articles from an Endnote Export](import/intranda_import_endnote.md)
