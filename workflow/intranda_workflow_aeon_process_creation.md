@@ -1,7 +1,7 @@
 ---
 description: >-
   This is a Workflow Plugin for Goobi workflow. It allows to create multiple Goobi processes based on an initial AEON request. It allows to manually select items from the AEON response to decide for which items a Goobi process shall be started.
-  
+
 ---
 
 AEON data transfer
@@ -20,8 +20,8 @@ Details             |  Explanation
 ------------------- | -----------------------------------------------------
 Identifier          | intranda_workflow_aeon_process_creation
 Source code         | [https://github.com/intranda/goobi-plugin-workflow-aeon-process-creation](https://github.com/intranda/goobi-plugin-workflow-aeon-process-creation)
-Licence             | GPL 2.0 or neeer 
-Documentation date  | 05.11.2021 
+Licence             | GPL 2.0 or neeer
+Documentation date  | 04.07.2022
 
 
 How the plugin works
@@ -118,7 +118,7 @@ The plugin is configured via the configuration file `plugin_intranda_workflow_ae
             <variable place="process">Doc type</variable>
             <help>This is my description for the field so that everyone gets some help.</help>
         </field>
-    
+
         <field aeon="username">
             <title>User Name</title>
             <type readonly="false">input</type>
@@ -183,7 +183,7 @@ The plugin is configured via the configuration file `plugin_intranda_workflow_ae
             <help>This is my description for the field so that everyone gets some help.</help>
         </field>
     </properties>
-    
+
     <processes>
         <field aeon="bibId" displayAlways="true" displayInTitle="false">
             <title>Bib Identifier</title>
@@ -236,9 +236,9 @@ This is followed by the configuration of the fields that are displayed and can b
 The configuration within the three areas is almost identical. Each field is defined by a `<field>` element. Within this, the following options are subsequently provided:
 
 Parameter           |  Explanation
-------------------- | ----------------------------------------------------- 
+------------------- | -----------------------------------------------------
 `title` | display name of the field
-`type` | Type of the field, possible values are `input`, `select`, `vocabulary`, `checkbox`.
+`type` | Type of field, possible values are `input` (text field), `select` (selection field), `vocabulary` (selection field from a vocabulary), `checkbox` (checkbox), `radio-dont-overwrite` (radio buttons editable in the left area but not in the right area).
 `readonly` | The values `true` or `false` define whether the content of the field may be edited.
 `aeon` | Name of the json element from which the field is filled. This parameter is not evaluated for the freely definable properties.
 `displayAlways` | The values `true` or `false` define whether the field is displayed when only a minimised record is displayed. This parameter is only evaluated for the fields from the Metadata Cloud.
@@ -248,9 +248,9 @@ Parameter           |  Explanation
 `value` | This parameter can be used to set a default value. If an AEON element is configured and obtained by the query, the configured default value is overwritten with the content from AEON.
 `help` | This parameter can be used to define a help text that can optionally be displayed.
 `validation` | This parameter defines a regular expression against which the field content can be validated.
-`strict` | The values `true` or `false` define whether a validation violation must be resolved before operations can be created. 
+`strict` | The values `true` or `false` define whether a validation violation must be resolved before operations can be created.
 `message` | This parameter specifies a message to be displayed in case of validation errors.
-`vocabularyName` |  This parameter defines a vocabulary to be used. 
+`vocabularyName` |  This parameter defines a vocabulary to be used.
 `vocabularyField` | The parameter `fieldname=value` can be used to restrict the hit set to values that meet this definition. The field is repeatable to define several restrictions at the same time.
 
 Setting up required permissions
