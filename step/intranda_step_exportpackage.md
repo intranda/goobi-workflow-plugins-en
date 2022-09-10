@@ -57,7 +57,8 @@ The configuration of the plugin is structured as follows:
         <target>/opt/digiverso/export/</target>
         <!-- use subfolder for each process -->
         <useSubFolderPerProcess>true</useSubFolderPerProcess>
-
+        <!-- a zip file with the subfolder-name will be created -->
+        <createZipPerProcess>true</createZipPerProcess>
         <!-- which image folders to use (master|media|jpeg|source|...) -->
         <imagefolder>master</imagefolder>
         <!-- use the attribute filegroup, if you want to add checksums to the files within the filegroup. The checksums are taken from the configured folder -->
@@ -100,6 +101,8 @@ The block `<config>` can occur repeatedly for different projects or workflow ste
 | `project` | This parameter determines the project for which the current block `<config>` is to apply. The name of the project is used here. This parameter can occur several times per `<config>` block. |
 | `step` | This parameter controls for which workflow steps the block `<config>` is to apply. The name of the step is used here. This parameter can occur several times per `<config>` block. |
 | `target` | This parameter defines the main path where the export of the process as a subfolder with the process name should be exported to. |
+| `useSubFolderPerProcess` | This parameter determines whether a subfolder is to be created for each process. |
+| `createZipPerProcess` | This parameter can be used to determine whether a zip file is to be created for each process. |
 | `imagefolder` | Several directories can be specified for the images or digital copies. This can include, for example, the master images and the derivatives. If the METS file is to contain checksums for the individual images, the attribute `filegroup` can be used here to specify for which `mets:fileGrp>` the checksums of the files from this folder are to be used. |
 | `ocr` | This parameter specifies whether the OCR results are to be exported as well. |
 | `source` | If the contents of the `source` folder should be included, this can be specified here. |

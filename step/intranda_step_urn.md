@@ -47,6 +47,8 @@ In addition, there is a configuration file that must be located in the following
 /opt/digiverso/goobi/config/plugin_intranda_step_urn.xml
 ```
 
+### Note
+This plugin uses a slightly modified table structure than the old URN plugin. When updating, it must be ensured that the urn column exists in the corresponding table. Furthermore, it must be ensured that e.g. for anchor elements whose URN was generated before the update, there is also a URN in the database.
 
 ## Configuration
 The configuration of the plugin is done via the configuration file `plugin_intranda_step_urn.xml` and can be adjusted during operation. The following is an example configuration file:
@@ -80,14 +82,27 @@ The configuration of the plugin is done via the configuration file `plugin_intra
 		<namespace>urn:nbn:de:{SIGIL}</namespace>
 
 		<!-- infix that you want to use (optional) -->
-		<infix>-goobi-</infix>
+		<infix>goobi-</infix>
 
-		<!-- example URN urn:nbn:de:gbv:48-goobi-20220404122233 -->
+        <!-- optional Element generationMethod,
+			increment if you want to use incrementation (300,301,302...) to generate the part after the infix
+			timestamp if you want to use a timestamp (2042-09-23-06-30-15) to generate the part after the infix
+			the default method is increment!
+		  -->
+		<generationMethod>timestamp</generationMethod>
+
+        <!-- optional Element checksum,
+			false if you don't want URNs with a Checksum
+			true if you want URNs with a Checksum.the default value is false;
+		-->
+		<checksum>false</checksum>
+
+		<!-- example URN urn:nbn:de:gbv:48-goobi-20220404122233
+        the "-" after the namespace string is always added! -->
 
 		<!--target url the newly generated urn will forward to. {pi.urn} will be
 			replaced with the newly minted urn -->
-		<publicationUrl>https://viewer.example.org/viewer/resolver?urn={pi.urn}
-		</publicationUrl>
+		<url>https://viewer.example.org/viewer/resolver?urn={pi.urn}</url>
 
 		<!--Generate URN for the work (e.g. for Monograph, Manuscript, Volume, etc.)  -->
 		<work>true</work>
@@ -125,7 +140,9 @@ The configuration of the plugin is done via the configuration file `plugin_intra
 | `apiUri` | The URL of the API must be stored in this parameter. As a rule, the standard entry `https://api.nbn-resolving.org/v2/` can be used.  |
 | `namespace` | The namespace in which the new URNs are created. |
 | `infix` | Infix to be inserted in the generated URNs after the namespace. A new URN would have the form `{namespace}{infix}{generatedValue}`. |
-| `publicationUrl`   | The URL under which the digitised work will be available in the future. As a rule, the publication URL will follow a pattern, e.g. `https://viewer.example.org/viewer/resolver?urn={pi.urn}`. The placeholder {pi.urn} will be replaced by the plugin with the new URN. |
+| `generationMethod` | The plugin currently offers 2 options for generating a URN. `timestamp` and `increment`. The default value is `increment`. If you use `timestamp`, the time of generation of the URN will be appended after the infix in the form `2022-12-23-12-00-35`. If you choose increment, a counter (1,2, ...301,302,..) is used. |
+| `checksum` | Here you can specify whether a check digit should be generated (`true`) or not (`false`). |
+| `url`   | The URL under which the digitised work will be available in the future. As a rule, the publication URL will follow a pattern, e.g. `https://viewer.example.org/viewer/resolver?urn={pi.urn}`. The placeholder {pi.urn} will be replaced by the plugin with the new URN. |
 | `work` | Switch that activates the setting of work URNs (Monograph, Manuscript, Volume, etc.). |
 | `anchor` | Switch that activates the setting of URNs for the anchor element. |
 | `allowed -> type` | Here you can list elements for which a URN is to be generated. For each element, a `<type>ElementName</type>` entry must be created in the `<allowed>` element. <br/>**Note:** If you set anchor or work to true, the anchor element and the work element will receive a URN even if their type names are not listed. |
