@@ -78,8 +78,8 @@ The configuration of the plugin is done via the configuration file `plugin_intra
 		<apiUri>https://api.nbn-resolving.org/v2/</apiUri>
 
 		<!-- namespace in which new URNs shall be created -->
-		<!-- example urn:nbn:de:gbv:{SIGIL} -->
-		<namespace>urn:nbn:de:{SIGIL}</namespace>
+		<!-- example urn:nbn:de:gbv:{SIGEL} -->
+		<namespace>urn:nbn:de:{SIGEL}</namespace>
 
 		<!-- infix that you want to use (optional) -->
 		<infix>goobi-</infix>
