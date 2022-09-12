@@ -17,8 +17,7 @@ This plugin allows a flexible export of data of a process into a defined target 
 | Identifier | intranda\_step\_exportPackage |
 | Source code | [https://github.com/intranda/goobi-plugin-step-exportPackage](https://github.com/intranda/goobi-plugin-step-exportPackage) |
 | Licence | GPL 2.0 or newer |
-| Compatibility | Goobi workflow 2020.09 |
-| Documentation date | 11.11.2020 |
+| Documentation date | 12.09.2022 |
 
 ## Installation
 
