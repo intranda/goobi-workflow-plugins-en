@@ -84,6 +84,7 @@
 * [Metadata enrichment via Excel file](step/intranda_step_excelMetadataenrichment.md)
 * [Metadata transfer from a directory](step/intranda_step_import_from_folder.md)
 * [DOI Registration](step/intranda_step_doi.md)
+* [Validierung von Dateien](step/intranda_step_file_validation)
 
 ## Opac Plugins <a id="opac"></a>
 * [PICA Import](opac/intranda_opac_pica.md)
