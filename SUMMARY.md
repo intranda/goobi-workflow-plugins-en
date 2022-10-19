@@ -122,6 +122,8 @@
 * [Process creation through file upload](workflow/intranda_workflow_fileupload_processcreation.md)
 * [AEON data transfer](workflow/intranda_workflow_aeon_process_creation.md)
 * [Mass import from Excel data with EAD enrichment](workflow/intranda_workflow_hu_importer.md)
+* [Entity Editor - Artist Dictionary](workflow/intranda_workflow_artist_dictionary.md)
+
 
 ## Statistics
 * [Sudan Memory Translations](statistics/intranda_statistics_sudan_memory.md)
