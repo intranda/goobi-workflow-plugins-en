@@ -16,7 +16,7 @@ This documentation describes how to install, configure and use the Administratio
 | Source code | [https://github.com/intranda/goobi-plugin-administration-catalogue-poller](https://github.com/intranda/goobi-plugin-administration-catalogue-poller) |
 | Licence | GPL 2.0 or newer |
 | Compatibility | Goobi workflow 2021.02 |
-| Documentation date | 06.11.2021 |
+| Documentation date | 20.10.2022 |
 
 ## How the plugin works
 
@@ -30,25 +30,27 @@ Plugin_Goobi_CataloguePoller
 
 In order to assign this right, the desired user group must first be assigned the right authorization in the right-hand area.
 
-![Enter the required authorization](../.gitbook/assets/intranda_administration_catalogue_poller_01.png)
-
-![User group with assigned authorization](../.gitbook/assets/intranda_administration_catalogue_poller_02.png)
+![User group with assigned authorization](../.gitbook/assets/intranda_administration_catalogue_poller_01_en.png)
 
 If the authorization for the user group is re-entered, the user must first log into Goobi again in order to be able to use this authorization level. The user can then click on the Catalogue Poller plugin in the Administration menu and manually trigger an update of the records at any time.
 
-![Successful run with the update of an affected Goobi process](../.gitbook/assets/intranda_administration_catalogue_poller_03.png)
+![User interface of the Catalgue Pollers](../.gitbook/assets/intranda_administration_catalogue_poller_02_en.png)
+
+![Possibility to download the results of a test run](../.gitbook/assets/intranda_administration_catalogue_poller_03_en.png)
+
+![Downloaded Excel file](../.gitbook/assets/intranda_administration_catalogue_poller_04.png)
 
 ## Automatic backups
 
 If the plugin finds updated metadata for a process and therefore updates the METS file, a backup of the current METS file `meta.xml` and, if relevant, the `meta_anchor.xml` is created automatically. The backup is saved next to the updated METS file.
 
-![Multiple versions of METS files are kept as backups](../.gitbook/assets/intranda_administration_catalogue_poller_04.png)
+![Multiple versions of METS files are kept as backups](../.gitbook/assets/intranda_administration_catalogue_poller_05.png)
 
 ## Logging within the process log
 
 The updates of the metadata by the plugin usually take place fully automatically in the background. In order to be able to track what happened to a data record at any time, the events are logged. Detailed entries are automatically added to the process log for each process for which there were changes from this plugin. In addition to the timestamp, these entries also contain an exact list of the changed metadata fields and their contents. Thus, it is possible to trace the previous or the new value at any time.
 
-![Within the process log the changes of the Catalogue Poller are traceable](../.gitbook/assets/intranda_administration_catalogue_poller_05.png)
+![Within the process log the changes of the Catalogue Poller are traceable](../.gitbook/assets/intranda_administration_catalogue_poller_06_en.png)
 
 
 ## Installation
@@ -114,11 +116,18 @@ The plugin is configured via the configuration file `plugin_intranda_administrat
         this is only executed if mergeRecords is set to true -->
         <exportUpdatedRecords>false</exportUpdatedRecords>
 
-        <!-- if records shall be merged: which existing fields shall not
-        be replace with new values? (use the metadatatypes from ruleset)-->
-        <skipField>viewerinstance</skipField>
-        <skipField>singleDigCollection</skipField>    
-        <skipField>pathimagefiles</skipField>
+        <!--fieldList: Must have a mode attribute which can contain either blacklist or whitelist as a value.
+            blacklist: All fields are updated except the defined ones. This is a potentially dangerous setting!
+            whitelist: Only the definied fields are updated. All others are skipped. 
+            field: Use the internal metadata names from the ruleset as field definition
+         -->
+        <fieldList mode="blacklist">
+            <field>viewerinstance</field>
+            <field>singleDigCollection</field>
+            <field>pathimagefiles</field>
+            <field>_urn</field>
+            <field>_representative</field>
+        </fieldList>
 
     </rule>
 
@@ -139,4 +148,4 @@ The plugin is configured via the configuration file `plugin_intranda_administrat
 | `exportUpdatedRecords` | If this value is set to `true`, the catalog query is followed by a new data export for all records that were actually updated during the catalog query. In this case, the data export is the step that was defined as the first export step within the workflow for the operation. This usually refers to the export and publication of the process within the Goobi viewers. It should be noted here that the processes are only exported if the mechanism for `mergeRecords` is also set to `false`. | 
 |`mergeRecords`|If the value `true` is set, the existing METS file is updated with the current data from the catalog. Any additional metadata can be excluded from the update. The logical and physical structure tree within the METS file also remains unchanged. If the value is set to `false`, the existing METS file will be completely replaced by a new METS file generated by the catalog query.| 
 |`analyseSubElements` | This parameter can be used to define whether metadata for structural elements already existing within the METS files should also be queried by the catalogue. For this, the specified metadata for the identifier to be queried must be available for each sub-element. | 
-| `skipField` | Several metadata fields can be defined here, which should not be changed by a catalog query. This is particularly useful for those fields that do not come from a catalog query and were therefore previously entered in addition to the catalog data. Typical examples for such fields are `singleDigCollection`, `accesscondition` and `pathimagefiles`. Please note that this parameter is only used if the value for `mergeRecords` is `true`. |
+| `fieldList` | The modes `blacklist` and `whitelist` are available here. If the 'whitelist' mode is selected, the metadata fields that are to be updated by a catalogue query can be defined here. If the 'blacklist' mode is used, several metadata fields can be defined that should not be changed by a catalogue query. This is particularly useful for those fields that do not come from a catalogue query and were therefore previously recorded in addition to the catalogue data. Typical examples of such fields include `singleDigCollection`,`accesscondition` and `pathimagefiles`.Please note that this parameter only applies if the value for `mergeRecords` is set to `true`.  |
