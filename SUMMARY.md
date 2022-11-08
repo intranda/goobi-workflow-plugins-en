@@ -21,6 +21,7 @@
 * [Restoring archived image folders](administration/intranda_administration_restorearchivedimagefolders.md)
 
 
+
 ## Step Plugins <a id="step"></a>
 * [Automatic setting of the representative](step/intranda_step_representative_creation.md)
 * [Electronic Publications](step/intranda_step_pdfupload.md)
