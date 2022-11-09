@@ -1,31 +1,31 @@
 ---
 description: >-
-  This is a technical documentation for the configurable Goobi Export plugin. It allows you to customise the export using the project configuration. By using export projects, it is also possible to export to different locations in one go.
+  This is a technical documentation for the VLM Export Plugin. It enables the export to a VLM instance.
 ---
 
-# Configurable VLM export
+# VLM Export
 
 ## Introduction
 
-This documentation describes how to install, configure and use the vlm export plugin in Goobi.
+This documentation describes the installation, configuration and use of the VLM export plugin in Goobi.
 
-Using this export plugin for Goobi, Goobi operations can be exported to configured locations simultaneously within one operation.
+Using this plugin for Goobi, Goobi operations can be exported to the configured location for VLM within one step.
 
 | Details |  |
 | :--- | :--- |
 | Identifier | intranda_export_vlm |
 | Source code | [https://github.com/intranda/goobi-plugin-export-vlm](https://github.com/intranda/goobi-plugin-export-vlm) |
-| Licence | GPL 2.0 oder neuer |
-| Compatibility | Goobi workflow 2022.10 und neuer |
+| Licence | GPL 2.0 or newer |
+| Compatibility | Goobi workflow 2022.10 or newer |
 | Documentation date | 07.11.2022 |
 
 ## Installation
 
-This plugin is integrated into the workflow in such a way that it is executed manually. For use within a work step of the workflow, it should be configured as shown in the screenshot below.
+This plugin is integrated into the workflow in such a way that it is executed automatically. For use within a workflow step, it should be configured as shown in the screenshot below.
 
-![Integration of the plug-in into the workflow](../.gitbook/assets/intranda_plugin_export_vlm_en.png)
+![Integration of the plugin into the workflow](../.gitbook/assets/intranda_plugin_export_vlm_de.png)
 
-The plugin must first be copied into the following directory:
+The plugin must first be copied to the following directory:
 
 ```text
 /opt/digiverso/goobi/plugins/export/plugin_intranda_export_vlm.jar
@@ -36,20 +36,19 @@ In addition, there is a configuration file that must be located in the following
 ```text
 /opt/digiverso/goobi/config/plugin_intranda_export_vlm.xml
 ```
-## Konfiguration
+## Configuration
 
-The plugin is configured via the configuration file `plugin_intranda_export_vlm.xml` and via the project settings. The configuration can be adjusted during operation. The following is an example configuration file:
+The plugin is configured via the configuration file `plugin_intranda_export_vlm.xml`. The configuration can be adjusted during operation. The following is an example configuration file:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <config_plugin>
-  <!-- The name of the system, e.g. AlmaIDDigital, AlephIDDigital, CatalogIDDigital.  -->
+  <!-- The object identifier, typically CatalogIDDigital  -->
   <!-- MANDATORY -->
   <identifier>CatalogIDDigital</identifier>
 
-  <!-- The name to be used to distinguish between different volumes of one book series. -->
+  <!-- The name to be used to distinguish between different volumes of multi volume works. -->
   <!-- Alternatively one may also choose "TitleDocMain", just assure its difference between volumes. -->
-  <!-- Leave the default value unchanged if the book is a one-volume work. -->
   <!-- MANDATORY -->
   <volume>CurrentNoSorting</volume>
 
@@ -59,18 +58,15 @@ The plugin is configured via the configuration file `plugin_intranda_export_vlm.
   <path>/opt/digiverso/viewer/hotfolder/</path>
 
   <!-- The prefix you would like to use for subfolders for different volumes. -->
-  <!-- Leave the default value unchanged if the book is a one-volume work. -->
   <!-- MANDATORY -->
   <subfolderPrefix>T_34_L_</subfolderPrefix>
 
 </config_plugin>
-
 ```
 
-| Parameter         | Explanation                                                                                                           |
-|:----------------- |:--------------------------------------------------------------------------------------------------------------------- |
-| `identifier`      | This parameter determines which system will be used. The name of the system will be used together with `IDDigital`.   |
-| `volume`          | This parameter determines how to distinguish between different volumes of a multi-volume work.                        |
-| `path`            | This parameter determines the place where the folders for books should be created. An absolute path is expected here. |
-| `subfolderPrefix` | This parameter determines how VLM would work on the exported data further. For example, `T_34` would trigger VLM to recognize and create structure nodes for the type `volume`, and `L` signifies the following of a text. |
-
+| Parameter         | Explanation                                                                                                            |
+|:----------------- |:---------------------------------------------------------------------------------------------------------------------- |
+| `identifier`      | This parameter determines which metadatum is to be used as the folder name. |
+| `volume`          | This parameter controls with which metadata the subdirectories for volumes are to be named. |
+| `path`            | This parameter sets the export path where the data is to be exported. An absolute path is expected. |
+| `subfolderPrefix` | This parameter describes the prefix to be placed in front of each volume of a multi-volume work in the folder name. (Example `T_34_L_`: Here `T_34` stands for the recognition for the creation of a structure node of the type `volume` and the `L` indicates that a text comes after it.). |
