@@ -188,7 +188,6 @@ An element of the type 'mappingSet' has only the attribute 'name'. This allows i
 | :--- | :--- |
 |`metadata`| An element of type `metadata` is associated with the metadatum specified in the attribute `mets` in the METS file |
 | `person`| This is a METS data type. If the type `person` is used, the attribute `mets` should always be set as well. |
-|`personWithGnd` | This is a specialisation of `person`. The plugin assumes that the last column contains the `GND-ID`. Either 2 or 3 columns can be specified. If only 2 columns are specified, the plugin assumes that the first column contains `first name` and `last name`.  |
 |`media`| There must be a file name in the specified column. It is assumed that the file is in the `mediaFolder` -> see `Importset`.|
 |`FileName`| This type must be used to specify the process description file name column. This field type is therefore only useful in a `descriptionMappingSet`.  |
 |`ProcessName` | This type must be used to specify the column with the future process name.  |
