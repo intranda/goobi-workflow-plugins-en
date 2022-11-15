@@ -17,7 +17,7 @@ Using this plugin for Goobi, Goobi operations can be exported to the configured 
 | Source code | [https://github.com/intranda/goobi-plugin-export-vlm](https://github.com/intranda/goobi-plugin-export-vlm) |
 | Licence | GPL 2.0 or newer |
 | Compatibility | Goobi workflow 2022.10 or newer |
-| Documentation date | 10.Nov.2022 |
+| Documentation date | 15.Nov.2022 |
 
 ## Installation
 
@@ -77,6 +77,20 @@ The plugin is configured via the configuration file `plugin_intranda_export_vlm.
 		<!-- The prefix you would like to use for subfolders for different volumes. -->
 		<!-- Leave it blank if no common prefix is needed. -->
 		<subfolderPrefix>T_34_L_</subfolderPrefix>
+		
+		<!-- Choice of application to perform the checksum validation. -->
+		<!-- Absolute path expected. -->
+		<!-- Options are:
+		1.) /usr/bin/sha1sum
+		2.) /usr/bin/sha224sum
+		3.) /usr/bin/sha256sum
+		4.) /usr/bin/sha384sum
+		5.) /usr/bin/sha512sum
+		6.) /usr/bin/shasum
+		7.) /usr/bin/md5sum
+		 -->
+		 <!-- If left blank, then 1.) will be used as the default setting. -->
+		<checksumValidationCommand></checksumValidationCommand>
 	</config>
 	
 	<config>
@@ -88,6 +102,7 @@ The plugin is configured via the configuration file `plugin_intranda_export_vlm.
 		<path>{goobiFolder}../viewer/hotfolder/</path>
 		<!-- No common prefix needed. -->
 		<subfolderPrefix></subfolderPrefix>
+		<checksumValidationCommand>/usr/bin/md5sum</checksumValidationCommand>
 	</config>
 	
 	<config>
@@ -98,6 +113,7 @@ The plugin is configured via the configuration file `plugin_intranda_export_vlm.
 		<path>/opt/digiverso/viewer/hotfolder</path>
 		<!-- No common prefix needed. -->
 		<subfolderPrefix></subfolderPrefix>
+		<checksumValidationCommand>/usr/bin/sha1sum</checksumValidationCommand>
 	</config>
 
 </config_plugin>
@@ -109,3 +125,4 @@ The plugin is configured via the configuration file `plugin_intranda_export_vlm.
 | `volume`          | This parameter controls with which metadata the subdirectories for volumes are to be named. |
 | `path`            | This parameter sets the export path where the data is to be exported. An absolute path is expected. |
 | `subfolderPrefix` | This parameter describes the prefix to be placed in front of each volume of a multi-volume work in the folder name. (Example `T_34_L_`: Here `T_34` stands for the recognition for the creation of a structure node of the type `volume` and the `L` indicates that a text comes after it.). |
+| `checksumValidationCommand` | This parameter determines which application is to be used for the checksum validation. |
