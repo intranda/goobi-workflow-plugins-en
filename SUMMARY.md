@@ -111,6 +111,7 @@
 * [Newspaper Export](export/intranda_export_newspaper.md)
 * [Configurable Export](export/intranda_export_configurable.md)
 * [VLM Export](export/intranda_export_vlm.md)
+* [ZOP Export](export/intranda_export_zop.md)
 
 
 ## Workflow plugins <a id="workflow"></a>
