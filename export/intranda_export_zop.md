@@ -23,7 +23,7 @@ Using this plugin for Goobi, Goobi operations can be exported to the configured 
 
 This plugin is integrated into the workflow in such a way that it is executed automatically. For use within a workflow step, it should be configured as shown in the screenshot below.
 
-![Integration of the plugin into the workflow](../.gitbook/assets/intranda_plugin_export_zop_en.png)
+![Integration of the plugin into the workflow](../.gitbook/assets/intranda_export_zop_en.png)
 
 The plugin must first be copied to the following directory:
 
