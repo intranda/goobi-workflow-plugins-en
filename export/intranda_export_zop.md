@@ -16,8 +16,8 @@ Using this plugin for Goobi, Goobi operations can be exported to the configured 
 | Identifier | intranda_export_zop |
 | Source code | [https://github.com/intranda/goobi-plugin-export-zop](https://github.com/intranda/goobi-plugin-export-zop) |
 | Licence | GPL 2.0 or newer |
-| Compatibility | Goobi workflow 2022.10 or newer |
-| Documentation date | 16.Nov.2022 |
+| Compatibility | Goobi workflow 2022.11.2 or newer |
+| Documentation date | 26.Jan.2022 |
 
 ## Installation
 
@@ -74,6 +74,25 @@ The plugin is configured via the configuration file `plugin_intranda_export_zop.
 		<!-- Absolute path expected. No difference whether you append the directory separator '/' to the end or not. -->
 		<!-- If left blank, then the default setting '/opt/digiverso/viewer/hotfolder' will be used. -->
 		<path></path>
+		
+		<!-- Whether or not use SFTP for the export. -->
+		<!-- If true then use SFTP. If false then perform local export. -->
+		<!-- If left blank, then the default setting 'false' will be used. -->
+		<sftp>true</sftp>
+
+		<!-- User name at the remote host. -->
+		<!-- MANDATORY if sftp is set to be true. -->
+		<username>CHANGE_ME</username>
+
+		<!-- Name of the remote host. -->
+		<!-- MANDATORY if sftp is set to be true. -->
+		<hostname>CHANGE_ME</hostname>
+
+		<!-- Path to the private key file, e.g. ~/.ssh/id_rsa -->
+		<!-- The key is expected to be of PEM format, beginning with `BEGIN RSA PRIVATE KEY`. -->
+		<!-- The OPENSSH format, beginning with `BEGIN OPENSSH PRIVATE KEY`, is not supported yet. -->
+		<!-- MANDATORY if sftp is set to be true. -->
+		<keyPath>CHANGE_ME</keyPath>
 	</config>
 
 	<config>
@@ -83,6 +102,11 @@ The plugin is configured via the configuration file `plugin_intranda_export_zop.
 		<!-- Setting up path using a goobi variable. -->
 		<!-- No difference whether you add a '/' between '}' and '..' or not. -->		
 		<path>{goobiFolder}../viewer/hotfolder/</path>
+		
+		<sftp>false</sftp>
+		<username></username>
+		<hostname></hostname>
+		<keyPath></keyPath>
 	</config>
 
 	<config>
@@ -91,6 +115,12 @@ The plugin is configured via the configuration file `plugin_intranda_export_zop.
 		<volume>CurrentNoSorting</volume>
 		<!-- Setting up path using an ABSOLUTE path. -->
 		<path>/opt/digiverso/viewer/hotfolder</path>
+		
+		<!-- Use the default setting 'false'. -->
+		<sftp></sftp>
+		<username></username>
+		<hostname></hostname>
+		<keyPath></keyPath>
 	</config>
 
 </config_plugin>
@@ -101,3 +131,7 @@ The plugin is configured via the configuration file `plugin_intranda_export_zop.
 | `identifier`      | This parameter determines which metadatum is to be used as the folder name. |
 | `volume`          | This parameter controls with which metadata the subdirectories for volumes are to be named. |
 | `path`            | This parameter sets the export path where the data is to be exported. An absolute path is expected. |
+| `sftp`       | This parameter determines whether to use SFTP for the export process or not. |
+| `username`   | This parameter determines the user name to log into the remote host. |
+| `hostname`   | This parameter determines the name of the remote host or its IP address. |
+| `keyPath`   | This parameter determines the privte key to be used to log into the remote host as `username`@`hostname`. |
