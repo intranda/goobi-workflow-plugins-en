@@ -16,7 +16,7 @@ This documentation describes the installation, configuration and use of a plugin
 | Source code | [https://github.com/intranda/goobi-plugin-step-change-workflow](https://github.com/intranda/goobi-plugin-step-change-workflow) |
 | Licence | GPL 2.0 or newer |
 | Compatibility | Goobi workflow 2021.03 |
-| Documentation date | 22.09.2021 |
+| Documentation date | 07.Feb.2023 |
 
 ## Precondition
 
@@ -78,6 +78,32 @@ The following is a sample configuration with comments:
             <steps type="lock">
                 <title>Automatic export to Islandora</title>
             </steps>
+		
+            <!-- list of steps of priority 0 (standard) -->
+            <priority value="0">
+                <title>Some standard step</title>
+            </priority>
+			
+            <!-- list of steps of priority 1 (priority) -->
+            <priority value="1">
+                <title>Step of priority</title>
+            </priority>
+			
+            <!-- list of steps of priority 2 (high priority) -->
+            <priority value="2">
+                <title>Step of high priority</title>
+            </priority>
+
+            <!-- list of steps of priority 3 (highest priority) -->
+            <priority value="3">
+                <title>Step of highest priority</title>
+                <title>another step of highest priority</title>
+            </priority>
+			
+            <!-- list of steps of priority 10 (correction) -->
+            <priority value="10">
+                <title></title>
+            </priority>
 
             <usergroups step="Image QA">
                 <usergroup>Administration</usergroup>
@@ -199,6 +225,40 @@ Depending on existing properties, the status of defined steps within the workflo
 | :--- | :--- |
 | `type` | Determine which status the workflow steps are to receive. |
 | `title` | Define here the name of the workflow steps that are to be set to the desired status. |
+
+
+### Changing the priority of workflow steps.
+
+Depending on existing properties, the priority of defined steps within the workflow can be changed automatically. Possible choices for priority are Standard `value="0"`, Priority `value="1"`, High priority `value="2"`, Highest priority `value="3"` or Correction `value="10"`.
+
+```xml
+<priority value="0">
+    <title>Some standard step</title>
+</priority>
+
+<priority value="1">
+    <title>Step of priority</title>
+</priority>
+
+<priority value="2">
+    <title>Step of high priority</title>
+</priority>
+
+<priority value="3">
+    <title>Step of highest priority</title>
+    <title>another step of highest priority</title>
+</priority>
+
+<priority value="10">
+    <title></title>
+</priority>
+```
+
+| Parameter | Explanation |
+| :--- | :--- |
+| `value` | Determine which priority the workflow steps are to receive. |
+| `title` | Define here the name of the workflow steps that are to be set to the desired priority. |
+
 
 ### Changing the responsibility of user groups for workflow steps
 
