@@ -16,7 +16,7 @@ This documentation describes the installation, configuration and use of a plugin
 | Source code | [https://github.com/intranda/goobi-plugin-step-change-workflow](https://github.com/intranda/goobi-plugin-step-change-workflow) |
 | Licence | GPL 2.0 or newer |
 | Compatibility | Goobi workflow 2021.03 |
-| Documentation date | 07.Feb.2023 |
+| Documentation date | 14.Feb.2023 |
 
 ## Precondition
 
@@ -79,6 +79,8 @@ The following is a sample configuration with comments:
                 <title>Automatic export to Islandora</title>
             </steps>
 		
+            <!-- If any title under priority is configured with a *, then this priority value will be applied to all steps of this process. -->
+            <!-- If more than two titles are configured with *, then the first match in the order of values 0, 1, 2, 3, 10 will be used. -->
             <!-- list of steps of priority 0 (standard) -->
             <priority value="0">
                 <title>Some standard step</title>
@@ -229,7 +231,7 @@ Depending on existing properties, the status of defined steps within the workflo
 
 ### Changing the priority of workflow steps.
 
-Depending on existing properties, the priority of defined steps within the workflow can be changed automatically. Possible choices for priority are Standard `value="0"`, Priority `value="1"`, High priority `value="2"`, Highest priority `value="3"` or Correction `value="10"`.
+Depending on existing properties, the priority of defined steps within the workflow can be changed automatically. Possible choices for priority are Standard `value="0"`, Priority `value="1"`, High priority `value="2"`, Highest priority `value="3"` or Correction `value="10"`. If any `title` is configured with `*`, then its priority value will be applied to all steps of this process. If more than two `title`s are configured with `*`, then only the value of the first one in the order 0, 1, 2, 3, 10 will be used.
 
 ```xml
 <priority value="0">
@@ -257,7 +259,7 @@ Depending on existing properties, the priority of defined steps within the workf
 | Parameter | Explanation |
 | :--- | :--- |
 | `value` | Determine which priority the workflow steps are to receive. |
-| `title` | Define here the name of the workflow steps that are to be set to the desired priority. |
+| `title` | Define here the name of the workflow steps that are to be set to the desired priority. `*` if the value should be applied to all steps of this process. |
 
 
 ### Changing the responsibility of user groups for workflow steps
