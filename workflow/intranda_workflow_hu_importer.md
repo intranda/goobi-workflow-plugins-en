@@ -68,6 +68,7 @@ The plugin is configured via the configuration file `plugin_intranda_workflow_hu
 		[eadNode]:"ID of the parent node that this Imporset will use"
 		[rowStart]: first row that will be read
 		[rowEnd]: last row that will be read
+		[processTitleMode]: specifies how the process naming shall be handled
 	  -->
     <!-- EAD-> Lochkartei - Grabungsdokumentation Fritz und Ursula Hintze -->
     <importSet name="Lochkarten EAD Subnodes"
@@ -84,6 +85,7 @@ The plugin is configured via the configuration file `plugin_intranda_workflow_hu
 		eadFile="EAD-Store - Sudanarchäologie.xml"
 		eadNode="f91585c7-9cd4-47f1-b9e4-5f26a6744fe3"
 		eadSubnodeType="file"
+		processTitleMode="EAD"
 	/>
 
 	<!-- mapping set -> set of fields that describe a mapping
@@ -94,7 +96,7 @@ The plugin is configured via the configuration file `plugin_intranda_workflow_hu
 		column: column of the xls-file that will be mapped
         [label]; column header
         [mets] mets of metadata element
-        type: person, metadata, media, 
+        type: person, metadata, media, structureType
         [separator]: default value is ;
         [blankBeforeSeparator]: default value is false
         [blankAfterSeparator]: default value is false
@@ -107,6 +109,7 @@ The plugin is configured via the configuration file `plugin_intranda_workflow_hu
 		<field column="I" label="Material" type="metadata" mets="MaterialDescription"/>
 		<field column="J" label="Maße" type="metadata" mets="SizeSourcePrint"/>
 		<field column="L,M" label="Datei recto, Datei verso" type="media"/>
+		<field column="N" label="Strukturtyp" type="structureType" />
 	</mappingSet>
 
 
@@ -135,6 +138,7 @@ The plugin is configured via the configuration file `plugin_intranda_workflow_hu
 </config_plugin>
 ```
 
+
 ### Element types
 The plugin initially knows the following element types.
 
@@ -145,8 +149,8 @@ The plugin initially knows the following element types.
 | `mappingSet`  |  A MappingSet consists of a set of `field` elements.|
 | `field`  | `field` elements are child elements of `mappingSet`. Each element maps a property of the operation to be created or its metadata to a column of the excel document.  |
 
-### Element: importSet
 
+### Element: importSet
 | Attribute | Description |
 | :--- | :--- |
 | `name` | Name of the ImportSets. This will be displayed later within the user interface. |
@@ -164,34 +168,39 @@ The plugin initially knows the following element types.
 |`eadNode`| ID of the parent node below which the new EAD node is to be inserted. The attribute is optional.|
 |`rowStart`| Specification for the first line of the Excel file in the metadataFolder to be evaluated. The attribute is optional.|
 |`rowEnd`| Specification for the last line of the Excel file in the metadataFolder to be evaluated. The attribute is optional. If `0` is specified as the value, the complete file is evaluated. |
-|`useFileNameAsProcessTitle`| If this optional parameter is set to `true`, the file name is used as the process title. |
+|`processTitleMode`| Here you can specify how the processes to be created are to be named. The modes `FILENAME`, `UUID`, `XLSX` and `EAD` are available for selection. By default, the `UUID` mode is used. If the mode `XLSX` is used, it is expected that a `field` of the type `ProcessName` is present in the configuration element `descriptionMappingSet`. In `FILENAME` mode, the file name is used as the process name. In `UUID` and `EAD` mode, a UUID is generated for the process. In the case of `EAD` mode, this UUID is also used as the ID of the node in the EAD tree. |
+|`processPerRow`| If no value has been specified within the configuration of `importSetDescription` and if a process is to be created for each line of the Excel file to be imported, this attribute must be set to `true`. |
 
 
 ### The elements mappingSet and field
 An element of the type 'mappingSet' has only the attribute 'name'. This allows it to be directly addressed for mapping. As sub-elements, any number of elements `field` are allowed.
-
 
 | Attribute | Description |
 | :--- | :--- |
 |`column`| Column(s) to be mapped. The read value is then assigned to the metadatum defined in the `mets` attribute. Alternatively, the contents of the cell can be mapped to a process property such as the process title if `ProcessName` is specified as the type. If several columns are to be mapped into one value, they can simply be listed separated by commas (e.g. `A,B,AA`). The attribute is mandatory. |
 |`label`| The column title can optionally be entered here. It is not evaluated by the plugin and is only used for documentation purposes. |
 |`mets`| This attribute determines to which metadata type the read-in value is to be assigned. All values that are a valid metadata for the corresponding structural element according to the rule set are permissible here. |
-|`type`| This parameter is mandatory and can take the values: `person`, `personWithGnd`, `metadata`, `media`, `FileName` and `ProcessName`. The values are explained in more detail below. |
+|`type`| This parameter is mandatory and can take the values: `person`, `metadata`, `media`, `copy`, `FileName` and `ProcessName`. The values are explained in more detail below. |
 |`gndColumn`| For mappings whose attribute `type` takes the value `metadata` or `person`, the column containing a authority url describing the record in more detail (e.g. https://d-nb.info/gnd/118551310) can be specified here. The authority record is then linked to the metadata. |
 |`separator`| This separator is used when several elements are to be mapped in one value. The default value is `;`.  The attribute is optional.|
 |`blankBeforeSeparator`| If the contents of several columns are to be mapped into one value, it can be determined here whether a space is to be set before the separator. The default value is `false`.|
 |`blankAfterSeparator`| If the contents of several columns are to be mapped into one value, it can be determined here whether a space is to be set after the separator. The default value is `false`. |
 |`ead`| If this parameter is set, the content of the cell is assigned to this EAD metadata type. |
+|`target`| Only supported if the value `copy` was used in the `type` attribute. The destination folder for the files to be copied can be specified here. The Goobi variable system is supported here. |
+|`structureType`| Supported only if `media` has been used as the value in the `type` attribute. If it is desired that the media files are assigned to a specific structural element to be created, the type of the structural element is specified here. |
+
 
 #### Type attribute values
 | Value | Description |
 | :--- | :--- |
 |`metadata`| An element of type `metadata` is associated with the metadatum specified in the attribute `mets` in the METS file |
 | `person`| This is a METS data type. If the type `person` is used, the attribute `mets` should always be set as well. |
-|`media`| There must be a file name in the specified column. It is assumed that the file is in the `mediaFolder` -> see `Importset`.|
+|`media`| There must be one or more file names in the specified column. The separator here is normally `,`. However, it can be set differently if required by using the `separator` attribute. It is assumed that the file is located in the directory `mediaFolder`. For more information, see the configuration of `Importset`. |
+|`copy` | There must be one or more file names in the specified column. The separator here is normally `,`. However, it can be set differently if required by using the `separator` attribute. It is assumed that the file is located in the directory `mediaFolder`. For more information, see the configuration of `Importset`. The files are moved to the folder specified in the `target` attribute. The `target` attribute also supports the Goobi variable system. |
 |`FileName`| This type must be used to specify the process description file name column. This field type is therefore only useful in a `descriptionMappingSet`.  |
 |`ProcessName` | This type must be used to specify the column with the future process name.  |
-|`structureType`| If the type `structureType` is used, the value from the cell is used as the structure type. If the cell is empty, the `sturctureType` specified in the `ImportSet` is used. The type is only used for creating structural elements within an process as sub-elements. |
+|`PublicationType` | If the type `PublicationType` is used, the value from the cell is used as the publication type. If the cell is empty, the `PublicationType` set in the `ImportSet` attribute is used. The type is only used for creating the top structure item of a process.|
+|`structureType`| If the type `structureType` is used, the value from the cell is used as the structure type. If the cell is empty, the `sturctureType` specified in the `ImportSet` attribute is used. The type is only used for creating structure elements of an operation, i.e. its sub-elements. In relation to a book, this corresponds to the title pages and chapters, for example. |
 
 
 ## Use of the plugin
