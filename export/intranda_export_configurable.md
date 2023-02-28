@@ -177,6 +177,7 @@ The `includeFolders` block is located inside each `config` element. It controls 
 | `source` | Here you can define whether and how the source folder should be exported. |
 | `import` | Here you can define whether and how the import folder should be exported. |
 | `export` | Here you can define whether and how the export folder should be exported. |
+| `itm` | Here you can define whether and how the TaskManager folder should be exported. |
 | `validation` | Here you can define whether and how the validation folder should be exported. |
 | `genericFolder` | Here you can define a generic folder that should be exported. |
 | `sourceFolderSuffix` | This sub-element of the `ocr` element is needed when using OCR folders with different suffixes. It specifies which OCR folders should be exported. If not specified, then all OCR folders will be exported. |
