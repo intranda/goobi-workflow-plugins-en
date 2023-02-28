@@ -180,6 +180,7 @@ The `includeFolders` block is located inside each `config` element. It controls 
 | `validation` | Here you can define whether and how the validation folder should be exported. |
 | `genericFolder` | Here you can define a generic folder that should be exported. |
 | `sourceFolderSuffix` | This sub-element of the `ocr` element is needed when using OCR folders with different suffixes. It specifies which OCR folders should be exported. If not specified, then all OCR folders will be exported. |
+| `destinationFolder` | This sub-element of all folder elements except `ocr` allows you to configure which files are to be exported to which folder using its two attributes `name` and `exportFileRegex` |
 
 If the attribute `enabled` is set false, then no export of the corresponding folder will take place.
 
