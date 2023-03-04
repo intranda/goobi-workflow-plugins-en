@@ -156,6 +156,7 @@ The block `<config>` can occur several times for different projects or workflow 
 | `step` | This parameter controls for which workflow steps the block `<config>` should apply. The name of the workflow step is used here. This parameter can occur several times per `<config>` block. |
 | `serviceAddress` | This parameter defines the URL for the DataCite service. In the example above, it is the test server. |
 | `debugMode` | With this parameter, the debug mode can be activated. This allows the XML file with the defined field variables (`doi_in.xml`) as well as the transformed DataCite XML file (`doi_out.xml`) to be stored within the `tmp` directory of Goobi workflow. This allows insight into the actual metadata used or customised for DOI registration. |
+| `draft` | This parameter can be used to specify that the DOIs are reserved as drafts but not yet officially registered. They are therefore not yet publicly accessible and are not yet invoiced by DataCite. |
 | `base` | This parameter defines the DOI base for the facility registered with DataCite. |
 | `viewer` | The parameter `viewer` defines the prefix that each DOI link receives. A DOI "10.80831/goobi-1", for example, receives the hyperlink here "[https://viewer.goobi.io/idresolver?doi=10.80831/goobi-1](https://viewer.goobi.io/idresolver?doi=10.80831/goobi-1)" |
 | `username` | This is the username used for DataCite registration. |
