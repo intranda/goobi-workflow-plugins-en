@@ -1,14 +1,13 @@
 ---
 description: >-
-  With the plugin for the quality control of images, images can be checked in
-  detail for their quality
+  With the plugin for the selection of images, images can be visually selected.
 ---
 
-# Quality control of images
+# Selection of images
 
 ## Introduction
 
-​ This plugin is used to visually check the quality of images. It allows different views of images as thumbnails, in large display or even in full screen mode. In addition, the full text of the image can be displayed and various functions for download or image manipulation can be activated. ​
+​ This plugin is used to visually select images. It allows to select, deselect and sort via Drag & Drop. ​
 
 | Details |  |
 | :--- | :--- |
@@ -27,7 +26,7 @@ description: >-
 /opt/digiverso/goobi/plugins/GUI/plugin_intranda_step_image_selection-GUI.jar
 ```
 
-​ The configuration of the plugin takes place within its configuration file `plugin_intranda_step_imageQA.xml`. It is expected to be located under the following path: ​
+​ The configuration of the plugin takes place within its configuration file `plugin_intranda_step_image_selection.xml`. It is expected to be located under the following path: ​
 
 ```text
 /opt/digiverso/goobi/config/plugin_intranda_step_image_selection.xml
