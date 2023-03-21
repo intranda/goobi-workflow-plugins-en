@@ -16,7 +16,7 @@ description: >-
 | Source code | [https://github.com/intranda/goobi-plugin-step-image-selection](https://github.com/intranda/goobi-plugin-step-image-selection) |
 | Licence | GPL 2.0 or newer |
 | Compatibility | Goobi workflow 2023.03 |
-| Dokumentation date | 21.03.2023 |
+| Dokumentation date | 21.Mar.2023 |
 
 ## Installation
 
