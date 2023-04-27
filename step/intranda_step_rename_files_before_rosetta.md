@@ -1,6 +1,6 @@
 ---
 description: >-
-  This step plugin allows you to automatically adjust file names within Goobi's media and ocr folders and update the METS file
+  This step plugin allows you to automatically adjust file names within Goobi's media and ocr folders and update the METS file of
   processes.
 ---
 
