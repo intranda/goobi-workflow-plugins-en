@@ -52,6 +52,7 @@
 * [Automatic pagination based on file names](step/intranda_step_imagename_analyse.md)
 * [EWIG Long term archiving](step/intranda_step_lza_ewig.md)
 * [Renaming files](step/intranda_step_rename_files.md)
+* [Renaming files before Rosetta](step/intranda_step_rename_files_before_rosetta.md)
 * [Tif-Validation](step/intranda_step_jhove-validation.md)
 * [Metadata validation within a task](step/intranda_step_metadata_yerusha_validation.md)
 * [Automatic enrichment of metadata from own vocabularies](step/intranda_step_metadata_replacement.md)
