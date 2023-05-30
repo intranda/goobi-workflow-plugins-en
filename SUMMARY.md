@@ -85,6 +85,10 @@
 * [Metadata transfer from a directory](step/intranda_step_import_from_folder.md)
 * [DOI Registration](step/intranda_step_doi.md)
 * [File validation](step/intranda_step_file_validation.md)
+* [PDFs Generation](step/intranda_step_createfullpdf.md)
+* [Select Images](step/intranda_step_image_selection.md)
+* [Fetch Images from Metadata](step/intranda_step_fetch_images_from_metadata.md)
+* [OCR to Metadata](step/intranda_step_ocr_to_metadata.md)
 
 ## Opac Plugins <a id="opac"></a>
 * [PICA Import](opac/intranda_opac_pica.md)
@@ -112,6 +116,7 @@
 * [Configurable Export](export/intranda_export_configurable.md)
 * [VLM Export](export/intranda_export_vlm.md)
 * [ZOP Export](export/intranda_export_zop.md)
+* [Selected Images Export](step/intranda_export_selected_images.md)
 
 
 ## Workflow plugins <a id="workflow"></a>
