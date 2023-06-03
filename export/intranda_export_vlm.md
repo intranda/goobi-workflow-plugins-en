@@ -16,7 +16,6 @@ Using this plugin for Goobi, Goobi operations can be exported to the configured 
 | Identifier | intranda_export_vlm |
 | Source code | [https://github.com/intranda/goobi-plugin-export-vlm](https://github.com/intranda/goobi-plugin-export-vlm) |
 | Licence | GPL 2.0 or newer |
-| Compatibility | Goobi workflow 2022.11.2 or newer |
 | Documentation date | 12.Jan.2023 |
 
 ## Installation
