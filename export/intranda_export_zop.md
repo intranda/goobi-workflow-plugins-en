@@ -16,8 +16,7 @@ Using this plugin for Goobi, Goobi operations can be exported to the configured 
 | Identifier | intranda_export_zop |
 | Source code | [https://github.com/intranda/goobi-plugin-export-zop](https://github.com/intranda/goobi-plugin-export-zop) |
 | Licence | GPL 2.0 or newer |
-| Compatibility | Goobi workflow 2022.11.2 or newer |
-| Documentation date | 26.Jan.2022 |
+| Documentation date | 02.06.2023 |
 
 ## Installation
 
