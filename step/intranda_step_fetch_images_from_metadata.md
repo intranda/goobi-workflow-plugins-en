@@ -7,21 +7,25 @@ description: >-
 
 
 ## Introduction
-This step plugin for Goobi workflow automatically fetches images from a configured folder according to the registered names in the mets file. The images can be further exported if configured so.
+This step plugin for Goobi workflow automatically fetches images from a configured folder or from some URLs according to the registered names or registered URLs in the mets file respectively. The images can be further exported if configured so.
 
 | Details |  |
 | :--- | :--- |
 | Identifier | fetch-images-from-metadata |
 | Source code | [https://github.com/intranda/goobi-plugin-step-fetch-images-from-metadata](https://github.com/intranda/goobi-plugin-step-fetch-images-from-metadata) |
 | Licence | GPL 2.0 or newer |
-| Compatibility | Goobi workflow 2023.04 |
-| Documentation date | 30.May.2023 |
+| Compatibility | Goobi workflow 2023.05 |
+| Documentation date | 04.Jun.2023 |
 
 
 ## How the plugin works
-The plugin checks the existing images in the `media` folder of the process to see if the wanted image was already imported, and if not, it will search the configured folder to see if it is there ready to be imported.
-In either case the order of the imported images will be updated and saved into the mets file.
-If any file is named after the pattern `{InventoryNumber} Nr_{SerialNumber}.{suffix}`, then it will be promoted to the first place, while the other images will just be sorted by their names.
+The plugin checks the existing images in the `media` folder of the process to see if the wanted image was already imported, and if not:
+* if `useUrl` is set `true`, the plugin will download the image from the given URL; 
+* if `useUrl` is set `false` or not set at all, the plugin will search the configured folder to see if the image is there ready to be imported.
+
+In either case the order of the imported images will be updated and saved into the mets file:
+* if `useUrl` is set `true`, then the files' order will be the same as their registered order in the mets file;
+* if `useUrl` is set `false` or not set at all, then any file named after the pattern `{InventoryNumber} Nr_{SerialNumber}.{suffix}` will be promoted to the first place, while the other images will just be sorted by their names.
 
 
 ## Installation
@@ -63,6 +67,9 @@ The configuration of the plugin is done via the configuration file `plugin_intra
         <!-- which projects to use for (can be more then one, otherwise use *) -->
         <project>*</project>
         <step>*</step>
+      
+        <!-- true if the images should be fetched from a url, false if the images should be fetched from the following configured folder. DEFAULT false -->
+        <useUrl>false</useUrl>
         
         <!-- metadata containing the file name -->
         <filenameMetadata>SeparatedMaterial</filenameMetadata>
@@ -77,6 +84,7 @@ The configuration of the plugin is done via the configuration file `plugin_intra
 
 | Parameter | Explanation |
 | :--- | :--- |
+| `useUrl` | This parameter determines the source location of the to be fetched images. If set `true` then the images will be fetched from registered URLs in the mets file, if set `false` or not set, then the images will be fetched from the following configured folder. |
 | `project` | This parameter determines the project for which the current block `<config>` is to apply. The name of the project is used here. This parameter can occur several times per `<config>` block. |
 | `step` | This parameter controls for which workflow steps the block `<config>` is to apply. The name of the step is used here. This parameter can occur several times per `<config>` block. |
 | `filenameMetadata` | This parameter defines the metadata which holds the names of the wanted images.  |
