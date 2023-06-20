@@ -12,6 +12,24 @@ After installing the plugin and the associated database, the plugin must also be
         <archive>*</archive>
         <!-- default title for a new node -->
         <nodeDefaultTitle>Document</nodeDefaultTitle>
+
+        <!-- configurations for generating process titles -->
+        
+        <!-- maximum length of the body token that will be used to generate a new process title -->
+        <!-- the specifically set HEAD token and TAIL token will not be affected by this limit -->
+        <!-- if the limit is positively configured, then CAMEL_CASE_LENGTH_LIMITED will be applied upon every body token, otherwise CAMEL_CASE will be applied -->
+        <lengthLimit>0</lengthLimit>
+        <!-- separator string that will be used to combine the tokens -->
+        <separator>_</separator>
+        
+        <!-- use id from parent node instead of id from node -->
+        <useIdFromParent>false</useIdFromParent>
+        
+        <!-- use shelfmark preferably instead of node id if it is available -->
+        <useShelfmarkAsId>false</useShelfmarkAsId>
+        
+        <!-- // configurations for generating process titles // -->
+
         <!-- define metadata fields. All fields are displayed on the UI based on the level and the order within this file.
                 - @name: contains the internal name of the field. The value can be used to translate the field in the messages files. The field must start with a letter and can not contain any white spaces.
                 - @level: metadata level, allowed values are 1-7:
@@ -175,6 +193,16 @@ The two parameters `<basexUrl>` and `<eadExportFolder>` configure the connection
 This is followed by a repeatable `<config>` block. The repeatable element `<archive>` can be used to specify for which files the `<config>` block should apply. If there should be a default block that should apply to all documents, `*` can be used.
 
 The `<processTemplateId>` is used to specify which process template should be used as the basis for the Goobi processes created.
+
+## Configuring the generation of process titles
+
+The parameter `<lengthLimit>` sets up a length limit upon all tokens except the heading one if it is positively configured.
+
+The parameter `<separator>` configures the string that should be used to combine all the tokens to form a process title.
+
+The parameter `<useIdFromParent>` configures whose id should be used for generating the process title. If set `true` then the id will be retrieved from current node's parent node. Otherwise the current node's id will be used.
+
+The parameter `<useShelfmarkAsId>` configures whether or not to use the shelfmark preferably for generating the process title. If set `true` and there is really a shelfmark available in any ancestor node, then the shelfmark will be used. Otherwise the id of the current node or its parent node will be used, depending on the configuration of the parameter `<useIdFromParent>`. 
 
 ## Configuring the metadata fields
 
