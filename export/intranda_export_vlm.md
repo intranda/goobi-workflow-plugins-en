@@ -158,7 +158,7 @@ The plugin is configured via the configuration file `plugin_intranda_export_vlm.
 | `path`            | This parameter sets the export path where the data is to be exported. An absolute path is expected. |
 | `subfolderPrefix` | This parameter describes the prefix to be placed in front of each volume of a multi-volume work in the folder name. (Example `T_34_L_`: Here `T_34` stands for the recognition for the creation of a structure node of the type `volume` and the `L` indicates that a text comes after it.). |
 | `sftp`            | This parameter determines whether to use SFTP for the export process or not. |
-| `useSshKey`        | This parameter determines whether to use a SSH key file for the connection to the SFTP server. |
+| `useSshKey`        | This parameter determines whether to use a SSH key file for the connection to the remote host. |
 | `knownHosts`      | This parameter determines where the file `known_hosts` is. If left empty, then the default setting `{user.home}/.ssh/known_hosts` will be used. Otherwise, it is an absolute path expected here. |
 | `username`        | This parameter determines the user name to log into the remote host. |
 | `hostname`        | This parameter determines the name of the remote host or its IP address. |
