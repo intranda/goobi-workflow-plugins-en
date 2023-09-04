@@ -16,7 +16,7 @@ Using this plugin for Goobi, Goobi operations can be exported to the configured 
 | Identifier | intranda_export_vlm |
 | Source code | [https://github.com/intranda/goobi-plugin-export-vlm](https://github.com/intranda/goobi-plugin-export-vlm) |
 | Licence | GPL 2.0 or newer |
-| Documentation date | 12.Jan.2023 |
+| Documentation date | 04.Sep.2023 |
 
 ## Installation
 
@@ -80,8 +80,11 @@ The plugin is configured via the configuration file `plugin_intranda_export_vlm.
 		<!-- If left blank, then the default setting 'false' will be used. -->
 		<sftp>true</sftp>
 		
+		<!-- If true then use ssh key for connection. If false then use password. OPTIONAL. DEFAULT false. -->
+		<useSshKey>false</useSshKey>
+		
 		<!-- Absolute path to the location of the file 'known_hosts'. -->
-		<!-- If left blank, then the default setting '{user.home}/.ssh/known_hosts' will be used. -->
+		<!-- If left blank, then the default setting '{user.home}/.ssh/known_hosts' will be used. OPTIONAL. -->
 		<knownHosts></knownHosts>
 		
 		<!-- User name at the remote host. -->
@@ -92,8 +95,19 @@ The plugin is configured via the configuration file `plugin_intranda_export_vlm.
 		<!-- MANDATORY if sftp is set to be true. -->
 		<hostname>CHANGE_ME</hostname>
 		
+		<!-- Port of the remote host. -->
+		<!-- OPTIONAL. DEFAULT 22. -->
+		<port>CHANGE_ME</port>
+		
 		<!-- Password to log into the remote host 'username'@'hostname'. -->
+		<!-- MANDATORY if sftp is set to be true, while useSshKey is set to be false or not set. -->
 		<password>CHANGE_ME</password>
+		
+		<!-- Path to the private key file, e.g. ~/.ssh/id_rsa -->
+		<!-- The key is expected to be of PEM format, beginning with `BEGIN RSA PRIVATE KEY`. -->
+		<!-- The OPENSSH format, beginning with `BEGIN OPENSSH PRIVATE KEY`, is not supported yet. -->
+		<!-- MANDATORY if sftp and useSshKey are both set to be true. -->
+		<keyPath>CHANGE_ME</keyPath>
 	</config>
 	
 	<config>
@@ -144,7 +158,10 @@ The plugin is configured via the configuration file `plugin_intranda_export_vlm.
 | `path`            | This parameter sets the export path where the data is to be exported. An absolute path is expected. |
 | `subfolderPrefix` | This parameter describes the prefix to be placed in front of each volume of a multi-volume work in the folder name. (Example `T_34_L_`: Here `T_34` stands for the recognition for the creation of a structure node of the type `volume` and the `L` indicates that a text comes after it.). |
 | `sftp`            | This parameter determines whether to use SFTP for the export process or not. |
+| `useSshKey`        | This parameter determines whether to use a SSH key file for the connection to the SFTP server. |
 | `knownHosts`      | This parameter determines where the file `known_hosts` is. If left empty, then the default setting `{user.home}/.ssh/known_hosts` will be used. Otherwise, it is an absolute path expected here. |
 | `username`        | This parameter determines the user name to log into the remote host. |
 | `hostname`        | This parameter determines the name of the remote host or its IP address. |
+| `port`        | This parameter determines the port number of the remote host that is to be used for the connection. |
 | `password`        | This parameter determines the password to be used to log into the remote host as `username`@`hostname`. |
+| `keyPath`        | This parameter determines the path to the SSH key file to be used to log into the remote host as `username`@`hostname`. |
