@@ -103,6 +103,8 @@ description: >-
 4. New images can be selected via Drag & Drop. If the relative position to drop is captured correctly, then the new selected image will be inserted there, otherwise it will be appended to the end.
 5. If the configured `max` is already reached, or if the to-be-selected image was already selected once, then the selection won't work.
 6. Selected images can be deselected via Drag & Drop. Just drag the image from the right box and drop it to the left one.
-7. Selected images can be reordered via Drag & Drop with one limitation regarding the last image: the last position is not supported yet for drop, therefore if one wants to let some other image to take the last position, one has to do some swaps.
-8. Remember to click the `Save Property` button to save the information of the selected into the process property. Otherwise the changes will be discarded and will not be restored the next time the plugin is started.
-9. One can also exit the plugin without saving the changes by clicking the button next to `Save Property`.
+7. Selected images can be reordered via Drag & Drop.
+8. A selected image can exchange its position with its neighbour, when its upper half or bottom half is clicked. There are two exceptions here that do not entail an exchange: if one clicks on the upper half of the first selected image, then it will be moved to the end of the list of all selected; if one clicks on the bottom half of the last selected image, then it will be promoted to the top of the list.
+9. In order to promote a selected image to the top of the list, one can also right click the mouse on this image.
+10. Remember to click the `Save Property` button to save the information of the selected into the process property. Otherwise the changes will be discarded and will not be restored the next time the plugin is started.
+11. One can also exit the plugin without saving the changes by clicking the button next to `Save Property`.
