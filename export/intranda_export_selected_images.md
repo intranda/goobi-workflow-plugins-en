@@ -9,7 +9,7 @@ description: >-
 
 This documentation describes the installation, configuration and use of the Selected Images Export plugin in Goobi.
 
-Using this plugin for Goobi, Goobi operations can export the selected images and potentially also a generated JSON or/and METS file for these images to the configured location within one step.
+Using this plugin for Goobi, Goobi operations can export the selected images and potentially also METS file for these images to the configured location within one step.
 
 | Details |  |
 | :--- | :--- |
@@ -55,8 +55,6 @@ The plugin is configured via the configuration file `plugin_intranda_export_sele
 	<config>
 		<project>*</project>
 		<step>*</step>
-		<!-- whether or not to export a JSON file, DEFAULT false -->
-		<exportJSON>true</exportJSON>
 		<!-- whether or not to export a METS file, DEFAULT false -->
 		<exportMetsFile>false</exportMetsFile>
 		<!-- whether or not to create subfolders for the results in the target folder, DEFAULT false -->
@@ -76,24 +74,11 @@ The plugin is configured via the configuration file `plugin_intranda_export_sele
 		<scpPassword>CHANGE_ME</scpPassword>
 		<!-- name or ip of the remote host that awaits the export, MANDATORY if useScp is set true -->
 		<scpHostname>CHANGE_ME</scpHostname>
-		
-		<!-- use default settings for the JSON format outside of config blocks -->
-		
-		<!-- values that are needed for the JSON file, MANDATORY if exportJSON is set true --> 
-		<json_values>
-			<!-- id number for the first selected image -->
-			<idStart>15700682</idStart>
-			<!-- step number that should be added to generate the id number for the next selected image, 0 and negative integers are also acceptable -->
-			<idStep>1</idStep>
-			<!-- HERIS ID -->
-			<herisId>37</herisId>
-		</json_values>
 	</config>
         
 	<config>
 		<project>Manuscript_Project</project>
 		<step>*</step>
-		<exportJSON>false</exportJSON>
 		<exportMetsFile>false</exportMetsFile>
 		<createSubfolders>true</createSubfolders>
 		<!-- propertyName can also be set using a goobi variable -->
@@ -107,48 +92,7 @@ The plugin is configured via the configuration file `plugin_intranda_export_sele
 		<scpLogin>CHANGE_ME</scpLogin>
 		<scpPassword>CHANGE_ME</scpPassword>
 		<scpHostname>CHANGE_ME</scpHostname>
-		
-		<!-- uncomment this block if you want to configure JSON format specifically for this project -->
-		<!--
-		<json_format>
-			<images></images>
-			<herisId></herisId>
-			<id></id>
-			<title></title>
-			<altText></altText>
-			<symbolImage></symbolImage>
-			<mediaType></mediaType>
-			<creationDate></creationDate>
-			<copyRightBDA></copyRightBDA>
-			<fileInformation></fileInformation>
-			<publishable></publishable>
-			<migratedInformation></migratedInformation>
-		</json_format>
-		-->
-        
-		<!-- values that are needed for the JSON file --> 
-		<json_values>
-			<idStart>15700682</idStart>
-			<idStep>1</idStep>
-			<herisId>37</herisId>
-		</json_values>
 	</config>
-    
-	<!-- configure here the default settings for the JSON format -->
-	<json_format>
-		<images>Bilder</images>
-		<herisId>HERIS-ID</herisId>
-		<id>Id</id>
-		<title>Titel</title>
-		<altText>alt_text</altText>
-		<symbolImage>Symbolbild</symbolImage>
-		<mediaType>media_type</mediaType>
-		<creationDate>Aufnahmedatum</creationDate>
-		<copyRightBDA>Copyright BDA</copyRightBDA>
-		<fileInformation>Dateiinformation</fileInformation>
-		<publishable>publikationsfähig</publishable>
-		<migratedInformation>Migrierte Information</migratedInformation>
-	</json_format>
 
 </config_plugin>
 ```
