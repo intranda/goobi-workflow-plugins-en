@@ -54,7 +54,7 @@ Configurations are supposed to be done in the configuration file, which may look
 					- Options are YEAR | MONTH | DAY | DATE | DATEFINE, where cases only matters for the references in @value string.
 					- The only difference between DATE and DATEFINE are their representations of the date: DATE keeps the original format "yyyy-mm-dd" while DATEFINE takes a new one "dd. MMM. yyyy".
 					- The value of an unknown variable will be its name.
-					- For eample,
+					- For example,
 						- IF one defines a @var by "year", then it should be referenced in @value using "_year_"
 						- IF one defines a @var by "YEAR", then it should be referenced in @value using "_YEAR_", although YEAR and year are actually the same option
 						- IF one defines a @var by "unknown", then any occurrences of "_unknown_" will be replaced by "unknown"
