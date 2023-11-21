@@ -51,7 +51,8 @@ Configurations are supposed to be done in the configuration file, which may look
 		- @value: metadata value template, which may contain a variable defined by @var wrapped with _ from both sides
 		- @type: metadata type
 		- @var: variable that is ready to be used in @value. To use it, wrap it with _ from both sides and put it into the @value string. OPTIONAL.
-					- Options are YEAR | MONTH | DAY | DATE, where cases only matters for the references in @value string.
+					- Options are YEAR | MONTH | DAY | DATE | DATEFINE, where cases only matters for the references in @value string.
+					- The only difference between DATE and DATEFINE are their representations of the date: DATE keeps the original format "yyyy-mm-dd" while DATEFINE takes a new one "dd. MMM. yyyy".
 					- The value of an unknown variable will be its name.
 					- For eample,
 						- IF one defines a @var by "year", then it should be referenced in @value using "_year_"
