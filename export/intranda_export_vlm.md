@@ -56,9 +56,15 @@ The plugin is configured via the configuration file `plugin_intranda_export_vlm.
 		<!-- MANDATORY -->
 		<project>Archive_Project</project>
 		
-		<!-- The field to use as identifier e.g. CatalogIDDigital.  -->
+		<!-- The name of the system, e.g. AlmaIDDigital, AlephIDDigital, CatalogIDDigital.  -->
+		<!-- This tag has the following two OPTIONAL attributes:
+				- @anchorSplitter: if configured with a non-blank string, then it will be used to split the metadata value into two parts, where its head will be used 
+						as the main folder's name, while its tail will be used as part of the volume's name. DEFAULT value is an empty string, i.e. no splitting expected.
+				- @volumeFormat: only works when @anchorSplitter is configured with a non-blank string.
+						It is used as the left padding if the volume's name is shorter than it. DEFAULT value is an empty string, i.e. no padding needed.
+		 -->
 		<!-- MANDATORY -->
-		<identifier>CatalogIDDigital</identifier>
+		<identifier anchorSplitter="" volumeFormat="000">CatalogIDDigital</identifier>
 	    
 		<!-- The name to be used to distinguish between different volumes of one book series. -->
 		<!-- Alternatively one may also choose "TitleDocMain", just assure its difference between volumes. -->
@@ -153,7 +159,7 @@ The plugin is configured via the configuration file `plugin_intranda_export_vlm.
 
 | Parameter         | Explanation                                                                                                            |
 |:----------------- |:---------------------------------------------------------------------------------------------------------------------- |
-| `identifier`      | This parameter determines which metadatum is to be used as the folder name. |
+| `identifier`      | This parameter determines which metadatum is to be used as the folder name. It has two optional attributes `anchorSplitter` and `volumeFormat` which will be used for the case when the value of this `identifier` itself contains both main folder's name as well as volume's name, separated by this configured `@anchorSplitter`. `@volumeFormat` is used in this case as the left padding for the volume's name. |
 | `volume`          | This parameter controls with which metadata the subdirectories for volumes are to be named. |
 | `path`            | This parameter sets the export path where the data is to be exported. An absolute path is expected. |
 | `subfolderPrefix` | This parameter describes the prefix to be placed in front of each volume of a multi-volume work in the folder name. (Example `T_34_L_`: Here `T_34` stands for the recognition for the creation of a structure node of the type `volume` and the `L` indicates that a text comes after it.). |
