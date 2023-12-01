@@ -1,0 +1,105 @@
+---
+description: >-
+  This step-plugin allows you to download several files from URLs defined by process properties, and to verify them using checksum codes also defined by process properties. In the end there can be several responses delivered to different systems or locally logged into the journal.
+---
+
+# Downloading and Verification of Files
+
+## Introduction
+
+This plugin reads in URL and Hash values from several configured process properties, download files from the URLs and compares them with their Hashcodes accordingly. In the end there can be possibly several responses prepared and sent, according to the final status between `success` and `error`. These responses can be delivered to another system via REST, or can be logged locally into the journal.
+
+## Overview
+
+| Details |  |
+| :--- | :--- |
+| Identifier | intranda\_step\_download\_and\_verify\_assets |
+| Source code | [https://gitea.intranda.com/goobi-workflow/goobi-plugin-step-download-and-verify-assets](https://github.com/intranda/goobi-plugin-step-download-and-verify-assets) |
+| Licence | GPL 2.0 or newer |
+| Compatibility | Goobi workflow 23.10 |
+| Dokumentation date | 01.Dec.2023 |
+
+## Installation
+
+For the installation of this plugin the following file is needed:
+
+```bash
+/opt/digiverso/goobi/plugins/step/plugin_intranda_step_download_and_verify_assets.jar
+```
+
+The configuration file is usually located here:
+
+```bash
+/opt/digiverso/goobi/config/plugin_intranda_step_download_and_verify_assets.xml
+```
+
+## Configuration
+
+The content of this configuration file looks like following:
+
+```xml
+<config_plugin>
+    <!--
+        order of configuration is:
+          1.) project name and step name matches
+          2.) step name matches and project is *
+          3.) project name matches and step name is *
+          4.) project name and step name are *
+    -->
+
+    <config>
+        <!-- which projects to use for (can be more then one, otherwise use *) -->
+        <project>*</project>
+        <step>*</step>
+
+        <!-- Configure here how many times shall be maximally tried before reporting final results. OPTIONAL. DEFAULT 1. -->
+        <maxTryTimes>3</maxTryTimes>
+
+        <!-- This tag accepts the following three attributes:
+            - @urlProperty: name of the property that holds the URL of the file
+            - @hashProperty: name of the property that holds the checksum of the file
+            - @folder: configured name of the target folder that shall be used to download the file. OPTIONAL. DEFAULT master.
+        -->
+        <fileNameProperty urlProperty="DraftUri" hashProperty="DraftHash" folder="master" />
+        <fileNameProperty urlProperty="AssetUriSplitted" hashProperty="AssetHashSplitted" folder="master" />
+
+        <!-- A response tag accepts four attributes:
+            - @type: success | error. Determines by which cases this configured response shall be activated.
+            - @method: OPTIONAL. If not configured or configured blankly, then the response will be performed via journal logs. Non-blank configuration options are: put | post | patch.
+            - @url: URL to the target system expecting this response. MANDATORY if @method is not blank..
+            - @message: Message that shall be logged into journal. ONLY needed when @method is blank.
+            - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+            One can also define a JSON string inside a pair of these tags, which will be used as JSON body to shoot a REST request.
+        -->
+        <!-- Usage of Goobi variables in @url as well as @message is allowed. -->
+        <response type="success" method="put" url="URL_ZU_BACH/upload_successful/{meta.ThesisId}" />
+
+        <!-- For error cases there is no need for a response back to BACH, but an error message should be logged into journal. -->
+        <!-- Log ERROR_MESSAGE into journal as a signal of errors -->
+        <response type="error" message="ERROR_MESSAGE" />
+
+        <!-- Example for REST calls with json body -->
+        <!--
+        <response type="success" method="put" url="CHANGE_ME">
+        {
+           "id": 0,
+           "name": "string",
+           "value": "string"
+        }
+        </response>
+        -->
+
+    </config>
+
+</config_plugin>
+```
+
+The block `<config>` can be repeatedly defined for different projects or steps, in order to be able to run different actions inside different workflows.
+
+| Value | Description |
+| :--- | :--- |
+| `project` | This parameter determines the project for which the current block `<config>` is to apply. The name of the project is used here. This parameter can occur several times per `<config>` block. |
+| `step` | This parameter controls for which work steps the block `<config>` should apply. The name of the workflow step is used here. This parameter can occur several times per `<config>` block. |
+| `maxTryTimes` | This parameter determines how many tries can be repeated before final responses should be given. OPTIONAL. DEFAULT 1.  |
+| `fileNameProperty` | This parameter controls the part of the downloading and verification of files. It accepts three attributes. `@urlProperty` defines the name of the process property that contains the URL of the file. `@hashProperty` defines the name of the process property that contains the checksum codes of the file. `@folder` is OPTONAL with DEFAULT value `master`, and it controls where to save the downloaded files. |
+| `response` | This OPTIONAL parameter can be used to give several responses after downloading and verifications of all files. It accepts four attributes and possibly also a JSON-text for REST responses that requires a JSON-Body. More details and examples can be found in the comments in the configuration file above. |
