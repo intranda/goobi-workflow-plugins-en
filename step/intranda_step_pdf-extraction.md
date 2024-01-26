@@ -38,29 +38,7 @@ The configuration of the plugin is expected under the following path:
 /opt/digiverso/goobi/config/plugin_intranda_step_pdf-extraction.xml
 ```
 
-An example configuration could look like this:
-
-```markup
-<config>
-    <docType>
-        <parent>Chapter</parent>
-        <children>Chapter</children>
-    </docType>
-
-    <images>
-        <resolution>300</resolution>
-        <format>tif</format>
-    </images>
-
-    <properties>
-        <fulltext>
-            <name>OCRDone</name>
-            <value exists="true">YES</value>
-            <value exists="false">NO</value>
-        </fulltext>
-    </properties>
-</config>
-```
+An example configuration can be found here: [https://github.com/intranda/goobi-plugin-step-pdf-extraction/blob/master/plugin/plugin\_intranda\_step\_pdf-extraction.xml](https://github.com/intranda/goobi-plugin-step-pdf-extraction/blob/master/plugin/plugin_intranda_step_pdf-extraction.xml)
 
 `docType` controls which structure types the entries extracted from the PDF table of contents receive in the METS file. The parent element is the main element in which all other table of contents entries land. If it is omitted, all entries are entered directly into the main element of the METS file.
 
