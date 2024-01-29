@@ -50,6 +50,15 @@ As an example, the content of this configuration file looks like this:
     </config>
 
     <config>
+        <project>Archive_Project</project>
+        <step>*</step>
+        <!-- use default settings -->
+        <folder>*</folder>
+        <namepart type="originalfilename" />
+        <namepart type="static">_ARCHIVE</namepart>
+    </config>
+
+    <config>
         <project>*</project>
         <step>*</step>
         <startValue>1</startValue>
@@ -70,11 +79,13 @@ The configuration of the plugin is done within the already mentioned configurati
 | `project` | This parameter determines the project for which the current block `<config>` is to apply. The name of the project is used here. This parameter can occur several times per `<config>` block. |
 | `step` | This parameter controls for which work steps the block `<config>` should apply. The name of the workflow step is used here. This parameter can occur several times per `<config>` block. |
 | `startValue` | This value controls with which start value the incrementing `counter` should start. |
-| `namepart` | This parameter, which can also be used several times, controls the generation of the file names. It can contain static elements \(`static`\), use variables from Goobi \(`variable`\) and generate a counter. The number of digits defined is crucial for generating the counter \(`counter`\). For example, the value `00000` would generate five-digit numbers with any leading zeros. The components of the file name defined in this way are concatenated together for naming purposes and then supplemented by the actual file extension to name the file. |
+| `namepart` | This parameter, which can also be used several times, controls the generation of the file names. It can contain static elements \(`static`\), use the original file name \(`originalfilename`\), use variables from Goobi \(`variable`\) and generate a counter. The `originalfilename` is the original filename of the file before this plugin is executed for the first time. The number of digits defined is crucial for generating the counter \(`counter`\). For example, the value `00000` would generate five-digit numbers with any leading zeros. The components of the file name defined in this way are concatenated together for naming purposes and then supplemented by the actual file extension to name the file. |
 
 ## Mode of operation
 
 The plugin is usually executed fully automatically within the workflow. It first determines whether there is a block within the configuration file that has been configured for the current workflow with regard to project name and work step. If this is the case, the individual elements `<namepart>` are evaluated, assigned the appropriate values for the counter and variables from Goobi workflow and then linked together. The file names created in this way are now applied to all the relevant directories in the Goobi process and are supplemented with the correct file name extensions \(e.g. `.tif`\).
+
+To ensure correct renaming, that is based on the original file name, the plugin saves the original filename for every file in a process property called `plugin_intranda_step_rename_files`. This property ensures, that multiple executions of this plugin, with possible changes in the configuration, will still resolve the `originalfilename` namepart correctly.
 
 If a file is found within the file that contains `barcode` within the file name, it will also be named according to the naming scheme. However, the value `0` is set as counter here.
 
