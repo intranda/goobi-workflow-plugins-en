@@ -13,8 +13,7 @@ This documentation describes the installation, configuration and use of the plug
 | Identifier | intranda\_opac\_xml |
 | Source code | [https://github.com/intranda/goobi-plugin-opac-generic-xml](https://github.com/intranda/goobi-plugin-opac-generic-xml) |
 | Licence | GPL 2.0 or newer |
-| Compatibility | Goobi workflow 2019.11 |
-| Documentation date | 11.11.2019 |
+| Documentation date | 02.06.2023 |
 
 ## Installation
 
@@ -50,7 +49,7 @@ In the file `goobi_opac.xml` the interface to the desired catalogue system must 
 
 ```markup
 <catalogue title="EAD">
-    <config description="EAD database" address="https://example.com/opac?id="
+    <config description="EAD database" address="https://example.com/opac?id={pv.id}"
     port="443" database="x" iktlist="x" ucnf="x" opacType="intranda_opac_xml" />
     <searchFields>
         <searchField label="Identifier" value="12"/>
@@ -61,6 +60,10 @@ In the file `goobi_opac.xml` the interface to the desired catalogue system must 
 The attribute `title` contains the name under which the catalog can be selected in the user interface, `address` the URL to the API endpoint and `opacType` the plugin to be used. In this case the entry must be `intranda_opac_xml`.
 
 Only one search query can be configured. Therefore the other search options can be hidden. This happens within the block `<searchFields>`. In the configuration described above, only one identifier can be searched for.
+
+The value of the `address`- attribute must contain the string {pv-id}, so that the plugin inserts the search value at the right place. E.g. to filter in a hotfolder based on the file name e.g. `/import/hotfolder/{pv.id}.xml`.
+
+The plugin can also read files from the file system if needed. For example from a hotfolder where files are stored. To do this, the following must be observed. The string in `address` must begin with `file://` and the file must have a unique name that corresponds to the process title, for example.
 
 The contents of the XML record are mapped to Goobi metadata in the `plugin_intranda_opac_xml.xml` file:
 
@@ -119,10 +122,11 @@ In the case of `String`, manipulations such as concat, substring can also be use
 
 ## Usage
 
-When an identifier is searched for in Goobi, a request is made to the configured URL in the background:
+When an identifier is searched for in Goobi, a request is made to the configured URL or to the filesystem in the background:
 
 ```text
-https://example.com/opac?id=[VALUE]
+https://example.com/opac?id={pv.id}
+file:///import/hotfolder/{pv.id}.xml
 ```
 
 If a valid record is found here, it is searched for the field in which the document type is to be found. If the query is not defined, the document type is read from the configuration file instead. The required structure element is then created with the determined type.
