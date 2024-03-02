@@ -15,8 +15,7 @@ Using this export plugin for Goobi, Goobi operations can be exported to multiple
 | :--- | :--- |
 | Identifier | intranda_export_configurable |
 | Source code | [https://github.com/intranda/goobi-plugin-export-configurable](https://github.com/intranda/goobi-plugin-export-configurable) |
-| Licence | GPL 2.0 oder neuer |
-| Compatibility | Goobi workflow 2022.03 und neuer |
+| Licence | GPL 2.0 or newer |
 | Documentation date | 28.Feb.2023 |
 
 ## Installation
@@ -179,11 +178,11 @@ The `includeFolders` block is located inside each `config` element. It controls 
 | `export` | Here you can define whether and how the export folder should be exported. |
 | `itm` | Here you can define whether and how the TaskManager folder should be exported. |
 | `validation` | Here you can define whether and how the validation folder should be exported. |
-| `genericFolder` | Here you can define a generic folder that should be exported. |
+| `genericFolder` | Here you can define a folder free configurable that should be exported. |
 | `sourceFolderSuffix` | This sub-element of the `ocr` element is needed when using OCR folders with different suffixes. It specifies which OCR folders should be exported. If not specified, then all OCR folders will be exported. |
 | `destinationFolder` | This sub-element of all folder elements except `ocr` allows you to configure which files are to be exported to which folder using its two attributes `name` and `exportFileRegex` |
 
-If the attribute `enabled` is set false, then no export of the corresponding folder will take place.
+If the attribute `enabled` is set to `false`, then no export of the corresponding folder will take place.
 
 The configuration of the destination folder can be done within the project settings in the Goobi workflow user interface. If the checkbox for `Create task folder` is set there, the task will be stored in a subfolder with its title as name in the target folder.
 
