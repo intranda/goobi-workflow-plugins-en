@@ -15,7 +15,6 @@ This plugin allows the editing of configurable properties and metadata within th
 | Identifier | intranda\_step\_metadata\_edition |
 | Source code | [https://github.com/intranda/goobi-plugin-step-metadata-edition](https://github.com/intranda/goobi-plugin-step-metadata-edition) |
 | Licence | GPL 2.0 or newer |
-| Compatibility | Goobi workflow 2021.06 |
 | Documentation date | 19.07.2021 |
 
 ## Installation
@@ -46,8 +45,10 @@ The configuration of the plugin is structured as follows:
         <!-- size of the thumbnail images -->
         <thumbnailsize>200</thumbnailsize>
 
-        <!-- define if you want to see empty fields for read only values -->
-        <hideEmptyFields>true</hideEmptyFields>
+         <!--  If true and the attribute onlyEmptyReadOnlyFields is set to false all empty fields in the plugin are hidden.
+              If the attribute onlyEmptyReadOnlyFields is true also, only these ones are not rendered.
+              The default value of onlyEmptyReadOnlyFields is true -->
+        <hideEmptyFields onlyEmptyReadOnlyFields="true">true</hideEmptyFields>
 
         <!-- which image folder should be used? Possible values are master/media, default is media -->
         <imageFolder>media</imageFolder>
@@ -136,7 +137,7 @@ The block `<config>` can occur repeatedly for different projects or workflow ste
 | `project` | This parameter determines for which project the current block `<config>` should apply. The name of the project is used here. This parameter can occur several times per `<config>` block. |
 | `step` | This parameter controls for which workflow steps the block `<config>` should apply. The name of the workflow step is used here. This parameter can occur several times per `<config>` block. |
 | `thumbnailsize` | This parameter determines the size of the thumbnails to be displayed for determining the representative. |
-| `hideEmptyFields` | This can be used to specify that fields that have no content should nevertheless be displayed empty. |
+| `hideEmptyFields` | This element can have the values `true` and `false`. The element also has the attribute `onlyEmptyReadOnlyFields`. If the element has the value `true`, empty metadata fields are hidden. The attribute `onlyEmptyReadOnlyFields` can also be used to control whether only empty `ReadOnly` fields (`true`) or all empty fields (`false`) should be hidden. The default value of `onlyEmptyReadOnlyFields` is `true`. |
 | `imageFolder` | This parameter determines from which directory the images are to be used for display. Common values here are, for example, `master` or `media`. |
 | `preselectFields` | This parameter can be used to specify whether the metadata found within the process search of this plugin should already be preselected so that a simple transfer of the metadata can take place. |
 | `showImages` | This parameter determines whether the image area for selecting the representative is to be displayed. |
@@ -194,4 +195,3 @@ Within the dialogue with the processes found, it is now possible to select which
 A click on one of the displayed thumbnails allows the representative to be set.
 
 Please note that the edits are only saved when the button provided is clicked.
-
