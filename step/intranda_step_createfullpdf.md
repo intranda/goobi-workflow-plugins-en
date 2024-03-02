@@ -15,12 +15,11 @@ This documentation describes how to install and configure this plugin to create 
 | Identifier | intranda\_step\_createfullpdf |
 | Source code | [https://github.com/intranda/goobi-plugin-step-createfullpdf](https://github.com/intranda/goobi-plugin-step-createfullpdf) |
 | Licence | GPL 2.0 or newer |
-| Compatibility | Goobi Workflow 23.03.2 and newer |
-| Documentation date | 23.Mar.2023 |
+| Documentation date | 23.03.2023 |
 
 ## Precondition
 
-The precondition for using the plugin is the use of Goobi workflow in version 23.03.2 or higher, the correct installation and configuration of the plugin as well as the correct integration of the plugin into the desired workflow steps.
+The precondition for using the plugin is the correct installation and configuration of the plugin as well as the correct integration of the plugin into the desired workflow steps.
 
 
 ## Installation and Configuration
@@ -85,15 +84,14 @@ An example configuration could look like this:
 
 | Value | Description |
 | :--- | :--- |
-| `imageFolder` | This parameter expects the name of the image folder. Possible values are `media` and `master`, anything else will be regarded just as `media`. |
-| `pagePdf` | This parameter determines the order of PDF files' generation. If set true, then single files are generated before the full PDF file; if set false then the other way around. |
-| `fullPdf` | This parameter has two attributes. The first one `enabled` is MANDATORY, which determines whether or not to generate a full PDF file. The second one `pdfConfigVariant` is OPTIONAL, which controls which config variant shall be used, and if not set, then `default` will be used. |
-| `exportPath` | This OPTIONAL parameter can be used to set up another path to export the PDF files. An ABSOLUTE path is expected if in use. If not set, then the default settings will be used. |
+| `imageFolder` | This parameter expects the name of the image folder. Possible values are `media` and `master`, anything else will be regarded as `media`. |
+| `pagePdf` | This parameter determines the order of PDF files' generation. If set `true`, then single files are generated before the full PDF file; if set `false` then the other way around. |
+| `fullPdf` | This parameter has two attributes. The first one `enabled` is mandatory and determines whether or not to generate a full PDF file. The second one `pdfConfigVariant` is optional and controls which config variant shall be used, and if not set, then `default` will be used. |
+| `exportPath` | This optional parameter can be used to set up another path to export the PDF files. An absolute path is expected if in use. If not set, then the default settings will be used. |
 
 
 ## Settings in Goobi
 
-After the plugin has been installed, it can be configured in the user interface in a workflow step.
+Once the plugin has been installed correctly, it can be configured in the user interface for use within the workflow for the desired work step. To do this, the value `` must be selected as the plugin and the filling should be set as automatic.
 
-![Configuration of the step in Goobi workflow](../.gitbook/assets/intranda_step_createfullpdf.png)
-
+![Auswahl des Plugins innerhalb der Workflowkonfiguration](../.gitbook/assets/intranda_step_createfullpdf_en.png)
