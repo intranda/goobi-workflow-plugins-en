@@ -15,7 +15,6 @@ This documentation describes the installation, configuration and use of a plugin
 | Identifier | intranda\_step\_changeWorkflow |
 | Source code | [https://github.com/intranda/goobi-plugin-step-change-workflow](https://github.com/intranda/goobi-plugin-step-change-workflow) |
 | Licence | GPL 2.0 or newer |
-| Compatibility | Goobi workflow 2021.03 |
 | Documentation date | 14.Feb.2023 |
 
 ## Precondition
@@ -259,7 +258,7 @@ Depending on existing properties, the priority of defined steps within the workf
 | Parameter | Explanation |
 | :--- | :--- |
 | `value` | Determine which priority the workflow steps are to receive. |
-| `title` | Define here the name of the workflow steps that are to be set to the desired priority. `*` if the value should be applied to all steps of this process. |
+| `title` | Define here the name of the workflow steps that are to be set to the desired priority. Use `*` if the value should be applied to all steps of this process. |
 
 
 ### Changing the responsibility of user groups for workflow steps
