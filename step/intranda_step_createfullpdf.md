@@ -4,7 +4,8 @@ description: >-
   creating PDF files out of images.
 ---
 
-# Create PDF files
+# Generation of PDF files
+
 
 ## Introduction
 

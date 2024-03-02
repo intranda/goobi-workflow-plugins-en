@@ -88,6 +88,7 @@
 * [File validation](step/intranda_step_file_validation.md)
 * [Renaming processes](step/intranda_step_rename_process.md)
 * [Selection of images](step/intranda_step_image_selection.md)
+* [Generation of PDF files](step/intranda_step_createfullpdf.md)
 
 
 ## Opac Plugins <a id="opac"></a>
