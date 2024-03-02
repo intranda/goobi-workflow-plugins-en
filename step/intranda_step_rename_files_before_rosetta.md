@@ -1,10 +1,9 @@
 ---
 description: >-
-  This step plugin allows you to automatically adjust file names within Goobi's media and ocr folders and update the METS file of
-  processes.
+  This step plugin allows you to automatically adjust file names within Goobi's media and OCR folders and update the METS file of processes before the ingest into Rosetta is happening.
 ---
 
-# Renaming files before Rosetta
+# Renaming files before the Rosetta ingest
 
 ## Introduction
 
@@ -17,8 +16,7 @@ This plugin is used to conditionally rename files within the media and ocr folde
 | Identifier | intranda\_step\_rename\_files\_before\_rosetta |
 | Source code | [https://github.com/intranda/goobi-plugin-step-rename-files-before-rosetta](https://github.com/intranda/goobi-plugin-step-rename-files-before-rosetta) |
 | Licence | GPL 2.0 or newer |
-| Compatibility | Goobi workflow 23.03 |
-| Dokumentation date | 27.Apr.2023 |
+| Dokumentation date | 27.04.2023 |
 
 ## Installation
 
@@ -36,7 +34,7 @@ To configure how the plugin should behave, different values can be adjusted in t
 
 As an example, the content of this configuration file looks like this:
 
-```markup
+```xml
 <config_plugin>
     <!--
         order of configuration is:
@@ -61,23 +59,23 @@ As an example, the content of this configuration file looks like this:
 
 ## General configuration of the plugin
 
-The configuration of the plugin is done within the already mentioned configuration file. There you can configure various parameters. The block `<config>` can occur repeatedly for different projects or work steps in order to be able to perform different actions within different workflows. The elements `<namepart>` are decisive for the generation of the file names.
+The configuration of the plugin is done within the already mentioned configuration file. There you can configure various parameters. The block `<config>` can occur repeatedly for different projects or work steps in order to be able to perform different actions within different workflows. The elements `<format>` are decisive for the generation of the file names.
 
 | Value | Description |
 | :--- | :--- |
 | `project` | This parameter determines the project for which the current block `<config>` is to apply. The name of the project is used here. This parameter can occur several times per `<config>` block. |
 | `step` | This parameter controls for which work steps the block `<config>` should apply. The name of the workflow step is used here. This parameter can occur several times per `<config>` block. |
-| `format`  | This parameter allows the user to set the number of digits that should be used to format file's order among all files as part of its new name. If this parameter is not set or absent, then `0000` will be used by default. |
+| `format` | This parameter allows the user to set the number of digits that should be used to format file's order among all files as part of its new name. If this parameter is not set or absent, then `0000` will be used by default. |
 
 ## Mode of operation
 
 The plugin is usually executed fully automatically within the workflow: 
 
-It first determines whether there is a block within the configuration file that has been configured for the current workflow with regard to project name and work step. 
+It first determines whether there is a block within the configuration file that has been configured for the current workflow with regard to project name and workflow step. 
 
 If this is the case, the plugin will rename all files from the relavant folders using the formula `{tail of process_title after the first _ }_{formatted order of the file in this folder}`. 
 
-After that it will update the METS file to assure that Workflow and Rosetta are still able to work with the updated information.
+After that it will update the METS file to assure that Goobi workflow and Rosetta are still able to work with the updated information.
 
 The plugin considers the files within the following subdirectories for naming:
 
@@ -91,4 +89,4 @@ The plugin considers the files within the following subdirectories for naming:
 
 This plugin is integrated into the workflow in such a way that it is executed automatically. Manual interaction with the plugin is not necessary. For use within a step of the workflow it should be configured as shown in the following screenshot.
 
-![Integration of the plugin into the workflow](../.gitbook/assets/intranda_step_rename_files_before_rosetta.png)
+![Integration of the plugin into the workflow](../.gitbook/assets/intranda_step_rename_files_before_rosetta_en.png)
