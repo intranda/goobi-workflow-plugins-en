@@ -15,7 +15,6 @@ This documentation describes how to install, configure and use a plugin to extra
 | Identifier | intranda\_step\_pdf-extraction |
 | Source code | [https://github.com/intranda/goobi-plugin-step-pdf-extraction](https://github.com/intranda/goobi-plugin-step-pdf-extraction) |
 | Licence | GPL 2.0 or newer |
-| Compatibility | Goobi Workflow 3.0.6 and newer |
 | Documentation date | 09.04.2019 |
 
 ## Precondition
@@ -40,33 +39,101 @@ The configuration of the plugin is expected under the following path:
 
 An example configuration could look like this:
 
-```markup
-<config>
-    <docType>
-        <parent>Chapter</parent>
-        <children>Chapter</children>
-    </docType>
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<configs>
 
-    <images>
-        <resolution>300</resolution>
-        <format>tif</format>
-    </images>
+	<config>
+		<!--
+        order of configuration is:
+        1.) project name and step name matches
+        2.) step name matches and project is *
+        3.) project name matches and step name is *
+        4.) project name and step name are *
+        -->
+		<project>*</project>
+		<step>*</step>
 
-    <properties>
-        <fulltext>
-            <name>OCRDone</name>
-            <value exists="true">YES</value>
-            <value exists="false">NO</value>
-        </fulltext>
-    </properties>
-</config>
+		<validation>
+			<failOnMissingPDF>true</failOnMissingPDF>
+		</validation>
+
+		<overwriteExistingData>true</overwriteExistingData>
+
+		<docType>
+			<parent>Chapter</parent>
+			<children>Chapter</children>
+		</docType>
+
+		<mets>
+			<write>true</write>
+			<failOnError>false</failOnError>
+		</mets>
+
+		<images>
+			<write>true</write>
+			<failOnError>true</failOnError>
+			<resolution>300</resolution>
+			<format>tif</format>
+			<generator>pdftoppm</generator>
+			<generatorParameter>-cropbox</generatorParameter>
+		</images>
+
+		<plaintext>
+			<write>true</write>
+			<failOnError>false</failOnError>
+		</plaintext>
+
+		<alto>
+			<write>true</write>
+			<failOnError>false</failOnError>
+		</alto>
+
+		<pagePdfs>
+			<write>true</write>
+			<failOnError>false</failOnError>
+		</pagePdfs>
+
+		<properties>
+			<fulltext>
+				<name>OCRDone</name>
+				<value exists="true">YES</value>
+				<value exists="false">NO</value>
+			</fulltext>
+		</properties>
+
+	</config>
+
+	<!-- more configurations can be added for projects/steps
+	<config>
+	</config>
+	-->
+
+</configs>
 ```
 
-`docType` controls which structure types the entries extracted from the PDF table of contents receive in the METS file. The parent element is the main element in which all other table of contents entries land. If it is omitted, all entries are entered directly into the main element of the METS file.
+## Settings in the configuration file
 
-The `images`-tag controls the resolution \(in DPI\) and the output format for the extracted images.
+In the configuration file any number of configurations can be defined for projects or processes with specific names. For this purpose, different `<config>` blocks can be used among each other, in each of which the `<project>` and `<step>` properties must be specified. The `<config>` blocks are applied to a particular step in the following order:
 
-With `properties`, process properties are written depending on the result of the extraction. The configuration given here as an example writes the process property `OCRDone` with value `YES` if full text was found in the PDF and with value `NO` if there was no full text in the PDF file. This is particularly helpful if the workflow is to be changed afterwards, for example to omit an OCR step if full text already exists.
+1) `<project>` and `<step>` correspond to the current project and workflow step.
+2) `<step>` corresponds to the current workflow step and `<project>` is set to `*`.
+3) `<project>` corresponds to the current project and `<step>` is set to `*`.
+4) `<project>` and `<step>` are set to `*`.
+
+The `<failOnMissingPDF>` tag within the `<validation>` tag can be set to `true` to issue a warning if no PDF files could be found. Warnings will then be written to the journal and the server-internal log files. If this option is disabled with `false`, the case that no PDF files may exist will be ignored.
+
+The `<overwriteExistingData>` tag can be used to set globally for this plugin whether existing PDF files may be overwritten or not.
+
+The `<docType>` tag controls which structure types the entries extracted from the PDF contents directory get in the METS file. The `<parent>` element is the main element where all other table of contents entries end up. If it is omitted, all entries will be placed directly into the main element of the METS file. The `<children>` element is used to specify the structure type of the subelements of the entry extracted from the PDF table of contents.
+
+The `<pagePdfs>`, `<alto>`, `<plaintext>`, `<images>` and `<mets>` elements each have a `<write>` and `<failOnError>` property. This can be used to set, according to the XML element for PDF files, ALTO files, TXT files, general image files, and the METS file, whether files of these types should be written or overwritten respectively, and whether an error message should be issued and further execution aborted if they could not be written.
+
+In the `<images>` tag some further settings for image files are possible. The values in `<resolution>` and `<format>` can be used to specify the image resolution \(in DPI\) and the output file format for the extracted images.
+
+The `<generator>` sub-element within `<images>` specifies which executable program on the server should be used to extract the images. Valid values are usually `pdftoppm` and `ghostscript`. The `<generatorParameter>` element can be used multiple times, each containing a command line parameter for the program specified in `<generator>`.
+
+With `<properties>` process properties are written depending on the result of the extraction. The configuration given here as an example writes the operation property `OCRDone` with value `YES` if full text was found in the PDF, and with value `NO` if there was no full text in the PDF. This is especially useful if the workflow is to be changed afterwards, for example to omit an OCR step if full text already exists.
 
 ## Settings in Goobi
 
