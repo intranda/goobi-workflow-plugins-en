@@ -7,7 +7,7 @@ description: >-
 
 
 ## Introduction
-This step plugin for Goobi workflow copies image folders to an external storage connected via sftp (ssh) and creates a file that causes Goobi workflow to display a warning in the task. The warning is displayed in the task details and in the metadata editor.
+This step plugin for Goobi workflow renames the process with the name specified in the configuration. You can also use variables from the Variable Replacer to define the renaming of processes.
 
 
 | Details |  |
@@ -15,8 +15,7 @@ This step plugin for Goobi workflow copies image folders to an external storage 
 | Identifier | intranda_step_rename_process |
 | Source code | [https://github.com/intranda/goobi-plugin-step-rename-process](https://github.com/intranda/goobi-plugin-step-rename-process) |
 | Licence | GPL 2.0 or newer |
-| Compatibility | Goobi workflow 2022.10 and newer |
-| Documentation date | 16.Nov.2022 |
+| Documentation date | 16.11.2022 |
 
 
 ## Installation
@@ -97,6 +96,4 @@ The configuration of the plugin is done via the configuration file `plugin_intra
 
 
 ## Integration of the plugin into the workflow
-To put the plugin into operation, it must be activated for one or more desired automatic tasks in the workflow. This is done as shown in the following screenshot by selecting the plugin `intranda_step_rename_process` from the list of installed plugins.
-
-![Integration of the plugin into the workflow](../.gitbook/assets/intranda_step_rename_process_en.png)
+To commission the plugin, it must be activated for one or more desired automatic tasks in the workflow. This is done by selecting the `intranda_step_rename_process` plugin from the list of installed plugins within the step configuration of the workflow.
