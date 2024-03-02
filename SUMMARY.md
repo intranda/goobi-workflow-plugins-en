@@ -46,6 +46,7 @@
 * [OCR page selection](step/intranda_step_ocrselector.md)
 * [OCR execution with mixed fonts](step/intranda_step_mixedocr.md)
 * [Writing XMP metadata to image files](step/intranda_step_xmp.md)
+* [Copying files from metadata fields](step/intranda_step_fetch_images_from_metadata.md)
 * [Split PDFs, Extract Full Text and Read Table of Contents](step/intranda_step_pdf-extraction.md)
 * [Changing the workflow based on process properties](step/intranda_step_changeworkflow.md)
 * [Display of metadata in a task](step/intranda_step_displaymetadata.md)
