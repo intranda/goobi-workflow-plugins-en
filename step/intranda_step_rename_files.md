@@ -18,7 +18,7 @@ This plugin is used to conditionally rename files within the different folders o
 | Source code | [https://github.com/intranda/goobi-plugin-step-rename-files](https://github.com/intranda/goobi-plugin-step-rename-files) |
 | Licence | GPL 2.0 or newer |
 | Compatibility | Goobi workflow 2020.02 |
-| Dokumentation date | 10.05.2020 |
+| Dokumentation date | 14.02.2023 |
 
 ## Installation
 
@@ -43,6 +43,12 @@ As an example, the content of this configuration file looks like this:
         <project>Monographs 1900-1950</project>
         <project>Monographs 1950-2000</project>
         <step>Automatic renaming</step>
+        
+        <!-- if configured, the value will be used by the VariableReplacer to search for the prepared replacement in `goobi_config.properties` -->
+        <!-- e.g. process.folder.images.greyscale={processtitle}_greyscale -->
+        <!-- if left blank or configured by *, or if there is no folder tag found, then the default settings will be used -->
+        <folder>greyscale</folder>
+        
         <startValue>1</startValue>
         <namepart type="counter">00000</namepart>
         <namepart type="static">-</namepart>
@@ -52,6 +58,8 @@ As an example, the content of this configuration file looks like this:
     <config>
         <project>*</project>
         <step>*</step>
+        <!-- use default settings -->
+        <folder>*</folder>
         <startValue>1</startValue>
         <namepart type="variable">{processtitle}</namepart>
         <namepart type="static">_</namepart>
@@ -69,6 +77,7 @@ The configuration of the plugin is done within the already mentioned configurati
 | :--- | :--- |
 | `project` | This parameter determines the project for which the current block `<config>` is to apply. The name of the project is used here. This parameter can occur several times per `<config>` block. |
 | `step` | This parameter controls for which work steps the block `<config>` should apply. The name of the workflow step is used here. This parameter can occur several times per `<config>` block. |
+| `folder`  | This parameter allows the user to control which directories are to be considered for renaming. If the value `*` is specified here, the parameter is missing or the value is not configured, the default settings are used. |
 | `startValue` | This value controls with which start value the incrementing `counter` should start. |
 | `namepart` | This parameter, which can also be used several times, controls the generation of the file names. It can contain static elements \(`static`\), use variables from Goobi \(`variable`\) and generate a counter. The number of digits defined is crucial for generating the counter \(`counter`\). For example, the value `00000` would generate five-digit numbers with any leading zeros. The components of the file name defined in this way are concatenated together for naming purposes and then supplemented by the actual file extension to name the file. |
 
@@ -80,7 +89,7 @@ If a file is found within the file that contains `barcode` within the file name,
 
 Details of the Goobi workflow variables that can be used in this plugin can be found [in this documentation](https://docs.intranda.com/goobi-workflow-en/manager/8).
 
-The plugin considers the files within the following subdirectories for naming:
+The plugin considers by default the files within the following subdirectories for naming:
 
 * master
 * media
