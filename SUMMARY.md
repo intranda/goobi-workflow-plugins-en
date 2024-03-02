@@ -90,6 +90,7 @@
 * [Selection of images](step/intranda_step_image_selection.md)
 * [Generation of PDF files](step/intranda_step_createfullpdf.md)
 * [Renaming files before the Rosetta ingest](step/intranda_step_rename_files_before_rosetta.md)
+* [Transfer OCR result to metadata field](step/intranda_step_ocr_to_metadata.md)
 
 
 ## Opac Plugins <a id="opac"></a>
