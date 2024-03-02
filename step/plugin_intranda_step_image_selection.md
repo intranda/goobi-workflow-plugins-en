@@ -7,28 +7,27 @@ description: >-
 
 ## Introduction
 
-​ This plugin is used to visually select images. It allows to select, deselect and sort via Drag & Drop. ​
+This plugin is used for the visual selection of images. It allows you to select, deselect and sort the selected images using drag & drop.
 
 | Details |  |
 | :--- | :--- |
 | Identifier | intranda\_step\_image\_selection |
 | Source code | [https://github.com/intranda/goobi-plugin-step-image-selection](https://github.com/intranda/goobi-plugin-step-image-selection) |
 | Licence | GPL 2.0 or newer |
-| Compatibility | Goobi workflow 2023.03 |
-| Dokumentation date | 21.Mar.2023 |
+| Dokumentation date | 21.03.2023 |
 
 ## Installation
 
 ​ To use the plugin, these two files must be copied to the following locations: ​
 
-```text
+```bash
 /opt/digiverso/goobi/plugins/step/plugin_intranda_step_image_selection.jar
 /opt/digiverso/goobi/plugins/GUI/plugin_intranda_step_image_selection-GUI.jar
 ```
 
-​ The configuration of the plugin takes place within its configuration file `plugin_intranda_step_image_selection.xml`. It is expected to be located under the following path: ​
+​The configuration of the plugin takes place within its configuration file `plugin_intranda_step_image_selection.xml`. It is expected to be located under the following path: ​
 
-```text
+```bash
 /opt/digiverso/goobi/config/plugin_intranda_step_image_selection.xml
 ```
 
@@ -36,7 +35,7 @@ description: >-
 
 ​ The configuration of the plugin is structured as follows: ​
 
-```markup
+```xml
 <config_plugin>
     <!--
         order of configuration is:
@@ -79,32 +78,31 @@ description: >-
 
 | Value | Description |
 | :--- | :--- |
-| `defaultNumberToLoad` | With this parameter you can define how many images shall be loaded in the beginning. Default 20. |
-| `defaultNumberToAdd` | With this parameter you can define how many more images shall be loaded when scrolled to the bottom. Default 10. |
-| `folder` | Specify here the configured name of the folder from which the images are to be displayed. Possible values are `master`, `main`, `jpeg`, `source`... as long as they are well configured. |
+| `defaultNumberToLoad` | With this parameter you can define how many images shall be loaded in the beginning. Default `20`. |
+| `defaultNumberToAdd` | With this parameter you can define how many more images shall be loaded when scrolled to the bottom. Default `10`. |
+| `folder` | Specify here the configured name of the folder from which the images are to be displayed. Possible values are `master`, `main`, `jpeg`, `source` etc. as long as they are correctly configured. |
 | `max` | Here you can define the maximum number of thumbnails that could be selected. |
 | `min` | Here you can define the minimum number of thumbnails that should be selected in order to save as a process property. |
-| `allowTaskFinishButtons` | With this parameter you can define whether or not to enable this button. |
-
+| `allowTaskFinishButtons` | With this parameter you can define whether or not to enable the button to finish the task directly. |
 
 ### Integration of the plugin into the workflow
 
-​To put the plugin into operation, it must be activated for one or more desired tasks in the workflow. This is done as shown in the following screenshot by selecting the `intranda_step_image_selection` plugin from the list of installed plugins. ​​
+​To put the plugin into operation, it must be configured for one or more desired tasks in the workflow. This is done as shown in the following screenshot by selecting the `intranda_step_image_selection` plugin from the list of installed plugins. ​​
 
-![Assigning the plugin to a specific task](../.gitbook/assets/intranda_step_image_selection1.png)
-
-![Integration of the plugin into a task within the workflow](../.gitbook/assets/intranda_step_image_selection2.png)
+![Assigning the plugin to a specific task](../.gitbook/assets/intranda_step_image_selection1_en.png)
 
 ### Function and operation of the plugin
 
-1. The plugin will show some images from the configured folder in the left box, and when the window is scrolled to the bottom, more images will be shown as long as there are still some available.
-2. When the mouse cursor is over an image, a zoomed-in view of the image will be shown, which can be used to check the details of the image.
-3. The selected images will be shown in the right box, and the top one will be bigger than the others.
-4. New images can be selected via Drag & Drop. If the relative position to drop is captured correctly, then the new selected image will be inserted there, otherwise it will be appended to the end.
-5. If the configured `max` is already reached, or if the to-be-selected image was already selected once, then the selection won't work.
-6. Selected images can be deselected via Drag & Drop. Just drag the image from the right box and drop it to the left one.
-7. Selected images can be reordered via Drag & Drop.
-8. A selected image can exchange its position with its neighbour, when its upper half or bottom half is clicked. There are two exceptions here that do not entail an exchange: if one clicks on the upper half of the first selected image, then it will be moved to the end of the list of all selected; if one clicks on the bottom half of the last selected image, then it will be promoted to the top of the list.
-9. In order to promote a selected image to the top of the list, one can also right click the mouse on this image.
-10. Remember to click the `Save Property` button to save the information of the selected into the process property. Otherwise the changes will be discarded and will not be restored the next time the plugin is started.
-11. One can also exit the plugin without saving the changes by clicking the button next to `Save Property`.
+The plugin displays some images from the configured folder in the left-hand area. If you scroll down within the area, more images are loaded if there are more images available. If the mouse pointer is positioned over an image, an enlarged view of the image is displayed, which can be used to check the details of the image.
+
+Images can be selected from the left-hand area using drag & drop. If the relative position for dropping is detected correctly, the newly selected image is inserted there, otherwise it is appended at the end. The selected images can be reorganised using drag & drop.
+
+If the configured maximum number of selected images is reached or if an attempt is made to select the same image multiple times, the selection will not work.
+
+Selected images can be deselected again using drag & drop. Simply drag the image from the right-hand box and drop it in the left-hand box. 
+
+The relative position of a selected image can be swapped with its neighbour by clicking on the top or bottom half of the image. There are two exceptions without swapping: if you click on the top half of the first selected image, it will be appended to the end of the list; if you click on the bottom half of the last image, it will be moved to the beginning of the list. To move a selected image to the top of the list, you can also right-click on this image.
+
+Please note that the save button must be clicked in order to save the information of the selected images within the process properties. 
+
+![User interface of the plugin](../.gitbook/assets/intranda_step_image_selection2_en.png)
