@@ -39,7 +39,7 @@ The configuration of the plugin is expected under the following path:
 
 An example configuration could look like this:
 
-```markup
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <configs>
 

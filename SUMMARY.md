@@ -3,7 +3,7 @@
 
 
 ## Administration Plugins <a id="administration"></a>
-* [Catalogue Poller](administration/intranda_administration_catalogue_poller.md)
+* [Data Poller](administration/intranda_administration_data_poller.md)
 * [Copy Master-Anchor](administration/intranda_administration_copyanchor.md)
 * [Goobi-to-Goobi](administration/intranda_administration_goobi2goobi/README.md)
   * [Installation and configuration](administration/intranda_administration_goobi2goobi/installation.md)
@@ -46,6 +46,7 @@
 * [OCR page selection](step/intranda_step_ocrselector.md)
 * [OCR execution with mixed fonts](step/intranda_step_mixedocr.md)
 * [Writing XMP metadata to image files](step/intranda_step_xmp.md)
+* [Copying files from metadata fields](step/intranda_step_fetch_images_from_metadata.md)
 * [Split PDFs, Extract Full Text and Read Table of Contents](step/intranda_step_pdf-extraction.md)
 * [Changing the workflow based on process properties](step/intranda_step_changeworkflow.md)
 * [Display of metadata in a task](step/intranda_step_displaymetadata.md)
@@ -85,6 +86,7 @@
 * [Metadata transfer from a directory](step/intranda_step_import_from_folder.md)
 * [DOI Registration](step/intranda_step_doi.md)
 * [File validation](step/intranda_step_file_validation.md)
+* [Renaming processes](step/intranda_step_rename_process.md)
 
 ## Opac Plugins <a id="opac"></a>
 * [PICA Import](opac/intranda_opac_pica.md)

@@ -22,8 +22,8 @@ It should be noted that this plugin is a new implementation of the [datacite-doi
 | Identifier | intranda_step_doi |
 | Source code | [https://github.com/intranda/goobi-plugin-step-doi](https://github.com/intranda/goobi-plugin-step-doi) |
 | Licence | GPL 2.0 or newer |
-| Compatibility | Goobi workflow 2022.05 |
-| Documentation date | 21.06.2022 |
+| Compatibility | Goobi workflow 2023.02 |
+| Documentation date | 04.03.2023 |
 
 ## Installation
 
@@ -69,6 +69,9 @@ The configuration is done via the configuration file `plugin_intranda_step_doi.x
 
     		<!-- use debug mode if the temporary xml shall be saved in the Goobi tmp folder -->
     		<debugMode>true</debugMode>
+
+            <!-- use draft if the doi should only be registered in draft state -->
+		    <draft>true</draft>
 
     		<!-- authentication and main information -->
     		<!-- For testing: https://mds.test.datacite.org/ -->
@@ -121,8 +124,8 @@ The configuration is done via the configuration file `plugin_intranda_step_doi.x
     			<data content="{meta.PublicationYear}"/>
     		</field>
 
-    		<field name="CREATOR" default="- NO CREATOR DEFINED -">
-    			<data content="{meta.Author}"/>
+    		<field name="CREATOR" default="- NO CREATOR DEFINED -" repeatable="true">
+    			<data content="{metas.Author}"/>
     		</field>
 
     		<field name="PUBLISHER" default="- NO PUBLISHER DEFINED -">
@@ -138,6 +141,9 @@ The configuration is done via the configuration file `plugin_intranda_step_doi.x
     			<data content="{meta.CurrentNoSorting}"/>
     		</field>
 
+            <field name="SUBJECT" default="- UNKNOWN SUBJECT -" repeatable="true">
+        	    <data content="{metas.SubjectTopic}"/>
+            </field>
     </config>
 </config_plugin>
 ```
@@ -150,6 +156,7 @@ The block `<config>` can occur several times for different projects or workflow 
 | `step` | This parameter controls for which workflow steps the block `<config>` should apply. The name of the workflow step is used here. This parameter can occur several times per `<config>` block. |
 | `serviceAddress` | This parameter defines the URL for the DataCite service. In the example above, it is the test server. |
 | `debugMode` | With this parameter, the debug mode can be activated. This allows the XML file with the defined field variables (`doi_in.xml`) as well as the transformed DataCite XML file (`doi_out.xml`) to be stored within the `tmp` directory of Goobi workflow. This allows insight into the actual metadata used or customised for DOI registration. |
+| `draft` | This parameter can be used to specify that the DOIs are reserved as drafts but not yet officially registered. They are therefore not yet publicly accessible and are not yet invoiced by DataCite. |
 | `base` | This parameter defines the DOI base for the facility registered with DataCite. |
 | `viewer` | The parameter `viewer` defines the prefix that each DOI link receives. A DOI "10.80831/goobi-1", for example, receives the hyperlink here "[https://viewer.goobi.io/idresolver?doi=10.80831/goobi-1](https://viewer.goobi.io/idresolver?doi=10.80831/goobi-1)" |
 | `username` | This is the username used for DataCite registration. |
@@ -161,6 +168,7 @@ The block `<config>` can occur several times for different projects or workflow 
 | `xslt` | This parameter sets the transformation file to be used for DOI registration. |
 | `field` - `name` | The parameter `name` can be used to name a field variable that is to be available for mapping. |
 | `field` - `default` | This parameter can be used to specify a value that the field variable should receive if none of the listed metadata can be found from the elements `data`. |
+| `field` - `repeatable` | This can be used to control that values that occur more than once (queried e.g. by using `{metas.SubjectTopic}` instead of `{meta.SubjectTopic}`) are separated by a semicolon and used as single values. |
 | `field` - `data` - `content` | Within this element, metadata or even static texts can be defined that are to be assigned as values of the field variable. The order of the listed `data` elements is decisive here. As soon as a field with the content could be found, the following `data` elements are skipped. This is therefore a descending priority of the listed elements. |
 
 
@@ -181,14 +189,21 @@ The transformation file `doi.xsl` looks something like this:
   </titles>
   <publisher><xsl:value-of select="//PUBLISHER"/></publisher>
   <publicationYear><xsl:value-of select="//PUBLICATIONYEAR"/></publicationYear>
+  <subjects>
+      <xsl:for-each select="//SUBJECT">
+          <subject xml:lang="de-DE"><xsl:value-of select="."/></subject>
+      </xsl:for-each>
+  </subjects>
   <resourceType resourceTypeGeneral="Text"><xsl:value-of select="//GOOBI-DOCTYPE"/></resourceType>
   <language><xsl:value-of select="//LANGUAGE"/></language>
   <creators>
-      <creator>
-          <creatorName><xsl:value-of select="//CREATOR"/></creatorName>
-          <givenName><xsl:value-of select="substring-before(//CREATOR, ', ')"/></givenName>
-          <familyName><xsl:value-of select="substring-after(//CREATOR, ', ')"/></familyName>
-      </creator>
+      <xsl:for-each select="//CREATOR">
+          <creator>
+            <creatorName><xsl:value-of select="."/></creatorName>
+            <givenName><xsl:value-of select="substring-before(., ', ')"/></givenName>
+            <familyName><xsl:value-of select="substring-after(., ', ')"/></familyName>
+          </creator>
+      </xsl:for-each>
   </creators>
   <sizes>
       <size><xsl:value-of select="//FORMAT"/></size>
