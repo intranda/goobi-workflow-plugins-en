@@ -1,23 +1,22 @@
 ---
 description: >-
-  This is a technical documentation for the Selected Images Export Plugin. It enables to export the selected images to the configured location.
+  This is a technical documentation for the plugin for exporting selected images. It enables the export of selected images to the configured location in the file system or via SCP.
 ---
 
-# Selected Images Export
+# Export of selected images
 
 ## Introduction
 
-This documentation describes the installation, configuration and use of the Selected Images Export plugin in Goobi.
+This documentation describes the installation, configuration and use of the plugin for exporting selected images in Goobi workflow.
 
-Using this plugin for Goobi, Goobi operations can export the selected images and potentially also METS file for these images to the configured location within one step.
+With the help of this plugin for Goobi workflow, Goobi processes can export the previously selected images and, if desired, the associated METS file to a configured location either in the file system or via SCP within a single work step.
 
 | Details |  |
 | :--- | :--- |
 | Identifier | intranda_export_selected_images |
 | Source code | [https://github.com/intranda/goobi-plugin-export-selected-images](https://github.com/intranda/goobi-plugin-export-selected-images) |
 | Licence | GPL 2.0 or newer |
-| Compatibility | Goobi workflow 23.04 or newer |
-| Documentation date | 12.May.2023 |
+| Documentation date | 12.05.2023 |
 
 ## Installation
 
@@ -27,13 +26,13 @@ This plugin is integrated into the workflow in such a way that it is executed au
 
 The plugin must first be copied to the following directory:
 
-```text
+```bash
 /opt/digiverso/goobi/plugins/export/plugin_intranda_export_selected_images.jar
 ```
 
 In addition, there is a configuration file that must be located in the following place:
 
-```text
+```bash
 /opt/digiverso/goobi/config/plugin_intranda_export_selected_images.xml
 ```
 ## Configuration
