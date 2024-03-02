@@ -118,6 +118,7 @@
 * [Configurable Export](export/intranda_export_configurable.md)
 * [VLM Export](export/intranda_export_vlm.md)
 * [ZOP Export](export/intranda_export_zop.md)
+* [Export of selected images](export/intranda_export_selected_images.md)
 
 
 ## Workflow plugins <a id="workflow"></a>
