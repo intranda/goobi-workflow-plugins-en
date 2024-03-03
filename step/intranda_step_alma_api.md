@@ -1,39 +1,35 @@
 ---
-description: >-
-  This plugin is originally implemented to communicate with ALMA system and process returned responses. But thanks to its general design, it can be used to communicate with other systems via REST as well.
+Beschreibung: >-
+    This plugin was originally implemented to communicate with the ALMA system and process returned responses. However, thanks to its general design, it can also be used to connect to other systems via REST.
 ---
 
-# ALMA API plugin
+# ALMA API Plugin
 
 ## Introduction
-
-​This plugin is used to send requests to a service system, e.g. ALMA, and process the returned responses. Multiple commands can be configured to compose a complicated task and the plugin will run these commands one by one in the same order.
+This plugin is used to send requests to REST APIs, e.g. ALMA, and process the returned responses. Multiple commands can be configured to compile a complicated task. The plugin executes these commands one after the other in a defined order.
 
 | Details |  |
 | :--- | :--- |
 | Identifier | intranda\_step\_alma\_api |
 | Source code | [https://github.com/intranda/goobi-plugin-step-alma-api](https://github.com/intranda/goobi-plugin-step-alma-api) |
 | Licence | GPL 2.0 or newer |
-| Compatibility | Goobi workflow 2023.09 |
-| Dokumentation date | 05.10.2023 |
+| Documentation date | 05.10.2023 |
 
 ## Installation
+To use the plugin, the file `plugin_intranda_step_alma_api.jar` must be saved in the following location:
 
-​To use the plugin, the jar file is expected to be located to: ​
-
-```text
-{GOOBI_INSTALLATION_PATH}/plugins/step/plugin_intranda_step_alma_api.jar
+```bash
+/opt/digiverso/goobi/plugins/step/plugin_intranda_step_alma_api.jar
 ```
 
-​The configuration file `plugin_intranda_step_alma_api.xml` is expected to be located to: ​
+The configuration file `plugin_intranda_step_alma_api.xml` is expected under the following path:
 
-```text
-{GOOBI_INSTALLATION_PATH}/config/plugin_intranda_step_alma_api.xml
+```bash
+/opt/digiverso/goobi/config/plugin_intranda_step_alma_api.xml
 ```
 
 ## Configuration of the plugin
-
-​The configuration of the plugin is structured as follows: ​
+The configuration of the plugin is structured as follows as an example:
 
 ```xml
 <config_plugin>
@@ -59,7 +55,7 @@ description: >-
               @name: name of the variable, e.g. VARIABLE. To use this variable's value, one can simply use {$VARIABLE}.
               @value: value to initialize this variable. It can be plain string value, or a Goobi variable, e.g. {meta.NAME} for a Metadata named NAME.
          -->
-        <variable name="MMS_ID" value="{meta.RezenssionsZssDBID}" />
+        <variable name="MMS_ID" value="{meta.CatalogIDDigital}" />
         <!-- There can be multiple variables defined before all commands. -->
         <variable name="SIGNATURE" value="{meta.shelfmarksource}" />
 
@@ -133,11 +129,11 @@ description: >-
                            - a variable defined before all <command> blocks via a <variable> tag
                            - a variable defined within some <command> block via a <target> tag
               @choice: indicates how many items should be saved into this new property, OPTIONS are first | last | random, or any non-blank strings following a colon.
-                            - first: save only the first one among all retrieved values
-                            - last: save only the last one among all retrieved values
-                            - random: save a random one from all retrieved values
-                            - For any non-blank strings following a colon: the substring following this colon will be used as a whole delimiter to combine all results.
-                            - For all other cases, including the case where there is only one single colon configured: all results will be combined using commas.
+                           - first: save only the first one among all retrieved values
+                           - last: save only the last one among all retrieved values
+                           - random: save a random one from all retrieved values
+                           - For any non-blank strings following a colon: the substring following this colon will be used as a whole delimiter to combine all results.
+                           - For all other cases, including the case where there is only one single colon configured: all results will be combined using commas.
               @overwrite: true if the old property named so should be reused, false if a new property should be created, DEFAULT false.
         -->     
         <save type="property" name="holding_id" value="{$HOLDING_ID}" choice="first" overwrite="true" />
@@ -245,23 +241,30 @@ description: >-
 ```
 
 ### General configurations
+The plugin is configured as described here:
 
 | Value | Description |
 | :--- | :--- |
-| `project` | This parameter determines for which project the current block `<config>` is to apply. The name of the project is used here. This parameter can occur several times per `<config>` block. |
-| `step` | This parameter controls for which work steps the block &lt;config&gt; should apply. The name of the work step is used here. This parameter can occur several times per `<config>` block. |
-| `url` | Specify here the base URL of the system. |
-| `api-key` | Put the api-key for connecting to the system here. |
-| `variable` | This tag allows you to define a variable that can be used by all commands below. This tag has two attributes where `@name` defines its name and `@value` defines its value which expects a plain text value or a Goobi variable here. |
-| `command` | A command block defines a command that shall be run in the order. It has two mandatory attributes itself where `@method` specifies the method to use, and `@endpoint` specifies the raw endpoint path with all placeholders unreplaced. It also has two optional attributes, namely `@accept` and `@content-type`, which are used to specify the request header parameters `Accept` and `Content-type`. They both expect either `json` or `xml`. For either one that is ommitted, the default value `json` will be applied. See the table below and the example configuration above for more details. |
-| `save` | An optional save tag defines a value that shall be saved after running all commands. It has three mandatory attributes, where `type` specifies whether to save the value as process `property` or as `metadata`, `@name` defines the name of the process property or the metadata type, and `@value` determines the value, which can be a plain text value or a variable defined before. It also has two optional attributes, where `@choice` specifies which value shall be saved when there are multiple found, and `@overwrite` determines whether to reuse a previously created process property or metadata of the same name or not. |
+| `project` | This parameter defines which project the current block `<config>` should apply to. The name of the project is used here. This parameter can occur multiple times per `<config>` block. |
+| `step` | This parameter controls which work steps the `<config>` block should apply to. The name of the work step is used here. This parameter can occur multiple times per `<config>` block. |
+| `url` | The base URL of the REST API is specified here. |
+| `api-key` | The API key for the connection to the REST API is configured here. |
+| `variable` | This tag can be used to define a variable that can be used by all subsequent commands. This tag has two attributes, where `@name` defines the name and `@value` the value. `@value` expects a simple text value or a Goobi variable. |
+| `command` | A command block defines a command that is to be executed in the job. It has two mandatory attributes itself, where `@method` specifies the method to be used and `@endpoint` specifies the path to the endpoint, where all placeholders are not replaced. It also has two optional attributes, `@accept` and `@content-type`, which are used to specify the request parameters `accept` and `content-type`. Both expect either `json` or `xml`. If one of the two parameters is omitted, the default value `json` is used. Further details can be found in the table below and in the example configuration above. |
+| `save` | An optional `save` element defines a value to be saved after all commands have been executed. It has three mandatory attributes, where `type` specifies whether the value is to be saved as an operation property or as a metadata. The attribute `@name` defines the name of the process property or metadata type. The `@value` attribute determines the value, which can be a simple text value or a previously defined variable. It has two optional attributes, where `@choice` specifies which value should be saved if several are found, and `@overwrite` determines whether a previously created process property or a metadata of the same name should be reused. |
 
 ### Configurations within command blocks
+The configuration within the command blocks is carried out as described here:
 
 | Value | Description |
 | :--- | :--- |
-| `filter` | Here specifies one which parts of the response JSON shall be used to search for the `target` values. It has four attributes, where `@key` and `@value` are mandatory, while `@fallback` and `@alt` are optional. See the comments in the example configuration for more details. |
-| `target` | Here specifies one which values shall be saved as variables for later use. It has two attributes, where `@var` specifies the variable name, and `@path` specifies the JSON path to retrieve the values. |
-| `parameter` | Here specifies one parameters that shall be sent together via request to the system. It has two attributes, namely `@name` for parameter name, and `@value` for parameter value which can ONLY be plain text values. |
-| `body` | Here specifies one the request body. It has three three attributes, where one of `@src` and `@value` must be specified, and when `@src` is set then `@wrapper` will also become applicable. By setting up `@src` one specifies the file whose content shall be used as request body, while using `@value` can one use the value of a variable achieved from previous commands. For the usage of `@wrapper` please check the comments in the example configuration.  |
-| `update` | This tag is used to save the response JSON object as a variable. It has one attribute `@var`, which specifies the variable's name. Every `command` tag can have at most one `update` sub-tag, but inside of the `update` sub-tag there can be multiple `entry` sub-tags, each one of which specifying a modification on the response JSON object. |
+| `filter` | This specifies which parts of the JSON response should be used to search for the `target` values. It has four attributes, where `@key` and `@value` are mandatory, while `@fallback` and `@alt` are optional. Further details can be found in the comments in the sample configuration. |
+| `target` | This specifies which values are to be saved as variables for later use. The parameter has two attributes, where `@var` specifies the variable name and `@path` specifies the JSON path to retrieve the values. |
+| `parameter` | A parameter is specified here that is to be sent to the REST API together with a request. It has two attributes, where `@name` is used for the parameter name and `@value` for the parameter value, which can consist exclusively of pure text values. |
+| `body` | The request body is defined here. It has three attributes, whereby one of `@src` and `@value` must be specified. If `@src` is set, `@wrapper` is also applicable. The file whose content is to be used as the request body is specified with `@src`, while `@value` specifies the value of a variable that has been received from previous commands. When using `@wrapper`, it is advisable to consider the comments in the sample configuration.  |
+| `update` | This element is used to save the JSON object of the response as a variable. It has an attribute `@var` that specifies the name of the variable. Each `command` tag can have at most one `update` sub-element. Within the `update` subelement, there can be multiple `entry` subelements, each of which specifies a change to the JSON response object. |
+
+## Operation of the plug-in
+This plugin is integrated into the workflow in such a way that it is executed automatically. Manual interaction with the plugin is not necessary. For use within a workflow step, it should be configured as shown in the screenshot below.
+
+![Integration of the plugin into the workflow](../.gitbook/assets/intranda_step_alma_api_en.png)
