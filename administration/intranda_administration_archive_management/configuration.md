@@ -21,8 +21,12 @@ After installing the plugin and the associated database, the plugin must also be
         <lengthLimit>0</lengthLimit>
         <!-- separator string that will be used to combine the tokens -->
         <separator>_</separator>
-        <!-- true if shelfmark/signature should be used preferably, false if uuid should be used -->
-        <useSignature>true</useSignature>
+        
+        <!-- use id from parent node instead of id from node -->
+        <useIdFromParent>false</useIdFromParent>
+        
+        <!-- use shelfmark preferably instead of node id if it is available -->
+        <useShelfmarkAsId>false</useShelfmarkAsId>
         
         <!-- // configurations for generating process titles // -->
         
@@ -190,10 +194,13 @@ This is followed by a repeatable `<config>` block. The repeatable element `<arch
 
 The `<processTemplateId>` is used to specify which process template should be used as the basis for the Goobi processes created.
 
-The three parameters `<lengthLimit>` `<separator>` and `<useSignature>` are used to configure the naming of the process to be generated:
+## Configuration of the generation of process titles
+The parameters `<lengthLimit>` `<separator>` `<useIdFromParent>` and `<useSignature>` are used to configure the naming of the process to be generated:
+
 * The `<lengthLimit>` value sets a length limit for all tokens except the manually set prefix and suffix. The default setting is `0`, i.e. it does not limit the length.
 * The parameter `<separator>` defines the separator to be used to combine all separate tokens. The default setting is `_`.
-* The parameter `<useSignature>` determines whether the signature is preferred when generating the task titles. If `true` is set, the plugin will try to retrieve the signature defined in the parent node of the current node and use it to generate the task title. However, if the signature is not available, the uuid will be used instead, just like if this parameter is set to `false`. The default setting is `false`. 
+- The parameter `<useIdFromParent>` configures whose ID should be used to create the process title. If it is set to `true`, the ID of the parent node is used. Otherwise, the ID of the current node is used.
+- The parameter `<useShelfmarkAsId>` configures whether the shelfmark should preferably be used to generate the process title. If it is set to `true` and a shelfmark actually exists in a predecessor node, this shelfmark is used. Otherwise, the ID of the current node or the parent node is used, depending on the configuration of the parameter `<useIdFromParent>`. 
 
 
 ## Configuring the metadata fields
