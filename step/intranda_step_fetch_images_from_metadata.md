@@ -16,9 +16,6 @@ This documentation describes the installation, configuration and use of the plug
 | Documentation date | 04.06.2023 |
 
 
-## How the plugin works
-The plugin is usually executed fully automatically within the workflow. It first determines whether the metadata specified in the configuration exists and then analyses it. The file specified in the metadata is then copied or moved to the media folder of the process based on its name and file extension.
-
 
 ## Operation of the plugin
 The plugin is usually executed fully automatically within the workflow. It first determines whether the metadata specified in the configuration exists and then analyses it. The file specified in the metadata is then copied or moved to the media folder of the process based on its name and file extension. The plugin checks the existing images in the `media` folder of the process to see whether the desired image has already been imported, and if not:
@@ -27,10 +24,8 @@ In the following two cases, the order of the imported images is updated and save
 - if `useUrl` is set to `true`, the plugin will download the image from the specified URL 
 - if `useUrl` is set to `false` or not at all, the name of each file is checked to determine whether it should be treated as the first file in the directory, while the other images are simply sorted by their names.
 
-![Selection of the plugin within the workflow configuration](../.gitbook/assets/intranda_step_fetch_images_from_metadata_en.png)
 
-
-## Installation and configuration
+## Installation
 The plugin consists of two files:
 
 ```bash
@@ -50,7 +45,8 @@ The configuration file `plugin_intranda_step_fetch_images_from_metadata.xml` mus
 /opt/digiverso/goobi/config/
 ```
 
-This configuration file is structured as follows:
+## Configuration
+The plugin is configured via the configuration file `plugin_intranda_step_fetch_images_from_metadata.xml` and can be customised during operation. An example configuration file is listed below:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -94,3 +90,8 @@ The individual parameters have the following function:
 | `filenameMetadata` | The name of the metadata field (usually from the METS file) that contains the file name of the file to be imported is specified here. |
 | `fileHandling` | The `@mode` attribute defines whether the images are to be imported by copying or moving. The `@ignoreFileExtension` attribute controls whether the file extension should be ignored for the copying process or must be exactly correct. The `@folder` attribute specifies the folder in which the files to be imported are located. |
 | `export` | The `@enabled` attribute defines whether the process is to be exported or not, while the `@exportImages` attribute defines whether the images are to be taken into account.  |
+
+## Integration of the plugin into the workflow
+This plugin is integrated into the workflow so that it is executed automatically. Manual interaction with the plugin is not necessary. To use it within a workflow step, it should be configured as shown in the screenshot below.
+
+![Integration of the plugin into the workflow](../.gitbook/assets/intranda_step_fetch_images_from_metadata_en.png)
