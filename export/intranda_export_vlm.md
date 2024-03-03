@@ -134,6 +134,28 @@ The plugin is configured via the configuration file `plugin_intranda_export_vlm.
 		<hostname></hostname>
 		<password></password>
 	</config>
+
+	<!-- Apply this configuration only under the condition that the `singleDigCollection` in the metadata is a 20 digit number -->
+	<config>
+		<project>Manuscript_Project</project>		
+		<identifier>CatalogIDDigital</identifier>		
+		<volume>CurrentNoSorting</volume>		
+		<path>/tmp/somewhere</path>
+		<subfolderPrefix></subfolderPrefix>
+		
+		<condition>
+            <type>variablematcher</type>
+            <field>{meta.singleDigCollection}</field>
+            <matches>\d{20}</matches>
+        </condition>
+		
+		<sftp>false</sftp>
+		<knownHosts></knownHosts>
+		
+		<username></username>
+		<hostname></hostname>
+		<password></password>
+	</config>
 	
 	<config>
 		<project>*</project>
@@ -162,6 +184,7 @@ The plugin is configured via the configuration file `plugin_intranda_export_vlm.
 | `identifier`      | This parameter determines which metadata is to be used as the folder name. It has two optional attributes `@anchorSplitter` and `@volumeFormat` which will be used for the case when the value of this `identifier` itself contains both main folder's name as well as volume's name, separated by this configured `@anchorSplitter`. The attribute `@volumeFormat` is used in this case as the left padding for the volume's name. |
 | `volume`          | This parameter controls with which metadata the subdirectories for volumes are to be named. |
 | `path`            | This parameter sets the export path where the data is to be exported. An absolute path is expected. |
+| `condition`       | This element is optional and can be present multiple times to define additional conditions under which this configuration can be used. The format of `condition` elements is described down below. A configuration section can only be processed, if all conditions apply. In case multiple configuration sections exist and more than one applies, the configuration section with the highest number of conditions is selected (more specialized conditions have a higher priority). If this is still not unique, any of the applying configurations can be chosen. In this case, an error message will be shown to the user. |
 | `subfolderPrefix` | This parameter describes the prefix to be placed in front of each volume of a multi-volume work in the folder name. (Example `T_34_L_`: Here `T_34` stands for the recognition for the creation of a structure node of the type `volume` and the `L` indicates that a text comes after it.). |
 | `sftp`            | This parameter determines whether to use SFTP for the export process or not. |
 | `useSshKey`        | This parameter determines whether to use a SSH key file for the connection to the remote host. |
@@ -171,3 +194,17 @@ The plugin is configured via the configuration file `plugin_intranda_export_vlm.
 | `port`        | This parameter determines the port number of the remote host that is to be used for the connection. The default value for this is 22.|
 | `password`        | This parameter determines the password to be used to log into the remote host as `username`@`hostname`. |
 | `keyPath`        | This parameter determines the path to the SSH key file to be used to log into the remote host as `username`@`hostname`. |
+
+### Condition format
+Currently, there is support for only one type of condition, the `variablematcher` condition. This type of condition checks any kind of variable, that is defined as `field`, and performs a regular expression matching against the regular expression that is defined in `matches`.
+
+A sample `condition` could look like:
+```xml
+<condition>
+    <type>variablematcher</type>
+    <field>{meta.singleDigCollection}</field>
+    <matches>\d{20}</matches>
+</condition>
+```
+
+This `condition` has the type `variablematcher`. It checks the field `{meta.singleDigCollection}`, which corresponds to the `singleDigCollection` value of the metadata file. The condition tries to match this field against the regular expression `\d{20}`, i. e. checks if the field consists of 20 digits.
