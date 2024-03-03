@@ -13,7 +13,6 @@ This documentation describes the installation, configuration and use of the Admi
 | Identifier | intranda\_administration\_archive\_management |
 | Source code | [https://github.com/intranda/goobi-plugin-administration-archive-management](https://github.com/intranda/goobi-plugin-administration-archive-management) |
 | Licence | GPL 2.0 or newer |
-| Compatibility | Goobi workflow 2023.05 |
 | Documentation date | 20.06.2023 |
 
 ## Installing the plugin
