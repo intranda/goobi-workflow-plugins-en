@@ -6,14 +6,14 @@ description: >-
 # Copying files from metadata fields
 
 ## Introduction
-This documentation describes the installation, configuration and use of the plugin. With the help of this plugin, images can be copied or moved to the desired folder in the process using the file name stored in the process. 
+This documentation describes the installation, configuration and use of the plugin. This plugin can be used to copy or move images from a configured folder or from specific URLs to the desired folder in the process using the file name stored in the process. 
 
 | Details |  |
 | :--- | :--- |
 | Identifier | intranda-step-fetch-images-from-metadata |
 | Source code | [https://github.com/intranda/goobi-plugin-step-fetch-images-from-metadata](https://github.com/intranda/goobi-plugin-step-fetch-images-from-metadata) |
 | Licence | GPL 2.0 or newer |
-| Documentation date | 25.11.2022 |
+| Documentation date | 04.06.2023 |
 
 
 ## How the plugin works
@@ -21,7 +21,13 @@ The plugin is usually executed fully automatically within the workflow. It first
 
 
 ## Operation of the plugin
-This plugin is integrated into the workflow so that it is executed automatically. Manual interaction with the plugin is not necessary. For use within a work step, the workflow must be configured accordingly and the plugin selected there. Manual use of this plugin by a user is not necessary.
+The plugin is usually executed fully automatically within the workflow. It first determines whether the metadata specified in the configuration exists and then analyses it. The file specified in the metadata is then copied or moved to the media folder of the process based on its name and file extension. The plugin checks the existing images in the `media` folder of the process to see whether the desired image has already been imported, and if not:
+
+In the following two cases, the order of the imported images is updated and saved in the Mets file:	
+- if `useUrl` is set to `true`, the plugin will download the image from the specified URL 
+- if `useUrl` is set to `false` or not at all, the name of each file is checked to determine whether it should be treated as the first file in the directory, while the other images are simply sorted by their names.
+
+![Selection of the plugin within the workflow configuration](../.gitbook/assets/intranda_step_fetch_images_from_metadata_en.png)
 
 
 ## Installation and configuration
@@ -62,6 +68,9 @@ This configuration file is structured as follows:
         <project>*</project>
         <step>*</step>
         
+        <!-- true if the images should be fetched from a url, false if the images should be fetched from the following configured folder. DEFAULT false -->
+        <useUrl>false</useUrl>
+        
         <!-- metadata containing the file name -->
         <filenameMetadata>SeparatedMaterial</filenameMetadata>
          <!-- fileHandling:
@@ -83,6 +92,7 @@ The individual parameters have the following function:
 | :--- | :--- |
 | `project` | This parameter defines which project the current block `<config>` should apply to. The name of the project is used here. This parameter can occur several times per `<config>` block. |
 | `step` | This parameter controls which work steps the `<config>` block should apply to. The name of the work step is used here. This parameter can occur several times per `<config>` block. |
+| `useUrl` | This parameter determines the source location of the images to be retrieved. If it is set to `true`, the images are retrieved from the registered URLs in the mets file, if it is set to `false` or not set at all, the images are retrieved from the following configured folder. |
 | `filenameMetadata` | The name of the metadata field (usually from the METS file) containing the file name of the file to be imported is specified here. |
 
 The attributes of the `fileHandling` element are configured as follows:

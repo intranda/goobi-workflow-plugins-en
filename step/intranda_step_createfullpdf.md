@@ -93,6 +93,6 @@ An example configuration could look like this:
 
 ## Settings in Goobi
 
-Once the plugin has been installed correctly, it can be configured in the user interface for use within the workflow for the desired work step. To do this, the value `` must be selected as the plugin and the filling should be set as automatic.
+Once the plugin has been installed correctly, it can be configured in the user interface for use within the workflow for the desired work step. To do this, the value `intranda_step_createfullpdf` must be selected as the plugin and the filling should be set as automatic.
 
-![Auswahl des Plugins innerhalb der Workflowkonfiguration](../.gitbook/assets/intranda_step_createfullpdf_en.png)
+![Selection of the plugin within the workflow configuration](../.gitbook/assets/intranda_step_createfullpdf_en.png)
