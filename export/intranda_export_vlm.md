@@ -16,7 +16,7 @@ Using this plugin for Goobi, Goobi operations can be exported to the configured 
 | Identifier | intranda_export_vlm |
 | Source code | [https://github.com/intranda/goobi-plugin-export-vlm](https://github.com/intranda/goobi-plugin-export-vlm) |
 | Licence | GPL 2.0 or newer |
-| Documentation date | 04.Sep.2023 |
+| Documentation date | 04.09.2023 |
 
 ## Installation
 
@@ -159,7 +159,7 @@ The plugin is configured via the configuration file `plugin_intranda_export_vlm.
 
 | Parameter         | Explanation                                                                                                            |
 |:----------------- |:---------------------------------------------------------------------------------------------------------------------- |
-| `identifier`      | This parameter determines which metadatum is to be used as the folder name. It has two optional attributes `@anchorSplitter` and `@volumeFormat` which will be used for the case when the value of this `identifier` itself contains both main folder's name as well as volume's name, separated by this configured `@anchorSplitter`. `@volumeFormat` is used in this case as the left padding for the volume's name. |
+| `identifier`      | This parameter determines which metadata is to be used as the folder name. It has two optional attributes `@anchorSplitter` and `@volumeFormat` which will be used for the case when the value of this `identifier` itself contains both main folder's name as well as volume's name, separated by this configured `@anchorSplitter`. The attribute `@volumeFormat` is used in this case as the left padding for the volume's name. |
 | `volume`          | This parameter controls with which metadata the subdirectories for volumes are to be named. |
 | `path`            | This parameter sets the export path where the data is to be exported. An absolute path is expected. |
 | `subfolderPrefix` | This parameter describes the prefix to be placed in front of each volume of a multi-volume work in the folder name. (Example `T_34_L_`: Here `T_34` stands for the recognition for the creation of a structure node of the type `volume` and the `L` indicates that a text comes after it.). |
@@ -168,6 +168,6 @@ The plugin is configured via the configuration file `plugin_intranda_export_vlm.
 | `knownHosts`      | This parameter determines where the file `known_hosts` is. If left empty, then the default setting `{user.home}/.ssh/known_hosts` will be used. Otherwise, it is an absolute path expected here. |
 | `username`        | This parameter determines the user name to log into the remote host. |
 | `hostname`        | This parameter determines the name of the remote host or its IP address. |
-| `port`        | This parameter determines the port number of the remote host that is to be used for the connection. |
+| `port`        | This parameter determines the port number of the remote host that is to be used for the connection. The default value for this is 22.|
 | `password`        | This parameter determines the password to be used to log into the remote host as `username`@`hostname`. |
 | `keyPath`        | This parameter determines the path to the SSH key file to be used to log into the remote host as `username`@`hostname`. |
