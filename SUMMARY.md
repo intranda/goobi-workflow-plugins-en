@@ -136,6 +136,7 @@
 * [Mass import from Excel data with EAD enrichment](workflow/intranda_workflow_hu_importer.md)
 * [Entity Editor - Artist Dictionary](workflow/intranda_workflow_artist_dictionary.md)
 * [Import of JSON files](workflow/intranda_workflow_import_json.md)
+* [Liechtenstein Volksblatt Importer](workflow/intranda_workflow_liechtenstein_volksblatt_importer.md)
 
 ## Statistics
 * [Sudan Memory Translations](statistics/intranda_statistics_sudan_memory.md)
