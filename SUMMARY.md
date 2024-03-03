@@ -93,6 +93,7 @@
 * [Transfer OCR result to metadata field](step/intranda_step_ocr_to_metadata.md)
 * [Libsafe Ingest using BagIt](step/intranda_step_libsafe.md)
 * [ALMA and REST API communication](step/intranda_step_alma_api.md)
+* [Duplicate tasks](step/intranda_step_duplicate_tasks.md)
 
 ## Opac Plugins <a id="opac"></a>
 * [PICA Import](opac/intranda_opac_pica.md)
