@@ -91,7 +91,7 @@
 * [Generation of PDF files](step/intranda_step_createfullpdf.md)
 * [Renaming files before the Rosetta ingest](step/intranda_step_rename_files_before_rosetta.md)
 * [Transfer OCR result to metadata field](step/intranda_step_ocr_to_metadata.md)
-
+* [Libsafe Ingest using BagIt](step/intranda_step_libsafe.md)
 
 ## Opac Plugins <a id="opac"></a>
 * [PICA Import](opac/intranda_opac_pica.md)
