@@ -1,27 +1,23 @@
 ---
 description: >-
-  This step-plugin allows you to download several files from URLs defined by process properties, and to verify them using checksum codes also defined by process properties. In the end there can be several responses delivered to different systems or locally logged into the journal.
+  This step plugin makes it possible to download multiple files from URLs and verify them with checksums that have been defined as process properties. Feedback on the progress can be saved to different systems or locally within the journal.
 ---
 
-# Downloading and Verification of Files
+# Downloading and verifying files
 
 ## Introduction
-
-This plugin reads in URL and Hash values from several configured process properties, download files from the URLs and compares them with their Hashcodes accordingly. In the end there can be possibly several responses prepared and sent, according to the final status between `success` and `error`. These responses can be delivered to another system via REST, or can be logged locally into the journal.
+This plugin reads URLs or hash values from several configured process properties, downloads the files from the defined URL and then compares them with the corresponding hash value. Finally, several responses can be given, depending on whether the status is `success` or `error`. These responses can be sent to another system via REST or simply logged within the journal.
 
 ## Overview
-
 | Details |  |
 | :--- | :--- |
 | Identifier | intranda\_step\_download\_and\_verify\_assets |
 | Source code | [https://gitea.intranda.com/goobi-workflow/goobi-plugin-step-download-and-verify-assets](https://github.com/intranda/goobi-plugin-step-download-and-verify-assets) |
 | Licence | GPL 2.0 or newer |
-| Compatibility | Goobi workflow 23.10 |
-| Dokumentation date | 01.Dec.2023 |
+| Documentation date | 01.12.2023 |
 
 ## Installation
-
-For the installation of this plugin the following file is needed:
+To install the plugin, the following file must be installed:
 
 ```bash
 /opt/digiverso/goobi/plugins/step/plugin_intranda_step_download_and_verify_assets.jar
@@ -33,9 +29,9 @@ The configuration file is usually located here:
 /opt/digiverso/goobi/config/plugin_intranda_step_download_and_verify_assets.xml
 ```
 
-## Configuration
+## Konfiguration
 
-The content of this configuration file looks like following:
+The content of this configuration file looks like the following example:
 
 ```xml
 <config_plugin>
@@ -94,12 +90,12 @@ The content of this configuration file looks like following:
 </config_plugin>
 ```
 
-The block `<config>` can be repeatedly defined for different projects or steps, in order to be able to run different actions inside different workflows.
+The `<config>` block can occur repeatedly for different projects or work steps in order to be able to perform different actions within different workflows.
 
 | Value | Description |
 | :--- | :--- |
-| `project` | This parameter determines the project for which the current block `<config>` is to apply. The name of the project is used here. This parameter can occur several times per `<config>` block. |
-| `step` | This parameter controls for which work steps the block `<config>` should apply. The name of the workflow step is used here. This parameter can occur several times per `<config>` block. |
-| `maxTryTimes` | This parameter determines how many tries can be repeated before final responses should be given. OPTIONAL. DEFAULT 1.  |
-| `fileNameProperty` | This parameter controls the part of the downloading and verification of files. It accepts three attributes. `@urlProperty` defines the name of the process property that contains the URL of the file. `@hashProperty` defines the name of the process property that contains the checksum codes of the file. `@folder` is OPTONAL with DEFAULT value `master`, and it controls where to save the downloaded files. |
-| `response` | This OPTIONAL parameter can be used to give several responses after downloading and verifications of all files. It accepts four attributes and possibly also a JSON-text for REST responses that requires a JSON-Body. More details and examples can be found in the comments in the configuration file above. |
+| `project` | This parameter defines which project the current block `<config>` should apply to. The name of the project is used here. This parameter can occur several times per `<config>` block. |
+| `step` | This parameter controls which work steps the `<config>` block should apply to. The name of the work step is used here. This parameter can occur several times per `<config>` block. |
+| `maxTryTimes` | This value defines the maximum number of attempts to be made before feedback must be given. This parameter is optional and has the default value `1`. |
+| `fileNameProperty` | This parameter controls the part for downloading and verifying the files. It accepts three attributes. `@urlProperty` defines the name of the process property that contains the URL of the file. `@hashProperty` defines the name of the process property that contains the checksum of the file. The attribute `@folder` is optional and has the default value `master`. It controls where the downloaded files are to be saved.  |
+| `response` | This optional parameter can be used to provide multiple responses after downloading and verifying the files. It accepts four attributes and a JSON text for REST requests with a JSON body. More details and examples can be found in the comments of the sample configuration file. |
