@@ -274,13 +274,13 @@ The metadata fields to be searched for the desired values are defined in <search
 ## Integration of the plugin into the workflow
 To activate the plugin, it must be activated for one or more desired tasks in the workflow. This is done by selecting the `intranda_step_metadata_per_image` plugin from the list of installed plugins.
 
-[Setting up the plugin in the workflow](../.gitbook/assets/intranda_metadata_per_image1_en.png)
+![Setting up the plugin in the workflow](../.gitbook/assets/intranda_metadata_per_image1_en.png)
 
 ## Functionality and operation of the plugin
 When the plugin is entered, separate structural elements are created for all files. The structure elements are listed. The metadata fields can be seen on the left and the image, video or audio file on the right. Click on the image to open it in full screen mode.
 The individual structural elements can be reorganised to put the files in the desired order.
 
-[User interface of the plugin](../.gitbook/assets/intranda_metadata_per_image2_en.png)
+![User interface of the plugin](../.gitbook/assets/intranda_metadata_per_image2_en.png)
 
 The configured metadata is displayed for each structural element. Depending on the configuration, there are options on the left-hand side to duplicate or delete a single field or to add a value to all structural elements at the same time.
 
@@ -288,4 +288,4 @@ The links are a special feature. This makes it possible to create a link between
 
 If a link is removed again, it is also removed from the selected process.
 
-[Assigned references to other processes](../.gitbook/assets/intranda_metadata_per_image3_en.png)
+![Assigned references to other processes](../.gitbook/assets/intranda_metadata_per_image3_en.png)

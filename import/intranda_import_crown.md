@@ -165,4 +165,4 @@ In addition, a field must be marked as `identifier="true"`. The content of this 
 ## Use in Goobi
 To use the import, the mass import area must be opened in the production templates and the plugin `intranda_import_crown` selected in the file upload import tab. An Excel file can then be uploaded and imported.
 
-[Selection of the plugin for performing the import](../.gitbook/assets/intranda_import_crown_en.png)
+![Selection of the plugin for performing the import](../.gitbook/assets/intranda_import_crown_en.png)
