@@ -18,7 +18,7 @@ This plugin is used to conditionally rename files within the different folders o
 | Source code | [https://github.com/intranda/goobi-plugin-step-rename-files](https://github.com/intranda/goobi-plugin-step-rename-files) |
 | Licence | GPL 2.0 or newer |
 | Compatibility | Goobi workflow 2020.02 |
-| Dokumentation date | 10.05.2020 |
+| Dokumentation date | 14.02.2023 |
 
 ## Installation
 
@@ -89,6 +89,7 @@ The configuration of the plugin is done within the already mentioned configurati
 | :--- | :--- |
 | `project` | This parameter determines the project for which the current block `<config>` is to apply. The name of the project is used here. This parameter can occur several times per `<config>` block. |
 | `step` | This parameter controls for which work steps the block `<config>` should apply. The name of the workflow step is used here. This parameter can occur several times per `<config>` block. |
+| `folder`  | This parameter allows the user to control which directories are to be considered for renaming. If the value `*` is specified here, the parameter is missing or the value is not configured, the default settings are used. |
 | `startValue` | This value controls with which start value the incrementing `counter` should start. |
 | `namepart` | This parameter, which can also be used several times, controls the generation of the file names. It can contain static elements \(`static`\), use the original file name \(`originalfilename`\), use variables from Goobi \(`variable`\) and generate a counter. The `originalfilename` is the original filename of the file before this plugin is executed for the first time. The number of digits defined is crucial for generating the counter \(`counter`\). For example, the value `00000` would generate five-digit numbers with any leading zeros. The components of the file name defined in this way are concatenated together for naming purposes and then supplemented by the actual file extension to name the file. |
 
@@ -114,7 +115,7 @@ To ensure correct renaming, that is based on the original file name, the plugin 
 
 Details of the Goobi workflow variables that can be used in this plugin can be found [in this documentation](https://docs.intranda.com/goobi-workflow-en/manager/8).
 
-The plugin considers the files within the following subdirectories for naming:
+The plugin considers by default the files within the following subdirectories for naming:
 
 * master
 * media
