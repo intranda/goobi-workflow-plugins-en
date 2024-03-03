@@ -2,7 +2,7 @@
 
 After installing the plugin and the associated database, the plugin must also be configured. This takes place within the configuration file `plugin_intranda_administration_archive_management.xml` and is structured as follows:
 
-```markup
+```xml
 <config_plugin>
 
     <basexUrl>http://localhost:8984/</basexUrl>
@@ -12,6 +12,20 @@ After installing the plugin and the associated database, the plugin must also be
         <archive>*</archive>
         <!-- default title for a new node -->
         <nodeDefaultTitle>Document</nodeDefaultTitle>
+        
+        <!-- configurations for generating process titles -->
+        
+        <!-- maximum length of the body token that will be used to generate a new process title -->
+        <!-- the specifically set HEAD token and TAIL token will not be affected by this limit -->
+        <!-- if the limit is positively configured, then CAMEL_CASE_LENGTH_LIMITED will be applied upon every body token, otherwise CAMEL_CASE will be applied -->
+        <lengthLimit>0</lengthLimit>
+        <!-- separator string that will be used to combine the tokens -->
+        <separator>_</separator>
+        <!-- true if shelfmark/signature should be used preferably, false if uuid should be used -->
+        <useSignature>true</useSignature>
+        
+        <!-- // configurations for generating process titles // -->
+        
         <!-- define metadata fields. All fields are displayed on the UI based on the level and the order within this file.
                 - @name: contains the internal name of the field. The value can be used to translate the field in the messages files. The field must start with a letter and can not contain any white spaces.
                 - @level: metadata level, allowed values are 1-7:
@@ -176,6 +190,12 @@ This is followed by a repeatable `<config>` block. The repeatable element `<arch
 
 The `<processTemplateId>` is used to specify which process template should be used as the basis for the Goobi processes created.
 
+The three parameters `<lengthLimit>` `<separator>` and `<useSignature>` are used to configure the naming of the process to be generated:
+* The `<lengthLimit>` value sets a length limit for all tokens except the manually set prefix and suffix. The default setting is `0`, i.e. it does not limit the length.
+* The parameter `<separator>` defines the separator to be used to combine all separate tokens. The default setting is `_`.
+* The parameter `<useSignature>` determines whether the signature is preferred when generating the task titles. If `true` is set, the plugin will try to retrieve the signature defined in the parent node of the current node and use it to generate the task title. However, if the signature is not available, the uuid will be used instead, just like if this parameter is set to `false`. The default setting is `false`. 
+
+
 ## Configuring the metadata fields
 
 This is followed by a list of `<metadata>` elements. This controls which fields are displayed, can be imported, how they should behave and whether there are validation rules.
@@ -214,19 +234,19 @@ There are also a number of other optional specifications:
 
 ### Simple input field
 
-```markup
+```xml
 <metadata xpath="./ead:control/ead:maintenanceagency/ead:agencycode" xpathType="element" name="agencycode" level="1" repeatable="false" fieldType="input"/>
 ```
 
 ### Text area
 
-```markup
+```xml
 <metadata xpath="(./ead:archdesc/ead:did/ead:unittitle | ./ead:did/ead:unittitle)[1]" xpathType="element" name="unittitle" level="1" repeatable="false" fieldType="textarea" rulesetName="TitleDocMain" importMetadataInChild="false" />
 ```
 
 ### Selection list
 
-```markup
+```xml
 <metadata xpath="(./ead:archdesc/@level | ./@level)[1]" xpathType="attribute" name="descriptionLevel" level="1" repeatable="false" fieldType="dropdown">
     <value>collection</value>
     <value>fonds</value>
@@ -244,7 +264,7 @@ There are also a number of other optional specifications:
 
 ### Multiple selection
 
-```markup
+```xml
 <metadata xpath="(./ead:archdesc/ead:did/ead:langmaterial[@label='Language']/ead:language | ./ead:did/ead:langmaterial[@label='Language']/ead:language)[1]" xpathType="element" name="langmaterial" level="4" repeatable="false" fieldType="multiselect" rulesetName="DocLanguage" importMetadataInChild="false">
     <value>eng</value>
     <value>ger</value>
@@ -261,7 +281,7 @@ There are also a number of other optional specifications:
 
 ### Validation of dates
 
-```markup
+```xml
 <metadata xpath="(./ead:archdesc/ead:did/ead:unitdate | ./ead:did/ead:unitdate)[1]" xpathType="element" name="unitdate" level="1" repeatable="false" rulesetName="PublicationYear" importMetadataInChild="false" regularExpression="^([0-9]{4}\\-[0-9]{2}\\-[0-9]{2}|[0-9]{4})(\\s?\\-\s?([0-9]{4}\\-[0-9]{2}\\-[0-9]{2}|[0-9]{4}))?$" validationType="regex">
   <validationError>The value is not a date specification. Permitted values are either years (YYYY), exact dates (YYYY-MM-DD) or time periods (YYYY - YYYY, YYYY-MM-DD-YYYY-MM-DD).</validationError>
 </metadata>
@@ -269,7 +289,7 @@ There are also a number of other optional specifications:
 
 ### Connection of a controlled vocabulary
 
-```markup
+```xml
 <metadata xpath="(./ead:archdesc/ead:dsc/ead:acqinfo | ./ead:dsc/ead:acqinfo)[1]" xpathType="element" name="acqinfo" level="2" repeatable="false" fieldType="vocabulary" rulesetName="AquisitionInformation" >
   <vocabulary>Aquisition</vocabulary>
   <searchParameter>type=visible</searchParameter>
