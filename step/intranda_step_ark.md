@@ -9,6 +9,10 @@ description: >-
 ## Einführung
 This documentation describes the installation, configuration and use of the Step Plugin for the generation of ARK identifiers in Goobi workflow.
 
+ [!WARNING]
+ This update can only be used to a very limited extent from 01.01.2024. ARCs were generated in the plugin via the Rest API of [arketype.ch](https://arketype.ch), a service of the Geneva University of Applied Sciences, which will be shut down in the course of 2024. Arketype is a fork of [EZID](https://github.com/CDLUC3/ezid) and could theoretically be used with it. However, the operation of a local ARK service using the [ARK services](https://gitlab.com/zhbluzern/zentralgut-ark-service) of the Lucerne Central Library for [ZentralGut](https://zentralgut.ch) is recommended. This Python script generates local identifiers, registers them in the global resolver and enters them into the processes in Goobi Workflow. 
+
+
 | Details |  |
 | :--- | :--- |
 | Identifier | intranda_step_ark |
