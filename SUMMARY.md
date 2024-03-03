@@ -95,6 +95,8 @@
 * [ALMA and REST API communication](step/intranda_step_alma_api.md)
 * [Duplicate tasks](step/intranda_step_duplicate_tasks.md)
 * [Download and Verify files](step/intranda_step_download_and_verify_assets.md)
+* [Capture metadata per image](step/intranda_step_metadata_per_image.md)
+
 
 ## Opac Plugins <a id="opac"></a>
 * [PICA Import](opac/intranda_opac_pica.md)
@@ -106,11 +108,13 @@
 * [Kalliope Import](opac/intranda_opac_kalliope.md)
 * [Ariadne Import](opac/intranda_opac_ariadne.md)
 
+
 ## Import Plugins <a id="import"></a>
 * [Import for journal articles from an Endnote Export](import/intranda_import_endnote.md)
 * [Importing records from an Excel file](import/intranda_import_excel.md)
 * [Import of Sisis SunRise Files](import/intranda_import_sisis_sunrise_file.md)
 * [Import of data records of the BDA Austria](import/intranda_import_bka_bda.md)
+* [Archive data import](import/intranda_import_crown.md)
 
 
 ## Export Plugins <a id="export"></a>
