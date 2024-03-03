@@ -1,34 +1,35 @@
 ---
 description: >-
-  This workflow plugin allows the mass import of single pages of Volksblatt from Liechtenstein.
+  This workflow plugin enables the mass import of individual newspaper editions for the Liechtensteiner Volksblatt
 ---
 
-# Workflow-plugin for the import of Newspaper pages of Liechtenstein Volksblatt
+# Import of newspaper editions for the Liechtensteiner Volksblatt
 
 ## Introduction
+This workflow plugin was implemented to read metadata from the file names and a configuration file and to correctly create or update processes and metadata. This plugin was originally developed for the import of newspaper issues of the Liechtensteiner Volksblatt, but can also be used for other imports as long as their page names follow the same pattern as `001_vbhp_4c_2019-01-11`, where the first three digits indicate the serial number of this page within its issue and the final date is the date of the issue. The description text in between does not matter as long as it does not match the regular expression `\d{4}-\d{2}-\d{2}`, which is reserved for storing the issue date.
 
-This workflow plugin was implemented to read metadata from the files' names as well as a configuration file and create or update processes and metadata properly. This Plugin is designed originally for the import of Newspaper pages from Liechtenstein Volksblatt, but it can also be used for other Newspaper import tasks as long as their page names follow the same pattern as `001_vbhp_4c_2019-01-11` where the first three digits indicate the ordering number of this page among its issue, and the tailing date is the issue's date. The description substring in between does not matter, as long as it does NOT match the regular expression `\d{4}-\d{2}-\d{2}` which is reserved for saving the issue's date.
 
 ## Overview
-
 | Details |  |
 | :--- | :--- |
 | Identifier | intranda\_workflow\_liechtenstein\_volksblatt\_importer |
 | Source code | [https://github.com/intranda/goobi-plugin-workflow-liechtenstein-volksblatt-importer](https://github.com/intranda/goobi-plugin-workflow-liechtenstein-volksblatt-importer) |
 | Licence | GPL 2.0 or newer |
-| Compatibility | Goobi workflow 23.10 |
-| Documentation date | 16.Nov.2023 |
+| Documentation date | 16.11.2023 |
 
 ## Installation
 
-* For the installation one needs `plugin_intranda_workflow_liechtenstein_volksblatt_importer.jar` and `plugin_intranda_workflow_liechtenstein_volksblatt_importer-GUI.jar`
+To install the plugin, the following two files must be installed:
+
 ```bash
-{PATH_TO_GOOBI}/plugins/workflow/plugin_intranda_workflow_liechtenstein_volksblatt_importer.jar
-{PATH_TO_GOOBI}/plugins/GUI/plugin_intranda_workflow_liechtenstein_volksblatt_importer-GUI.jar
+/opt/digiverso/goobi/plugins/workflow/plugin_intranda_workflow_liechtenstein_volksblatt_importer.jar
+/opt/digiverso/goobi/plugins/GUI/plugin_intranda_workflow_liechtenstein_volksblatt_importer-GUI.jar
 ```
-* The configuration file `plugin_intranda_workflow_liechtenstein_volksblatt_importer.xml` is to be copied to:
+
+To configure how the plugin should behave, various values can be adjusted in the configuration file. The configuration file is usually located here:
+
 ```bash
-{PATH_TO_GOOBI}/config/plugin_intranda_workflow_liechtenstein_volksblatt_importer.xml
+/opt/digiverso/goobi/config/plugin_intranda_workflow_liechtenstein_volksblatt_importer.xml
 ```
 
 ## Configuration
@@ -86,21 +87,23 @@ Configurations are supposed to be done in the configuration file, which may look
 </config_plugin>
 ```
 
+The individual parameters are used as follows:
+
 | Value | Description |
 | :--- | :--- |
-| `importFolder` | Path to the folder that contains the separated newspaper pages ready for import. |
-| `workflow` | Name of the template workflow. |
-| `deleteFromSource` | If `true` then the files from the import folder will be deleted once they are successfully imported, otherwise all files in the import folder will remain untouched. |
-| `metadata` | There will be one Metadata object created out of every tag. It accepts six attributes, where `@value` and `@type` are mandatory, while `@var`, `@anchor`, `@volume` and `@person` are all optional. See the comments in the example configuration for more details. |
+| `importFolder` | Path to the folder containing the separated newspaper pages for the import. |
+| `workflow` | Name of the production template to be used. |
+| `deleteFromSource` | If the value is 'true', the files are deleted from the import folder as soon as they have been successfully imported, otherwise all files in the import folder remain unchanged. |
+| `metadata` | An independent metadata is created from each element specified here. It accepts six attributes, where `@value` and `@type` are mandatory, while `@var`, `@anchor`, `@volume` and `@person` are optional. Further details can be found in the comments within the sample configuration. |
 
-## Instruction for use
+## Using the plugin
+* It is not important for the plugin which file formats the newspaper pages to be imported have, as all the metadata that needs to be saved is read directly from the file names and from the configuration file. The page files are distributed to the master folders of the corresponding Goobi processes.
+* The file formats in the file links created by this plugin in the METS file are changed to `tiff` and `jpg`, as only these can be rendered correctly by the metadata editor. If the pages cannot be viewed correctly after import, the files may need to be converted first. In the event that these are PDF files that are to be imported
+to be imported, such a step could look like this:
 
-* This plugin does not care about the actual file formats of the newspaper pages that are to be imported, since all metadata that need to be recorded will be read directly from the files' names as well as from the configuration file. The page files will be distributed into the master folders of proper Goobi processes.
-* The file formats in the file links that will be recorded in the METS file by this plugin will be changed to `tiff` and `jpg` because only they can be properly rendered by the Metadata Editor. If one wants to see the pages correctly after the import, one has to add a conversion step after the import. ***ATTENTION***: even if this conversion step is supposed to run automatically, one has to trigger it manuelly, alternatively one can add a blank step between the import step and this conversion step and manuelly change this blank step's status when the import is done.
-* Following is an example to illustrate the creation and use of such a conversion step, in the original use case for Liechtenstein Volksblatt, where the original newspaper pages are of format PDF:
-
-  1. Install `pdftoppm` if not done yet
-  2. Put the following script file to `{PATH_TO_GOOBI}/scripts/script_convertPdfToTiff.sh`
+  1. Install the package `pdftoppm`, if not already done
+  2. create a script file under the name `/opt/digiverso/goobi/scripts/script_convertPdfToTiff.sh`
+   
     ```bash
     #!/bin/bash
 
@@ -123,4 +126,4 @@ Configurations are supposed to be done in the configuration file, which may look
     # delete all pdf files
     rm *.pdf
     ```
-  3. Create a script step with script path `{PATH_TO_GOOBI}/scripts/script_convertPdfToTiff.sh "{origpath}"`
+  3. Create a workflow step in the workflow with the path to the script `/opt/digiverso/goobi/scripts/script_convertPdfToTiff.sh "{origpath}"`
