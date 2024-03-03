@@ -198,9 +198,28 @@ An example configuration could look like this:
 
 </config>
 ```
-The `<mets>` element controls the generation of METS files and allows various configurations. For example, `<docType>` can be used to control which structure types are to be generated for the entries extracted from the PDF table of contents. The `<parent>` element is the main element in which all other table of contents entries are stored. If it is omitted, all entries are entered directly in the main element of the METS file.
 
-The `<images>` element controls the resolution \(in DPI\) and the output format for the extracted images.
+## Settings in the configuration file
+Any number of configurations for projects or work steps with specific names can be defined in the configuration file. Various `<config>` blocks can be used for this purpose, whereby the `<project>` and `<step>` properties must be specified in each one. The `<config>` blocks are applied to a specific step in the following order:
+
+1) `<project>` and `<step>` correspond to the current project and step
+2) `<step>` corresponds to the current step and `<project>` is set to `*`
+3) `<project>` corresponds to the current project and `<step>` is set to `*`
+4) `<project>` and `<step>` are set to `*`
+
+The `<failOnMissingPDF>` element within the `<validation>` element can be set to `true` to issue a warning if no PDF files could be found. Warnings are then written to the journal and the server-internal log files. If this option is deactivated with `false`, the case that no PDF files may exist is ignored.
+
+The `<overwriteExistingData>` element can be used to set globally for this plugin whether existing PDF files may be overwritten.
+
+The `<docType>` controls which structure types the entries extracted from the PDF content directory are given in the METS file. The `<parent>` element is the main element in which all other table of contents entries are stored. If it is omitted, all entries are entered directly in the main element of the METS file. The `<children>` element is used to specify the structure type of the sub-elements of the entry extracted from the PDF table of contents.
+
+The `<pagePdfs>`, `<alto>`, `<plaintext>`, `<images>` and `<mets>` elements each have a `<write>` and `<failOnError>` property. In accordance with the XML element for PDF files, ALTO files, TXT files, general image files and the METS file, this allows you to set whether files of these types should be written or overwritten and whether an error message should be issued and further execution cancelled if they could not be written.
+
+In the `<images>` element, some further settings for image files are possible. The values in `<resolution>` and `<format>` can be used to specify the image resolution \(in DPI\) and the output file format for the extracted images.
+
+The sub-element `<generator>` within `<images>` specifies which executable programme is to be used on the server to extract the images. Valid values are usually `pdftoppm` and `ghostscript`. The element `<generatorParameter>` can be used multiple times and contains a command line parameter for the programme specified in `<generator>`.
+
+The `<mets>` element controls the generation of METS files and allows various configurations. For example, `<docType>` can be used to control which structure types are to be generated for the entries extracted from the PDF content directory. The `<parent>` element is the main element in which all other table of contents entries are stored. If it is omitted, all entries are entered directly in the main element of the METS file.
 
 The elements `<plaintext>`, `<alto>` and `<pagePdfs>` control the generation of the text files, the alto files and the Pdf files of all individual pages.
 

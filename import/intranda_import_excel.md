@@ -229,6 +229,8 @@ The element `processTitleRule` is used to generate the operation title. The same
 <processTitleRule>'StaticPrefix_'+Identifier</processTitleRule>
 ```
 
+The `processTitleRule` can be provided with the additional parameter `replacewith`. The character specified here (e. g. `replacewith="_"`) replaces all special characters with this character.
+
 ### Transfer of images
 
 The elements `imageFolderHeaderName`, `imageFolderPath` and `moveFiles` can be used to import images in addition to metadata. In `imageFolderHeaderName` the column name is entered, in which the folder names containing the images can be found in the Excel file. Either an absolute path or a relative path can be specified there.
