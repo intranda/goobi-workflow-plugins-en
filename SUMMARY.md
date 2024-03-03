@@ -94,6 +94,7 @@
 * [Libsafe Ingest using BagIt](step/intranda_step_libsafe.md)
 * [ALMA and REST API communication](step/intranda_step_alma_api.md)
 * [Duplicate tasks](step/intranda_step_duplicate_tasks.md)
+* [Download and Verify files](step/intranda_step_download_and_verify_assets.md)
 
 ## Opac Plugins <a id="opac"></a>
 * [PICA Import](opac/intranda_opac_pica.md)
