@@ -96,6 +96,8 @@
 * [Duplicate tasks](step/intranda_step_duplicate_tasks.md)
 * [Download and Verify files](step/intranda_step_download_and_verify_assets.md)
 * [Capture metadata per image](step/intranda_step_metadata_per_image.md)
+* [Import of structure data from an Excel file](step/intranda_step_excel_structure_import.md)
+
 
 
 ## Opac Plugins <a id="opac"></a>
