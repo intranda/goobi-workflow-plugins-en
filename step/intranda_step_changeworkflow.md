@@ -14,7 +14,7 @@ This documentation describes the installation, configuration and use of a plugin
 | Identifier | intranda\_step\_changeWorkflow |
 | Source code | [https://github.com/intranda/goobi-plugin-step-change-workflow](https://github.com/intranda/goobi-plugin-step-change-workflow) |
 | Licence | GPL 2.0 or newer |
-| Documentation date | 14.Feb.2023 |
+| Documentation date | 31.03.2024 |
 
 ## Precondition
 The precondition for using the plugin is the use of Goobi workflow in version 3.0.0 or higher, the correct installation and configuration of the plugin as well as the correct integration of the plugin into the desired workflow steps.
