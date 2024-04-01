@@ -73,7 +73,11 @@ The plugin is configured via the configuration file `plugin_intranda_export_zop.
 		<!-- Absolute path expected. No difference whether you append the directory separator '/' to the end or not. -->
 		<!-- If left blank, then the default setting '/opt/digiverso/viewer/hotfolder' will be used. -->
 		<path></path>
-		
+
+		<!-- define if the expoart shall be cancelled if the target directory is not empty -->
+		<!-- if this parameter is missing the default is true -->
+		<checkIfPathEmpty>true</checkIfPathEmpty>
+
 		<!-- Whether or not use SFTP for the export. -->
 		<!-- If true then use SFTP. If false then perform local export. -->
 		<!-- If left blank, then the default setting 'false' will be used. -->
@@ -130,6 +134,7 @@ The plugin is configured via the configuration file `plugin_intranda_export_zop.
 | `identifier`      | This parameter determines which metadatum is to be used as the folder name. |
 | `volume`          | This parameter controls with which metadata the subdirectories for volumes are to be named. |
 | `path`            | This parameter sets the export path where the data is to be exported. An absolute path is expected. |
+| `checkIfPathEmpty`| This parameter defines whether the export should be canceled if the folder already exists and already has content. |
 | `sftp`       | This parameter determines whether to use SFTP for the export process or not. |
 | `username`   | This parameter determines the user name to log into the remote host. |
 | `hostname`   | This parameter determines the name of the remote host or its IP address. |
