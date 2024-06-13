@@ -208,6 +208,8 @@ The configuration of the plugin is structured as follows as an example:
         <!-- create variables using values read from process properties -->
         <variable name="MMS_ID" value="{meta.MMS_ID}" />
         <variable name="PORTFOLIO_ID" value="{meta.PortfolioId}" />
+        <variable name="THESIS_TYPE" value="MASTERTHESIS" conditionField="{meta.ThesisType}" conditionValue="Masterarbeit" />
+        <variable name="THESIS_TYPE" value="DISSERTATION" conditionField="{meta.ThesisType}" conditionType="not" conditionValue="Masterarbeit" />
 
         <command method="get" accept="json" content-type="json" endpoint="/almaws/v1/bibs/{mms_id}/portfolios/{portfolio_id}">
             <!-- define the value of the placeholder {mms_id} using the value of the variable named MMS_ID -->
@@ -249,7 +251,7 @@ The plugin is configured as described here:
 | `step` | This parameter controls which work steps the `<config>` block should apply to. The name of the work step is used here. This parameter can occur multiple times per `<config>` block. |
 | `url` | The base URL of the REST API is specified here. |
 | `api-key` | The API key for the connection to the REST API is configured here. |
-| `variable` | This tag can be used to define a variable that can be used by all subsequent commands. This tag has two attributes, where `@name` defines the name and `@value` the value. `@value` expects a simple text value or a Goobi variable. |
+| `variable` | This tag can be used to define a variable that can be used by all subsequent commands. This tag has two attributes, where `@name` defines the name and `@value` the value. `@value` expects a simple text value or a Goobi variable. If a variable is to contain different values when certain conditions are met, the attributes `@conditionField`, `@conditionValue` and `@conditionType` can be used. `@conditionField` contains the field to be checked; Goobi variables can be used here. The expected value is in `@conditionValue` and `@conditionType` optionally contains the type of check. Possible types are `is` (exact match), `not` (no match), `matches` (conditionValue is evaluated as a regular expression and must be true) and `any` (value must exist) |
 | `command` | A command block defines a command that is to be executed in the job. It has two mandatory attributes itself, where `@method` specifies the method to be used and `@endpoint` specifies the path to the endpoint, where all placeholders are not replaced. It also has two optional attributes, `@accept` and `@content-type`, which are used to specify the request parameters `accept` and `content-type`. Both expect either `json` or `xml`. If one of the two parameters is omitted, the default value `json` is used. Further details can be found in the table below and in the example configuration above. |
 | `save` | An optional `save` element defines a value to be saved after all commands have been executed. It has three mandatory attributes, where `type` specifies whether the value is to be saved as an operation property or as a metadata. The attribute `@name` defines the name of the process property or metadata type. The `@value` attribute determines the value, which can be a simple text value or a previously defined variable. It has two optional attributes, where `@choice` specifies which value should be saved if several are found, and `@overwrite` determines whether a previously created process property or a metadata of the same name should be reused. |
 
