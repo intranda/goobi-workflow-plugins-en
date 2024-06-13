@@ -21,27 +21,29 @@ This is a technical documentation for the import of structure data from an Excel
 
 To install the plugin, the following file must be installed:
 
-```text
+```bash
 /opt/digiverso/goobi/plugins/step/plugin_intranda_step_MetadataStructureImport.jar
 /opt/digiverso/goobi/plugins/config/plugin_intranda_step_MetadataStructureImport.xml
 ```
-To put the plugin into operation, it must be activated in a task in the workflow. This is done by selecting the plugin `intranda_step_MetadataStructureImport` from the list of installed plugins. The step should run after importing the images and creating derivatives.
+
+A new step must be added to the workflow. This step should run after the import of images and the creation of derivatives. This is an automatic step in which the `intranda_step_MetadataStructureImport` plugin must be selected.
 
 ## Overview and functionality
 
-When the plugin is executed, it first searches for an Excel file in the configured location. The Excel file can have any name, but it must have the extension xlsx.
+When the plugin is executed, it first searches for an Excel file in the configured location. The Excel file can have any name, but it must have the extension `xlsx`.
 
 If an Excel file exists, the METS file for the process is then opened. If no pagination exists, it is created automatically.  If the file contains structural data, this is now removed. This makes it possible to call up the plugin several times with updated Excel files.
 
 Once the preparations have been completed, the Excel file is now processed line by line. The first step is to check which hierarchy level is entered in the line. There are four options: 
-* If 0, the line is skipped, as this is the information on the publication type itself. This data has already been created by the regular import and is therefore not relevant here.
-* If the hierarchy number of the current line is the same as that of the previous line, it is a sibling element of the last element. It is then created as the last child element of the parent element of the previous element.
-* If the hierarchy number is greater than that of the previous line, it is a child element of the previous element. A hierarchy level is then created below the last element.
-* If the hierarchy number is lower than that of the previous element, the previous element is searched for parent elements until one with the same number is found. The new element is then created as a sibling element of the parent element found.
+
+- If `0`, the line is skipped, as this is the information on the publication type itself. This data has already been created by the regular import and is therefore not relevant here.
+- If the hierarchy number of the current line is `the same` as that of the previous line, it is a sibling element of the last element. It is then created as the last child element of the parent element of the previous element.
+- If the hierarchy number is `greater` than that of the previous line, it is a child element of the previous element. A hierarchy level is then created below the last element.
+- If the hierarchy number is `lower` than that of the previous element, the previous element is searched for parent elements until one with the same number is found. The new element is then created as a sibling element of the parent element found.
 
 ## Configuration of the plugin
 
-The configuration takes place in the plugin_intranda_step_MetadataStructureImport.xml file:
+The configuration takes place in the `plugin_intranda_step_MetadataStructureImport.xml` file:
 
 ```xml
 <config_plugin>
@@ -57,13 +59,11 @@ The configuration takes place in the plugin_intranda_step_MetadataStructureImpor
         <!-- which projects to use for (can be more then one, otherwise use *) -->
         <project>*</project>
         <step>*</step>
-
 ```
 
 The `<config>` area can be repeated as often as required and therefore allows different metadata configurations for different projects.
 
 The sub-elements `<project>` and `<step>` are used to check whether the current block should be used for the current step. The system first checks whether there is an entry that contains both the project name and the step name. If this is not the case, the system searches for an entry for any projects marked with `*` and the step name used. If no entry is found for this either, a search is carried out for the project name and any steps, otherwise the default block is used, in which both `<project>` and `<step>` contain `*`.
-
 
 ```xml
         <!-- Can be an absolute path or composed with variables  -->
@@ -107,7 +107,6 @@ Columns are then defined that have a fixed meaning. `<doctypeColumnName>` contai
 ```
 
 Any number of additional columns are now defined that are to be imported as metadata. The column heading is in `columnName` and the internal name of the metadata from the rule set is in `metadata`.
-
 
 ```xml
         <docstruct label="Handschrift" value="Monograph"/>
