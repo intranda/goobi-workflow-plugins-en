@@ -79,15 +79,16 @@ Therefore please assign the role `Plugin_Goobi_Massupload` to the group.
 
 The configuration of the plugin is as follows:
 
-| Value | Description |
-| :--- | :--- |
-| `allowed-file-extensions` | This parameter defines which files may be uploaded. This is a regular expression. |
-| `user-folder-name` | If the files are to be read from the user directory, you can specify here the name of the folder within the user directory from which the files are to be read. |
-| `use-barcodes` | This parameter defines whether the assignment to the processes is to be based on barcodes or whether it is to be made on the basis of file names. |
-| `copy-images-using-goobiscript` | If the data transfer is to take place in the background using the GoobiScript queue functionality, this can be specified here. |
-| `allowed-step` | In this repeatable parameter, define which step in the determined process must currently be in the status `open`. |
-| `filename-part` | This parameter can be used to specify how the file names are to be assigned to the processes. |
-| `filename-separator` | Enter the separator character by which a prefix or suffix is to be cut off. Thus it can be determined that e.g. from a file `kleiuniv_987654321_00002.tif` with an filename-part by means of `prefix` and the filename-separator `_` a process is to be determined, which is called `kleinuniv_987654321`. |
+| Value                               | Description of the                  |
+| ---------------------------------- | ----------------------------- |
+| `allowed-file-extensions`          | This parameter is used to specify which files may be uploaded. This is a regular expression. |
+| `user-folder-name`                 | If the files are to be read from the user directory, the name of the folder within the user directory from which the files are to be read can be specified here. |
+| `detection-type`                     | This parameter is used to specify whether the assignment to the processes should be based on barcodes or whether it should be based on the file names. The values available here are `filename` for the use of file names and `barcode` for barcode recognition. If the value " `user` is specified, the user is given a selection option in the user interface. |
+| `copy-images-using-goobiscript`    | If data transfer is to take place in the background using the GoobiScript queue functionality, this can be specified here. |
+| `allowed-step`                     | Use this repeatable parameter to specify which work step in the determined process must currently be in the `open` status. |
+| `filename-part`                    | This parameter can be used to specify how the file names are to be assigned to the processes. |
+| `filename-separator`               | Specify the separator that is to be used to truncate a prefix or suffix. This allows you to specify that, for example, an operation called `kleiuniv_987654321` is to be determined from a file named `kleiuniv_987654321_00002.tif` when an assignment is made using `prefix` and the separator `_`. |
+| `match-type`                       | Specify here whether the matching of the processes should be carried out using `exact` via an exact name or using `contains` whether the process name should only contain the value. |
 
 ## Operation of the plugin
 
