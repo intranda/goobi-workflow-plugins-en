@@ -20,8 +20,7 @@ As well as assigning files on the basis of their file name, it is also possible 
 | Identifier | intranda\_workflow\_massupload |
 | Source code | [https://github.com/intranda/goobi-plugin-workflow-massupload](https://github.com/intranda/goobi-plugin-workflow-massupload) |
 | Licence | GPL 2.0 or newer |
-| Compatibility | Goobi workflow 20.06 |
-| Documentation date | 20.09.2020 |
+| Documentation date | 06.07.2024 |
 
 ## Installation
 
